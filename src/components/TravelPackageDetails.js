@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import axios from "axios";
 
 
-export default class PostDetails extends Component {
+export default class PackageDetails extends Component {
 
   constructor(props){
     super(props);

@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import axios from "axios";
 
-export default class EditPost extends Component {
+export default class EditPackage extends Component {
 
   
 

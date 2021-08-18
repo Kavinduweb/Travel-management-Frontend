@@ -2,7 +2,7 @@ import React,{useReducer, useState} from "react"
 import {useHistory} from 'react-router-dom';
 import axios from "axios";
 
-const CreatePost = ()=>{
+const CreatePackage = ()=>{
 
      let history = useHistory();
 
@@ -140,4 +140,4 @@ const CreatePost = ()=>{
     );
 };
 
-export default CreatePost;
+export default CreatePackage;
