@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import axios from "axios";
 
 
+
 export default class PackageDetails extends Component {
 
   constructor(props){
@@ -56,7 +57,7 @@ const {packageName,destination,district,date,noofdays,noofnights,vehical,perpers
              
     </dl>   
 
-        <button  ><a href="/booking" >Book Package</a></button>
+        <button ><a href="/booking" >Book Package</a></button>
  
     </div>
 
