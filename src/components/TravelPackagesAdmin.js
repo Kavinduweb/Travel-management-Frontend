@@ -54,14 +54,14 @@ render(){
       <tr key={index}>
       <th scope="row">{index+1}</th>
       <td>
-          <a href ={`/travelpackages/travelpackage/${posts._id}`} style={{textDecoration:'none'}}>
+          <a href ={`/travelpackages/travelpackage/admin/${posts._id}`} style={{textDecoration:'none'}}>
           {posts.packageName}
           </a>
           </td>
       <td>{posts.destination}</td>
       <td>{posts.perperson}</td>
       <td>
-        <a className ="btn btn-warning" href ={`/travelpackages/travelpackage/edit/${posts._id}`}>
+        <a className ="btn btn-warning" href ={`/travelpackages/admin/edit/${posts._id}`}>
           <i className="fas fa-edit"></i>&nbsp;Edit
         </a>&nbsp;
       
@@ -75,7 +75,7 @@ render(){
   </tbody>
 </table>
 
- <button className="btn btn-success"><a href="/travelpackage/add" style={{textDecoration:'none' ,color:'white'}} >Add New Package</a></button>
+ <button className="btn btn-success"><a href="/travelpackage/admin/add" style={{textDecoration:'none' ,color:'white'}} >Add New Package</a></button>
 
     </div>
   )

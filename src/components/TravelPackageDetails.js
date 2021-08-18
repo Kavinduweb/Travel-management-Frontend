@@ -57,7 +57,7 @@ const {packageName,destination,district,date,noofdays,noofnights,vehical,perpers
              
     </dl>   
 
-        <button ><a href="/booking" >Book Package</a></button>
+        <button type="submit" class="btn btn-primary" ><a href="/booking" style={{textDecoration:'none' ,color:'white'}} >Book Package</a></button>
  
     </div>
 

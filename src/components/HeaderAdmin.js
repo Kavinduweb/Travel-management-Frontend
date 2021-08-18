@@ -1,7 +1,7 @@
 import React from "react";
 
 
-function Header(){
+function HeaderAdmin(){
 
     return(
         <nav className="navbar navbar-expand-lg navbar-light bg-light">
@@ -20,7 +20,7 @@ function Header(){
         </li>
 
         <li className="nav-item">
-          <a className="nav-link" href="/travelpackages">Travel Packages</a>
+          <a className="nav-link" href="/travelpackages/admin">Travel Packages</a>
         </li>
         
       </ul>
@@ -32,4 +32,4 @@ function Header(){
     
 }
 
-export default Header;
+export default HeaderAdmin;
