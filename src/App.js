@@ -10,6 +10,10 @@ import EditPackage from './components/EditTravelPackage';
 import HomePage from './components/HomePage';
 import AllPackages from './components/TravelPackages';
 import AllBooking from './components/BookingAllDetails';
+import adminhotelbooking from './components/AdminHotelBooking';
+import userhotelbooking from './components/UserHotelBooking';
+import hotelbookingdetails from './components/HotelBookingDetails';
+import addnewhotelbooking from './components/AddNewHotelBooking';
 
 
 import {BrowserRouter as Router, Route} from "react-router-dom"
@@ -17,7 +21,7 @@ import {BrowserRouter as Router, Route} from "react-router-dom"
 function App() {
   return (
     <Router>
-    <div>
+    <div> 
       
       <Header/>
       <Route path ="/add" exact component={AddPayment}/>
@@ -30,6 +34,10 @@ function App() {
       <Route path ="/" exact component={HomePage}></Route>
       <Route path="/travelpackages" exact component = {AllPackages}></Route>
       <Route path="/allbooking" exact component = {AllBooking}></Route>
+      <Route path="/adminhotelbooking" exact component = {adminhotelbooking}></Route>
+      <Route path="/userhotelbooking" exact component = {userhotelbooking}></Route>
+      <Route path="/userhotelbooking/hotelbookingdetails/:id" exact component = {hotelbookingdetails}></Route>
+      <Route path="/addnewhotelbooking" exact component = {addnewhotelbooking}></Route>
 
     </div>
     </Router>
