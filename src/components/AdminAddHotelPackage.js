@@ -2,17 +2,16 @@ import React, {Component } from 'react';
 import axios from 'axios';
 
 
-export default class AddNewHotelBooking extends Component{
+export default class AdminAddPackage extends Component{
 
 constructor(props){
     super(props);
     this.state={
         roomType:"",
-        capacity:"",
-        name:"",
-        email:"",
-        arrivalDate:"",
-        departureDate:""
+        details:"",
+        price:"",
+        size:"",
+        maxCapacity:""
     }
 }
 
@@ -29,29 +28,27 @@ constructor(props){
 
         e.preventDefault();
 
-        const {roomType,capacity,name,email,arrivalDate,departureDate}= this.state;
+        const {roomType,details,price,size,maxCapacity}= this.state;
 
         const data={
             roomType:roomType,
-            capacity:capacity,
-            name:name,
-            email:email,
-            arrivalDate:arrivalDate,
-            departureDate:departureDate
+            details:details,
+            price:price,
+            size:size,
+            maxCapacity:maxCapacity
         }
 
         console.log(data)
 
-axios.post("http://localhost:8070/hotelbooking/add",data).then((res)=>{
+axios.post("http://localhost:8070/hotelpackage/add",data).then((res)=>{
     if(res.data.success){
         this.setState(
             {
                 roomType:"",
-                capacity:"",
-                name:"",
-                email:"",
-                arrivalDate:"",
-                departureDate:"" 
+                details:"",
+                price:"",
+                size:"",
+                maxCapacity:""
             }
         )
     }
@@ -64,67 +61,58 @@ axios.post("http://localhost:8070/hotelbooking/add",data).then((res)=>{
     render(){
         return(
             <div className="col-md-8 mt-4 mx-auto">
-                <h1 className="h3 mb-3 font-weight-normal">create your Booking</h1>
+                <h1 className="h3 mb-3 font-weight-normal">Add New room</h1>
                 <form className="needs-validation" no noValidate>
                     <div className="from group" style={{marginBottom:'15px'}}>
                         <label style={{marginBottom:'5px'}}>Room Type</label>
                         <input type="text"
                         className="form-control"
                         name="roomType"
-                        placeholder=""
+                        placeholder="Room Type"
                         value={this.state.roomType}
                         onChange={this.handleInputChange}/>
                     </div>
 
                     <div className="from group" style={{marginBottom:'15px'}}>
-                        <label style={{marginBottom:'5px'}}>Capacity</label>
+                        <label style={{marginBottom:'5px'}}>Details</label>
                         <input type="text"
                         className="form-control"
-                        name="capacity"
-                        placeholder=""
-                        value={this.state.capacity}
+                        name="details"
+                        placeholder="Room Details"
+                        value={this.state.details}
                         onChange={this.handleInputChange}/>
                     </div>
 
                     <div className="from group" style={{marginBottom:'15px'}}>
-                        <label style={{marginBottom:'5px'}}>Name</label>
+                        <label style={{marginBottom:'5px'}}>Price</label>
                         <input type="text"
                         className="form-control"
-                        name="name"
-                        placeholder="Name"
-                        value={this.state.name}
+                        name="price"
+                        placeholder="price"
+                        value={this.state.price}
                         onChange={this.handleInputChange}/>
                     </div>
 
                     <div className="from group" style={{marginBottom:'15px'}}>
-                        <label style={{marginBottom:'5px'}}>Email</label>
+                        <label style={{marginBottom:'5px'}}>Size</label>
                         <input type="text"
                         className="form-control"
-                        name="email"
-                        placeholder="Email"
-                        value={this.state.email}
+                        name="size"
+                        placeholder="Room Size"
+                        value={this.state.size}
                         onChange={this.handleInputChange}/>
                     </div>
 
                     <div className="from group" style={{marginBottom:'15px'}}>
-                        <label style={{marginBottom:'5px'}}>Arrival Date</label>
+                        <label style={{marginBottom:'5px'}}>max Capacity</label>
                         <input type="text"
                         className="form-control"
-                        name="arrivalDate"
-                        placeholder="YY/MM/DD"
-                        value={this.state.arrivalDate}
+                        name="maxCapacity"
+                        placeholder="Max Capacity"
+                        value={this.state.maxCapacity}
                         onChange={this.handleInputChange}/>
                     </div>
 
-                    <div className="from group" style={{marginBottom:'15px'}}>
-                        <label style={{marginBottom:'5px'}}>Departure Date</label>
-                        <input type="text"
-                        className="form-control"
-                        name="departureDate"
-                        placeholder="YY/MM/DD"
-                        value={this.state.departureDate}
-                        onChange={this.handleInputChange}/>
-                    </div>
 
 <button className="btn btn-success" type="submit" style={{marginTop:'15px'}} onClick={this.onSubmit}>
     <i className="far fa-check-square"></i>

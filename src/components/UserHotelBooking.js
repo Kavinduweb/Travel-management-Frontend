@@ -24,6 +24,17 @@ export default class UserHotelBooking extends Component{
           }
         });
       } 
+
+
+      onDelete=(id)=>{
+
+        axios.delete(`http://localhost:8070/hotelbooking/delete/${id}`).then((res)=>{
+          alert("Delete Successfully");
+          this.retrievePosts();
+        })
+      }
+      
+
     
 
     render(){
@@ -50,13 +61,14 @@ export default class UserHotelBooking extends Component{
 
           <td>
             <br></br><br></br><br></br>
-            <a className ="btn btn-warning" href ={`/travelpackages/admin/edit/${posts._id}`}>
+            <a className ="btn btn-warning" href ={`/edithotelbooking/${posts._id}`}>
               <i className="fas fa-edit"></i>Edit Booking
             </a>&nbsp;
-            <a className ="btn btn-danger" href ={`/travelpackages/admin/edit/${posts._id}`}>
+            <a className ="btn btn-danger" href ="#" onClick={()=>this.onDelete(posts._id)}>
               <i className="fas fa-edit"></i>&nbsp;Cancle Booking
             </a>
         </td>
+        
 
     </tr>
     ))}
@@ -64,7 +76,7 @@ export default class UserHotelBooking extends Component{
   </tbody>
 </table>
       
-      <button className="btn btn-success"><a href="/addnewhotelbooking" style={{textDecoration:'none', color:'white'}}>Make a new Booking</a></button>
+      <button className="btn btn-success"><a href="/hotelpackage" style={{textDecoration:'none', color:'white'}}>Make a new Booking</a></button>
       <br></br>
       <br></br>
       <br></br> 
