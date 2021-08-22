@@ -33,12 +33,55 @@ onDelete=(id)=>{
   })
 }
 
+filterData(posts,searchkey){
+  const result = posts.filter((post) =>
+  post.packageName.toLowerCase().includes(searchkey)||
+  post.destination.toLowerCase().includes(searchkey) ||
+  post.perperson.toLowerCase().includes(searchkey)
+  )
+  this.setState({posts:result})
+}
+
+handleSearchArea=(e)=>{
+  const searchkey = e.currentTarget.value;
+
+  axios.get("http://localhost:8070/travelpackages").then(res =>{
+    if(res.data.success){
+      this.filterData(res.data.existingPackage,searchkey)
+    }
+  });
+}
+
 
 
 render(){
   return(
     <div className="container">
       <p> All Packages</p>
+
+
+      
+<div className="rightsearch">
+  
+  <div class="input-group" >
+<div class="form-outline">
+
+<input 
+id="search-input" 
+type="search" 
+id="form1" 
+class="form-control" 
+placeholder="Search Package"
+onChange={this.handleSearchArea}  />
+</div>
+
+<button id="search-button" type="button" class="btn btn-primary">
+<i class="fas fa-search"></i>
+</button>
+
+</div>
+</div>
+  
        
       <table class="table">
   <thead class="thead-dark">
