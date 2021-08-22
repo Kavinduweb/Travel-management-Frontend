@@ -20,7 +20,7 @@ import adminhotelpackage from './components/AdminHotelPcakage';
 import adminaddhotelpackage from './components/AdminAddHotelPackage';
 import adminedithotelpackage from './components/AdminEditHotelPackage';
 import adminhotelpackagedetails from './components/AdminHotelPackageDetails';
-
+import DeletePackage from './components/DeleteTravelPackage'
 
 
 import {BrowserRouter as Router, Route} from "react-router-dom"
@@ -32,12 +32,12 @@ function App() {
       
       <Header/>
       <Route path ="/add" exact component={AddPayment}/>
-      <Route path="/booking" exact component = {PackageBooking}></Route>
+      <Route path="/bookingpackage" exact component = {PackageBooking}></Route>
        <Route path="/travelpackages/admin" exact component = {AllPackagesAdmin}></Route>
        <Route path="/travelpackage/admin/add" exact component ={CreatePackage}></Route>
        <Route path="/travelpackages/travelpackage/:id" exact component ={PackageDetails}></Route>
        <Route path="/travelpackages/travelpackage/admin/:id" exact component ={PackageDetailsAdmin}></Route>
-       <Route path="/travelpackages/admin/edit/:id" exact component ={EditPackage}></Route>
+       <Route path="/travelpackage/admin/edit/:id" exact component ={EditPackage}></Route>
       <Route path ="/" exact component={HomePage}></Route>
       <Route path="/travelpackages" exact component = {AllPackages}></Route>
       <Route path="/allbooking" exact component = {AllBooking}></Route>
@@ -51,6 +51,8 @@ function App() {
       <Route path="/adminaddhotelpackage" exact component = {adminaddhotelpackage}></Route>
       <Route path="/adminedithotelpackage/:id" exact component = {adminedithotelpackage}></Route>
       <Route path="/adminhotelpackagedetails/:id" exact component = {adminhotelpackagedetails}></Route>
+      <Route path="/travelpackage/admin/delete/:id" exact component = {DeletePackage}></Route>
+
 
     </div>
     </Router>

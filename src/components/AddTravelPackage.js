@@ -1,6 +1,7 @@
 import React,{useReducer, useState} from "react"
 import {useHistory} from 'react-router-dom';
 import axios from "axios";
+import '../Styles/TravelPackage.css'
 
 const CreatePackage = ()=>{
 
@@ -24,119 +25,111 @@ const CreatePackage = ()=>{
  const onSubmit=async e =>{
      e.preventDefault();
      await axios.post ("http://localhost:8070/travelpackages/admin/add",post);
-     history.push("/travelpackages");
+     history.push("/travelpackages/admin");
      alert(" Travel Package Added")
  }
 
     return(
-        <div className="container">
-            <div className="w-75 mx-auto shadow p-5">
-                <h2 className ="text- mb-10">Add New Travel Package</h2>
-                <hr/>   <br></br>
-        <form onSubmit={e=>onSubmit(e)}>
-      <div class="form-group">
-         <h6>Package Name</h6>
-          <input
-             type = "text"
-             className="form-control form-control-lg"
-             placeholder="Enter Package Name"
-             name="packageName"
-             value={packageName}
-             onChange={e=>onInputChange(e)}
-          />
-       </div>
+        <div id="bodytbc">
+           <div >
+            <div >
+                
+                <form class="signup-form" onSubmit={e=>onSubmit(e)}>
+     
+     <div class="form-header">
+        <h1 style={{color:"white"}}><b>Add New Travel Package</b></h1>
+     </div>
 
-       <div class="form-group">
-       <h6>Destination</h6>
-          <input
-             type = "text"
-             className="form-control form-control-lg"
-             placeholder="Enter Destination"
-             name="destination"
-             value={destination}
-             onChange={e=>onInputChange(e)}
-          />
-       </div>
+     <div class="form-body">
 
-       <div class="form-group">
-       <h6>District</h6>
-          <input
-             type = "text"
-             className="form-control form-control-lg"
-             placeholder="Enter District"
-             name="district"
-             value={district}
-             onChange={e=>onInputChange(e)}
-          />
-       </div>
 
-       <div class="form-group">
-       <h6>Date</h6>
-          <input
-             type = "text"
-             className="form-control form-control-lg"
-             placeholder="Enter Date"
-             name="date"
-             value={date}
-             onChange={e=>onInputChange(e)}
-          />
-       </div>
+    <div class="form-group">   
+     <lable class="label-title"><b>Package Name *</b></lable>
+       <input type="text" name="packageName" class="form-input" placeholder="packageName"
+       value={packageName}
+       onChange={e=>onInputChange(e)}  /><br/>
+      </div>
 
-       <div class="form-group">
-       <h6>No of Days</h6>
-          <input
-             type = "text"
-             className="form-control form-control-lg"
-             placeholder="Enter no of Days"
-             name="noofdays"
-             value={noofdays}
-             onChange={e=>onInputChange(e)}
-          />
-       </div>
 
-       <div class="form-group">
-       <h6>No of Nights</h6>
-          <input
-             type = "text"
-             className="form-control form-control-lg"
-             placeholder="Enter No of Nights"
-             name="noofnights"
-             value={noofnights}
-             onChange={e=>onInputChange(e)}
-          />
-       </div>
+      <div class="form-group">   
+     <lable class="label-title"><b>destination *</b></lable>
+       <input type="text" name="destination" class="form-input" placeholder="destination"
+       value={destination}
+       onChange={e=>onInputChange(e)}  /><br/>
+      </div>
 
-       <div class="form-group">
-       <h6>Vehical</h6>
-          <input
-             type = "text"
-             className="form-control form-control-lg"
-             placeholder="Enter Vehical"
-             name="vehical"
-             value={vehical}
-             onChange={e=>onInputChange(e)}
-          />
-       </div>
 
-       <div class="form-group">
-       <h6>Per Person</h6>
-          <input
-             type = "text"
-             className="form-control form-control-lg"
-             placeholder="Enter Per Person"
-             name="perperson"
-             value={perperson}
-             onChange={e=>onInputChange(e)}
-          />
-       </div>
+      <div class="horizontal-group">
+
+     <div class="form-group left">
+       <lable class="label-title"><b>district *</b></lable>
+       <input type="text" name="district" class="form-input" placeholder="district"
+       value={district}
+       onChange={e=>onInputChange(e)}  /><br/>
+     </div> 
+     
+      <div class="form-group right">
+        <lable class="label-title"><b>date *</b></lable>
+       <input type="text" name="date"  class="form-input" placeholder="date"
+       value={date}
+       onChange={e=>onInputChange(e)}  /><br/>
+      </div>
+      
+     </div>
+
+
+      <div class="horizontal-group">
+
+     <div class="form-group left">
+       <lable class="label-title"><b>noofdays *</b></lable>
+       <input type="text" name="noofdays"  class="form-input" placeholder="noofdays"
+       value={noofdays}
+       onChange={e=>onInputChange(e)}  /><br/>
+     </div> 
+     
+      <div class="form-group right">
+        <lable class="label-title"><b>noofnights *</b></lable>
+       <input type="text" name="noofnights"  class="form-input" placeholder="noofnights"
+       value={noofnights}
+       onChange={e=>onInputChange(e) } /><br/>
+      </div>
+      
+     </div>
 
 
 
-    <button type="submit" class="btn btn-primary">Add Package</button>
-    
-    </form>
-    </div>
-    </div>
+       <div class="horizontal-group">
+
+     <div class="form-group left">
+       <lable class="label-title"><b>vehical *</b></lable>
+       <input type="text" name="vehical"  class="form-input" placeholder="vehical"
+       value={vehical}
+       onChange={e=>onInputChange(e)}  /><br/>
+     </div> 
+     
+      <div class="form-group right">
+        <lable class="label-title"><b>perperson *</b></lable>
+       <input type="text" name="perperson"  class="form-input" placeholder="perperson"
+       value={perperson}
+       onChange={e=>onInputChange(e)}  /><br/>
+      </div>
+      
+     </div>
+
+        <div class="form-footer">
+      
+       <input type="submit" name="submit" class="reg" value="Add Package"/>
+      </div>
+<br/>
+     </div>  
+     
+     <br/> 
+     </form>
+
+
+   
+   
+</div></div></div>
     );
 };
 

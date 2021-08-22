@@ -1,8 +1,6 @@
 import React, {Component} from 'react';
 import axios from "axios";
 
-
-
 export default class PackageDetails extends Component {
 
   constructor(props){
@@ -23,7 +21,6 @@ export default class PackageDetails extends Component {
     });
   }
   
-
 render(){
 
 const {packageName,destination,district,date,noofdays,noofnights,vehical,perperson} = this.state.post;
@@ -57,7 +54,7 @@ const {packageName,destination,district,date,noofdays,noofnights,vehical,perpers
              
     </dl>   
 
-        <button type="submit" class="btn btn-primary" ><a href="/booking" style={{textDecoration:'none' ,color:'white'}} >Book Package</a></button>
+        <button type="submit" class="btn btn-primary" ><a href="/bookingpackage" style={{textDecoration:'none' ,color:'white'}} >Book Package</a></button>
  
     </div>
 

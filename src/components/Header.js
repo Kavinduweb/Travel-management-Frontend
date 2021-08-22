@@ -19,8 +19,13 @@ function Header(){
           <a className="nav-link" href="/add">Add Payment</a>
         </li>
 
+        
         <li className="nav-item">
-          <a className="nav-link" href="/travelpackages">Travel Packages</a>
+          <a className="nav-link" style={{backgroundColor:"	#33CCFF"}} href="/travelpackages"><b>Travel Packages User</b></a>
+        </li>
+
+        <li className="nav-item">
+          <a className="nav-link" style={{backgroundColor:"	#D3D3D3"}} href="/travelpackages/admin"><b>Travel Packages Admin</b></a>
         </li>
         
       </ul>

@@ -1,5 +1,6 @@
 import React,{Component} from 'react'
 import axios from 'axios';
+import '../Styles/TravelPackage.css'
 
 export default class AllPackagesAdmin extends Component{
 
@@ -61,11 +62,11 @@ render(){
       <td>{posts.destination}</td>
       <td>{posts.perperson}</td>
       <td>
-        <a className ="btn btn-warning" href ={`/travelpackages/admin/edit/${posts._id}`}>
+        <a className ="btn btn-warning" href ={`/travelpackage/admin/edit/${posts._id}`}>
           <i className="fas fa-edit"></i>&nbsp;Edit
         </a>&nbsp;
       
-        <a className ="btn btn-danger" href ="#" onClick={()=>this.onDelete(posts._id)} >
+        <a className ="btn btn-danger" href = {`/travelpackage/admin/delete/${posts._id}`} >
         <i className="fas fa-edit"></i>&nbsp;Delete
         </a>
       </td>
@@ -76,7 +77,8 @@ render(){
 </table>
 
  <button className="btn btn-success"><a href="/travelpackage/admin/add" style={{textDecoration:'none' ,color:'white'}} >Add New Package</a></button>
-
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+ <button className="btn btn-success"><a href="/allbooking" style={{textDecoration:'none' ,color:'white'}} >Booking Details</a></button>
     </div>
   )
 }
