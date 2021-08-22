@@ -1,0 +1,284 @@
+/*book Package*/
+
+.bodyaa {
+    background-image:  url("../Images/tp1.jpg") ;
+   background-size: cover;
+  }
+  
+  .bodybb {
+   max-width: 70%;
+   padding: 15spx;
+   margin: 0 auto;
+   border-radius: 0.3em;
+   background-color: #b4b2b2d5;
+  
+  }
+  
+  .bodycc{ 
+   font-family: 'Open Sans' , sans-serif;
+   font-size: 40px;
+   font-weight: 600;
+   color: #222121;
+   margin-top: 5%;
+   text-align: center;
+   text-transform: uppercase;
+   letter-spacing: 4px;
+  }
+/*add package*/  
+  #bodytbc{
+      background-image: url("../Images/tp2.jpg");
+      min-height: 100%;
+      min-width: 100%;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size:cover;
+  }
+  
+  .signup-form {
+    font-family: "Roboto", sans-serif;
+    width:60%;
+    margin:30px auto;
+    background: rgb(102,101,101);
+background: linear-gradient(16deg, rgba(102,101,101,1) 12%, rgba(111,111,111,1) 78%, rgba(41,41,41,1) 100%);
+    border-radius: 10px;
+     opacity:0.9;
+     height: 600px;
+     
+  }
+  
+  .form-header  {
+    width:100%;
+    margin:40px auto;
+    background: rgb(16,2,2);
+    background: linear-gradient(16deg, rgba(16,2,2,1) 12%, rgba(111,111,111,1) 78%, rgba(41,41,41,1) 100%);
+      
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+  }
+  
+  .form-header h1 {
+    font-size: 30px;
+    text-align:center;
+    color:#2e2e2e;
+    padding:20px 0;
+    border-bottom:1px solid #cccccc;
+  }
+  
+  .form-body {
+    padding:10px 40px;
+    color:#666;
+    font-size: 16px;
+    
+  }
+  
+  .form-group{
+    margin-bottom:20px;
+  }
+  
+  .form-body .label-title {
+    color:white;
+    font-size: 17px;
+  }
+  
+  .form-body .form-input {
+      font-size: 17px;
+      box-sizing: border-box;
+      width: 100%;
+      height: 34px;
+      padding-left: 10px;
+      padding-right: 10px;
+      color: #333333;
+      text-align: left;
+      border: 1px solid #d6d6d6;
+      border-radius: 4px;
+      background: white;
+      outline: none;
+       
+  }
+
+  .horizontal-group .left{
+    float:left;
+    width:49%;
+    
+  }
+  
+  .horizontal-group .right{
+    float:right;
+    width:49%;
+    
+  }
+    
+  .signup-form .form-footer  {
+    
+    background-color: #969899;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    padding:10px 240px;
+    text-align: right;
+    border-top: 1px solid #cccccc;
+    clear:both;
+    
+    
+  }
+  
+  
+  .reg {
+     display:inline-block;
+     padding:5px 100px;
+     background-color: rgb(197, 11, 11);
+     font-size:18px;
+     border:5px;
+     border-radius:15px;
+     color:#bcf5e7;
+     cursor:pointer;
+    
+     
+  }
+  
+  .reg:hover {
+    background-color: #ee1818;
+    color:rgb(201, 200, 200);
+    font-weight: bold;
+    font-size: 19px;
+  }
+  
+  
+  .form-body a{
+    color:#ffffff;
+    text-decoration:none;
+    opacity:0.8;
+  
+  }
+  
+  
+  
+  /*Delete paclage*/
+  
+  .modalBackground {
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(200, 200, 200, 0);
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    
+  }
+  
+  .modalContainer {
+    width: 400px;
+    height: 200px;
+    border-radius: 12px;
+    background-color: rgb(245, 244, 244);
+    box-shadow: rgba(0, 0, 0, 0.637) 0px 5px 15px;
+    display: flex;
+    flex-direction: column;
+    padding: 5px; 
+  }
+  
+  .p {
+    animation-duration: .5s;
+    animation-name: slidein;
+  }
+  
+  @keyframes slidein {
+    from {
+      margin-top:4%;
+      
+     
+    }
+  
+    to {
+      margin-bottom: 0%;
+    
+    }
+  }
+  
+  .modalContainer .title {
+    display: inline-block;
+    text-align: center;
+    margin-top: 20px;
+  }
+  
+  .titleCloseBtn {
+    display: flex;
+    justify-content: flex-end;
+    background-color: rgba(146, 146, 146, 0.096);
+    border-radius: 5px;
+    
+  }
+  .footera{
+    margin-right: 210px;
+    margin-top: 5px;
+    font-size: 20px;
+    color: #000000e3;
+  }
+  
+  .titleCloseBtn button {
+    background-color: transparent;
+    border: none;
+    font-size: 20px;
+    background-color: rgba(139, 139, 139, 0.336);
+    cursor: pointer;
+  
+  }
+  
+  .modalContainer .body {
+    flex: 20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 15px;
+    margin-left: 10px;
+  }
+  
+  .modalContainer .footer {
+    flex: 20%;
+    background-color: rgba(158, 158, 158, 0.11);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-height: 40px;
+    border-radius: 5px;
+   
+  }
+  
+  .modalContainer .footer button {
+   margin-left: 10px;
+    width: 80px;
+    height: 30px;
+    border: none;
+    background-color: rgba(207, 34, 34, 0.877);
+    color: white;
+    border-radius: 8px;
+    font-size: 15px;
+    cursor: pointer;
+  }
+  
+  #cancelBtn {
+    
+  margin-left: 200px;
+    background-color: rgb(110, 110, 110);
+  }
+  
+  
+  
+  
+  @import url("https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap");
+  .Appxx {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  font-family: "Nunito", sans-serif;
+  }
+  
+  .Appxx .openModalBtn {
+  width: 200px;
+  height: 40px;
+  border: none;
+  border-radius: 6px;
+  background-color: cornflowerblue;
+  color: white;
+  cursor: pointer;
+  }

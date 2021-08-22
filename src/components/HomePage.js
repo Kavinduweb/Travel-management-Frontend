@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
-import '../Styles/Stylehome.css';
+import '../Styles/Stylehome.css'
+
 import imag1 from '../Images/z1.jpg';
 import imag2 from '../Images/z2.jpg'
 import imag3 from '../Images/z3.jpg'
@@ -119,7 +120,7 @@ export default class HomePage extends Component {
 render(){
 
   return(
- <div className= "container-fluid">
+ <div className= "container-fluid" id="bodyhome">
   <div className="App">
         <br/>
         <div className="containerhome">
