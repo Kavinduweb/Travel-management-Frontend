@@ -33,19 +33,19 @@ const {roomType,capacity,name,email,arrivalDate,departureDate} = this.state.post
       <h4>{roomType}</h4>
       <hr/>      
     <dl className="row">
-             <dt className="col-sm-3">Destination</dt>
+             <dt className="col-sm-3">Capacity</dt>
              <dd className="col-sm-9">{capacity}</dd>
 
-             <dt className="col-sm-3">District</dt>
+             <dt className="col-sm-3">User Name</dt>
              <dd className="col-sm-9">{name}</dd>
 
-             <dt className="col-sm-3">Date</dt>
+             <dt className="col-sm-3">User Email</dt>
              <dd className="col-sm-9">{email}</dd>
 
-             <dt className="col-sm-3">No of Days</dt>
+             <dt className="col-sm-3">Arrival Date</dt>
              <dd className="col-sm-9">{arrivalDate}</dd>
 
-             <dt className="col-sm-3">No of Nights</dt>
+             <dt className="col-sm-3">Departure Date</dt>
              <dd className="col-sm-9">{departureDate}</dd>
 
              
