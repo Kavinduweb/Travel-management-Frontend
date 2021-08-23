@@ -1,5 +1,11 @@
 import React,{Component} from 'react'
 import axios from 'axios';
+import { Card } from 'react-bootstrap';
+import { Row } from 'react-bootstrap';
+import { Col } from 'react-bootstrap';
+import tp1 from '../Images/tp1.jpg'
+
+
 
 export default class AllPackages extends Component{
 
@@ -53,7 +59,8 @@ handleSearchArea=(e)=>{
 
 render(){
   return(
-    <div className="container">
+    <div className="bodytravelpackage" id="bbimg">
+    <div >
       <p> All Packages</p>
 
 <div className="rightsearch">
@@ -76,35 +83,45 @@ render(){
 
 </div>
 </div>
-       
-      <table class="table">
-  <thead class="thead-dark">
-    <tr>
-      <th scope="col">#</th>
-      <th scope="col">Package Name</th>
-      <th scope="col">Destination</th>
-      <th scope="col">Price</th>
-     
-    </tr>
-  </thead>
-  <tbody>
-    {this.state.posts.map((posts,index)=>(
-      <tr key={index}>
-      <th scope="row">{index+1}</th>
-      <td>
-          <a href ={`/travelpackages/travelpackage/${posts._id}`} style={{textDecoration:'none'}}>
-          {posts.packageName}
-          </a>
-          </td>
-      <td>{posts.destination}</td>
-      <td>{posts.perperson}</td>
-     
-    </tr>
-    ))}
-    
-  </tbody>
-</table>
 
+       
+
+<Row xs={1} md={3} className="g-4" id="by" class="rounded" >
+  {this.state.posts.map((posts, idx) => (
+   
+    <Col >
+  
+      <Card >
+      <div className="cdbody">
+        <Card.Img variant="top" src={tp1} id="cardimg" />
+        <Card.Body>
+        
+          <Card.Title> {idx+1}. &nbsp;{posts.packageName}<br/><br/>
+          </Card.Title>
+          <Card.Text>
+       
+          {posts.destination}<br/>
+         {posts.perperson}
+       <button type="button" class="btn btn-primary" id="cardbtn">
+
+     <a href ={`/travelpackages/travelpackage/${posts._id}`} style={{textDecoration:'none',color:'white'}}> View Details</a></button>
+ 
+          </Card.Text>
+        </Card.Body>
+        </div>
+      </Card>
+
+    </Col>
+   
+  ))}
+</Row>
+
+
+
+<br/><br/><br/><br/><br/>
+
+
+</div>
  
     </div>
   )

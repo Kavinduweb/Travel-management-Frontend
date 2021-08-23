@@ -21,7 +21,7 @@ import adminaddhotelpackage from './components/AdminAddHotelPackage';
 import adminedithotelpackage from './components/AdminEditHotelPackage';
 import adminhotelpackagedetails from './components/AdminHotelPackageDetails';
 import DeletePackage from './components/DeleteTravelPackage'
-
+import Images from './components/Image'
 
 import {BrowserRouter as Router, Route} from "react-router-dom"
 
@@ -31,6 +31,7 @@ function App() {
     <div> 
       
       <Header/>
+      <Route path ="/image" exact component ={Images}/>
       <Route path ="/add" exact component={AddPayment}/>
       <Route path="/bookingpackage" exact component = {PackageBooking}></Route>
        <Route path="/travelpackages/admin" exact component = {AllPackagesAdmin}></Route>

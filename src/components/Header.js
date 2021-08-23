@@ -4,34 +4,38 @@ import React from "react";
 function Header(){
 
     return(
-        <nav className="navbar navbar-expand-lg navbar-light bg-light">
+      <body >
 
-    <a className="navbar-brand" href="#" style={{color:"red"}}>Navbar</a>
-    <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-      <span className="navbar-toggler-icon"></span>
-    </button>
-    <div className="collapse navbar-collapse" id="navbarNav">
-      <ul className="navbar-nav">
-        <li className="nav-item">
-          <a className="nav-link active" aria-current="page" href="/">Home </a>
-        </li>
-        <li className="nav-item">
-          <a className="nav-link" href="/add">Add Payment</a>
-        </li>
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark fixed-top">
+  <a class="navbar-brand" href="#">Home</a>
+  <ul class="navbar-nav">
+    <li class="nav-item">
+      <a class="nav-link" href="#">About Us</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="#">Services</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="#">Contact Us</a>
+    </li>
 
-        
-        <li className="nav-item">
-          <a className="nav-link" style={{backgroundColor:"	#33CCFF"}} href="/travelpackages"><b>Travel Packages User</b></a>
-        </li>
+    <li class="nav-item">
+      <a class="nav-link" href="#">Gallery</a>
+    </li>
 
-        <li className="nav-item">
-          <a className="nav-link" style={{backgroundColor:"	#D3D3D3"}} href="/travelpackages/admin"><b>Travel Packages Admin</b></a>
-        </li>
-        
-      </ul>
-    </div>
-  
+    
+    <i class="fas fa-user-alt" style={{color:"white"}} id="userprofile" href="/profile"></i>
+
+
+  </ul>
 </nav>
+
+<div class="container-fluid">
+
+</div>
+
+</body>
+
     )
 
     

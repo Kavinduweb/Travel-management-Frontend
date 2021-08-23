@@ -5,6 +5,7 @@
   background-position: center;
   background-repeat: no-repeat;
   background-size:cover;
+  margin-top: 60px;
 }
 
 .dot-container{
@@ -163,4 +164,10 @@
 }
 
 
+#userprofile{
+
+  margin-left: 830px;
+  margin-top: 8px;
+  font-size: 25px;
+}
 

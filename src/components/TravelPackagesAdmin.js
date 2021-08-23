@@ -122,6 +122,8 @@ onChange={this.handleSearchArea}  />
  <button className="btn btn-success"><a href="/travelpackage/admin/add" style={{textDecoration:'none' ,color:'white'}} >Add New Package</a></button>
  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
  <button className="btn btn-success"><a href="/allbooking" style={{textDecoration:'none' ,color:'white'}} >Booking Details</a></button>
+ 
+ <br/><br/><br/>
     </div>
   )
 }
