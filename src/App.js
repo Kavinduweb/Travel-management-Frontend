@@ -21,6 +21,12 @@ import adminaddhotelpackage from './components/AdminAddHotelPackage';
 import adminedithotelpackage from './components/AdminEditHotelPackage';
 import adminhotelpackagedetails from './components/AdminHotelPackageDetails';
 import DeletePackage from './components/DeleteTravelPackage'
+import Display from './components/Kavindu/adminProfileView'
+import admin from './components/Kavindu/adminLogin'
+import EditDetails from './components/Kavindu/edit'
+import UserProfile from './components/Kavindu/userprofile'
+import RegisterUser from './components/Kavindu/RegForm';
+
 
 
 import {BrowserRouter as Router, Route} from "react-router-dom"
@@ -30,7 +36,7 @@ function App() {
     <Router>
     <div> 
       
-      <Header/>
+      
       <Route path ="/add" exact component={AddPayment}/>
       <Route path="/bookingpackage" exact component = {PackageBooking}></Route>
        <Route path="/travelpackages/admin" exact component = {AllPackagesAdmin}></Route>
@@ -52,7 +58,11 @@ function App() {
       <Route path="/adminedithotelpackage/:id" exact component = {adminedithotelpackage}></Route>
       <Route path="/adminhotelpackagedetails/:id" exact component = {adminhotelpackagedetails}></Route>
       <Route path="/travelpackage/admin/delete/:id" exact component = {DeletePackage}></Route>
-
+      <Route path ="/Register" exact component={RegisterUser}/>
+      <Route path ="/get" exact component={Display}/>
+      <Route path ="/admin" exact component={admin}/>
+      <Route path ="/Profile" exact component={UserProfile}/>
+      <Route path ="/edit/:id" exact component={EditDetails}/>
 
     </div>
     </Router>
