@@ -7,11 +7,27 @@ export default class UserProfile extends Component {
 
     constructor(props){
         super(props);
+        
         this.state={
             View:[]
 
             
         };
+    }
+
+    logout(){
+
+       const dat = localStorage.removeItem("userInfo");
+
+       if (dat == null  ){
+
+        alert("log  Out Success ");
+        window.location.replace("/")
+
+       }
+       else {
+           alert("cant log out ")
+       }
     }
 
     
@@ -24,8 +40,15 @@ export default class UserProfile extends Component {
 
         const userInfo = localStorage.getItem('userInfo');
         //alert (userInfo);
+        if (userInfo == null){
 
+            alert("You Are Not Authorized User")
+            window.location.replace("/register")
+
+
+        }
         var line=[];
+
         for ( var i =7 ,p=0 ; i !== 31;i++,p++){
             
              
@@ -51,8 +74,7 @@ export default class UserProfile extends Component {
 
     })
 
-    
-
+     
 
     }
 
@@ -61,6 +83,10 @@ export default class UserProfile extends Component {
 
         return(
         <div>
+
+            
+                 <button onClick={this.logout}>Log out</button>
+                         
              <h2> {this.state.View.Name}'s profile </h2>  
    
                <form>
