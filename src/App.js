@@ -26,6 +26,10 @@ import admin from './components/Kavindu/adminLogin'
 import EditDetails from './components/Kavindu/edit'
 import UserProfile from './components/Kavindu/userprofile'
 import RegisterUser from './components/Kavindu/RegForm';
+import EditEquipment from './components/Travel_Equipments/EditEquipment';
+import AddEquipment from './components/Travel_Equipments/AddEquipment';
+import AdminEquipment from './components/Travel_Equipments/AdminEquipment';
+import UserEquipment from './components/Travel_Equipments/UserEquipment';
 
 
 
@@ -63,6 +67,10 @@ function App() {
       <Route path ="/admin" exact component={admin}/>
       <Route path ="/Profile" exact component={UserProfile}/>
       <Route path ="/edit/:id" exact component={EditDetails}/>
+      <Route path ="/equipment/add" exact component={AddEquipment}/>
+      <Route path ="/equipment/edit/:id" exact component={EditEquipment}/>
+      <Route path ="/equipment/admin" exact component={AdminEquipment}/>
+      <Route path ="/equipment" exact component={UserEquipment}/>
 
     </div>
     </Router>
