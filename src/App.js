@@ -30,6 +30,8 @@ import EditEquipment from './components/Travel_Equipments/EditEquipment';
 import AddEquipment from './components/Travel_Equipments/AddEquipment';
 import AdminEquipment from './components/Travel_Equipments/AdminEquipment';
 import UserEquipment from './components/Travel_Equipments/UserEquipment';
+import AddFeedback from './components/Feedback/AddFeedback';
+import AllFeedback from './components/Feedback/AdminFeedback';
 
 
 
@@ -71,6 +73,8 @@ function App() {
       <Route path ="/equipment/edit/:id" exact component={EditEquipment}/>
       <Route path ="/equipment/admin" exact component={AdminEquipment}/>
       <Route path ="/equipment" exact component={UserEquipment}/>
+      <Route path ="/feedback" exact component={AddFeedback}/>
+      <Route path = "/feedbacks/admin" exact component={AllFeedback}/>
 
     </div>
     </Router>
