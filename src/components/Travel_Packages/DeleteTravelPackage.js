@@ -1,7 +1,7 @@
 import React, {useState, useEffect ,Component} from "react"
 import axios from "axios";
 import { Link,useParams ,useHistory} from "react-router-dom";
-import '../Styles/TravelPackage.css'
+import '../../Styles/TravelPackage.css'
 
 
 const ViewPackage=()=>{

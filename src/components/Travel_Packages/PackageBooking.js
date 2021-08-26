@@ -1,7 +1,7 @@
 import React,{useReducer, useState} from "react"
 import {useHistory} from 'react-router-dom';
 import axios from "axios";
-import '../Styles/TravelPackage.css'
+import '../../Styles/TravelPackage.css'
 
 const PackageBooking = ()=>{
 
@@ -77,7 +77,7 @@ const PackageBooking = ()=>{
                 </div>
                <br/>
 
-                <button type="submit" className="btn btn-danger">Book Now</button>
+                <button type="submit" class="btn btn-danger btn-block" > Book Now</button>
                
             </form>
             </div>

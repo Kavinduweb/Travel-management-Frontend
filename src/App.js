@@ -1,15 +1,16 @@
 
 import Header from './components/Header';
+import Footer from './components/Footer';
 import AddPayment from "./components/AddPayment";
-import PackageDetails from './components/TravelPackageDetails';
-import PackageDetailsAdmin from './components/TravelPackageDetailsAdmin';
-import PackageBooking from './components/PackageBooking';
-import AllPackagesAdmin from './components/TravelPackagesAdmin';
-import CreatePackage from './components/AddTravelPackage';
-import EditPackage from './components/EditTravelPackage';
+import PackageDetails from './components/Travel_Packages/TravelPackageDetails';
+import PackageDetailsAdmin from './components/Travel_Packages/TravelPackageDetailsAdmin';
+import PackageBooking from './components/Travel_Packages/PackageBooking';
+import AllPackagesAdmin from './components/Travel_Packages/TravelPackagesAdmin';
+import CreatePackage from './components/Travel_Packages/AddTravelPackage';
+import EditPackage from './components/Travel_Packages/EditTravelPackage';
 import HomePage from './components/HomePage';
-import AllPackages from './components/TravelPackages';
-import AllBooking from './components/BookingAllDetails';
+import AllPackages from './components/Travel_Packages/TravelPackages';
+import AllBooking from './components/Travel_Packages/BookingAllDetails';
 import adminhotelbooking from './components/AdminHotelBooking';
 import userhotelbooking from './components/UserHotelBooking';
 import hotelbookingdetails from './components/HotelBookingDetails';
@@ -20,7 +21,7 @@ import adminhotelpackage from './components/AdminHotelPcakage';
 import adminaddhotelpackage from './components/AdminAddHotelPackage';
 import adminedithotelpackage from './components/AdminEditHotelPackage';
 import adminhotelpackagedetails from './components/AdminHotelPackageDetails';
-import DeletePackage from './components/DeleteTravelPackage'
+import DeletePackage from './components/Travel_Packages/DeleteTravelPackage'
 import Display from './components/Kavindu/adminProfileView'
 import admin from './components/Kavindu/adminLogin'
 import EditDetails from './components/Kavindu/edit'
@@ -33,8 +34,6 @@ import UserEquipment from './components/Travel_Equipments/UserEquipment';
 import AddFeedback from './components/Feedback/AddFeedback';
 import AllFeedback from './components/Feedback/AdminFeedback';
 
-
-
 import {BrowserRouter as Router, Route} from "react-router-dom"
 
 function App() {
@@ -42,7 +41,7 @@ function App() {
     <Router>
     <div> 
       
-      
+    
       <Route path ="/add" exact component={AddPayment}/>
       <Route path="/bookingpackage" exact component = {PackageBooking}></Route>
        <Route path="/travelpackages/admin" exact component = {AllPackagesAdmin}></Route>
@@ -76,6 +75,10 @@ function App() {
       <Route path ="/feedback" exact component={AddFeedback}/>
       <Route path = "/feedbacks/admin" exact component={AllFeedback}/>
 
+
+
+
+    
     </div>
     </Router>
     

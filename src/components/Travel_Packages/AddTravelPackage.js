@@ -1,7 +1,7 @@
 import React,{useReducer, useState} from "react"
 import {useHistory} from 'react-router-dom';
 import axios from "axios";
-import '../Styles/TravelPackage.css'
+import '../../Styles/TravelPackage.css'
 
 const CreatePackage = ()=>{
 

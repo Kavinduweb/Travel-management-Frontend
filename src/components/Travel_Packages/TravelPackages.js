@@ -3,7 +3,7 @@ import axios from 'axios';
 import { Card } from 'react-bootstrap';
 import { Row } from 'react-bootstrap';
 import { Col } from 'react-bootstrap';
-import tp1 from '../Images/tp1.jpg'
+import tp1 from '../../Images/tp1.jpg'
 
 
 
@@ -61,7 +61,7 @@ render(){
   return(
     <div className="bodytravelpackage" id="bbimg">
     <div >
-      <p> All Packages</p>
+      <br/><br/>
 
 <div className="rightsearch">
   
