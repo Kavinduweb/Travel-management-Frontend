@@ -1,5 +1,5 @@
-import React,{useReducer, useState} from "react"
-import {useHistory} from 'react-router-dom';
+import React,{useReducer, useState,useEffect} from "react"
+import {useHistory,useParams} from 'react-router-dom';
 import axios from "axios";
 import '../../Styles/TravelPackage.css'
 
@@ -9,6 +9,7 @@ const PackageBooking = ()=>{
     let history = useHistory();
 
     const [post,addPost] = useState({
+            packageName:"",
             name:"",
             phone:"",
             address:"",
@@ -29,7 +30,7 @@ const PackageBooking = ()=>{
  }
 
  return(
-  
+    <div className="infotr">
     <div className="bodyaa"> 
     
        <div className="bodybb">
@@ -40,8 +41,12 @@ const PackageBooking = ()=>{
             <h2 className ="text- mb-10"><b>Booking Travel Package</b></h2>
             </div>
             <hr/>  
+
            
             <form onSubmit={e=>onSubmit(e)}>
+
+           
+
 
                 <div className="form-group">
                     <label><b>Name</b></label>
@@ -65,7 +70,7 @@ const PackageBooking = ()=>{
                 </div>
    <div className="form-group">
                     <label><b>Email</b></label>
-                    <input type="text" className="form-control" placeholder="Enter E-mail"  name="email"
+                    <input type="email" className="form-control" placeholder="Enter E-mail"  name="email"
          value={email}
          onChange={e=>onInputChange(e)}/>
                 </div>
@@ -81,6 +86,7 @@ const PackageBooking = ()=>{
                
             </form>
             </div>
+</div>
 </div>
 </div>
 </div>

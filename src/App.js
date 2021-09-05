@@ -33,17 +33,24 @@ import AdminEquipment from './components/Travel_Equipments/AdminEquipment';
 import UserEquipment from './components/Travel_Equipments/UserEquipment';
 import AddFeedback from './components/Feedback/AddFeedback';
 import AllFeedback from './components/Feedback/AdminFeedback';
+import Gallery from './components/Gallery';
+import Aboutus from './components/AboutUs';
+import ContactUs from './components/Contactus';
+
+
 
 import {BrowserRouter as Router, Route} from "react-router-dom"
+
+
 
 function App() {
   return (
     <Router>
     <div> 
-      
+      <Header/>
     
       <Route path ="/add" exact component={AddPayment}/>
-      <Route path="/bookingpackage" exact component = {PackageBooking}></Route>
+      <Route path="/bookingpackage/:id" exact component = {PackageBooking}></Route>
        <Route path="/travelpackages/admin" exact component = {AllPackagesAdmin}></Route>
        <Route path="/travelpackage/admin/add" exact component ={CreatePackage}></Route>
        <Route path="/travelpackages/travelpackage/:id" exact component ={PackageDetails}></Route>
@@ -74,11 +81,16 @@ function App() {
       <Route path ="/equipment" exact component={UserEquipment}/>
       <Route path ="/feedback" exact component={AddFeedback}/>
       <Route path = "/feedbacks/admin" exact component={AllFeedback}/>
+      <Route path="/gallery" exact component={Gallery}/>
+      <Route path="/aboutus" exact component={Aboutus}/>
+      <Route path="/contactus" exact component ={ContactUs}/>
+
+      
 
 
 
 
-    
+    <Footer/>
     </div>
     </Router>
     

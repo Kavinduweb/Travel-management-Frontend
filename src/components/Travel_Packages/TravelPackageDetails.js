@@ -20,12 +20,16 @@ export default class PackageDetails extends Component {
       }
     });
   }
+
+
+  
   
 render(){
 
-const {packageName,destination,district,date,noofdays,noofnights,vehical,perperson} = this.state.post;
+const {_id,packageName,destination,discription,date,noofdays,noofnights,vehical,perperson} = this.state.post;
 
   return(
+    <div className="infotr">
     <div className="container" style={{marginTop:'20px'}}>
       <h4>{packageName}</h4>
       <hr/>      
@@ -33,8 +37,8 @@ const {packageName,destination,district,date,noofdays,noofnights,vehical,perpers
              <dt className="col-sm-3">Destination</dt>
              <dd className="col-sm-9">{destination}</dd>
 
-             <dt className="col-sm-3">District</dt>
-             <dd className="col-sm-9">{district}</dd>
+             <dt className="col-sm-3">Discription</dt>
+             <dd className="col-sm-9">{discription}</dd>
 
              <dt className="col-sm-3">Date</dt>
              <dd className="col-sm-9">{date}</dd>
@@ -54,8 +58,10 @@ const {packageName,destination,district,date,noofdays,noofnights,vehical,perpers
              
     </dl>   
 
-        <button type="submit" class="btn btn-primary" ><a href="/bookingpackage" style={{textDecoration:'none' ,color:'white'}} >Book Package</a></button>
+        <button type="submit" class="btn btn-primary" ><a href={`/bookingpackage/${_id}`} style={{textDecoration:'none' ,color:'white'}} >Book Package</a></button>
  
+    </div>
+    <br/><br/><br/>
     </div>
 
   )

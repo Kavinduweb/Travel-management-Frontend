@@ -11,14 +11,14 @@ const EditPackage = ()=>{
     const [post,addPost] = useState({
             packageName:"",
             destination:"",
-            district:"",
+            discription:"",
             date:"",
             noofdays:"",
             noofnights:"",
             vehical:"",
             perperson:""
     });
- const {packageName,destination,district,date,noofdays,noofnights,vehical,perperson}=post;
+ const {packageName,destination,discription,date,noofdays,noofnights,vehical,perperson}=post;
  const onInputChange = e=>{
      addPost({...post,[e.target.name]: e.target.value});
  };
@@ -63,7 +63,7 @@ onChange={e=>onInputChange(e)}  /><br/>
 
 
 <div class="form-group">   
-<lable class="label-title"><b>destination *</b></lable>
+<lable class="label-title"><b>Destination *</b></lable>
 <input type="text" name="destination" class="form-input" placeholder="destination"
 value={destination}
 onChange={e=>onInputChange(e)}  /><br/>
@@ -73,14 +73,14 @@ onChange={e=>onInputChange(e)}  /><br/>
 <div class="horizontal-group">
 
 <div class="form-group left">
-<lable class="label-title"><b>district *</b></lable>
-<input type="text" name="district" class="form-input" placeholder="district"
-value={district}
+<lable class="label-title"><b>Discription *</b></lable>
+<input type="text" name="discription" class="form-input" placeholder="discription"
+value={discription}
 onChange={e=>onInputChange(e)}  /><br/>
 </div> 
 
 <div class="form-group right">
-<lable class="label-title"><b>date *</b></lable>
+<lable class="label-title"><b>Date *</b></lable>
 <input type="text" name="date"  class="form-input" placeholder="date"
 value={date}
 onChange={e=>onInputChange(e)}  /><br/>
@@ -92,14 +92,14 @@ onChange={e=>onInputChange(e)}  /><br/>
 <div class="horizontal-group">
 
 <div class="form-group left">
-<lable class="label-title"><b>noofdays *</b></lable>
+<lable class="label-title"><b>No of Days *</b></lable>
 <input type="text" name="noofdays"  class="form-input" placeholder="noofdays"
 value={noofdays}
 onChange={e=>onInputChange(e)}  /><br/>
 </div> 
 
 <div class="form-group right">
-<lable class="label-title"><b>noofnights *</b></lable>
+<lable class="label-title"><b>No of Nights *</b></lable>
 <input type="text" name="noofnights"  class="form-input" placeholder="noofnights"
 value={noofnights}
 onChange={e=>onInputChange(e) } /><br/>
@@ -112,14 +112,14 @@ onChange={e=>onInputChange(e) } /><br/>
 <div class="horizontal-group">
 
 <div class="form-group left">
-<lable class="label-title"><b>vehical *</b></lable>
+<lable class="label-title"><b>Vehical *</b></lable>
 <input type="text" name="vehical"  class="form-input" placeholder="vehical"
 value={vehical}
 onChange={e=>onInputChange(e)}  /><br/>
 </div> 
 
 <div class="form-group right">
-<lable class="label-title"><b>perperson *</b></lable>
+<lable class="label-title"><b>Per person *</b></lable>
 <input type="text" name="perperson"  class="form-input" placeholder="perperson"
 value={perperson}
 onChange={e=>onInputChange(e)}  /><br/>

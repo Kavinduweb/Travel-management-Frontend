@@ -7,15 +7,15 @@ function Header(){
 
 <div class="wrapper">
     <div class="sidebar">
-       <h1>  <i class="fas fa-plane-departure"> </i></h1>
+       <h1>  <i class="fas fa-plane-departure"> </i></h1>  
         <ul>
-            <li><a href="#"  style={{textDecoration:'none' ,color:'white'}}><i class="fas fa-home"></i>Home</a></li>
-            <li><a href="#" style={{textDecoration:'none' ,color:'white'}}><i class="fas fa-user"></i>Travel Package</a></li>
-            <li><a href="#" style={{textDecoration:'none' ,color:'white'}}><i class="fas fa-address-card"></i>Room Package</a></li>
-            <li><a href="#" style={{textDecoration:'none' ,color:'white'}}><i class="fas fa-project-diagram"></i>Activity</a></li>
-            <li><a href="#" style={{textDecoration:'none' ,color:'white'}}><i class="fas fa-blog"></i>Equipment</a></li>
-            <li><a href="#" style={{textDecoration:'none' ,color:'white'}}><i class="fas fa-address-book"></i>FeedBack</a></li>
-            <li><a href="#"style={{textDecoration:'none' ,color:'white'}}><i class="fas fa-map-pin"></i>Inquiry</a></li>
+            <li><a href="/"  style={{textDecoration:'none' ,color:'white'}}><i class="fas fa-home"></i>Home</a></li>
+            <li><a href="/travelpackages" style={{textDecoration:'none' ,color:'white'}}><i class="fas fa-car"></i>Travel Package</a></li>
+            <li><a href="/hotelpackage" style={{textDecoration:'none' ,color:'white'}}><i class="fas fa-bed"></i>Room Package</a></li>
+            <li><a href="#" style={{textDecoration:'none' ,color:'white'}}><i class="fas fa-running"></i>Activity</a></li>
+            <li><a href="/equipment" style={{textDecoration:'none' ,color:'white'}}><i class="fas fa-campground"></i>Equipment</a></li>
+            <li><a href="/feedback" style={{textDecoration:'none' ,color:'white'}}><i class="fas fa-comments"></i>FeedBack</a></li>
+            <li><a href="#"style={{textDecoration:'none' ,color:'white'}}><i class="fas fa-exclamation-circle"></i>Inquiry</a></li>
         </ul> 
         <div class="social_media">
           <a href="#"><i class="fab fa-facebook-f"></i></a>
@@ -45,10 +45,10 @@ function Header(){
     <li className="menupp"><a></a></li>
     <li className="menupp"><a></a></li>
     
-  <li class="menupp"><a class="actively" href="home.html">About Us</a></li>
+  <li class="menupp"><a class="actively" href="/aboutus">About Us</a></li>
   <li class="menupp"><a href="#">Views</a></li>
-  <li class="menupp"><a href="#">Contact Us</a></li>
-  <li class="menupp"><a href="equpmentpage.html">Gallery</a> </li>
+  <li class="menupp"><a href="/contactus">Contact Us</a></li>
+  <li class="menupp"><a href="/gallery">Gallery</a> </li>
 
   </ul>
 

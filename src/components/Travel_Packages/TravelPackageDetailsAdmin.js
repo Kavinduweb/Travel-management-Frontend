@@ -9,7 +9,7 @@ const PackageDetailsAdmin=()=>{
 const [tpackage,viewPackage] = useState({
   packageName:"",
   destination:"",
-  district:"",
+  discription:"",
   date:"",
   noofdays:"",
   noofnights:"",
@@ -45,8 +45,8 @@ return(
     
              <dd className="col-sm-9">{tpackage.destination}</dd>
 
-             <dt className="col-sm-3">District</dt>
-             <dd className="col-sm-9">{tpackage.district}</dd>
+             <dt className="col-sm-3">Discription</dt>
+             <dd className="col-sm-9">{tpackage.discription}</dd>
 
              <dt className="col-sm-3">Date</dt>
              <dd className="col-sm-9">{tpackage.date}</dd>
