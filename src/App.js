@@ -1,7 +1,6 @@
 
 import Header from './components/Header';
 import Footer from './components/Footer';
-import AddPayment from "./components/AddPayment";
 import PackageDetails from './components/Travel_Packages/TravelPackageDetails';
 import PackageDetailsAdmin from './components/Travel_Packages/TravelPackageDetailsAdmin';
 import PackageBooking from './components/Travel_Packages/PackageBooking';
@@ -36,6 +35,10 @@ import AllFeedback from './components/Feedback/AdminFeedback';
 import Gallery from './components/Gallery';
 import Aboutus from './components/AboutUs';
 import ContactUs from './components/Contactus';
+import AddPayment from './components/Payment/AddPayment';
+import AllPayments from './components/Payment/AllPayments';
+import EditPayment from './components/Payment/EditPayment';
+import PaymentDetails from  './components/Payment/PaymentDetails';
 
 
 
@@ -49,7 +52,7 @@ function App() {
     <div> 
       <Header/>
     
-      <Route path ="/add" exact component={AddPayment}/>
+      
       <Route path="/bookingpackage/:id" exact component = {PackageBooking}></Route>
        <Route path="/travelpackages/admin" exact component = {AllPackagesAdmin}></Route>
        <Route path="/travelpackage/admin/add" exact component ={CreatePackage}></Route>
@@ -84,6 +87,10 @@ function App() {
       <Route path="/gallery" exact component={Gallery}/>
       <Route path="/aboutus" exact component={Aboutus}/>
       <Route path="/contactus" exact component ={ContactUs}/>
+      <Route path="/payment/add" exact component={AddPayment}/>
+      <Route path="/payment/" exact component={AllPayments}/>
+      <Route path="/payment/edit/:id" exact component={EditPayment}/>
+      <Route path="/payment/details/:id" exact component={PaymentDetails}/>
 
       
 
