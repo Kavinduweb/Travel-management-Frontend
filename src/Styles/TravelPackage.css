@@ -26,7 +26,7 @@
   }
 /*add package*/  
   #bodytbc{
-      background-image: url("../Images/tp2.jpg");
+     
       min-height: 100%;
       min-width: 100%;
       background-position: center;
@@ -42,7 +42,7 @@
 background: linear-gradient(16deg, rgba(102,101,101,1) 12%, rgba(111,111,111,1) 78%, rgba(41,41,41,1) 100%);
     border-radius: 10px;
      opacity:0.9;
-     height: 600px;
+     height: 680px;
      
   }
   

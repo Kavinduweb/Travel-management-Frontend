@@ -7,36 +7,64 @@ const CreatePackage = ()=>{
 
      let history = useHistory();
 
-    const [post,addPost] = useState({
-            packageName:"",
-            destination:"",
-            discription:"",
-            date:"",
-            noofdays:"",
-            noofnights:"",
-            vehical:"",
-            perperson:""
-    });
- const {packageName,destination,discription,date,noofdays,noofnights,vehical,perperson}=post;
- const onInputChange = e=>{
-     addPost({...post,[e.target.name]: e.target.value});
- };
-
- const onSubmit=async e =>{
-     e.preventDefault();
-     await axios.post ("http://localhost:8070/travelpackages/admin/add",post);
-     history.push("/travelpackages/admin");
-     alert(" Travel Package Added")
- }
-
+     const[packageName,setPackagename]=useState("");
+     const[destination,setDestination]=useState("");
+     const[discription,setDiscription]=useState("");
+     const[date,setDate]=useState("");
+     const[noofdays,setDays]=useState("");
+     const[noofnights,setNights]=useState("");
+     const[vehical,setVehical]=useState("");
+     const[perperson,setPerperson]=useState("");
+     const[message,setMessage]=useState("");
+     const[packageImage,setFileName]=useState("");
+   
+     const onChangeFile= e=>{
+         setFileName(e.target.files[0]);
+     }
+   
+   const changeOnClick =(e)=>{
+       e.preventDefault();
+   
+       const formData=new FormData();
+       formData.append("packageName",packageName);
+       formData.append("destination",destination);
+       formData.append("discription",discription);
+       formData.append("date",date);
+       formData.append("noofdays",noofdays);
+       formData.append("noofnights",noofnights);
+       formData.append("vehical",vehical);
+       formData.append("perperson",perperson);
+       formData.append("packageImage",packageImage);
+   
+       setPackagename("");
+       setDestination("");
+       setDiscription("");
+       setDate("");
+       setDays("");
+       setNights("");
+       setVehical("");
+       setPerperson("");
+       
+   
+       axios
+       .post("http://localhost:8070/travelpackages/admin/add",formData)
+       .then(
+        (res)=>setMessage(res.data))
+        
+       .catch((err)=>{
+           console.log(err);
+       });
+       history.push("/travelpackages/admin");
+       alert(" Travel Package Added Successful")
+   };
     return(
 
-      
-        <div id="bodytbc">
+      <div className="info">
+        <div className="bodyaa" id="bodytbc">
            <div >
             <div >
                 
-                <form class="signup-form" onSubmit={e=>onSubmit(e)} >
+                <form class="signup-form" onSubmit={changeOnClick} encType="multipart/form-data" >
      
      <div class="form-header">
         <h1 style={{color:"white"}}><b>Add New Travel Package</b></h1>
@@ -49,7 +77,7 @@ const CreatePackage = ()=>{
      <lable class="label-title"><b>Package Name *</b></lable>
        <input type="text" name="packageName" class="form-input" placeholder="packageName"
        value={packageName}
-       onChange={e=>onInputChange(e)} required="required"  /><br/>
+       onChange={(e)=>setPackagename(e.target.value)} required="required"  /><br/>
       </div>
 
 
@@ -57,7 +85,7 @@ const CreatePackage = ()=>{
      <lable class="label-title"><b>Destination *</b></lable>
        <input type="text" name="destination" class="form-input" placeholder="destination"
        value={destination}
-       onChange={e=>onInputChange(e)} required="required" /><br/>
+       onChange={(e)=>setDestination(e.target.value)} required="required" /><br/>
       </div>
 
 
@@ -67,14 +95,14 @@ const CreatePackage = ()=>{
        <lable class="label-title"><b>Discription *</b></lable>
        <input type="text" name="discription" class="form-input" placeholder="discription"
        value={discription}
-       onChange={e=>onInputChange(e)} required="required" /><br/>
+       onChange={(e)=>setDiscription(e.target.value)} required="required" /><br/>
      </div> 
      
       <div class="form-group right">
         <lable class="label-title"><b>Date *</b></lable>
        <input type="text" name="date"  class="form-input" placeholder="date"
        value={date}
-       onChange={e=>onInputChange(e)} required="required" /><br/>
+       onChange={(e)=>setDate(e.target.value)} required="required" /><br/>
       </div>
       
      </div>
@@ -92,14 +120,14 @@ const CreatePackage = ()=>{
        maxLength="3"
        value={noofdays}
        required="required"
-       onChange={e=>onInputChange(e)}  /><br/>
+       onChange={(e)=>setDays(e.target.value)}  /><br/>
      </div> 
      
       <div class="form-group right">
         <lable class="label-title"><b>No of Nights *</b></lable>
        <input type="text" name="noofnights"  class="form-input" placeholder="noofnights"
        value={noofnights} maxLength="3" required="required"
-       onChange={e=>onInputChange(e) } /><br/>
+       onChange={(e)=>setNights(e.target.value)} /><br/>
       </div>
       
      </div>
@@ -112,17 +140,24 @@ const CreatePackage = ()=>{
        <lable class="label-title"><b>Vehical *</b></lable>
        <input type="text" required="required" name="vehical"  class="form-input" placeholder="vehical"
        value={vehical}
-       onChange={e=>onInputChange(e)}  /><br/>
+       onChange={(e)=>setVehical(e.target.value)}  /><br/>
      </div> 
      
       <div class="form-group right">
         <lable class="label-title"><b>Perperson *</b></lable>
        <input type="text" name="perperson" required="required" class="form-input" placeholder="perperson"
        value={perperson}
-       onChange={e=>onInputChange(e)}  /><br/>
+       onChange={(e)=>setPerperson(e.target.value)}  /><br/>
       </div>
       
      </div>
+
+     
+     <lable class="label-title"><b>Add a Image*</b>
+       <div class="mb-3">
+  <input class="form-control" type="file" id="formFile" filename="packageImage" onChange={onChangeFile}/>
+</div></lable>
+       
 
         <div class="form-footer">
       
@@ -137,7 +172,7 @@ const CreatePackage = ()=>{
 
    
    
-</div></div></div>
+</div></div></div></div>
     );
 };
 

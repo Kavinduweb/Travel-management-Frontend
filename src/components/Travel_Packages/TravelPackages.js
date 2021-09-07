@@ -92,11 +92,11 @@ render(){
    
    
 
-	<div class="container py-4">
+	<div class="container py-1">
 
 		<article class="postcard dark blue">
 			<a class="postcard__img_link" href="#">
-				<img class="postcard__img" src={tp1}  />
+				<img class="postcard__img" src={`/uploads/${posts.packageImage}`} alt="..."  />
 			</a>
 			<div class="postcard__text">
 				<h1 class="postcard__title blue"><a href="#"> {idx+1}. &nbsp;{posts.packageName}</a></h1>

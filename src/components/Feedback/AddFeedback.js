@@ -25,7 +25,7 @@ const AddFeedback = ()=>{
  
     return(
  
-        <div className="container">
+        <div className="container" className="info">
         <div className="w-75 mx-auto shadow p-5">
             <h2 className ="text- mb-10">Feedback Form</h2>
             <hr/>   <br></br>
@@ -82,6 +82,7 @@ const AddFeedback = ()=>{
  
 </form>
 </div>
+<br/><br/><br/>
 </div>
     );
 };

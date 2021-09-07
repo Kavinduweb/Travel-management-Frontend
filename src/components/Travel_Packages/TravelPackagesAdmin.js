@@ -56,6 +56,8 @@ handleSearchArea=(e)=>{
 
 render(){
   return(
+
+    <div className="info">
     <div className="container">
       <p> All Packages</p>
 
@@ -124,7 +126,7 @@ onChange={this.handleSearchArea}  />
  <button className="btn btn-success"><a href="/allbooking" style={{textDecoration:'none' ,color:'white'}} >Booking Details</a></button>
  
  <br/><br/><br/>
-    </div>
+    </div></div>
   )
 }
 

@@ -1,4 +1,3 @@
-
 import Header from './components/Header';
 import Footer from './components/Footer';
 import PackageDetails from './components/Travel_Packages/TravelPackageDetails';
@@ -35,10 +34,12 @@ import AllFeedback from './components/Feedback/AdminFeedback';
 import Gallery from './components/Gallery';
 import Aboutus from './components/AboutUs';
 import ContactUs from './components/Contactus';
+import ContactUsAdmin from './components/ContactUsAdmin';
 import AddPayment from './components/Payment/AddPayment';
 import AllPayments from './components/Payment/AllPayments';
 import EditPayment from './components/Payment/EditPayment';
 import PaymentDetails from  './components/Payment/PaymentDetails';
+import AdminHome from  './components/AdminHome';
 
 
 
@@ -87,10 +88,12 @@ function App() {
       <Route path="/gallery" exact component={Gallery}/>
       <Route path="/aboutus" exact component={Aboutus}/>
       <Route path="/contactus" exact component ={ContactUs}/>
+      <Route path="/contactus/admin" exact component ={ContactUsAdmin}/>
       <Route path="/payment/add" exact component={AddPayment}/>
       <Route path="/payment/" exact component={AllPayments}/>
       <Route path="/payment/edit/:id" exact component={EditPayment}/>
       <Route path="/payment/details/:id" exact component={PaymentDetails}/>
+      <Route path="/adminhome" exact component={AdminHome}/>
 
       
 

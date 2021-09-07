@@ -28,6 +28,8 @@ retrievePosts(){
 
 render(){
   return(
+
+    <div className="info">
     <div className="container">
       <p> Package Booking Details</p>
        
@@ -59,7 +61,7 @@ render(){
   </tbody>
 </table>
 
- 
+ </div>
     </div>
   )
 }

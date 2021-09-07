@@ -1,10 +1,27 @@
-
-import React from 'react'
-import '../Styles/AboutUS.css'
-
+import React,{useReducer, useState} from "react"
+import {useHistory} from 'react-router-dom';
+import axios from "axios";
+ 
 const ContactUs = ()=>{
-
-    
+ 
+     let history = useHistory();
+ 
+    const [contactus,addContactus] = useState({
+            name:"",
+            message:"" 
+    });
+ const {name,message}=contactus;
+ const onInputChange = e=>{
+     addContactus({...contactus,[e.target.name]: e.target.value});
+ };
+ 
+ const onSubmit=async e =>{
+     e.preventDefault();
+     await axios.post ("http://localhost:8070/contactus/add",contactus);
+     history.push("/");
+     alert(" We will reply you soon")
+ }
+   
     return(
         <div className="bodycn">
             <div className="info">
@@ -24,15 +41,27 @@ const ContactUs = ()=>{
 
             <div class="col-lg-12 login-form">
                 <div class="col-lg-12 login-form">
-                    <form>
+                    <form onSubmit={e=>onSubmit(e)}>
                         <div class="form-group" id="form-groupabc">
                             <label class="form-control-label">YOUR NAME</label>
-                           <input type="text" class="form-control" id="inputabc"/>
+                           <input type="text" class="form-control" id="inputabc"
+                           placeholder="Enter your Name"
+                           name="name"
+                           value={name}
+                           onChange={e=>onInputChange(e)}
+                           
+                           
+                           />
                         </div>
                         <div class="form-group" id="form-groupabc">
                             <label class="form-control-label">MESSAGE</label>
                             
-                            <textarea class="form-control" id="inputabc" rows="5"></textarea>
+                            <textarea class="form-control" id="inputabc" rows="6"
+                            placeholder="Enter your Message"
+                            name="message"
+                            value={message}
+                            onChange={e=>onInputChange(e)}
+                            ></textarea>
                         </div>
 
                         <div class="col-lg-12 loginbttm">

@@ -28,6 +28,7 @@ const ViewPackage=()=>{
     
      
     return(
+      <div className="info">
         <div className="container" style={{marginTop:'20px'}}>
           <h4>{tpackage.packageName}</h4>
           <hr/>      
@@ -44,7 +45,7 @@ const ViewPackage=()=>{
                  <dt className="col-sm-3">Minimum Person</dt>
                  <dd className="col-sm-9">{tpackage.date}</dd>
 
-        </dl>    
+        </dl>    </div>
         </div>
     
     )

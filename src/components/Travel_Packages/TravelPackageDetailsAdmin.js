@@ -33,57 +33,56 @@ useEffect(()=>{
 
  
 return(
+
+  <div className="info">
     <div className="container" style={{marginTop:'20px'}}>
 
 
-      <h4>{tpackage.packageName}</h4>
-      <hr/>      
-      <div className="Appxx">
-      
-    <dl className="row">
-    <dt className="col-sm-3">Destination</dt>
-    
-             <dd className="col-sm-9">{tpackage.destination}</dd>
+    <div class="card">
+    <img style={{height:"400px"}} class="card-img-top"src={`/uploads/${tpackage.packageImage}`} alt="..."  />
+    <div class="card-body" style={{backgroundColor:"#DDE8E8"}}>
+      <h5 class="card-title">{tpackage.packageName}</h5>
+      <p class="card-text">{tpackage.date}   </p>
+      <p class="card-text">{tpackage.destination}   </p>
+      <p class="card-text">{tpackage.discription}   </p>
+    </div>
+    <div class="card-footer" style={{backgroundColor:"#ADADAD"}}>
 
-             <dt className="col-sm-3">Discription</dt>
-             <dd className="col-sm-9">{tpackage.discription}</dd>
 
-             <dt className="col-sm-3">Date</dt>
-             <dd className="col-sm-9">{tpackage.date}</dd>
+    <ul class="postcard__tagbox" style={{fontSize:"16px"}}>
+					<li class="tag__item"><i class="fas fa-tag mr-2"></i>PP&nbsp;{tpackage.perperson}</li>
+					<li class="tag__item"><i class="fas fa-clock mr-2"></i>{tpackage.noofdays}&nbsp;{tpackage.noofnights}</li>
+					<li class="tag__item play blue">	<i class="fas fa-car mr-2"></i>{tpackage.vehical}	</li>
+           
+             <li >
+             <small class="text-muted" style={{marginInlineStart:"20%"}}> 
+              <button type="submit" class="btn btn-danger" style={{width:"300px",fontSize:"20px"}} onClick={()=>{setOpenModal(true);}}>
+               Delete Package</button>
+                { openModal && <Modal setOpenModal={setOpenModal}/>}
+             </small>
+             </li>
+             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+             <li >
+             <small class="text-muted"> 
+              <button type="submit" class="btn btn-danger" style={{width:"300px",fontSize:"20px"}}>
+                <a href ={`/travelpackage/admin/edit/${tpackage._id}`} style={{textDecoration:'none' ,color:'white'}} >Edit Package</a></button>
+             </small>
+             </li>
 
-             <dt className="col-sm-3">No of Days</dt>
-             <dd className="col-sm-9">{tpackage.noofdays}</dd>
+				</ul>
 
-             <dt className="col-sm-3">No of Nights</dt>
-             <dd className="col-sm-9">{tpackage.noofnights}</dd>
-
-             <dt className="col-sm-3">Vehical</dt>
-             <dd className="col-sm-9">{tpackage.vehical}</dd>
-
-             <dt className="col-sm-3">Per Person</dt>
-             <dd className="col-sm-9">{tpackage.perperson}</dd>
-             </dl> 
-         
-             <button className="btn btn-danger"onClick={()=>{setOpenModal(true);}}>Delete Package</button>
-        { openModal && <Modal setOpenModal={setOpenModal}/>}
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <button class="btn btn-danger"><a href ={`/travelpackage/admin/edit/${tpackage._id}`} style={{textDecoration:'none' ,color:'white'}}>Edit Package</a></button>
-    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         
-         </div>
+
+    </div>
+  </div>
+    <br/><br/><br/>
+
      
-      
-    <table>
-       <td>
+
+    </div>
     
     
-        
-        </td>
-        </table>
-
-        
-
-
+    
     </div>
 
 )

@@ -41,7 +41,7 @@ const EditPackage = ()=>{
     
 return(
 
-   <div >
+   <div  className="info" >
    <div >
     <div >
         
