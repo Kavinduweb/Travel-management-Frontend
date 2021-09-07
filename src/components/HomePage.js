@@ -1,14 +1,13 @@
 import React, {Component} from 'react';
 import '../Styles/Stylehome.css'
 
-import imag1 from '../Images/z1.jpg';
+import imag1 from '../Images/z1.jpg'
 import imag2 from '../Images/z2.jpg'
 import imag3 from '../Images/z3.jpg'
 import imag4 from '../Images/z4.jpg'
 import imag5 from '../Images/z5.jpg'
 import imag6 from '../Images/z6.jpg'
 import imag7 from '../Images/z7.jpg'
-
 
 const data =[
   {
@@ -120,9 +119,11 @@ export default class HomePage extends Component {
 render(){
 
   return(
+
+    <div class="info">
  <div className= "container-fluid" id="bodyhome">
   <div className="App">
-        <br/>
+   
         <div className="containerhome">
            <div className="slideshow-containerxx">
            <Slider slideIndex={this.state.slideIndex}/>
@@ -170,9 +171,9 @@ If you travel, you will not only learn about foreign cultures, but about your ow
  makes your culture unique. After retrurning from a long journey, you will see your country with new eyes.
 </p>
 
-
+<br/><br/><br/>
 </div>
-
+</div>
   )
 }
 }

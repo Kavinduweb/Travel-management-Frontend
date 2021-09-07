@@ -26,7 +26,7 @@
   }
 /*add package*/  
   #bodytbc{
-      background-image: url("../Images/tp2.jpg");
+     
       min-height: 100%;
       min-width: 100%;
       background-position: center;
@@ -42,7 +42,7 @@
 background: linear-gradient(16deg, rgba(102,101,101,1) 12%, rgba(111,111,111,1) 78%, rgba(41,41,41,1) 100%);
     border-radius: 10px;
      opacity:0.9;
-     height: 600px;
+     height: 680px;
      
   }
   
@@ -285,6 +285,225 @@ background: linear-gradient(16deg, rgba(102,101,101,1) 12%, rgba(111,111,111,1) 
 
 
   .rightsearch {
-    float: right;
+    margin-left: 75%;
     padding-bottom: 20px;
   }
+  #cardbtn{
+    width: 130px;
+    font-size: 15px;
+    margin: center;
+    margin-left: 60%;
+    
+  }
+
+#cardimg{
+ width: 100%;
+ height: 100px;
+ opacity: 0.9;
+  }
+
+
+  
+#by{
+  margin-block-start:  0px;
+  margin-inline-start: 20px;
+  margin-inline-end: 20px;
+  margin-block-end: 20px;
+   }
+.cdbody{
+
+  background: rgb(103,255,196);
+  background: linear-gradient(16deg, rgba(103,255,196,0.3738881657632549) 0%,
+   rgba(255,255,255,0.6098432219430302) 46%, rgba(255,238,160,0.3373713118306706) 100%);
+}
+
+.crdbody2{
+  font-size: 14px;
+}
+
+/*
+.bodytravelpackage{
+  
+  background: rgb(49,3,3);
+  background: linear-gradient(16deg, rgba(49,3,3,0.2222027725048279) 0%, rgba(128,191,98,0.6182701882351651) 46%, rgba(196,196,196,0.2559106376733673) 100%);
+}
+*/
+.infotr{
+ 
+  color: #252525;
+  
+  margin-inline-start: 180px;
+}
+
+
+
+
+
+
+
+@import url("https://fonts.googleapis.com/css2?family=Baloo+2&display=swap");
+
+
+/* This pen */
+
+#cardbtn2{
+    width: 150px;
+    font-size: 15px;
+    margin: center;
+    margin-left: 130%;
+    height: 33px;
+    
+    
+  }
+
+
+.dark {
+	background-color: #18151fda ;
+}
+
+a, a:hover {
+	text-decoration: none;
+	transition: color 0.3s ease-in-out;
+}
+
+#pageHeaderTitle {
+	margin: 2rem 0;
+	text-transform: uppercase;
+	text-align: center;
+	font-size: 2.5rem;
+}
+
+/* Cards */
+.postcard {
+  flex-wrap: wrap;
+  display: flex;
+  background-image: linear-gradient(-80deg, rgba(249, 253, 255, 0.1) , transparent 50%);
+  box-shadow: 0 4px 21px -12px rgba(0, 0, 0, 0.66);
+  border-radius: 10px;
+  margin: 0 0 0 0;
+  overflow: hidden;
+  position: relative;
+  color: #ffffff;
+
+	
+	
+}
+	
+	.small {
+		font-size: 80%;
+	}
+
+  .postcard__title {
+    font-size: 1.75rem;
+  }
+
+  .postcard__img {
+    max-height: 180px;
+    width: 100%;
+    object-fit: cover;
+    position: relative;
+  }
+
+  .postcard__img_link {
+    display: contents;
+  }
+
+  .postcard__bar {
+    width: 50px;
+    height: 10px;
+    margin: 10px 0;
+    border-radius: 5px;
+    background-color: #424242;
+    transition: width 0.2s ease;
+  }
+
+  .postcard__text {
+    padding: 1.5rem;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .postcard__preview-txt {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    text-align: justify;
+    height: 100%;
+  }
+
+  .postcard__tagbox {
+    display: flex;
+    flex-flow: row wrap;
+    font-size: 14px;
+    margin: 20px 0 0 0;
+		padding: 0;
+    justify-content: center;}
+
+    .tag__item {
+      display: inline-block;
+      background: rgba(83, 83, 83, 0.4);
+      border-radius: 3px;
+      padding: 2.5px 10px;
+      margin: 0 5px 5px 0;
+      cursor: default;
+      user-select: none;
+      transition: background-color 0.3s;}
+    
+  
+
+@media screen and (min-width: 769px) {
+  .postcard {
+    flex-wrap: inherit;}
+
+    .postcard__title {
+      font-size: 2rem;
+    }
+
+    .postcard__tagbox {
+      justify-content: start;
+    }
+
+    .postcard__img {
+      max-width: 300px;
+      max-height: 100%;
+      transition: transform 0.3s ease;
+    }
+
+    .postcard__text {
+      padding: 3rem;
+      width: 100%;
+    }
+
+    .media.postcard__text:before {
+      content: "";
+      position: absolute;
+      display: block;
+      background: #18151f;
+      top: -20%;
+      height: 130%;
+      width: 55px;
+    }
+
+@media screen and (min-width: 1024px){
+		.postcard__text {
+      padding: 2rem 3.5rem;
+    }
+		
+		.postcard__text:before {
+      content: "";
+      position: absolute;
+      display: block;
+      
+      top: -20%;
+      height: 130%;
+      width: 55px;
+    }
+	
+ 
+	.postcard.light .postcard__text:before {
+		
+			background: #e1e5ea;
+		
+  }
+}
+}
