@@ -4,7 +4,7 @@
 	box-sizing:border-box;
 }
 
-body {
+.body1 {
 	background-image: url('https://i.pinimg.com/originals/dd/91/4c/dd914c6cca076f8cebb463a81e73e7e5.jpg');
     background-position: center;
     background-repeat: no-repeat;
@@ -74,7 +74,7 @@ button.ghost {
 	border-color: #FFFFFF;
 }
 
-form {
+.form {
 	background-color: #FFFFFF;
 	display: flex;
 	align-items: center;
@@ -164,7 +164,7 @@ input {
 }
 
 .overlay {
-	background: #FF416C;
+	background: #455ef0;
 	background: -webkit-linear-gradient(to right, #FF4B2B, #FF416C);
 	background: linear-gradient(to right, #FF4B2B, #FF416C);
 	background-repeat: no-repeat;

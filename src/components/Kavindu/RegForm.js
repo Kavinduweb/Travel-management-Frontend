@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { useHistory } from 'react-router-dom';
-import '../../../src/Form.css';
+import './Form.css';
 import axios from "axios";
 import { configure } from '@testing-library/react';
 
@@ -30,8 +30,11 @@ export default function RegisterUser ({}){
 	},[history])
 
 
+	
 function sendData (){
 
+
+	
 const NewReg ={
 
 	Name,
@@ -47,13 +50,25 @@ const NewReg ={
 	}).catch((err)=>{
 		alert(err);
 	})
+
+
 }
 
 const getData = async (e)=>{
 
 	e.preventDefault();
 	
+	const email = document.getElementById('logemail');
+	const pass = document.getElementById('logpass');
 
+	if(email.value == '' || email.value == null){
+		alert("email Required");
+		return false;
+	}
+	else if (pass.value == '' || pass.value == null){
+		alert("pass Required");
+		return false
+	}
 
 	try {
 		const config ={
@@ -90,18 +105,18 @@ const getData = async (e)=>{
 
 return (
 
-		
+	<div className="body1">
 <div className="container" id="container">
 	<div className="form-container sign-up-container">
-		<form onSubmit={sendData}action="#">
+		<form onSubmit={sendData} >
 			<h1>Create Account</h1>
 			
-			<input type="text" placeholder="Name" id="Name" onChange={(e)=>{  setName(e.target.value) ; }} required/>
-			<input type="email" placeholder="Email" id="Email" onChange={(e)=>{  setEmail(e.target.value) ; }} required />
-       	 	 <input type="number" placeholder="Mobile" id="Number"  onChange={(e)=>{ setNum (e.target.value) ; }} required/>
-        
-			<input type="password" placeholder="Password" id="Password" onChange={(e)=>{setPassword(e.target.value) ;}}required/>
-			<button >Sign Up</button>
+			<input type="text" placeholder="Name" id="Name" onChange={(e)=>{  setName(e.target.value) ; }} />
+			<input type="email" placeholder="Email" id="Email" onChange={(e)=>{  setEmail(e.target.value) ; }}  />
+       	 	 <input type="number" placeholder="Mobile" id="Number"  onChange={(e)=>{ setNum (e.target.value) ; }} />
+			<input type="password" placeholder="Password" id="Password" onChange={(e)=>{setPassword(e.target.value) ;}}/>
+
+			<button type="submit">Sign Up</button>
 		</form>
 	</div> 
 	<div className="form-container sign-in-container">
@@ -109,8 +124,8 @@ return (
 			<h1>Sign in</h1>
 			
 			<span>or use your account</span>
-			<input type="email" placeholder="Email" value={Email} onChange={(e)=>{  setEmail(e.target.value) ; }} />
-			<input type="password" placeholder="Password" value={Password} onChange={(e)=>{  setPassword(e.target.value) ; }}  />
+			<input type="email" placeholder="Email" id='logemail'value={Email} onChange={(e)=>{  setEmail(e.target.value) ; }} />
+			<input type="password" placeholder="Password" id='logpass' value={Password} onChange={(e)=>{  setPassword(e.target.value) ; }}  />
 			<a href="#">Forgot your password?</a>
 			<button>Sign In</button>
 		</form>
@@ -131,7 +146,7 @@ return (
 	</div>
 </div>
 
-
+</div>	
 )
 
 }

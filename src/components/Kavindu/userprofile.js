@@ -38,7 +38,7 @@ export default class UserProfile extends Component {
     componentDidMount(){
 
 
-        const userInfo = localStorage.getItem('userInfo');
+         const userInfo = localStorage.getItem('userInfo');
         //alert (userInfo);
         if (userInfo == null){
 
@@ -82,11 +82,11 @@ export default class UserProfile extends Component {
 
 
         return(
-        <div>
+            <div className="body1">
 
-            
-                 <button onClick={this.logout}>Log out</button>
-                         
+            <div style={{marginLeft:300}}> 
+                 <button onClick={this.logout} >Log out</button>
+                 </div>        
              <h2> {this.state.View.Name}'s profile </h2>  
    
                <form>

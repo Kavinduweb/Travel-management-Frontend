@@ -26,6 +26,7 @@ import admin from './components/Kavindu/adminLogin'
 import EditDetails from './components/Kavindu/edit'
 import UserProfile from './components/Kavindu/userprofile'
 import RegisterUser from './components/Kavindu/RegForm';
+import UserRepo from './components/Kavindu/ReportUsers';
 
 
 
@@ -63,6 +64,7 @@ function App() {
       <Route path ="/admin" exact component={admin}/>
       <Route path ="/Profile" exact component={UserProfile}/>
       <Route path ="/edit/:id" exact component={EditDetails}/>
+      <Route path="/rep" exact component={UserRepo}/>
 
     </div>
     </Router>

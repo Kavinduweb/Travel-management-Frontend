@@ -87,18 +87,18 @@ onDelete = (id) =>{
 render(){
 return (
       
-          <div>
+    <div className="body1">
 
               <br></br>
               <hr></hr>
               <h2> All Registration Details </h2>  
-                <input type="text" placeholder="Search By Email" id="searchid" onChange={this.Handelsearch}></input> 
+               
                     
 
     
    
                 <div className="container">
-               
+                <input type="text" placeholder="Search By Email" id="searchid" onChange={this.Handelsearch}></input> 
                     <table className="table">
 
                
@@ -139,13 +139,19 @@ return (
                 ))}
                 
                    
-
+            
 
                     
                     </tbody>
+                   
                     </table>
 
                     </div>
+                    <hr></hr>
+                    
+                      <a href="/rep">
+                    <button  >Generate User Report</button></a>
+                   
                     </div>
                 
        

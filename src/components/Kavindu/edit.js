@@ -47,7 +47,7 @@ const loadPackage = async()=>{
 
         return(
 
-            <div>
+            <div className="body1">
                 
         <form onSubmit={e=>onSubmit(e)}>
 
