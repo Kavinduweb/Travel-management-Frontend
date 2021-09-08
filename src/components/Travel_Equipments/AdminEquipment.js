@@ -5,6 +5,7 @@ import { Card } from 'react-bootstrap';
 import { Row } from 'react-bootstrap';
 import { Col } from 'react-bootstrap';
 import pb from '../../Images/pb.jpg'
+import '../../Styles/TravelEquipment.css'
 
 const AdminEquipment = () => {
     const [equipments, setEquipment] = useState([]);
@@ -19,13 +20,17 @@ const AdminEquipment = () => {
     };
 
     const deleteEquipment = async id => {
+      // eslint-disable-next-line no-restricted-globals
+      if(confirm("Are you Sure you want to delete this item?")){
         await axios.delete(`http://localhost:8070/equipment/delete/${id}`);
         alert ("Successfully Deleted");
         loadEquipments();
+      }
       };
     const { id } = useParams();
     return (
-        <div>  
+      <div className="TEcenter">
+      <div className="info">
                 <div><Link class="btn btn-primary mr-2" to="/equipment/add" style={{float:"right"}}>
                     Add Equipment
                   </Link></div> <br/> <br/> <br/> 
@@ -36,7 +41,7 @@ const AdminEquipment = () => {
 <div class="card mb-3" >
   <div class="row g-0">
     <div class="col-md-2"><br/>
-      <img src={pb} class="img-fluid rounded-start" style={{maxHeight:"200px", maxWidth:"200px"}} />
+      <img src={`/uploads/${equipment.image}`} alt="..."  class="img-fluid rounded-start" style={{maxHeight:"200px", maxWidth:"200px"}} />
     </div>
     <div class="col-md-10">
       <div class="card-body"> <br/>
@@ -66,6 +71,7 @@ const AdminEquipment = () => {
           ))}
         </Row> <br/> <br/> <br/> <br/>
                 </div>
+                </div> 
     );
 };
 

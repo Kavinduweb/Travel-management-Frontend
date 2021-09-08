@@ -31,6 +31,7 @@ const EditEquipment = () => {
     setEquipment(result.data.equipment);
   };
   return (
+    <div className="info">
     <div className="container">
       <div className="w-75 mx-auto shadow p-5">
         <h2 className="text-center mb-4">Edit An Equipment</h2>
@@ -43,6 +44,7 @@ const EditEquipment = () => {
               name="name"
               value={name}
               onChange={e => onInputChange(e)}
+              required
             />
           </div>
           <div className="form-group">
@@ -53,6 +55,7 @@ const EditEquipment = () => {
               name="description"
               value={description}
               onChange={e => onInputChange(e)}
+              required
             />
           </div>
           <div className="form-group">
@@ -63,11 +66,13 @@ const EditEquipment = () => {
               name="price"
               value={price}
               onChange={e => onInputChange(e)}
+              required
             />
           </div>
           <button className="btn btn-warning btn-block">Update Equipment</button>
         </form>
       </div>
+    </div>
     </div>
   );
 };
