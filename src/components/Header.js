@@ -25,7 +25,7 @@ function Header(){
       </div>
     </div>
     
-    <div class="main_content">
+    <div class="main_content" >
         <div class="header">
     
         <div class ="header">
@@ -47,7 +47,7 @@ function Header(){
     <li className="menupp"><a></a></li>
     
   <li class="menupp"><a class="actively" href="/aboutus">About Us</a></li>
-  <li class="menupp"><a href="#">Views</a></li>
+  <li class="menupp"><a href="/services">Services</a></li>
   <li class="menupp"><a href="/contactus">Contact Us</a></li>
   <li class="menupp"><a href="/gallery">Gallery</a> </li>
 

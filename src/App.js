@@ -43,6 +43,7 @@ import PaymentDetails from  './components/Payment/PaymentDetails';
 import AdminHome from  './components/AdminHome';
 import hotelpackagedetails from './components/HotelRooms/HotelPackageDetails';
 import EquipmentReport from './components/Travel_Equipments/EquipmentReport';
+import Services from './components/Services';
 
 
 
@@ -100,6 +101,7 @@ function App() {
       <Route path="/adminhome" exact component={AdminHome}/>
       <Route path="/hotelpackagedetails/:id" exact component = {hotelpackagedetails}/>
       <Route path="/equipment/report" exact component = {EquipmentReport}/>
+      <Route path="/services" exact component = {Services}/>
 
       
 

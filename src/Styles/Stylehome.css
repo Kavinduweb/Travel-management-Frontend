@@ -4,6 +4,7 @@
   background-position: center;
   background-repeat: no-repeat;
   background-size:cover;
+position:unset;
   
 }
 
@@ -169,7 +170,9 @@
   color: #252525;
   
   margin-inline-start: 180px;
-}
 
+  
+  
+}
 
 
