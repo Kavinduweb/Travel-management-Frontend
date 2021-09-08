@@ -36,7 +36,7 @@ function Header(){
 
 
 <div id="login">
-      <a href="#"  style={{textDecoration:'none' ,color:'rgb(87, 87, 87)'}}  > <i class="fas fa-user-alt"></i> </a>
+      <a href="/register"  style={{textDecoration:'none' ,color:'rgb(87, 87, 87)'}}  > <i class="fas fa-user-alt"></i> </a>
 </div>
 
 </div>

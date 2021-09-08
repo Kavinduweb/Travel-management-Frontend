@@ -59,7 +59,7 @@ handleSearchArea=(e)=>{
 
 render(){
   return(
-    <div className="infotr">
+    <div className="infotr" >
     <div className="bodytravelpackage" id="bbimg">
     <div >
       <br/>
