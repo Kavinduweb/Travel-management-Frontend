@@ -17,7 +17,6 @@ const [tpackage,viewPackage] = useState({
   perperson:""
 });
 
-const [openModal,setOpenModal] = useState(false) 
 
 const {id}=useParams();
 
@@ -31,15 +30,30 @@ useEffect(()=>{
     loadPackage();
 })
 
+const deletepackage = async id =>{
+   // eslint-disable-next-line no-restricted-globals
+   if(confirm("Are you Sure you want to delete this?")){
+  await axios.delete(`http://localhost:8070/travelpackages/admin/delete/${id}`);
+  alert("Package Deleted");
+  window.location.href = "/travelpackages/admin";
+  
+  }}
+
  
 return(
 
-  <div className="info">
+  <div className="info" >
     <div className="container" style={{marginTop:'20px'}}>
 
+    <small class="text-muted" style={{marginInlineStart:"2%"}}>  
+             <button type="submit" class="btn btn-primary" style={{width:"100px"}}>
+               <a href="/travelpackages/admin" style={{textDecoration:'none' ,color:'white'}} ><i class="fas fa-angle-left mr-2"></i>Back</a></button>
+ </small> <br/><br/>
 
-    <div class="card">
-    <img style={{height:"400px"}} class="card-img-top"src={`/uploads/${tpackage.packageImage}`} alt="..."  />
+
+
+    <div class="card" >
+    <img style={{height:"500px"}} class="card-img-top"src={`/uploads/${tpackage.packageImage}`} alt="..."  />
     <div class="card-body" style={{backgroundColor:"#DDE8E8"}}>
       <h5 class="card-title">{tpackage.packageName}</h5>
       <p class="card-text">{tpackage.date}   </p>
@@ -56,9 +70,9 @@ return(
            
              <li >
              <small class="text-muted" style={{marginInlineStart:"20%"}}> 
-              <button type="submit" class="btn btn-danger" style={{width:"300px",fontSize:"20px"}} onClick={()=>{setOpenModal(true);}}>
+              <button type="submit" class="btn btn-danger" style={{width:"300px",fontSize:"20px"}} onClick={()=>deletepackage(id)} >
                Delete Package</button>
-                { openModal && <Modal setOpenModal={setOpenModal}/>}
+              
              </small>
              </li>
              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -88,71 +102,7 @@ return(
 )
 
 };
-export default PackageDetailsAdmin;
 
+export default PackageDetailsAdmin
 
-function Modal({ setOpenModal }) {
-    
-  let history = useHistory();
-  const [packages,setUser]= useState([]);
-
-  useEffect(()=>{
-      loadUser();
-  },[]);
-
-  const loadUser= async ()=>{
-    const result =await  axios.get("http://localhost:8070/travelpackages/");
-    setUser(result.data.existingPackage)
-
-};
-
-const deletepackage = async id =>{
-await axios.delete(`http://localhost:8070/travelpackages/admin/delete/${id}`);
-alert("Package Deleted");
-history.push("/travelpackages/admin");
-}
-
-const {id}=useParams();
-      return (
-
-        <div className="modalBackground">
-          <div className="p">
-          <div className="modalContainer">
-            <div className="titleCloseBtn">
-            <div className="footera"><b>Confirm Delete</b></div>
-              <button
-                onClick={() => {
-                  setOpenModal(false);
-                }}
-              >
-                X
-              </button>
-            </div>
-            <div className="title">
-            
-            </div>
-            <div className="body">
-            <p>Are You Sure You Want to Delete this Travel package.? This package can't be restore.
-                </p>
-         
-            </div>
-            <div className="footer">
-              <button
-                onClick={() => {
-                  setOpenModal(false);
-                }}
-                id="cancelBtn"
-              >
-                Cancel
-              </button>
-
-            
-              <button onClick={()=>deletepackage(id)}  >Delete</button>
-              </div>
-            </div>
-          </div>
-        </div>
-      );
-    }
-    
    

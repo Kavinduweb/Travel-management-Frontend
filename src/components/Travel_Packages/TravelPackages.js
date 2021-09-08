@@ -41,6 +41,7 @@ onDelete=(id)=>{
 filterData(posts,searchkey){
   const result = posts.filter((post) =>
   post.packageName.toLowerCase().includes(searchkey)||
+  post.packageName.toUpperCase().includes(searchkey)||
   post.destination.toLowerCase().includes(searchkey) ||
   post.perperson.toLowerCase().includes(searchkey)
   )
@@ -60,7 +61,7 @@ handleSearchArea=(e)=>{
 render(){
   return(
     <div className="infotr" >
-    <div className="bodytravelpackage" id="bbimg">
+    <div className="bodytravelpackage" className="container" id="bbimg">
     <div >
       <br/>
   
@@ -86,7 +87,7 @@ render(){
 </div>
 
        
-
+<hr/>
 <Row xs={1} md={1} className="g-4" id="by" class="rounded" >
   {this.state.posts.map((posts, idx) => (
    
@@ -95,7 +96,7 @@ render(){
 	<div class="container py-1">
 
 		<article class="postcard dark blue">
-			<a class="postcard__img_link" href="#">
+			<a class="postcard__img_link" >
 				<img class="postcard__img" src={`/uploads/${posts.packageImage}`} alt="..."  />
 			</a>
 			<div class="postcard__text">
@@ -111,15 +112,15 @@ render(){
                 {posts.destination}
                 
                 <ul class="postcard__tagbox">
-					<li class="tag__item"><i class="fas fa-tag mr-2"></i>PP&nbsp;{posts.perperson}</li>
+					<li class="tag__item"><i class="fas fa-tag mr-2"></i>PP&nbsp;<a style={{color:" hsl(180,100%,50%)"}}>{posts.perperson}</a></li>
 					<li class="tag__item"><i class="fas fa-clock mr-2"></i>{posts.noofdays}&nbsp;{posts.noofnights}</li>
 					<li class="tag__item play blue">
-						<a href="#"><i class="fas fa-car mr-2"></i>{posts.vehical}</a>
+						<a style={{color:"  hsl(60,100%,50%) "}}><i class="fas fa-car mr-2"></i>{posts.vehical}</a>
 					</li>
              <li >
                     <button type="button" class="btn btn-primary" id="cardbtn2">
 
-         <a href ={`/travelpackages/travelpackage/${posts._id}`} style={{textDecoration:'none',color:'white'}}> View Details</a></button>
+         <a href ={`/travelpackages/travelpackage/${posts._id}`} style={{textDecoration:'none',color:'white'}}>View Details &nbsp;<i class="fas fa-hand-point-right"> </i></a></button>
          </li>
 				</ul>
 			</div>

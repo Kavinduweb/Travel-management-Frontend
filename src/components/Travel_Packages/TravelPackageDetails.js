@@ -31,13 +31,45 @@ const {_id,packageName,destination,discription,date,noofdays,noofnights,vehical,
   return(
     <div className="infotr">
     <div className="container"  style={{marginTop:'10px'}}>
+      
+      
+    <ul class="postcard__tagbox" style={{fontSize:"16px"}}>
+    <li >
+             <small class="text-muted" style={{marginInlineStart:"2%"}}>  
+             <button type="submit" class="btn btn-primary" style={{width:"100px"}}>
+               <a href="/travelpackages" style={{textDecoration:'none' ,color:'white'}} ><i class="fas fa-angle-left mr-2"></i>Back</a></button>
+ </small> </li>
+<div style={{marginInlineStart:"55%"}}>
+          <li class="tag__item"><i class="fab fa-cc-visa mr-2" ></i>Visa Payment</li>
+					<li class="tag__item"><i class="fas fa-paper-plane mr-2"></i>Full Option</li>
+					<li class="tag__item play blue">	<i class="fas fa-hands mr-2"></i>Security	</li>
+          </div>
+				</ul>
+        <hr/>
+<br/>
+
     <div class="card">
-    <img style={{height:"400px"}} class="card-img-top"src={`/uploads/${packageImage}`} alt="..."  />
+    <img style={{height:"500px"}} class="card-img-top"src={`/uploads/${packageImage}`} alt="..."  />
     <div class="card-body" style={{backgroundColor:"#DDE8E8"}}>
-      <h5 class="card-title">{packageName}</h5>
-      <p class="card-text">{date}   </p>
-      <p class="card-text">{destination}   </p>
-      <p class="card-text">{discription}   </p>
+      <h5 class="card-title">  {packageName}</h5>
+      <p class="card-text"> {date}   </p>
+      <p class="card-text"><i class="fas fa-long-arrow-alt-right mr-2"></i><b> {destination} </b>  </p>
+      <p class="card-text"><i class="fas fa-long-arrow-alt-right mr-2"></i><b> {discription} </b>  </p>
+
+<p>
+      We are the Best Travel Company in Sri Lanka.
+                Since 2018, Us the "Dream travellers" has been committed to bring the 
+travellers the best experience and value for their travel arrangements. We 
+are passionate about travel and providing corporate travellers high-touch 
+services to facilitate their travel needs and sharing the world's wonders best 
+experience on the leisure travel side. On behalf of that we offer valuable and 
+time reliable offers for the best prices for our customers.Sri Lanka Local Tours
+ tailor-makes unique Sri Lanka tours, sightseeing adventures and interesting trips s
+ tarting from the gateway cities of Sri Lanka to help travelers explore Sri Lanka on their way.
+  We are a passionate team of one hundred avid travelers who love to share our experiences of Sri
+   Lanka with those looking for a more authentic travel experience.
+</p>
+
     </div>
     <div class="card-footer" style={{backgroundColor:"#ADADAD"}}>
 

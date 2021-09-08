@@ -8,7 +8,7 @@ function AdminHome(){
 <div>
         
 <div id="bodyadd">
-           <div >
+           <div className="info">
             <div >
                 
 

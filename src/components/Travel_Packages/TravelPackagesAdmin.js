@@ -1,6 +1,8 @@
 import React,{Component} from 'react'
 import axios from 'axios';
 import '../../Styles/TravelPackage.css'
+import { Row } from 'react-bootstrap';
+import { Col } from 'react-bootstrap';
 
 export default class AllPackagesAdmin extends Component{
 
@@ -36,6 +38,7 @@ onDelete=(id)=>{
 filterData(posts,searchkey){
   const result = posts.filter((post) =>
   post.packageName.toLowerCase().includes(searchkey)||
+  post.packageName.toUpperCase().includes(searchkey)||
   post.destination.toLowerCase().includes(searchkey) ||
   post.perperson.toLowerCase().includes(searchkey)
   )
@@ -59,75 +62,57 @@ render(){
 
     <div className="info">
     <div className="container">
-      <p> All Packages</p>
-
-
-      
-<div className="rightsearch">
-  
-  <div class="input-group" >
-<div class="form-outline">
-
-<input 
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+ 
+    <button className="btn btn-success"><a href="/travelpackage/admin/add" style={{textDecoration:'none' ,color:'white'}} > 
+    <i class="fas fa-plus mr-2"></i>Add New Package</a></button>
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+ <button className="btn btn-success"><a href="/allbooking" style={{textDecoration:'none' ,color:'white'}} >
+ <i class="fas fa-book mr-2"></i>Booking Details</a></button>
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+ 
+ 
+ <input 
 id="search-input" 
 type="search" 
-id="form1" 
-class="form-control" 
+id="form1"
 placeholder="Search Package"
-onChange={this.handleSearchArea}  />
-</div>
-
-<button id="search-button" type="button" class="btn btn-primary">
+onChange={this.handleSearchArea} /><button id="search-button" type="button" class="btn btn-primary">
 <i class="fas fa-search"></i>
 </button>
+<hr/>
+ <Row xs={1} md={3} className="g-4 " id="by" class="rounded" >
+ {this.state.posts.map((posts,index)=>(
+     <Col key={index}>
+<div class="card" style={{backgroundColor:"hsl(0,0%,75%,0.1)",borderColor:"black"}}>
+  <div class="card-body">
+    <h5 class="card-title">{index+1}.&nbsp; <b>{posts.packageName}</b></h5>
+    <h6 class="card-subtitle mb-2 text-muted">{posts.destination}</h6>
+    <p class="card-text"><i class="fas fa-car mr-2"></i>{posts.vehical}  </p>
+    <p class="card-text">{posts.noofdays}  {posts.noofnights} &nbsp;&nbsp;||&nbsp;&nbsp; Per Person:-{posts.perperson}    </p>
+    &nbsp;&nbsp;
+    <a className ="btn btn-outline-primary" href ={`/travelpackages/travelpackage/admin/${posts._id}`} >
+          <i className="fas fa-eye"></i>&nbsp;View
+        </a>&nbsp;
 
-</div>
-</div>
-  
-       
-      <table class="table">
-  <thead class="thead-dark">
-    <tr>
-      <th scope="col">#</th>
-      <th scope="col">Package Name</th>
-      <th scope="col">Destination</th>
-      <th scope="col">Price</th>
-      <th scope="col">Action</th>
-    </tr>
-  </thead>
-  <tbody>
-    {this.state.posts.map((posts,index)=>(
-      <tr key={index}>
-      <th scope="row">{index+1}</th>
-      <td>
-          <a href ={`/travelpackages/travelpackage/admin/${posts._id}`} style={{textDecoration:'none'}}>
-          {posts.packageName}
-          </a>
-          </td>
-      <td>{posts.destination}</td>
-      <td>{posts.perperson}</td>
-      <td>
-        <a className ="btn btn-warning" href ={`/travelpackage/admin/edit/${posts._id}`}>
+    <a className ="btn btn-outline-warning" href ={`/travelpackage/admin/edit/${posts._id}`}>
           <i className="fas fa-edit"></i>&nbsp;Edit
         </a>&nbsp;
       
-        <a className ="btn btn-danger" href = {`/travelpackage/admin/delete/${posts._id}`} >
-        <i className="fas fa-edit"></i>&nbsp;Delete
+        <a className ="btn btn-outline-danger" href = {`/travelpackage/admin/delete/${posts._id}`} >
+        <i className="fas fa-trash-alt"></i>&nbsp;Delete
         </a>
-      </td>
-    </tr>
-    ))}
-    
-  </tbody>
-</table>
+  </div>
+</div>
+</Col>
+  ))}
 
- <button className="btn btn-success"><a href="/travelpackage/admin/add" style={{textDecoration:'none' ,color:'white'}} >Add New Package</a></button>
- &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
- <button className="btn btn-success"><a href="/allbooking" style={{textDecoration:'none' ,color:'white'}} >Booking Details</a></button>
- 
- <br/><br/><br/>
+</Row>
     </div></div>
   )
 }
 
 }
+
