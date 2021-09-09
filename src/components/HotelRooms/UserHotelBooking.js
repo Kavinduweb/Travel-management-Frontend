@@ -1,5 +1,8 @@
 import React, {Component } from 'react';
 import axios from 'axios';
+import hotelimg from '../../Images/simple-house-logo.png'
+import luxurious from '../../Images/aa.jpg'
+
 
 export default class UserHotelBooking extends Component{
 
@@ -44,8 +47,29 @@ export default class UserHotelBooking extends Component{
     render(){
         return(
           <div className="info">
+			<div class="parallax-window" data-parallax="scroll" data-image-src="img/simple-house-01.jpg">
+      <img src={luxurious} alt="Logo" class="shimg" />
+				<div class="tm-header">
+					<div class="tm-header-inner">
+            <div class="row">
+						<div class="col-md-6 col-12">
+							<img src={hotelimg} alt="Logo" class="tm-site-logo" /> 
+							<div class="tm-site-text-box">
+								<h1 class="tm-site-title">My Reservation</h1>
+                <h6 class="tm-site-description">Dream Travelers</h6>
+							</div>
+						</div>
+						<nav class="col-md-6 col-12 tm-nav">
+							<ul class="tm-nav-ul">
+								<li class="tm-nav-li"><a href ={"/hotelpackage"} class="tm-nav-link ">Rooms</a></li>
+								<li class="tm-nav-li"><a href ={"/userhotelbooking"} class="tm-nav-link active">My Booking</a></li>
+							</ul>
+						</nav>	
+					</div>
+          </div>
+				</div>
+			</div>
             <div className="container">
-            <h2>My Booking</h2><br></br>
              
 <table className="table">
 
@@ -79,12 +103,7 @@ export default class UserHotelBooking extends Component{
     ))}
     
   </tbody>
-</table>
-      
-      <button className="btn btn-success"><a href="/hotelpackage" style={{textDecoration:'none', color:'white'}}>Back to Rooms</a></button>
-      <br></br>
-      <br></br>
-      <br></br> 
+</table> 
 </div>
 </div>
         )

@@ -1,34 +1,37 @@
-import React, {Component } from 'react';
-import axios from 'axios';
+import React from "react";
+import axios from 'axios'
+import ReactToPrint from "react-to-print";
 
-export default class hotelbooking extends Component{
 
-    constructor(props){
-        super(props);
-        this.state={
-          posts:[]
-        };
-      }
-      
-      componentDidMount(){
-        this.retrievePosts();
-      }
-      
-      retrievePosts(){
-        axios.get("http://localhost:8070/hotelbooking/admin").then(res =>{
-          if(res.data.success){
-            this.setState({
-              posts:res.data.existingBooking
-            });
-          console.log(this.state.hotelbooking);
-          }
+class ComponentToPrint extends React.Component{
+
+  constructor(props){
+    super(props);
+    this.state={
+      posts:[]
+    };
+  }
+  
+  componentDidMount(){
+    this.retrievePosts();
+  }
+  
+  retrievePosts(){
+    axios.get("http://localhost:8070/hotelbooking/admin").then(res =>{
+      if(res.data.success){
+        this.setState({
+          posts:res.data.existingBooking
         });
-      } 
-    
+      console.log(this.state.hotelbooking);
+      }
+    });
+  } 
 
-    render(){
-        return(
-          <div className="info">
+
+
+  render() {
+    return (
+      <div className="info">
             <div className="container">
             <p>All Hotel Booking Details</p>
              
@@ -65,6 +68,23 @@ export default class hotelbooking extends Component{
        
           </div>
           </div>
-        )
-    }
+    );
+  }
 }
+
+class Example extends React.Component {
+  render() {
+    return (
+      <div>
+        <ReactToPrint
+          trigger={() => <button style={{marginLeft:230}}>Print this out!</button> }
+          
+          content={() => this.componentRef}
+        />
+        <ComponentToPrint ref={(el) => (this.componentRef = el)} />
+      </div>
+    );
+  }
+}
+
+export default Example;

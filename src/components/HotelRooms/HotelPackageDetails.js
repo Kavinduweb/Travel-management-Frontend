@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import axios from "axios";
+import '../../Styles/templatemo-style.css'
 
 
 
@@ -18,7 +19,7 @@ export default class hotelpackageDetails extends Component {
       if (res.data.success){
          this.setState({
       post:res.data.HotelPackage
-    });
+        });
       }
     });
   }
@@ -27,36 +28,47 @@ export default class hotelpackageDetails extends Component {
 render(){
   
 
-const {roomType,details,price,size,maxCapacity} = this.state.post;
+  const {roomType,details,price,size,maxCapacity,packageImage} = this.state.post;
 
-  return(
-    <div className="info">
-    <div className="container" style={{marginTop:'20px'}}>
-      <h4>{roomType}</h4>
-      <hr/>      
-    <dl className="row">
-             <dt className="col-sm-3">Details</dt>
-             <dd className="col-sm-9">{details}</dd>
-
-             <dt className="col-sm-3">Price Per Day</dt>
-             <dd className="col-sm-9">{price}</dd>
-
-             <dt className="col-sm-3">Size</dt>
-             <dd className="col-sm-9">{size}</dd>
-
-             <dt className="col-sm-3">Max Capacity</dt>
-             <dd className="col-sm-9">{maxCapacity}</dd>
-
-             
-    </dl>  
-
-    <button className="btn btn-success"><a href={`/addnewhotelbooking/${this.state.post._id}`} style={{textDecoration:'none', color:'white'}}>Book Now</a></button>
-
-    </div>
-    </div>
-
-    
-
-  )
-}
+    return(
+      
+      <div className="info">
+        <div class="container">
+            <div class="row">
+              <div class="col-md-12">
+                <div class="mu-about-area">
+                <br></br>
+                        <br></br>
+                        <br></br>
+                  <div class="row">
+                    <div class="col-md-6">
+                      <div class="mu-about-left">
+                        <img class="detailsimg" src={`/uploads/${packageImage}`} alt="Men Speaker"/>
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="mu-about-right">
+                        <br></br>
+                        <h2 class="detailstitle"> {roomType}</h2><br></br> 
+                        <p>{details}</p>
+                        <p class="detailsprice">Per Day: {price}</p>
+                        <p className="tm-gallery-price">Room Size: {size}</p>
+                        <p>Maximum people: {maxCapacity}</p>
+                        <button className="btn btn-success"><a href={`/addnewhotelbooking/${this.state.post._id}`} style={{textDecoration:'none', color:'white'}}>Book Now</a></button>
+                        <br></br>
+                        <br></br>
+                        <br></br>
+                        <br></br>
+                        <br></br>
+                        <br></br>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+      </div>
+    )
+  }
 }

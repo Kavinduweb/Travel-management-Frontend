@@ -1,5 +1,6 @@
 import React, {Component } from 'react';
 import axios from 'axios';
+import '../../Styles/shenukastyle.css'
 
 
 export default class AddNewHotelBooking extends Component{
@@ -70,80 +71,108 @@ axios.post("http://localhost:8070/hotelbooking/add",data).then((res)=>{
 
         return(
             <div className="info">
-            <div className="col-md-8 mt-4 mx-auto">
-                <h1 className="h3 mb-3 font-weight-normal">create your Booking</h1>
-                <form className="needs-validation" no noValidate>
-                    <div className="from group" style={{marginBottom:'15px'}}>
-                        <label style={{marginBottom:'5px'}}>Room Type</label>
-                        <input type="text"
-                        className="form-control"
-                        name="roomType"
-                        placeholder=""
-                        value={roomType}
-                        disabled
-                        onChange={this.handleInputChange}/>
-                    </div>
 
-                    <div className="from group" style={{marginBottom:'15px'}}>
-                        <label style={{marginBottom:'5px'}}>Capacity</label>
-                        <input type="text"
-                        className="form-control"
-                        name="capacity"
-                        placeholder=""
-                        value={maxCapacity}
-                        disabled
-                        onChange={this.handleInputChange}/>
-                    </div>
+            <div id="booking" class="section">
+		<div class="section-center">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-7 col-md-push-5">
+						<div class="booking-cta">
+							<h1>Make Your</h1>
+                            <h1>Reservation</h1>
+							<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi facere, soluta magnam consectetur molestias itaque
+								ad sint fugit architecto incidunt iste culpa perspiciatis possimus voluptates aliquid consequuntur cumque quasi.
+								Perspiciatis.
+							</p>
+						</div>
+					</div>
+					<div class="col-md-4 col-md-pull-7">
+						<div class="booking-form">
+							<form>
+                            <div class="row">
+									<div class="col-sm-7">
+										<div class="form-group">
+											<span class="form-label">Your Room Type</span>
+                                            <input type="text"
+                                            className="form-control"
+                                            name="roomType"
+                                            placeholder=""
+                                            value={roomType}
+                                            disabled
+                                            onChange={this.handleInputChange}/>
+										</div>
+									</div>
+									<div class="col-sm-5">
+										<div class="form-group">
+											<span class="form-label">Max Person</span>
+											<input type="text"
+                                            className="form-control"
+                                            name="capacity"
+                                            placeholder=""
+                                            value={maxCapacity}
+                                            disabled
+                                            onChange={this.handleInputChange}/>
+											<span class="select-arrow"></span>
+										</div>
+									</div>
+								</div>
+                                <div class="form-group">
+									<span class="form-label">Full Name</span>
+                                    <input type="text"
+                                    className="form-control"
+                                    name="name"
+                                    placeholder="Name"
+                                    value={this.state.name}
+                                    onChange={this.handleInputChange}/>
+								</div>
+                                <div class="form-group">
+									<span class="form-label">Email</span>
+                                    <input type="email"
+                                    className="form-control"
+                                    name="email"
+                                    placeholder="Email"
+                                    value={this.state.email}
+                                    onChange={this.handleInputChange}
+                                    required/>
+								</div>
+								<div class="row">
+									<div class="col-sm-6">
+										<div class="form-group">
+											<span class="form-label">Check In</span>
+                                            <input type="date"
+                                            required
+                                            className="form-control"
+                                            name="arrivalDate"
+                                            placeholder="YY/MM/DD"
+                                            value={this.state.arrivalDate}
+                                            onChange={this.handleInputChange}/>
+										</div>
+									</div>
+									<div class="col-sm-6">
+										<div class="form-group">
+											<span class="form-label">Check out</span>
+                                            <input type="date"
+                                            required
+                                            className="form-control"
+                                            name="departureDate"
+                                            placeholder="YY/MM/DD"
+                                            value={this.state.departureDate}
+                                            onChange={this.handleInputChange}/>
+										</div>
+									</div>
+								</div>
+								<div class="form-btn">
+									{/**<button class="submit-btn">Check availability</button>*/}
+                                    <button class="submit-btn" type="submit"  onClick={this.onSubmit}>Confirm Booking</button>
+								</div>
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
 
-                    <div className="from group" style={{marginBottom:'15px'}}>
-                        <label style={{marginBottom:'5px'}}>Name</label>
-                        <input type="text"
-                        className="form-control"
-                        name="name"
-                        placeholder="Name"
-                        value={this.state.name}
-                        onChange={this.handleInputChange}/>
-                    </div>
-
-                    <div className="from group" style={{marginBottom:'15px'}}>
-                        <label style={{marginBottom:'5px'}}>Email</label>
-                        <input type="email"
-                        className="form-control"
-                        name="email"
-                        placeholder="Email"
-                        value={this.state.email}
-                        onChange={this.handleInputChange}
-                        required/>
-                    </div>
-
-                    <div className="from group" style={{marginBottom:'15px'}}>
-                        <label style={{marginBottom:'5px'}}>Arrival Date</label>
-                        <input type="date"
-                        className="form-control"
-                        name="arrivalDate"
-                        placeholder="YY/MM/DD"
-                        value={this.state.arrivalDate}
-                        onChange={this.handleInputChange}/>
-                    </div>
-
-                    <div className="from group" style={{marginBottom:'15px'}}>
-                        <label style={{marginBottom:'5px'}}>Departure Date</label>
-                        <input type="date"
-                        className="form-control"
-                        name="departureDate"
-                        placeholder="YY/MM/DD"
-                        value={this.state.departureDate}
-                        onChange={this.handleInputChange}/>
-                    </div>
-
-<button className="btn btn-success" type="submit" style={{marginTop:'15px'}} onClick={this.onSubmit}>
-    <i className="far fa-check-square"></i>
-    &nbsp; Confirm
-</button>
-
-
-                </form>
-            </div>
             </div>
         )
     }
