@@ -17,13 +17,11 @@ class ComponentToPrint extends React.Component{
   }
   
   retrievePosts(){
-    axios.get("http://localhost:8070/packagebooking/allbookings").then(res =>{
-      if(res.data.success){
+    axios.get("http://localhost:8070/activities").then(res =>{
         this.setState({
-          posts:res.data.allBookings
+          posts:res.data
         });
-      console.log(this.state.packagebooking);
-      }
+      
     });
   }
   
@@ -33,20 +31,16 @@ class ComponentToPrint extends React.Component{
     
       <div className="info">
       <div className="container">
-      <h2> Package Booking Details</h2>
+      <h2> Activity Details</h2>
         <hr/>
          
         <table class="table">
     <thead class="thead-dark">
       <tr>
         <th scope="col">#</th>
-        <th scope="col">Package Name</th>
-        <th scope="col">Name</th>
-        <th scope="col">Contact Number</th>
-        <th scope="col">Address</th>
-        <th scope="col">Email</th>
-        <th scope="col">Join Place</th>
-        <th scope="col">Booking Date</th>
+        <th scope="col">Activity Name</th>
+        <th scope="col">Category</th>
+        <th scope="col">Price</th>
        
       </tr>
     </thead>
@@ -54,13 +48,9 @@ class ComponentToPrint extends React.Component{
       {this.state.posts.map((posts,index)=>(
         <tr key={index}>
         <th scope="row">{index+1}</th>
-        <td>{posts.packagename}</td>
-        <td>{posts.name}</td>
-        <td>{posts.phone}</td>
-        <td>{posts.address}</td>
-        <td>{posts.email}</td>
-        <td>{posts.joinplace}</td>
-        <td>{posts.date}</td>
+        <td>{posts.aname}</td>
+        <td>{posts.category}</td>
+        <td>{posts.price}</td>
        
       </tr>
   

@@ -11,7 +11,9 @@ const ViewPackage=()=>{
         destination:"",
         date:"",
         noofdays:"",
-        noofnights:""
+        noofnights:"",
+        packageImage:"",
+        perperson:""
     });
     
     const {id}=useParams();
@@ -28,24 +30,33 @@ const ViewPackage=()=>{
     
      
     return(
-      <div className="info">
+      <div className="info" >
         <div className="container" style={{marginTop:'20px'}}>
-          <h4>{tpackage.packageName}</h4>
-          <hr/>      
-        <dl className="row">
-                 <dt className="col-sm-3">Start Point</dt>
-                 <dd className="col-sm-9">{tpackage.destination}</dd>
-    
-                 <dt className="col-sm-3">Price</dt>
-                 <dd className="col-sm-9">{tpackage.noofdays}</dd>
-    
-                 <dt className="col-sm-3">Number of Days</dt>
-                 <dd className="col-sm-9">{tpackage.noofnights}</dd>
-    
-                 <dt className="col-sm-3">Minimum Person</dt>
-                 <dd className="col-sm-9">{tpackage.date}</dd>
+       
 
-        </dl>    </div>
+
+        <div class="card mb-3" >
+  <div class="row g-0">
+    <div class="col-md-4">
+      <img src={`/uploads/${tpackage.packageImage}`} class="img-fluid rounded-start" alt="..."/>
+    </div>
+    <div class="col-md-8" style={{backgroundColor:"  hsl(0,100%,25%,0.1)	"}}>
+      <div class="card-body" >
+        <h2 class="card-title"> {tpackage.packageName} </h2>
+        <p class="card-text"> <b>{tpackage.destination}</b></p>
+        <p class="card-text"><small class="text-muted">{tpackage.date}</small></p>
+        <p class="card-text"> No of Days -<b> {tpackage.noofdays}</b></p>
+        <p class="card-text"> No of Nights - <b>{tpackage.noofnights}</b></p>
+        <p class="card-text"> Per Person - <b>{tpackage.perperson}</b></p>
+      </div>
+    </div>
+  </div>
+</div>   </div>
+
+
+
+
+
         </div>
     
     )
@@ -57,11 +68,11 @@ export default function DeleteTravelPackage() {
     const [openModal,setOpenModal] = useState(false) 
 
     return (
-        <div>
-              <div className="Appxx">
+        <div style={{backgroundColor:"hsl(0,0%,0%,0.1)"}}> 
+              <div className="Appxx"  >
                <h1>Do You Want to delete this travel package .?</h1>
                <ViewPackage/>
-                 <button className="openModalBtn" onClick={()=>{setOpenModal(true);}}>Delete Package</button>
+                 <button className="openModalBtn" className="btn btn-danger" onClick={()=>{setOpenModal(true);}}>Delete Package</button>
                 { openModal && <Modal setOpenModal={setOpenModal}/>}    
               </div>
         </div>

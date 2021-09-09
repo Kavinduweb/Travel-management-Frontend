@@ -1,29 +1,24 @@
 import React,{useReducer, useState,useEffect} from "react"
 import {useHistory,useParams} from 'react-router-dom';
 import axios from "axios";
-import '../../Styles/TravelPackage.css'
 
-const PackageBooking = ()=>{
+const ActivitySelect = ()=>{
 
 
-    const [tpackage,viewPackage] = useState({
-        packageName:"",
-        destination:"",
-        discription:"",
-        date:"",
-        noofdays:"",
-        noofnights:"",
-        vehical:"",
-        perperson:""
+    const [tactivity,viewActivity] = useState({
+        aname:"",
+        category:"",
+        description:"",
+        price:""
       });
-
+    
       const {id}=useParams();
 
 const loadPackage = async()=>{
     const res = await axios.get(
-        (`http://localhost:8070/travelpackages/admin/${id}`)
+        (`http://localhost:8070/activities/${id}`)
     );
-    viewPackage(res.data.post);
+    viewActivity(res.data);
 };
 useEffect(()=>{
     loadPackage();
@@ -32,16 +27,14 @@ useEffect(()=>{
     let history = useHistory();
 
     const [post,addPost] = useState({
-            packagename:"",
-            price:"",
+            aName:"",
+            aprice:"",
             name:"",
             phone:"",
-            address:"",
-            email:"",
-            joinplace:""
+            content:""
             
     });
- const {packagename,price,name,phone,address,email,joinplace}=post;
+ const {aName,aprice,name,phone,content}=post;
 
 
  const onInputChange = e=>{
@@ -50,25 +43,23 @@ useEffect(()=>{
 
  const onSubmit=async e =>{
      e.preventDefault();
-     const {packagename,price,name,phone,address,email,joinplace}=post;
-     const {packageName,perperson}=tpackage;
+     const {aName,aprice,name,phone,content}=post;
+     const {aname,price}=tactivity;
       
      const data={
-        packagename:packageName,
-        price:perperson,
+        aName:aname,
+        aprice:price,
         name:name,
           phone:phone,
-          address:address,
-          email:email,
-          joinplace:joinplace
+          content:content
      }
 
-     await axios.post ("http://localhost:8070/packagebooking/add",data);
-     alert("Booking Added Successfull. Click Ok to Pay")
+     await axios.post ("http://localhost:8070/activityselect/add",data);
+     alert("Activity Select Successfull. Click Ok to Pay")
      history.push("/payment/add");
     
  }
- const {packageName,perperson}=tpackage;
+ const {aname,price} = tactivity;
  return(
     <div className="infotr">
     <div className="bodyaa"> 
@@ -94,8 +85,8 @@ useEffect(()=>{
     <span class="input-group-text" id="basic-addon1" style={{backgroundColor:'hsl(0,0%,0%,0.3)',color:"white"}}>Package Name</span>
   </div>
 
-  <input type="text" className="form-control"   name="packagename"
-         value={packageName}
+  <input type="text" className="form-control"   name="aName"
+         value={aname}
          onChange={e=>onInputChange(e)}
          disabled/>
 
@@ -106,8 +97,8 @@ useEffect(()=>{
     <span class="input-group-text" id="basic-addon1" style={{backgroundColor:'hsl(0,0%,0%,0.3)',color:"white"}}>Price</span>
   </div>
 
-  <input type="text" className="form-control"   name="price"
-         value={perperson}
+  <input type="text" className="form-control"   name="aprice"
+         value={price}
          onChange={e=>onInputChange(e)}
          disabled/>
 
@@ -134,29 +125,15 @@ useEffect(()=>{
                 </div>
 
    <div className="form-group">
-                    <label><b>Address</b></label>
-                    <input type="text" className="form-control" placeholder="Enter Your Address"  name="address"
-         value={address}
-         onChange={e=>onInputChange(e)}
-         required/>
-                </div>
-   <div className="form-group">
-                    <label><b>Email</b></label>
-                    <input type="email" className="form-control" placeholder="Enter E-mail"  name="email"
-         value={email}
-         onChange={e=>onInputChange(e)}
-         required/>
-                </div>
-   <div className="form-group">
-                    <label><b>Join Place</b></label>
-                    <input type="text" className="form-control" placeholder="Where do you join"  name="joinplace"
-         value={joinplace}
+                    <label><b>Content</b></label>
+                    <input type="text" className="form-control" placeholder="Enter Your Address"  name="content"
+         value={content}
          onChange={e=>onInputChange(e)}
          required/>
                 </div>
                <br/>
 
-                <button type="submit" class="btn btn-danger btn-block" > Book Now</button>
+                <button type="submit" class="btn btn-danger btn-block" > Select Now</button>
                
             </form>
             </div>
@@ -171,4 +148,4 @@ useEffect(()=>{
 
 };
 
-export default PackageBooking;
+export default ActivitySelect;

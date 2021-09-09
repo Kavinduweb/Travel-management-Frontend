@@ -8,7 +8,7 @@ function AdminHome(){
 <div>
         
 <div id="bodyadd">
-           <div >
+           <div className="info">
             <div >
                 
 
@@ -44,7 +44,7 @@ function AdminHome(){
 
               <div class="d-grid mb-4">
                 <button  class="btn btn-lg btn-secondary btn-login fw-bold text-uppercase" type="submit">
-                <a href="#" style={{textDecoration:'none' ,color:'black'}} >Activity</a></button>
+                <a href="/activities" style={{textDecoration:'none' ,color:'black'}} >Activity</a></button>
               </div>
 
               <div class="d-grid mb-4">
@@ -54,7 +54,7 @@ function AdminHome(){
 
               <div class="d-grid mb-4">
                 <button  class="btn btn-lg btn-secondary btn-login fw-bold text-uppercase" type="submit">
-                <a href="#" style={{textDecoration:'none' ,color:'black'}} >Guide</a></button>
+                <a href="/guide" style={{textDecoration:'none' ,color:'black'}} >Guide</a></button>
               </div>
 
               <div class="d-grid mb-4">
