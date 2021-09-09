@@ -14,6 +14,7 @@ function Header(){
             <li><a href="/hotelpackage" style={{textDecoration:'none' ,color:'white'}}><i class="fas fa-bed"></i>Room Package</a></li>
             <li><a href="#" style={{textDecoration:'none' ,color:'white'}}><i class="fas fa-running"></i>Activity</a></li>
             <li><a href="/equipment" style={{textDecoration:'none' ,color:'white'}}><i class="fas fa-campground"></i>Equipment</a></li>
+            <li><a href="/guide/all"  style={{textDecoration:'none' ,color:'white'}}><i class="fas fa-home"></i>Guides</a></li>
             <li><a href="/feedback" style={{textDecoration:'none' ,color:'white'}}><i class="fas fa-comments"></i>FeedBack</a></li>
             <li><a href="#"style={{textDecoration:'none' ,color:'white'}}><i class="fas fa-exclamation-circle"></i>Inquiry</a></li>
             <li><a href="/adminhome"style={{textDecoration:'none' ,color:'white'}}><i class="fas fa-exclamation-circle"></i>Admin</a></li>

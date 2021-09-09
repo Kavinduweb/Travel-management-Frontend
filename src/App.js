@@ -43,7 +43,14 @@ import PaymentDetails from  './components/Payment/PaymentDetails';
 import AdminHome from  './components/AdminHome';
 import hotelpackagedetails from './components/HotelRooms/HotelPackageDetails';
 import EquipmentReport from './components/Travel_Equipments/EquipmentReport';
-
+import AddGuide from './components/Guide/AddGuide';
+import AllGuideDetails from './components/Guide/AllGuideDetails';
+import EditGuide from './components/Guide/EditGuide';
+import GuideLogin from './components/Guide/GuideLogin';
+import SelectGuide from './components/Guide/SelectGuide';
+import GuideConfirm from './components/Guide/GuideConfirm';
+import GuideRequest from './components/Guide/GuideRequest';
+import AllRequests from './components/Guide/AllRequests';
 
 
 import {BrowserRouter as Router, Route} from "react-router-dom"
@@ -100,6 +107,15 @@ function App() {
       <Route path="/adminhome" exact component={AdminHome}/>
       <Route path="/hotelpackagedetails/:id" exact component = {hotelpackagedetails}/>
       <Route path="/equipment/report" exact component = {EquipmentReport}/>
+      <Route path ="/guide" exact component={AllGuideDetails}/>
+      <Route path = "/guide/add" exact component={AddGuide}/>
+      <Route path = "/guide/edit/:id" exact component={EditGuide}/>
+      <Route path = "/guide/login" exact component={GuideLogin}/>
+      <Route path = "/guide/all" exact component={SelectGuide}/>
+      <Route path = "/guide/handle" exact component={GuideConfirm}/>
+      <Route path = "/guide/request/:id" exact component={GuideRequest}/>
+      <Route path = "/guide/allrequests" exact component={AllRequests}/>
+
 
       
 

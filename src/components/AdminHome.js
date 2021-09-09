@@ -54,7 +54,7 @@ function AdminHome(){
 
               <div class="d-grid mb-4">
                 <button  class="btn btn-lg btn-secondary btn-login fw-bold text-uppercase" type="submit">
-                <a href="#" style={{textDecoration:'none' ,color:'black'}} >Guide</a></button>
+                <a href="/guide" style={{textDecoration:'none' ,color:'black'}} >Guide</a></button>
               </div>
 
               <div class="d-grid mb-4">
