@@ -18,7 +18,7 @@ const loadPackage = async()=>{
     const res = await axios.get(
         (`http://localhost:8070/activities/${id}`)
     );
-    viewActivity(res.data.post);
+    viewActivity(res.data);
 };
 useEffect(()=>{
     loadPackage();
