@@ -2,6 +2,8 @@ import React,{useReducer, useState,useEffect} from "react"
 import {useHistory,useParams} from 'react-router-dom';
 
 import axios from "axios";
+import Header from "../Header";
+import Footer from "../Footer";
 
 
   
@@ -46,11 +48,14 @@ const loadPackage = async()=>{
    },[]);
 
         return(
-
+            <div>
+                <Header/>
             <div className="body1">
-                
-        <form onSubmit={e=>onSubmit(e)}>
+                <div className="info">
+                 
+        <form onSubmit={e=>onSubmit(e)} className="form1">
 
+                <h2>Edit Details </h2>
                 <input type="text" name="Name"  value={Name}onChange={e=>onInputChange(e)} />
                 <input type="text"  name ="Email" value={Email}  onChange={e=>onInputChange(e)} />
                 <input type="text" name="Num" value={Num}  onChange={e=>onInputChange(e)}/>
@@ -60,6 +65,10 @@ const loadPackage = async()=>{
                 <input type="submit" name="submit" class="reg" value="Edit Conifrm"/>
 
                             </form>
+            </div>
+            </div>
+            
+            <Footer/>
             </div>
 
             

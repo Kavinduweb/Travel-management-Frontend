@@ -29,7 +29,7 @@ function AdminHome(){
 
               <div class="d-grid mb-4">
                 <button  class="btn btn-lg btn-secondary btn-login fw-bold text-uppercase" type="submit">
-                <a href="/admin" style={{textDecoration:'none' ,color:'black'}}> User Management </a></button>
+                <a href="/get" style={{textDecoration:'none' ,color:'black'}}> User Management </a></button>
               </div>
 
               <div class="d-grid mb-4">
