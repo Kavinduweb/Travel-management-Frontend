@@ -74,7 +74,7 @@ function App() {
   return (
     <Router>
     <div> 
-      <Header/>
+    
     
       
       <Route path="/bookingpackage/:id" exact component = {PackageBooking}></Route>
@@ -146,7 +146,7 @@ function App() {
 
 
 
-    <Footer/>
+    
     </div>
     </Router>
     
