@@ -34,13 +34,13 @@ render(){
       
       <div className="info">
         <div class="container">
-            <div class="row">
+            <div class="row" id="bokrow">
               <div class="col-md-12">
                 <div class="mu-about-area">
                 <br></br>
                         <br></br>
                         <br></br>
-                  <div class="row">
+                  <div class="row" id="bokrow">
                     <div class="col-md-6">
                       <div class="mu-about-left">
                         <img class="detailsimg" src={`/uploads/${packageImage}`} alt="Men Speaker"/>
@@ -54,7 +54,7 @@ render(){
                         <p class="detailsprice">Per Day: {price}</p>
                         <p className="tm-gallery-price">Room Size: {size}</p>
                         <p>Maximum people: {maxCapacity}</p>
-                        <button className="btn btn-success"><a href={`/addnewhotelbooking/${this.state.post._id}`} style={{textDecoration:'none', color:'white'}}>Book Now</a></button>
+                        <button className="btn btn-primary" style={{backgroundColor: "#192c3e",width: "20%"}}><a href={`/addnewhotelbooking/${this.state.post._id}`} style={{textDecoration:'none', color:'white'}}>Book Now</a></button>
                         <br></br>
                         <br></br>
                         <br></br>

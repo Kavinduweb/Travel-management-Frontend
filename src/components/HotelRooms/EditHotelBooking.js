@@ -80,7 +80,7 @@ export default class EditHotelBooking extends Component{
             <div id="booking" class="section">
 		<div class="section-center">
 			<div class="container">
-				<div class="row">
+				<div class="row" id="bokrow">
 					<div class="col-md-7 col-md-push-5">
 						<div class="booking-cta">
 							<h1>Make Your</h1>
@@ -94,7 +94,7 @@ export default class EditHotelBooking extends Component{
 					<div class="col-md-4 col-md-pull-7">
 						<div class="booking-form">
 							<form>
-                            <div class="row">
+                            <div class="row" id="bokrow">
 									<div class="col-sm-7">
 										<div class="form-group">
 											<span class="form-label">Your Room Type</span>
@@ -140,7 +140,7 @@ export default class EditHotelBooking extends Component{
                                     onChange={this.handleInputChange}
                                     required/>
 								</div>
-								<div class="row">
+								<div class="row" id="bokrow">
 									<div class="col-sm-6">
 										<div class="form-group">
 											<span class="form-label">Check In</span>
@@ -167,8 +167,7 @@ export default class EditHotelBooking extends Component{
 									</div>
 								</div>
                                 <div class="form-btn">
-									{/**<button class="submit-btn">Check availability</button>*/}
-                                    <button class="submit-btn" type="submit"  onClick={this.onSubmit}>Update</button>
+                                    <button class="btn btn-secondary" style={{backgroundColor: "#192c3e",width: "100%"}} type="submit"  onClick={this.onSubmit}>Update</button>
 								</div>
 							</form>
 						</div>

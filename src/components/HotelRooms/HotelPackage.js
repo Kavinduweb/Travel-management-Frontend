@@ -69,7 +69,7 @@ export default class hotelpackage extends Component{
       <img src={luxurious} alt="Logo" class="shimg" />
 				<div class="tm-header">
 					<div class="tm-header-inner">
-            <div class="row">
+            <div class="row" id="bokrow">
 						<div class="col-md-6 col-12">
 							<img src={hotelimg} alt="Logo" class="tm-site-logo" /> 
 							<div class="tm-site-text-box">
@@ -77,6 +77,7 @@ export default class hotelpackage extends Component{
                 <div className="col-lg-3 mt-2 mb-2">
                     <input
                     className="from-control"
+                    id="hotelse"
                     type="search"
                     placeholder=" What are you looking for?"
                     name="searchQuery"
@@ -106,9 +107,9 @@ export default class hotelpackage extends Component{
             
                     <Row xs={1} md={3} className="g-4" id="by" class="rounded" >
           {this.state.posts.map((posts) => (
-          <Col >
-          <Card class="crdboder" >
-          <div className="hotelcontainer">
+          <Col>
+          <Card class="crdboder" style={{borderColor:"black"}}>
+          <div  class="crdboder">
           <Card.Img className="packageimg" variant="top" src={`/uploads/${posts.packageImage}`} id="cardimg" />
           <Card.Body>
 
@@ -119,7 +120,7 @@ export default class hotelpackage extends Component{
   <tr>
     <td>Per Day: {posts.price}<br></br>
     Max Capacity: {posts.maxCapacity}</td>
-    <td>          <button type="button" class="btn btn-primary" id="crdbtn">
+    <td>          <button type="button" class="btn btn-dark" id="crdbtn">
 
           <a href ={`/hotelpackagedetails/${posts._id}`} style={{textDecoration:'none',color:'white'}}>Features</a></button></td>
   </tr>

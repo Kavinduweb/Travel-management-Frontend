@@ -39,7 +39,7 @@ function AdminHome(){
 
               <div class="d-grid mb-4">
                 <button  class="btn btn-lg btn-secondary btn-login fw-bold text-uppercase" type="submit">
-                <a href="/adminhotelbooking" style={{textDecoration:'none' ,color:'black'}} >Hotel Package</a></button>
+                <a href="/adminhotelpackage" style={{textDecoration:'none' ,color:'black'}} >Hotel Package</a></button>
               </div>
 
               <div class="d-grid mb-4">

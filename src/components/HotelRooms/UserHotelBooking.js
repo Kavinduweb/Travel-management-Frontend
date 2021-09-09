@@ -52,7 +52,7 @@ export default class UserHotelBooking extends Component{
       <img src={luxurious} alt="Logo" class="shimg" />
 				<div class="tm-header">
 					<div class="tm-header-inner">
-            <div class="row">
+            <div class="row" id="bokrow">
 						<div class="col-md-6 col-12">
 							<img src={hotelimg} alt="Logo" class="tm-site-logo" /> 
 							<div class="tm-site-text-box">

@@ -23,10 +23,21 @@ export default class HotelBookingDetails extends Component {
     });
   }
   
+  onDelete=(id)=>{
+    // eslint-disable-next-line no-restricted-globals
+    if(confirm("Are you Sure you want to delete this item?")){
+
+    
+    axios.delete(`http://localhost:8070/hotelbooking/delete/${id}`).then((res)=>{
+      alert("Delete Successfully");
+      window.location.href = "/userhotelbooking";
+    })
+  }
+  }
 
 render(){
 
-const {roomType,capacity,name,email,arrivalDate,departureDate} = this.state.post;
+const {_id,roomType,capacity,name,email,arrivalDate,departureDate} = this.state.post;
 
   return(
 
@@ -35,7 +46,7 @@ const {roomType,capacity,name,email,arrivalDate,departureDate} = this.state.post
     <div id="booking" class="section">
 <div class="section-center">
 <div class="container">
-<div class="row">
+<div class="row" id="bokrow">
   <div class="col-md-7 col-md-push-5">
     <div class="booking-cta">
       <h1>Your</h1>
@@ -92,7 +103,7 @@ const {roomType,capacity,name,email,arrivalDate,departureDate} = this.state.post
                             value={email}
                             disabled/>
         </div>
-        <div class="row">
+        <div class="row" id="bokrow">
           <div class="col-sm-6">
             <div class="form-group">
               <span class="form-label">Check In</span>
@@ -115,6 +126,22 @@ const {roomType,capacity,name,email,arrivalDate,departureDate} = this.state.post
                                     placeholder="YY/MM/DD"
                                     value={departureDate}
                                     disabled/>
+            </div>
+          </div>
+        </div>
+        <div class="row" id="bokrow">
+          <div class="col-sm-6">
+            <div class="form-group">
+            <a className ="btn btn-secondary" style={{backgroundColor: "#192c3e",width: "100%"}} href ={`/edithotelbooking/${_id}`} >
+              Edit Booking
+            </a>
+            </div>
+          </div><br></br>
+          <div class="col-sm-6">
+            <div class="form-group">
+            <a className ="btn btn-secondary" style={{backgroundColor: "#192c3e",width: "100%"}} href ="#" onClick={()=>this.onDelete(_id)} >
+              Cancle Booking
+            </a>
             </div>
           </div>
         </div>
