@@ -54,7 +54,7 @@ axios.post("http://localhost:8070/hotelbooking/add",data).then((res)=>{
     if(res.data.success){
         // eslint-disable-next-line no-restricted-globals
         if(confirm("Your reservation was Successfull, Did you want to pay Now?")){
-            window.location.href = "/add";
+            window.location.href = `/payment/add/${this.props.match.params.id}`;
         }
         else{
             window.location.href = "/userhotelbooking";
@@ -88,7 +88,7 @@ axios.post("http://localhost:8070/hotelbooking/add",data).then((res)=>{
 					</div>
 					<div class="col-md-4 col-md-pull-7">
 						<div class="booking-form">
-							<form>
+							<form onSubmit={this.onSubmit}>
                             <div class="row">
 									<div class="col-sm-7">
 										<div class="form-group">
@@ -161,9 +161,16 @@ axios.post("http://localhost:8070/hotelbooking/add",data).then((res)=>{
 										</div>
 									</div>
 								</div>
+                                <div class="row">
+									<div class="col-sm-6">
+										<div class="form-group">
+                                        <button class="shenuka" type="submit" >
+                                        <span class="away">Confirm booking</span>
+                <span class="over">Confirm booking</span></button>
+										</div>
+									</div>
+								</div>
 								<div class="form-btn">
-									{/**<button class="submit-btn">Check availability</button>*/}
-                                    <button class="submit-btn" type="submit"  onClick={this.onSubmit}>Confirm Booking</button>
 								</div>
 							</form>
 						</div>

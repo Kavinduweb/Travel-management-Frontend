@@ -2,6 +2,7 @@ import React, {Component } from 'react';
 import axios from 'axios';
 import hotelimg from '../../Images/simple-house-logo.png'
 import luxurious from '../../Images/aa.jpg'
+import '../../Styles/templatemo-style.css'
 
 
 export default class UserHotelBooking extends Component{
@@ -69,11 +70,47 @@ export default class UserHotelBooking extends Component{
           </div>
 				</div>
 			</div>
-            <div className="container">
-             
-<table className="table">
+      
+  
+            
+              
+           
+ <div class="bokpadding">          
+<div class="hero-image">
+  {this.state.posts.map((posts,index)=>(
+    <div class="bokbox"> 
+      <table class="boktable">
 
-  <tbody>
+        <tr>
+          <h3>
+            <td class="boktd">
+              <a href={`/userhotelbooking/hotelbookingdetails/${posts._id}`} style={{textDecoration:'none'}}>
+                      {posts.roomType}
+              </a>
+            </td>
+          </h3>
+        </tr>
+
+        <tr>
+          <td class="boktd">Arrival Date: {posts.arrivalDate}</td>
+        </tr>
+
+        <tr>
+          <td class="boktd">Departure Date: {posts.departureDate}</td>
+            <th class="bokth">
+            <a href={`/userhotelbooking/hotelbookingdetails/${posts._id}`}>
+    <button class="bokbtn">Details</button>
+</a>
+            </th>
+        </tr>
+      </table>
+    </div>
+  ))}
+</div>
+</div> 
+
+
+{/**  <tbody>
     {this.state.posts.map((posts,index)=>(
       <tr key={index}>
 
@@ -90,21 +127,16 @@ export default class UserHotelBooking extends Component{
 
           <td>
             <br></br><br></br><br></br>
-            <a className ="btn btn-warning" href ={`/edithotelbooking/${posts._id}`}>
+            <a className ="btn btn-warning" href={`/userhotelbooking/hotelbookingdetails/${posts._id}`}>
               <i className="fas fa-edit"></i>Edit Booking
-            </a>&nbsp;
-            <a className ="btn btn-danger" href ="#" onClick={()=>this.onDelete(posts._id)}>
-              <i className="fas fa-edit"></i>&nbsp;Cancle Booking
             </a>
         </td>
-        
-
-    </tr>
+        </tr>
     ))}
     
-  </tbody>
-</table> 
-</div>
+  </tbody>*/}
+
+
 </div>
         )
     }

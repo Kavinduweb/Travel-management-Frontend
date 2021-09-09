@@ -115,6 +115,11 @@
 }
 
 
+.crdboder:hover{
+  box-shadow: 0px 0px 5px 5px #6e6e6e;
+}
+
+
 #myInput {
   
   background-position: 10px 12px;
@@ -133,10 +138,11 @@
   border: black;
 }
 .submit-btn{
-  text-align: center;
-  min-width: 90px;
-  min-height: 20px;
-  max-height: 50px;
+  width: 100%;
+  height: 100%;
+  padding: 10px;
+  box-shadow: 0 0 0 3px #2d3142 inset;
+  background-color: #2d3142;
 }
 
 .packageimg{
@@ -149,6 +155,125 @@
   color: black;
   margin-bottom: 15px;
 }
+
+.button {
+  box-sizing: border-box;
+  height: 10px;
+  width: 100%;
+  display: table;
+  font-size: 18px;
+  box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.55);
+  background-color: #cfcfcf;
+  cursor: pointer;
+}
+.button span {
+  width: 100%;
+  height: 100%;
+  padding: 10px;
+  color: #2d3142;
+  box-shadow: 0 0 0 3px #2d3142 inset;
+  background: transparent;
+}
+.button .away {
+  background: #2d3142;
+  color: white;
+  display: table-cell;
+  vertical-align: middle;
+  text-align: center;
+}
+.button .over {
+  display: none;
+}
+.button:hover span.away {
+  display: none;
+}
+.button:hover span.over {
+  display: table-cell;
+  vertical-align: middle;
+  text-align: center;
+  color: white;
+  box-shadow: none;
+}
+.button:hover {
+  background: #2d3142;
+}
+
+
+
+.shenuka{
+  width: 100%;
+  font-size: 18px;
+  height: 100%;
+  padding: 10px;
+  background-color: #2d3142;
+}
+
+.shenuka .away {
+  background: #2d3142;
+  color: white;
+  vertical-align: middle;
+  text-align: center;
+}
+.shenuka .over {
+  display: none;
+}
+
+.hero-image {
+  background-color: #cccccc;
+  width: 100%;
+  min-height: 500px;
+  background-position: center;
+  background-size: cover;
+  position: relative;
+  padding-top: 30px;
+  padding-left: 10%;
+  padding-right: 10%;
+  padding-bottom: 30px;
+}
+
+.boktable{
+  width: 100%;
+  border: 0px solid white;
+}
+
+.bokbtn{
+  width: 200px;
+  height: 40px;
+}
+
+.boktd{
+  padding-left: 30px;
+  width: 80%;
+  border: 0px solid white;
+}
+
+.bokth{
+  padding-right: 30px;
+  text-align: right;
+  border: 0px solid white;
+}
+
+.bokbox{
+  width: 100%;
+  border: 1px solid rgb(141, 141, 141);
+  padding: 5px;
+  margin-top: 5px;
+  margin-bottom: 10px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.bokmiddle{
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.bokpadding{
+  margin-left: 50px;
+  margin-right: 50px;
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
 
 
 
