@@ -44,6 +44,16 @@ import AdminHome from  './components/AdminHome';
 import hotelpackagedetails from './components/HotelRooms/HotelPackageDetails';
 import EquipmentReport from './components/Travel_Equipments/EquipmentReport';
 import Services from './components/Services';
+import Activities from "./components/Activity/Activities";
+import Activity from "./components/Activity/Activity";
+import AddActivity from "./components/Activity/AddActivity";
+import EditActivity from "./components/Activity/EditActivity";
+import AllActivity from './components/Activity/AllActivity';
+import ViewActivity from './components/Activity/ViewActivity';
+import ActivityDetails from './components/Activity/ActivityDetails';
+import ActivitySelect from './components/Activity/ActivitySelect';
+import ActivityUser from './components/Activity/ActivityUser';
+
 
 
 
@@ -102,6 +112,16 @@ function App() {
       <Route path="/hotelpackagedetails/:id" exact component = {hotelpackagedetails}/>
       <Route path="/equipment/report" exact component = {EquipmentReport}/>
       <Route path="/services" exact component = {Services}/>
+      <Route path="/activities" exact component = {Activities}/>
+      <Route path="/all" exact component = {AllActivity}/>
+      <Route path="/activity/:id" exact component = { Activity}/>
+      <Route path="/activity-details" exact component = {ActivityDetails}/>
+      <Route path="/view-activity/:id" exact component = {ViewActivity}/>
+      <Route path="/update/:id" exact component =  {EditActivity}/>
+      <Route path="/add-activity" exact component={AddActivity} />
+      <Route path="/activity-user/:id" exact component={ActivityUser} />
+      <Route path="/activity-select" exact component={ActivitySelect} />
+
 
       
 
