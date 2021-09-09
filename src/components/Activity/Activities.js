@@ -1,6 +1,8 @@
 import React, {useState, useEffect} from 'react';
 import styled from 'styled-components';
 import {Link} from "react-router-dom";
+import {Row} from 'react-bootstrap';
+import {Col} from 'react-bootstrap';
 import axios from 'axios';
 
 const Activities = () => {
@@ -28,10 +30,21 @@ const Activities = () => {
               <div className="col-sm-2">
                     <Link to="/add-activity" className="btn btn-outline-secondary">+Add New Activity</Link>
                 </div>
+                <div className="col-sm-2">
+                    <Link to="/activity-select" className="btn btn-outline-secondary">Activity Select Details</Link>
+                </div>
+
+                <div className="col-sm-2">
+                    <Link to="/activity-details" className="btn btn-outline-secondary">Print Activity Details</Link>
                 </div>
                 </div>
-            {post.map((activity, key) => (
-                <div className="container" key={key}>
+                </div>
+                <div className="container">
+                    <Row xs={1} md={3} className="g-4" id="by" className="rounded" >
+                        {post.map((activity) => (
+                
+
+    <Col>
                     <img src={`/uploads/${activity.activityImage}`} alt="..." style={{width: "40%"}}/>
                     <Link to={{
                         pathname: `/activity/${activity._id}`
@@ -47,15 +60,19 @@ const Activities = () => {
                     <div className="col-sm-2">
                     <Link to={`/update/${activity._id}`} className="btn btn-outline-success">Edit Activity</Link>
                 </div>
-
+                    &nbsp;
+                    &nbsp;
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                 <div className="col-sm-2">
                     <button onClick={() => deleteActivity(activity._id)} className="btn btn-outline-danger">Delete Activity</button>
                 </div>
                 </div>
                 <hr/>
+                </Col>
+    ))}
+                </Row>
                 </div>
-            ))}
-            </div>
+           </div>
         </MainContainer>
     )
 }

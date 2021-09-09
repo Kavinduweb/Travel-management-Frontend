@@ -128,11 +128,9 @@ export default EditActivity;
 const AddActivityContainer = styled.div`
     margin: 3rem auto;
     padding: 4rem;
-    width: 40.25rem;
+    width: 75.25rem;
     margin: 3rem auto;
     padding: 4rem;
-    width: 40.25rem;
-    background: linear-gradient(to bottom, #00ffff 0%, #ff99ff 100%);
 
     h1 {
         font-weight: 900;
