@@ -51,6 +51,19 @@ import SelectGuide from './components/Guide/SelectGuide';
 import GuideConfirm from './components/Guide/GuideConfirm';
 import GuideRequest from './components/Guide/GuideRequest';
 import AllRequests from './components/Guide/AllRequests';
+import Services from './components/Services';
+import Activities from "./components/Activity/Activities";
+import Activity from "./components/Activity/Activity";
+import AddActivity from "./components/Activity/AddActivity";
+import EditActivity from "./components/Activity/EditActivity";
+import AllActivity from './components/Activity/AllActivity';
+import ViewActivity from './components/Activity/ViewActivity';
+import ActivityDetails from './components/Activity/ActivityDetails';
+import ActivitySelect from './components/Activity/ActivitySelect';
+import ActivityUser from './components/Activity/ActivityUser';
+
+
+
 
 
 import {BrowserRouter as Router, Route} from "react-router-dom"
@@ -65,11 +78,11 @@ function App() {
     
       
       <Route path="/bookingpackage/:id" exact component = {PackageBooking}></Route>
-       <Route path="/travelpackages/admin" exact component = {AllPackagesAdmin}></Route>
-       <Route path="/travelpackage/admin/add" exact component ={CreatePackage}></Route>
-       <Route path="/travelpackages/travelpackage/:id" exact component ={PackageDetails}></Route>
-       <Route path="/travelpackages/travelpackage/admin/:id" exact component ={PackageDetailsAdmin}></Route>
-       <Route path="/travelpackage/admin/edit/:id" exact component ={EditPackage}></Route>
+      <Route path="/travelpackages/admin" exact component = {AllPackagesAdmin}></Route>
+      <Route path="/travelpackage/admin/add" exact component ={CreatePackage}></Route>
+      <Route path="/travelpackages/travelpackage/:id" exact component ={PackageDetails}></Route>
+      <Route path="/travelpackages/travelpackage/admin/:id" exact component ={PackageDetailsAdmin}></Route>
+      <Route path="/travelpackage/admin/edit/:id" exact component ={EditPackage}></Route>
       <Route path ="/" exact component={HomePage}></Route>
       <Route path="/travelpackages" exact component = {AllPackages}></Route>
       <Route path="/allbooking" exact component = {AllBooking}></Route>
@@ -115,6 +128,17 @@ function App() {
       <Route path = "/guide/handle" exact component={GuideConfirm}/>
       <Route path = "/guide/request/:id" exact component={GuideRequest}/>
       <Route path = "/guide/allrequests" exact component={AllRequests}/>
+      <Route path="/services" exact component = {Services}/>
+      <Route path="/activities" exact component = {Activities}/>
+      <Route path="/all" exact component = {AllActivity}/>
+      <Route path="/activity/:id" exact component = { Activity}/>
+      <Route path="/activity-details" exact component = {ActivityDetails}/>
+      <Route path="/view-activity/:id" exact component = {ViewActivity}/>
+      <Route path="/update/:id" exact component =  {EditActivity}/>
+      <Route path="/add-activity" exact component={AddActivity} />
+      <Route path="/activity-user/:id" exact component={ActivityUser} />
+      <Route path="/activity-select" exact component={ActivitySelect} />
+
 
 
       
