@@ -62,6 +62,16 @@ import ActivityDetails from './components/Activity/ActivityDetails';
 import ActivitySelect from './components/Activity/ActivitySelect';
 import ActivityUser from './components/Activity/ActivityUser';
 
+import CreateInquiry from './components/Inquiry/CreateInquiry';
+import EditInquiry from './components/Inquiry/EditInquiry';
+import InquiryAll from './components/Inquiry/InquiryAll';
+import AdminRep from './components/Inquiry/AdminReply';
+import InqDetails from './components/Inquiry/InqDetails';
+import InqView from './components/Inquiry/InqView';
+import AdminView from './components/Inquiry/AdminView';
+import ComponentToPrint from './components/Inquiry/InqReport';
+import ComponentToPrint1 from './components/Inquiry/userDoc';
+
 
 
 
@@ -138,6 +148,16 @@ function App() {
       <Route path="/add-activity" exact component={AddActivity} />
       <Route path="/activity-user/:id" exact component={ActivityUser} />
       <Route path="/activity-select" exact component={ActivitySelect} />
+
+      <Route path="/add" exact component={CreateInquiry}></Route>
+      <Route path="/editinq/:id" component= {EditInquiry}></Route>
+      <Route path="/allinq" component= {InquiryAll}></Route>
+      <Route path="/admin/:id"  component= {AdminRep}></Route>
+      <Route path="/inqD/:id" component= {InqDetails}></Route>
+      <Route path="/view" component= {InqView}></Route>
+      <Route path="/adView/" component= {AdminView}></Route>
+      <Route path="/report" component= {ComponentToPrint}></Route>
+      <Route path="/userDoc/:id" component= {ComponentToPrint1}></Route>
 
 
 
