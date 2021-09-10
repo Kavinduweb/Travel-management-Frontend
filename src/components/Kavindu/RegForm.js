@@ -46,9 +46,9 @@ const NewReg ={
 
 }
 	console.log(NewReg);
-
+	
 	axios.post("http://localhost:8070/Register/add",NewReg).then(()=>{
-		alert("success")
+		alert("success");
 	}).catch((err)=>{
 		alert(err);
 	})
@@ -60,13 +60,14 @@ const getData = async (e)=>{
 
 	e.preventDefault();
 	
-	const email = document.getElementById('logemail');
+	const email = document.getElementById('logemail').value;
 	const pass = document.getElementById('logpass');
 
-	if(email.value == '' || email.value == null){
-		alert("email Required");
-		return false;
-	}
+	if (email == '' || email.includes('@'  && '.com') == false ){
+
+        alert("Enter Valid email Address")
+        return false;
+    }
 	else if (pass.value == '' || pass.value == null){
 		alert("pass Required");
 		return false
@@ -130,10 +131,10 @@ return (
 		<form  onSubmit={getData} className="form1">
 			<h1 className="h1">Sign in</h1>
 			
-			<span className="span">or use your account</span>
-			<input type="email" placeholder="Email" id='logemail'value={Email} onChange={(e)=>{  setEmail(e.target.value) ; }} />
+			
+			<input type="text" placeholder="Email" id='logemail'value={Email} onChange={(e)=>{  setEmail(e.target.value) ; }} />
 			<input type="password" placeholder="Password" id='logpass' value={Password} onChange={(e)=>{  setPassword(e.target.value) ; }}  />
-			<a href="#">Forgot your password?</a>
+			<a href="/forget">Forgot your password?</a>
 			<button className="button1  ">Sign In</button>
 		</form>
 		
