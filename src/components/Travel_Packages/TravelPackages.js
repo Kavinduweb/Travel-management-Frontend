@@ -1,10 +1,10 @@
 import React,{Component} from 'react'
 import axios from 'axios';
-import { Card } from 'react-bootstrap';
 import { Row } from 'react-bootstrap';
-import { Col } from 'react-bootstrap';
-import tp1 from '../../Images/z5.jpg'
 import '../../Styles/TravelPackage.css'
+import Header from '../Header';
+import Footer from '../Footer';
+
 
 
 export default class CardItemsT extends Component{
@@ -42,8 +42,7 @@ filterData(posts,searchkey){
   const result = posts.filter((post) =>
   post.packageName.toLowerCase().includes(searchkey)||
   post.packageName.toUpperCase().includes(searchkey)||
-  post.destination.toLowerCase().includes(searchkey) ||
-  post.perperson.toLowerCase().includes(searchkey)
+  post.destination.toLowerCase().includes(searchkey)
   )
   this.setState({posts:result})
 }
@@ -60,6 +59,8 @@ handleSearchArea=(e)=>{
 
 render(){
   return(
+    <div>
+            <Header/>
     <div className="infotr" >
     <div className="bodytravelpackage" className="container" id="bbimg">
     <div >
@@ -143,6 +144,8 @@ render(){
 </div>
  
     </div>
+    </div>
+    <Footer/>
     </div>
   )
 }

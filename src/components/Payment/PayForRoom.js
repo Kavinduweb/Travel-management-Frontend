@@ -2,6 +2,9 @@ import React, {Component} from 'react'
 import axios from "axios";
 import '../../Styles/Payment.css'
 import { reference } from '@popperjs/core';
+import Header from '../Header';
+import Footer from '../Footer';
+
 export default class PayForRoom extends Component{
 
 
@@ -115,6 +118,8 @@ const{roomType,price}=this.state;
 
     const{roomType,price,method,img,size,payf}=this.state;
    return(
+    <div>
+    <Header/>
      <div className="info">
 
 <div class="card" style={{backgroundColor:"#78766F"}}>    
@@ -268,7 +273,7 @@ const{roomType,price}=this.state;
     </div>
     <div> </div>
 </div>
-     </div>
+     </div></div>
    )
  }
 

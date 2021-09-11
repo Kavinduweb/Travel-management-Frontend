@@ -1,5 +1,3 @@
-import Header from './components/Header';
-import Footer from './components/Footer';
 import PackageDetails from './components/Travel_Packages/TravelPackageDetails';
 import PackageDetailsAdmin from './components/Travel_Packages/TravelPackageDetailsAdmin';
 import PackageBooking from './components/Travel_Packages/PackageBooking';

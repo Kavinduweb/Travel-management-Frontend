@@ -1,5 +1,8 @@
 import React, {Component} from 'react';
 import axios from "axios";
+import Header from '../Header';
+import Footer from '../Footer';
+
 
 export default class PackageDetails extends Component {
 
@@ -29,6 +32,8 @@ render(){
 const {_id,packageName,destination,discription,date,noofdays,noofnights,vehical,perperson,packageImage} = this.state.post;
 
   return(
+    <div>
+            <Header/>
     <div className="infotr" >
      
     <div className="container"  style={{marginTop:'10px'}}>
@@ -90,6 +95,8 @@ time reliable offers for the best prices for our customers.Sri Lanka Local Tours
 
   
   </div>
+    </div>
+    <Footer/>
     </div>
 
   )

@@ -2,6 +2,9 @@ import React, {Component} from 'react'
 import axios from "axios";
 import '../../Styles/Payment.css'
 import { reference } from '@popperjs/core';
+import Header from '../Header';
+import Footer from '../Footer';
+
 export default class PayForTravelPackage extends Component{
 
 
@@ -112,6 +115,8 @@ const{ename,price}=this.state;
 
     const{ename,price,payf,method,img}=this.state;
    return(
+    <div>
+    <Header/>
      <div className="info">
 
 <div class="card" style={{backgroundColor:"#78766F"}}>    
@@ -261,6 +266,7 @@ const{ename,price}=this.state;
     </div>
     <div> </div>
 </div>
+     </div>
      </div>
    )
  }

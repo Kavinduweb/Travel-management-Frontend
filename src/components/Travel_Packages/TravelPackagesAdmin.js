@@ -3,7 +3,7 @@ import axios from 'axios';
 import '../../Styles/TravelPackage.css'
 import { Row } from 'react-bootstrap';
 import { Col } from 'react-bootstrap';
-
+import HeaderAdmin from '../HeaderAdmin'
 export default class AllPackagesAdmin extends Component{
 
 constructor(props){
@@ -60,7 +60,10 @@ handleSearchArea=(e)=>{
 render(){
   return(
 
-    <div className="info">
+    <div>
+      <HeaderAdmin/>
+  
+    <div className="infoadmin">
     <div className="container">
   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
  
@@ -110,7 +113,7 @@ onChange={this.handleSearchArea} /><button id="search-button" type="button" clas
   ))}
 
 </Row>
-    </div></div>
+    </div></div>  </div>
   )
 }
 
