@@ -55,6 +55,8 @@ export default class PayForTravelPackage extends Component{
     });
       }
     });
+
+
   }
 
 
@@ -85,7 +87,7 @@ export default class PayForTravelPackage extends Component{
       this.setState({amount:e.target.value})
     }
     
-
+  
 
     onSubmit= (e)=>{
       e.preventDefault();
@@ -109,9 +111,11 @@ const{packageName,price}=this.state;
       console.log(data)
       axios.post("http://localhost:8070/payment/add",data).then((res=>{
         if(res.data.success){
+
+
           this.setState(
-            alert("Payment SuccessFull. Give Us a FeedBack"),
-             window.location.replace("/feedback")
+
+            
           )
           }
         })

@@ -127,7 +127,7 @@ render(){
     <Header/>
 
     <div class="info">
- <div className= "container-fluid" id="bodyhome">
+ <div className= "container-fluid " id="bodyhome">
   <div className="App">
    
         <div className="containerhome">

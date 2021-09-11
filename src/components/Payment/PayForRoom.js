@@ -108,7 +108,7 @@ const{roomType,price}=this.state;
         if(res.data.success){
           this.setState(
             alert("Payment SuccessFull. Give Us a FeedBack"),
-             window.location.replace("/feedback")
+          
           )
           }
         })

@@ -62,6 +62,7 @@ import PayForRoom from './components/Payment/PayForRoom';
 import PayForActivity from './components/Payment/PayForActivity';
 import PayForEquipment from './components/Payment/PayForEquipment';
 import PayForTP from './components/Payment/PayForTP';
+import PaymentConfirm from './components/Payment/PaymentComplete';
 import forget from './components/Kavindu/ForgetPass';
 import CreateInquiry from './components/Inquiry/CreateInquiry';
 import EditInquiry from './components/Inquiry/EditInquiry';
@@ -122,7 +123,6 @@ function App() {
       <Route path="/aboutus" exact component={Aboutus}/>
       <Route path="/contactus" exact component ={ContactUs}/>
       <Route path="/contactus/admin" exact component ={ContactUsAdmin}/>
-      <Route path="/payment/add/" exact component={AddPayment}/>
       <Route path="/payment/add-package/:id" exact component={PayForTP}/>
       <Route path="/payment/add-room/:id" exact component ={PayForRoom}/>
       <Route path="/payment/add-equipment/:id" exact component ={PayForEquipment}/>
@@ -130,6 +130,7 @@ function App() {
       <Route path="/payment/" exact component={AllPayments}/>
       <Route path="/payment/edit/:id" exact component={EditPayment}/>
       <Route path="/payment/details/:id" exact component={PaymentDetails}/>
+      <Route path="/confirm/payment/" exact component={PaymentConfirm}/>
       <Route path="/adminhome" exact component={AdminHome}/>
       <Route path="/hotelpackagedetails/:id" exact component = {hotelpackagedetails}/>
       <Route path="/equipment/report" exact component = {EquipmentReport}/>
