@@ -113,7 +113,7 @@ function App() {
       <Route path="/aboutus" exact component={Aboutus}/>
       <Route path="/contactus" exact component ={ContactUs}/>
       <Route path="/contactus/admin" exact component ={ContactUsAdmin}/>
-      <Route path="/payment/add" exact component={AddPayment}/>
+      <Route path="/payment/add/" exact component={AddPayment}/>
       <Route path="/payment/" exact component={AllPayments}/>
       <Route path="/payment/edit/:id" exact component={EditPayment}/>
       <Route path="/payment/details/:id" exact component={PaymentDetails}/>

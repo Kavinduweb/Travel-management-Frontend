@@ -4,9 +4,26 @@ import axios from "axios";
 import { reference } from '@popperjs/core';
 
 export default class AddPayment extends Component{
+ 
+
+componentDidMount(){
+    const id = this.props.match.params.id;
+    axios.get(`http://localhost:8070/hotelpackage/read/${id}`).then((res)=>{
+      if (res.data.success){
+         this.setState({
+           roomType:res.data.HotelPackage.roomType,
+           price:res.data.HotelPackage.price,
+           maxCapacity:res.data.HotelPackage.maxCapacity,
+
+      
+    });
+      }
+    });
+  }
 
   constructor(props){
     super(props)
+    
 
     this.onChangeReference =this.onChangeReference.bind(this);
     this.onChangeName =this.onChangeName.bind(this);
@@ -19,6 +36,9 @@ export default class AddPayment extends Component{
 
 
     this.state={
+      roomType:"",
+      price:"",
+      maxCapacity:"",
       reference:"",
       name:"",
       payf:"Hotel Booking",
@@ -61,6 +81,10 @@ export default class AddPayment extends Component{
 
     onSubmit= (e)=>{
       e.preventDefault();
+      const {roomType,details,price,size,maxCapacity} = this.state;
+
+
+
       
       console.log('Payment Added');
       
@@ -75,14 +99,14 @@ export default class AddPayment extends Component{
         amount}=this.state;
 
         const data={
-      reference:reference,
-      name:name,
+      reference:roomType,
+      name:price,
       payf:payf,
       method:method,
       card:card,
       time:time,
       no:no,
-      amount:amount
+      amount:maxCapacity
       }
 
       console.log(data)
@@ -108,23 +132,32 @@ export default class AddPayment extends Component{
 
  render(){
 
+  const {roomType,details,price,size,maxCapacity} = this.state;
+
   const{payf} = this.state;
   const{method}= this.state;
    return(
      <div className="info" id="pybody">
-     <div className="col-md-8 mt-4 mx-auto">
+     <div style ={{backgroundColor: "hsla(0,0%,75% ,0.4)"}} className="col-md-8 mt-4 mx-auto">
+
+
        <h1 className="h3 mb- font-weight-normal">Add Payment</h1>
        
-       <form className="needs-validation" onSubmit={this.onSubmit}>
+       <form  className="needs-validation" onSubmit={this.onSubmit}>
          <div className="form-group" style={{marginBottom:'15px'}}>
-           <label style={{marginBottom:'5px'}}>Reference</label>
+           <label style={{marginBottom:'5px'}}>Package Name</label>
            <input type="text" required className="form-control" name="reference" placeholder="Enter Reference" required ="required"
-           value={this.state.reference} onChange={this.onChangeReference}   />
+           value={roomType} onChange={this.onChangeReference}  disabled />
+         </div>
+         <div className="form-group" style={{marginBottom:'15px'}}>
+           <label style={{marginBottom:'5px'}}>Amount</label>
+           <input type="text" className="form-control" name="reference" placeholder="Enter Amount" 
+           value={maxCapacity} onChange={this.onChangeAmount} required ="required" disabled/>
          </div>
          <div className="form-group" style={{marginBottom:'15px'}}>
            <label style={{marginBottom:'5px'}}>Name</label>
            <input type="text"  className="form-control" name="reference" placeholder="Enter Name" required ="required"
-           value={this.state.name} onChange={this.onChangeName} />
+           value={price} onChange={this.onChangeName} disabled />
          </div>
          <div className="form-group" style={{marginBottom:'15px'}}>
          <label style={{marginBottom:'5px'}}> Pay For</label>
@@ -161,11 +194,7 @@ export default class AddPayment extends Component{
            <input type="text" className="form-control" name="reference" placeholder="Enter CVV"
            value={this.state.no} onChange={this.onChangeNo} maxLength="3" required ="required"/>
          </div>
-         <div className="form-group" style={{marginBottom:'15px'}}>
-           <label style={{marginBottom:'5px'}}>Amount</label>
-           <input type="text" className="form-control" name="reference" placeholder="Enter Amount" 
-           value={this.state.amount} onChange={this.onChangeAmount} required ="required"/>
-         </div>
+        
 
          <button className="btn btn-success" type="submit" style={{marginTop:'15px'}}  >
            <i className="far fa-check-square"></i>
