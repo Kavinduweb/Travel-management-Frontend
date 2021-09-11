@@ -1,6 +1,7 @@
 import React, {Component} from 'react'
 import axios from 'axios';
 import '../../Styles/Payment.css'
+import ReactToPrint from "react-to-print";
 
 export default class AllPayments extends Component{
 
@@ -26,21 +27,22 @@ export default class AllPayments extends Component{
     })
   }
 
-  onDelete = (id)=>{
-       // eslint-disable-next-line no-restricted-globals
-       if(confirm("Are you Sure you want to delete this item?")){
-    axios.delete(`http://localhost:8070/payment/delete/${id}`).then((res)=>{
-      alert("Delete Successfully");
-      this.retrievePayments();
-    })
-  }}
+  
 
   render(){
 
     return(
       <div>
       <div className="info">
-      <div className="container">
+      <ReactToPrint
+          trigger={() =>
+            
+          
+            <button type="button" class="btn btn-secondary" style={{marginInlineStart:'80%'}} ><i class="fas fa-print mr-2"></i>Print this out!</button> }
+          
+          content={() => this.componentRef}
+        /> 
+      <div className="container"  ref={(Component) => (this.componentRef = Component)}>
         <p> All Payments</p>
          
         <table className="table">
@@ -76,17 +78,7 @@ export default class AllPayments extends Component{
              {payments.no}</td>
          <td> Rs &nbsp;{payments.amount}</td>
          <td>{payments.pdate}</td>
-        <td>
-        <a className ="btn btn-warning" href ={`/payment/edit/${payments._id}`}>
-          <i className="fas fa-edit"></i>&nbsp;Edit
-        </a>&nbsp;
-     
-
-        
-          <a className ="btn btn-danger" href="#" onClick={()=>this.onDelete(payments._id)} >
-          <i className="fas fa-edit"></i>&nbsp;Delete
-          </a>
-        </td>
+       
       </tr>
       ))}
       

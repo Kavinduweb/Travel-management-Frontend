@@ -107,8 +107,8 @@ const{roomType,price}=this.state;
       axios.post("http://localhost:8070/payment/add",data).then((res=>{
         if(res.data.success){
           this.setState(
-            alert("Payment SuccessFull. Give Us a FeedBack"),
-          
+        
+            window.location.replace("/confirm/payment")
           )
           }
         })

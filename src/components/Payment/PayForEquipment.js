@@ -104,8 +104,8 @@ const{ename,price}=this.state;
       axios.post("http://localhost:8070/payment/add",data).then((res=>{
         if(res.data.success){
           this.setState(
-            alert("Payment SuccessFull. Give Us a FeedBack"),
-           
+    
+           window.location.replace("/confirm/payment")
           )
           }
         })
@@ -126,7 +126,7 @@ const{ename,price}=this.state;
             <div class="col-md-5" >
                 <div class="righta border" style={{backgroundColor:"white",borderRadius:"10px"}}>
                    
-                <div class="text-center mb-2"> <h2>Your Booking Package</h2> </div>
+                <div class="text-center mb-2"> <h2>Equipment Details</h2> </div>
                 <hr  class="text-center mb-4"/>
                     <h4 style={{color:"hsl(0,0%,0%,0.6)"}}>{ename}</h4>
                     <div >

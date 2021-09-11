@@ -73,7 +73,7 @@ import InqView from './components/Inquiry/InqView';
 import AdminView from './components/Inquiry/AdminView';
 import ComponentToPrint from './components/Inquiry/InqReport';
 import ComponentToPrint1 from './components/Inquiry/userDoc';
-
+import PaymentView from './components/Payment/PayView';
 
 import {BrowserRouter as Router, Route} from "react-router-dom"
 
@@ -131,6 +131,7 @@ function App() {
       <Route path="/payment/edit/:id" exact component={EditPayment}/>
       <Route path="/payment/details/:id" exact component={PaymentDetails}/>
       <Route path="/confirm/payment/" exact component={PaymentConfirm}/>
+      <Route path="/payment/view/" exact component={PaymentView}/>
       <Route path="/adminhome" exact component={AdminHome}/>
       <Route path="/hotelpackagedetails/:id" exact component = {hotelpackagedetails}/>
       <Route path="/equipment/report" exact component = {EquipmentReport}/>

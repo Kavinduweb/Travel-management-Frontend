@@ -112,7 +112,7 @@ const{packageName,price}=this.state;
       axios.post("http://localhost:8070/payment/add",data).then((res=>{
         if(res.data.success){
 
-
+window.location.replace("/confirm/payment")
           this.setState(
 
             

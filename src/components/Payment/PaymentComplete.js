@@ -46,7 +46,7 @@ render(){
     <div class="form-outline mb-2 ">
    
     <button  class="btn btn-lg btn-secondary btn-login fw-bold text-uppercase" type="submit">
-      <a href="/" style={{textDecoration:'none' ,color:'black'}}>View My payment</a></button>
+      <a href="/payment/view" style={{textDecoration:'none' ,color:'black'}}>View My payment</a></button>
 
    </div>
 

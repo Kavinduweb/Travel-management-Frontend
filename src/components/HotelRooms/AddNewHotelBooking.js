@@ -54,7 +54,7 @@ axios.post("http://localhost:8070/hotelbooking/add",data).then((res)=>{
     if(res.data.success){
         // eslint-disable-next-line no-restricted-globals
         if(confirm("Your reservation was Successfull, Did you want to pay Now?")){
-            window.location.href = `/payment/add/${this.props.match.params.id}`;
+            window.location.href = `/payment/add-room/${this.props.match.params.id}`;
         }
         else{
             window.location.href = "/userhotelbooking";
