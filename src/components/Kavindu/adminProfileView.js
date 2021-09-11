@@ -91,7 +91,7 @@ render(){
 return (
       
     <div className="body1">
-        <div className="info">
+        <div className="infoadmin">
 
               <br></br>
               <hr></hr>
@@ -101,11 +101,11 @@ return (
 
     
    
-                <div className="container">
+                <div className="container containerabc">
                 <hr></hr>
-                <h2> All Registration Details </h2> 
+                <h2 className="h222"> All Registration Details </h2> 
                 <hr></hr>
-                <input type="text" placeholder="Search By Email" id="searchid" onChange={this.Handelsearch}></input> 
+                <input className="inputabc" type="text" placeholder="Search By Email" id="searchid" onChange={this.Handelsearch}></input> 
                     <table className="table">
 
                
@@ -131,7 +131,7 @@ return (
                        
                        
                         <td>
-                            <a className="btn btn-danger" href="#" onClick={()=>this.onDelete(RegData._id)}>
+                            <a className="btn btn-danger a123" href="#" onClick={()=>this.onDelete(RegData._id)}>
                                 <i className ="fas fa-trash-alt"></i>&nbsp;Block User
                             </a>
                         </td>
@@ -150,8 +150,8 @@ return (
                     </tbody>
                    
                     </table>
-                    <a href="/rep">
-                    <button className="button1" >Generate User Report</button></a>
+                    <a className="a123" href="/rep">
+                    <button className="button12" >Generate User Report</button></a>
                     <hr></hr>
                     </div>
                     <hr></hr>
