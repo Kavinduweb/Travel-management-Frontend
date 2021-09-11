@@ -75,7 +75,7 @@ axios.post("http://localhost:8070/hotelbooking/add",data).then((res)=>{
             <div id="booking" class="section">
 		<div class="section-center">
 			<div class="container">
-				<div class="row">
+				<div class="row" id="bokrow">
 					<div class="col-md-7 col-md-push-5">
 						<div class="booking-cta">
 							<h1>Make Your</h1>
@@ -89,7 +89,7 @@ axios.post("http://localhost:8070/hotelbooking/add",data).then((res)=>{
 					<div class="col-md-4 col-md-pull-7">
 						<div class="booking-form">
 							<form onSubmit={this.onSubmit}>
-                            <div class="row">
+                            <div class="row" id="bokrow">
 									<div class="col-sm-7">
 										<div class="form-group">
 											<span class="form-label">Your Room Type</span>
@@ -135,7 +135,7 @@ axios.post("http://localhost:8070/hotelbooking/add",data).then((res)=>{
                                     onChange={this.handleInputChange}
                                     required/>
 								</div>
-								<div class="row">
+								<div class="row" id="bokrow">
 									<div class="col-sm-6">
 										<div class="form-group">
 											<span class="form-label">Check In</span>
@@ -161,12 +161,12 @@ axios.post("http://localhost:8070/hotelbooking/add",data).then((res)=>{
 										</div>
 									</div>
 								</div>
-                                <div class="row">
-									<div class="col-sm-6">
-										<div class="form-group">
-                                        <button class="shenuka" type="submit" >
-                                        <span class="away">Confirm booking</span>
-                <span class="over">Confirm booking</span></button>
+                                <div class="">
+									<div>
+										<div class="">
+                                        <button class="btn btn-secondary" type="submit" style={{backgroundColor: "#192c3e",width: "100%"}} >
+                                        Confirm booking
+                </button>
 										</div>
 									</div>
 								</div>

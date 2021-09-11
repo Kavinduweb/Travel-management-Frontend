@@ -33,7 +33,7 @@ const {roomType,details,price,size,maxCapacity} = this.state.post;
     <div className="container" style={{marginTop:'20px'}}>
       <h4>{roomType}</h4>
       <hr/>      
-    <dl className="row">
+    <dl className="row" id="bokrow">
              <dt className="col-sm-3">Details</dt>
              <dd className="col-sm-9">{details}</dd>
 

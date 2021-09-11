@@ -27,11 +27,13 @@ export default class AllPayments extends Component{
   }
 
   onDelete = (id)=>{
+       // eslint-disable-next-line no-restricted-globals
+       if(confirm("Are you Sure you want to delete this item?")){
     axios.delete(`http://localhost:8070/payment/delete/${id}`).then((res)=>{
       alert("Delete Successfully");
       this.retrievePayments();
     })
-  }
+  }}
 
   render(){
 
@@ -45,14 +47,15 @@ export default class AllPayments extends Component{
     <thead className="thead-dark">
       <tr>
         <th scope="col">#</th>
-        <th scope="col">Reference</th>
-        <th scope="col">Name</th>
         <th scope="col">Paid For</th>
+        <th scope="col">Catogory Name</th>
+        <th scope="col">Name</th>
         <th scope="col">Method</th>
         <th scope="col">Card</th>
-        <th scope="col">Time</th>
-        <th scope="col">No</th>
+        <th scope="col">Expire Date</th>
+        <th scope="col">CVV</th>
         <th scope="col">Amount</th>
+        <th scope="col">Payment Date</th>
         <th scope="col">Action</th>
       </tr>
     </thead>
@@ -60,10 +63,9 @@ export default class AllPayments extends Component{
       {this.state.payments.map((payments,index)=>(
         <tr key={index}>
         <th scope="row">{index+1}</th>
-        
+        <td>{payments.payf}</td>
         <td>{payments.reference}</td>
         <td>{payments.name}</td>
-        <td>{payments.payf}</td>
         <td>{payments.method}</td>
          <td>
          <a href ={`/payment/${payments._id}`} style={{textDecoration:'none'}}>
@@ -73,6 +75,7 @@ export default class AllPayments extends Component{
          
              {payments.no}</td>
          <td> Rs &nbsp;{payments.amount}</td>
+         <td>{payments.pdate}</td>
         <td>
         <a className ="btn btn-warning" href ={`/payment/edit/${payments._id}`}>
           <i className="fas fa-edit"></i>&nbsp;Edit
