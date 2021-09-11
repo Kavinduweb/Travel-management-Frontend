@@ -91,7 +91,7 @@ onChange={this.handleSearchArea} /><button id="search-button" type="button" clas
     <h5 class="card-title">{index+1}.&nbsp; <b>{posts.packageName}</b></h5>
     <h6 class="card-subtitle mb-2 text-muted">{posts.destination}</h6>
     <p class="card-text"><i class="fas fa-car mr-2"></i>{posts.vehical}  </p>
-    <p class="card-text">{posts.noofdays}  {posts.noofnights} &nbsp;&nbsp;||&nbsp;&nbsp; Per Person:-{posts.perperson}    </p>
+    <p class="card-text">{posts.noofdays}  {posts.noofnights} &nbsp;&nbsp;||&nbsp;&nbsp; Per Person:- Rs.{posts.perperson}    </p>
     &nbsp;&nbsp;
     <a className ="btn btn-outline-primary" href ={`/travelpackages/travelpackage/admin/${posts._id}`} >
           <i className="fas fa-eye"></i>&nbsp;View

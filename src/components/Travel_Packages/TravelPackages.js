@@ -112,7 +112,7 @@ render(){
                 {posts.destination}
                 
                 <ul class="postcard__tagbox">
-					<li class="tag__item"><i class="fas fa-tag mr-2"></i>PP&nbsp;<a style={{color:" hsl(180,100%,50%)"}}>{posts.perperson}</a></li>
+					<li class="tag__item"><i class="fas fa-tag mr-2"></i>PP Rs.&nbsp;<a style={{color:" hsl(180,100%,50%)"}}>{posts.perperson}</a></li>
 					<li class="tag__item"><i class="fas fa-clock mr-2"></i>{posts.noofdays}&nbsp;{posts.noofnights}</li>
 					<li class="tag__item play blue">
 						<a style={{color:"  hsl(60,100%,50%) "}}><i class="fas fa-car mr-2"></i>{posts.vehical}</a>

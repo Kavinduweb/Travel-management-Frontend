@@ -36,7 +36,6 @@ import Gallery from './components/Gallery';
 import Aboutus from './components/AboutUs';
 import ContactUs from './components/Contactus';
 import ContactUsAdmin from './components/ContactUsAdmin';
-import AddPayment from './components/Payment/AddPayment';
 import AllPayments from './components/Payment/AllPayments';
 import EditPayment from './components/Payment/EditPayment';
 import PaymentDetails from  './components/Payment/PaymentDetails';
@@ -61,7 +60,10 @@ import ViewActivity from './components/Activity/ViewActivity';
 import ActivityDetails from './components/Activity/ActivityDetails';
 import ActivitySelect from './components/Activity/ActivitySelect';
 import ActivityUser from './components/Activity/ActivityUser';
-
+import PayForRoom from './components/Payment/PayForRoom';
+import PayForActivity from './components/Payment/PayForActivity';
+import PayForEquipment from './components/Payment/PayForEquipment';
+import PayForTP from './components/Payment/PayForTP';
 
 
 
@@ -113,7 +115,10 @@ function App() {
       <Route path="/aboutus" exact component={Aboutus}/>
       <Route path="/contactus" exact component ={ContactUs}/>
       <Route path="/contactus/admin" exact component ={ContactUsAdmin}/>
-      <Route path="/payment/add" exact component={AddPayment}/>
+      <Route path="/payment/add-package/:id" exact component={PayForTP}/>
+      <Route path="/payment/add-room/:id" exact component ={PayForRoom}/>
+      <Route path="/payment/add-equipment/:id" exact component ={PayForEquipment}/>
+      <Route path="/payment/add-activity/:id" exact component ={PayForActivity}/>
       <Route path="/payment/" exact component={AllPayments}/>
       <Route path="/payment/edit/:id" exact component={EditPayment}/>
       <Route path="/payment/details/:id" exact component={PaymentDetails}/>

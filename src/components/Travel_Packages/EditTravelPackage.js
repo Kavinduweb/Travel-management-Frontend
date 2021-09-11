@@ -1,147 +1,198 @@
 import React,{useReducer, useState,useEffect} from "react"
-import {useHistory,useParams} from 'react-router-dom';
+import {useHistory} from 'react-router-dom';
 import axios from "axios";
 import '../../Styles/TravelPackage.css'
 
-const EditPackage = ()=>{
+const EditPackage = (props)=>{
+    let history = useHistory();
 
-     let history = useHistory();
-     const {id}=useParams();
+     const[packageName,setPackagename]=useState("");
+     const[destination,setDestination]=useState("");
+     const[discription,setDiscription]=useState("");
+     const[date,setDate]=useState("");
+     const[noofdays,setDays]=useState("");
+     const[noofnights,setNights]=useState("");
+     const[vehical,setVehical]=useState("");
+     const[perperson,setPerperson]=useState("");
+     const[message,setMessage]=useState("");
+     const[packageImage,setFileName]=useState("");
+   
+     const onChangeFile= e=>{
+         setFileName(e.target.files[0]);
+     }
+   
+   const changeOnClick =(e)=>{
+       e.preventDefault();
+   
+       const formData=new FormData();
+       formData.append("packageName",packageName);
+       formData.append("destination",destination);
+       formData.append("discription",discription);
+       formData.append("date",date);
+       formData.append("noofdays",noofdays);
+       formData.append("noofnights",noofnights);
+       formData.append("vehical",vehical);
+       formData.append("perperson",perperson);
+       formData.append("packageImage",packageImage);
+   
+       setPackagename("");
+       setDestination("");
+       setDiscription("");
+       setDate("");
+       setDays("");
+       setNights("");
+       setVehical("");
+       setPerperson("");
+       setFileName("");
+       
+   
+       axios
+       .put(`http://localhost:8070/travelpackages/admin/update/${props.match.params.id}`, formData)
+       .then(res => setMessage(res.data))
+       .catch(err => {
+           console.log(err);
+       });
+       
+       alert(" Travel Package Update Successful")
+       history.push("/travelpackages/admin");
+   };
 
-    const [post,addPost] = useState({
-            packageName:"",
-            destination:"",
-            discription:"",
-            date:"",
-            noofdays:"",
-            noofnights:"",
-            vehical:"",
-            perperson:""
-    });
- const {packageName,destination,discription,date,noofdays,noofnights,vehical,perperson}=post;
- const onInputChange = e=>{
-     addPost({...post,[e.target.name]: e.target.value});
- };
+   useEffect(() => {
+    axios
+    .get(`http://localhost:8070/travelpackages/admin/${props.match.params.id}`)
+    .then(res => [
+        setPackagename(res.data.post.packageName),
+        setDestination(res.data.post.destination),
+        setDiscription(res.data.post.discription),
+        setDate(res.data.post.date),
+        setDays(res.data.post.noofdays),
+        setNights(res.data.post.noofnights),
+        setVehical(res.data.post.vehical),
+        setPerperson(res.data.post.perperson),
+        setFileName(res.data.post.packageImage),
 
- const onSubmit=async e =>{
-     e.preventDefault();
-     await axios.put(`http://localhost:8070/travelpackages/admin/update/${id}`,post);
-     history.push("/travelpackages/admin");
-     alert(" Travel Package Updated Successful")
- }
+    ])
+    .catch(error => console.log(error));
+}, []);
 
- const loadPackage = async()=>{
-    const res = await axios.get
-        (`http://localhost:8070/travelpackages/admin/${id}`)
-        addPost(res.data.post)
-      }
-      useEffect(()=>{
-        loadPackage();
-    },[]);
     
-return(
+    return(
 
-   <div  className="info" >
-   <div >
-    <div >
+        <div className="info">
+          <div className="bodyaa" id="bodytbc">
+             <div >
+              <div >
+                  
+                  <form class="signup-form" onSubmit={changeOnClick} encType="multipart/form-data" >
+       
+       <div class="form-header">
+          <h1 style={{color:"white"}}><b>Edit Travel Package Details</b></h1>
+       </div>
+  
+       <div class="form-body">
+  
+  
+      <div class="form-group">   
+       <lable class="label-title"><b>Package Name *</b></lable>
+         <input type="text" name="packageName" class="form-input" placeholder="packageName"
+         value={packageName}
+         onChange={(e)=>setPackagename(e.target.value)} required="required"  /><br/>
+        </div>
+  
+  
+        <div class="form-group">   
+       <lable class="label-title"><b>Destination *</b></lable>
+         <input type="text" name="destination" class="form-input" placeholder="destination"
+         value={destination}
+         onChange={(e)=>setDestination(e.target.value)} required="required" /><br/>
+        </div>
+  
+  
+        <div class="horizontal-group">
+  
+       <div class="form-group left">
+         <lable class="label-title"><b>Discription *</b></lable>
+         <input type="text" name="discription" class="form-input" placeholder="discription"
+         value={discription}
+         onChange={(e)=>setDiscription(e.target.value)} required="required" /><br/>
+       </div> 
+       
+        <div class="form-group right">
+          <lable class="label-title"><b>Date *</b></lable>
+         <input type="text" name="date"  class="form-input" placeholder="date"
+         value={date}
+         onChange={(e)=>setDate(e.target.value)} required="required" /><br/>
+        </div>
         
-        <form class="signup-form" onSubmit={e=>onSubmit(e)}>
-
-<div class="form-header">
-<h1 style={{color:"white"}}><b>Edit Travel Package</b></h1>
-</div>
-
-<div class="form-body">
-
-
-<div class="form-group">   
-<lable class="label-title"><b>Package Name *</b></lable>
-<input type="text" name="packageName" class="form-input" placeholder="packageName"
-value={packageName}
-onChange={e=>onInputChange(e)}  /><br/>
-</div>
-
-
-<div class="form-group">   
-<lable class="label-title"><b>Destination *</b></lable>
-<input type="text" name="destination" class="form-input" placeholder="destination"
-value={destination}
-onChange={e=>onInputChange(e)}  /><br/>
-</div>
-
-
-<div class="horizontal-group">
-
-<div class="form-group left">
-<lable class="label-title"><b>Discription *</b></lable>
-<input type="text" name="discription" class="form-input" placeholder="discription"
-value={discription}
-onChange={e=>onInputChange(e)}  /><br/>
-</div> 
-
-<div class="form-group right">
-<lable class="label-title"><b>Date *</b></lable>
-<input type="text" name="date"  class="form-input" placeholder="date"
-value={date}
-onChange={e=>onInputChange(e)}  /><br/>
-</div>
-
-</div>
-
-
-<div class="horizontal-group">
-
-<div class="form-group left">
-<lable class="label-title"><b>No of Days *</b></lable>
-<input type="text" name="noofdays"  class="form-input" placeholder="noofdays"
-value={noofdays}
-onChange={e=>onInputChange(e)}  /><br/>
-</div> 
-
-<div class="form-group right">
-<lable class="label-title"><b>No of Nights *</b></lable>
-<input type="text" name="noofnights"  class="form-input" placeholder="noofnights"
-value={noofnights}
-onChange={e=>onInputChange(e) } /><br/>
-</div>
-
-</div>
-
-
-
-<div class="horizontal-group">
-
-<div class="form-group left">
-<lable class="label-title"><b>Vehical *</b></lable>
-<input type="text" name="vehical"  class="form-input" placeholder="vehical"
-value={vehical}
-onChange={e=>onInputChange(e)}  /><br/>
-</div> 
-
-<div class="form-group right">
-<lable class="label-title"><b>Per person *</b></lable>
-<input type="text" name="perperson"  class="form-input" placeholder="perperson"
-value={perperson}
-onChange={e=>onInputChange(e)}  /><br/>
-</div>
-
-</div>
-
-<div class="form-footer">
-
-<input type="submit" name="submit" class="reg" value="Update Package"/>
-</div>
-<br/>
-</div>  
-
-<br/> 
-</form>
-
-
-
-
-</div></div></div>
-) 
+       </div>
+  
+  
+        <div class="horizontal-group">
+  
+       <div class="form-group left">
+         <lable class="label-title"><b>No of Days *</b></lable>
+         <input 
+         type="text" 
+         name="noofdays"  
+         class="form-input" 
+         placeholder="noofdays"
+         maxLength="3"
+         value={noofdays}
+         required="required"
+         onChange={(e)=>setDays(e.target.value)}  /><br/>
+       </div> 
+       
+        <div class="form-group right">
+          <lable class="label-title"><b>No of Nights *</b></lable>
+         <input type="text" name="noofnights"  class="form-input" placeholder="noofnights"
+         value={noofnights} maxLength="3" required="required"
+         onChange={(e)=>setNights(e.target.value)} /><br/>
+        </div>
+        
+       </div>
+  
+  
+  
+         <div class="horizontal-group">
+  
+       <div class="form-group left">
+         <lable class="label-title"><b>Vehical *</b></lable>
+         <input type="text" required="required" name="vehical"  class="form-input" placeholder="vehical"
+         value={vehical}
+         onChange={(e)=>setVehical(e.target.value)}  /><br/>
+       </div> 
+       
+        <div class="form-group right">
+          <lable class="label-title"><b>Perperson *</b></lable>
+         <input type="text" name="perperson" required="required" class="form-input" placeholder="perperson"
+         value={perperson}
+         onChange={(e)=>setPerperson(e.target.value)}  /><br/>
+        </div>
+        
+       </div>
+  
+       
+       <lable class="label-title"><b>Edit Image*</b>
+         <div class="mb-3">
+    <input class="form-control" type="file" id="formFile" filename="packageImage" onChange={onChangeFile}/>
+  </div></lable>
+         
+  
+          <div class="form-footer">
+        
+         <input type="submit" name="submit" class="reg" value="Edit Package"/>
+        </div>
+  <br/>
+       </div>  
+       
+       <br/> 
+       </form>
+  
+  
+     
+     
+  </div></div></div></div>
+      );
 }
 
 

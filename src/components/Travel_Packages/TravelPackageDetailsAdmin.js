@@ -64,7 +64,7 @@ return(
 
 
     <ul class="postcard__tagbox" style={{fontSize:"16px"}}>
-					<li class="tag__item"><i class="fas fa-tag mr-2"></i>PP&nbsp;{tpackage.perperson}</li>
+					<li class="tag__item"><i class="fas fa-tag mr-2"></i>PP Rs.&nbsp;{tpackage.perperson}</li>
 					<li class="tag__item"><i class="fas fa-clock mr-2"></i>{tpackage.noofdays}&nbsp;{tpackage.noofnights}</li>
 					<li class="tag__item play blue">	<i class="fas fa-car mr-2"></i>{tpackage.vehical}	</li>
            

@@ -65,7 +65,7 @@ useEffect(()=>{
 
      await axios.post ("http://localhost:8070/packagebooking/add",data);
      alert("Booking Added Successfull. Click Ok to Pay")
-     history.push("/payment/add");
+     history.push(`/payment/add-package/${id}`);
     
  }
  const {packageName,perperson}=tpackage;
