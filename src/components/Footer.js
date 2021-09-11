@@ -4,7 +4,7 @@ import "../Styles/HeaderFooter.css";
 function Footer() {
   return (
     <div className="mainfooter">
-      <div className="container">
+      
        <div className="ftr">
 	    <div className="row">
           {/* Column1 */}
@@ -63,7 +63,7 @@ function Footer() {
 		</div>
 		
       </div>
-    </div>
+    
   );
 }
 

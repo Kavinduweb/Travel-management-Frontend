@@ -60,10 +60,25 @@ import ViewActivity from './components/Activity/ViewActivity';
 import ActivityDetails from './components/Activity/ActivityDetails';
 import ActivitySelect from './components/Activity/ActivitySelect';
 import ActivityUser from './components/Activity/ActivityUser';
+<<<<<<< HEAD
 import PayForRoom from './components/Payment/PayForRoom';
 import PayForActivity from './components/Payment/PayForActivity';
 import PayForEquipment from './components/Payment/PayForEquipment';
 import PayForTP from './components/Payment/PayForTP';
+=======
+import forget from './components/Kavindu/ForgetPass';
+
+import CreateInquiry from './components/Inquiry/CreateInquiry';
+import EditInquiry from './components/Inquiry/EditInquiry';
+import InquiryAll from './components/Inquiry/InquiryAll';
+import AdminRep from './components/Inquiry/AdminReply';
+import InqDetails from './components/Inquiry/InqDetails';
+import InqView from './components/Inquiry/InqView';
+import AdminView from './components/Inquiry/AdminView';
+import ComponentToPrint from './components/Inquiry/InqReport';
+import ComponentToPrint1 from './components/Inquiry/userDoc';
+
+>>>>>>> be78884e57fa962d5237bb824a18707468dea0f0
 
 
 
@@ -72,11 +87,12 @@ import {BrowserRouter as Router, Route} from "react-router-dom"
 
 
 
+
 function App() {
   return (
     <Router>
     <div> 
-      <Header/>
+    
     
       
       <Route path="/bookingpackage/:id" exact component = {PackageBooking}></Route>
@@ -143,6 +159,17 @@ function App() {
       <Route path="/add-activity" exact component={AddActivity} />
       <Route path="/activity-user/:id" exact component={ActivityUser} />
       <Route path="/activity-select" exact component={ActivitySelect} />
+      <Route path="/forget" exact component={forget} />
+
+      <Route path="/add" exact component={CreateInquiry}></Route>
+      <Route path="/editinq/:id" component= {EditInquiry}></Route>
+      <Route path="/allinq" component= {InquiryAll}></Route>
+      <Route path="/admin/:id"  component= {AdminRep}></Route>
+      <Route path="/inqD/:id" component= {InqDetails}></Route>
+      <Route path="/view" component= {InqView}></Route>
+      <Route path="/adView/" component= {AdminView}></Route>
+      <Route path="/report" component= {ComponentToPrint}></Route>
+      <Route path="/userDoc/:id" component= {ComponentToPrint1}></Route>
 
 
 
@@ -151,7 +178,7 @@ function App() {
 
 
 
-    <Footer/>
+    
     </div>
     </Router>
     
