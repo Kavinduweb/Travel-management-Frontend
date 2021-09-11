@@ -53,11 +53,7 @@ componentDidMount(){
 axios.post("http://localhost:8070/hotelbooking/add",data).then((res)=>{
     if(res.data.success){
         // eslint-disable-next-line no-restricted-globals
-<<<<<<< HEAD
         if(confirm("Your reservation was Successfull,pleaSe select OK to pay!")){
-=======
-        if(confirm("Your reservation was Successfull, Did you want to pay Now?")){
->>>>>>> 089f5e6b8a18c40d117aaba07d95d79a2b8172f2
             window.location.href = `/payment/add-room/${this.props.match.params.id}`;
         }
         else{

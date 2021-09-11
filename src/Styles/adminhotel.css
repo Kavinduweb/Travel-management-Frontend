@@ -85,5 +85,6 @@
 }
 
 .prntbtn{
-    margin-left: 90%;
+    margin-block-start: 30px;
+    margin-inline-start: 80%;
 }

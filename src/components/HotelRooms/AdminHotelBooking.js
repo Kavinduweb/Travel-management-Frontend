@@ -32,7 +32,12 @@ class ComponentToPrint extends React.Component{
   render() {
     return (
       <div className="info">
-        <div className="container">
+
+        <ReactToPrint
+          trigger={() => <button  class="prntbtn" >Make a Report</button> }
+          content={() => this.componentRef}/>
+
+        <div className="container" ref={(el) => (this.componentRef = el)} >
           <h2>Hotel Booking Details</h2>
             <hr></hr>
               <table class="table">
@@ -70,17 +75,5 @@ class ComponentToPrint extends React.Component{
   }
 }
 
-class Example extends React.Component {
-  render() {
-    return (
-      <div>
-        <ReactToPrint
-          trigger={() => <button  class="prntbtn">Make a Report</button> }
-          content={() => this.componentRef}/>
-        <ComponentToPrint ref={(el) => (this.componentRef = el)} />
-      </div>
-    );
-  }
-}
 
-export default Example;
+export default ComponentToPrint;
