@@ -1,7 +1,8 @@
 
 import  React from 'react'
 import Display from './adminProfileView';
-
+import Header from '../Header';
+import Footer from '../Footer';
 export default function Admin  (){
 
 
@@ -15,7 +16,7 @@ export default function Admin  (){
 
             if(adminuser =="admin" && adminpass =="admin"){
                 
-                window.location.href="/get" ;
+                window.location.href="/adminhome" ;
  
             }else{
                 alert("login Fail")
@@ -25,15 +26,19 @@ export default function Admin  (){
 
 
     return (
-        <div>
+       
+        
+        <div className="body1">
             
-
-            <form >
+            <div className="info">
+           
+         
+            <form  className="form1">
                 <br></br>
             <h2>System admin Login</h2>
 
             <input type="text" placeholder="Username" id="user1" ></input>
-            <input type="text" placeholder="Password"id="pass1"></input>
+            <input type="password" placeholder="Password"id="pass1"></input>
             <a className="btn btn-danger"  onClick={myFunction}>
                                 <i className ="fas fa-login"></i>&nbsp;Login
                             </a>
@@ -44,10 +49,11 @@ export default function Admin  (){
          
             
             
+            </div>
+                </div>
+               
 
-                
-
-        </div>
+       
     )
 
 }

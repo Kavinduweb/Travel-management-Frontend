@@ -1,6 +1,8 @@
 import React,{Component} from 'react';
-
+import ReactToPrint from "react-to-print";
 import axios from 'axios';
+import Header from '../Header';
+import Footer from '../Footer';
 
 
 export default class UserProfile extends Component {
@@ -17,6 +19,7 @@ export default class UserProfile extends Component {
 
     logout(){
 
+        if (window.confirm("You Want To LogOut ")){
        const dat = localStorage.removeItem("userInfo");
 
        if (dat == null  ){
@@ -24,10 +27,8 @@ export default class UserProfile extends Component {
         alert("log  Out Success ");
         window.location.replace("/")
 
-       }
-       else {
-           alert("cant log out ")
-       }
+       } }
+       
     }
 
     
@@ -82,14 +83,18 @@ export default class UserProfile extends Component {
 
 
         return(
+           <div>
+               <Header/>
             <div className="body1">
-
+                <div className="info">
             <div style={{marginLeft:300}}> 
-                 <button onClick={this.logout} >Log out</button>
+                 <button className="button1" onClick={this.logout} >Log out</button>
                  </div>        
-             <h2> {this.state.View.Name}'s profile </h2>  
-   
-               <form>
+              
+            
+               <form className="form1">
+               <h2> {this.state.View.Name}'s profile </h2> 
+              <hr/>
                <input id="Email" type="text" value={this.state.View.Name} />
                <input id="Name" type="text" value={this.state.View.Email} />
                <input id="Num" type="text" value={this.state.View.Num} />
@@ -101,7 +106,14 @@ export default class UserProfile extends Component {
                             </a>
         
                             </form> 
+                           
+                            </div>
                 </div>
+
+                <Footer/>
+
+                </div>
+              
         )
 
 

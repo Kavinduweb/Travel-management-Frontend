@@ -28,6 +28,7 @@ retrieveContactus(){
  
 render(){
   return(
+    
       <div className="info">
     <div className="container">
  <h1 style={{textAlign:"center"}}>Contact us Messages</h1>

@@ -2,6 +2,7 @@ import React,{useReducer, useState} from "react"
 import {useHistory} from 'react-router-dom';
 import axios from "axios";
 import '../../Styles/TravelPackage.css'
+import HeaderAdmin from '../HeaderAdmin'
 
 const CreatePackage = ()=>{
 
@@ -58,8 +59,10 @@ const CreatePackage = ()=>{
        alert(" Travel Package Added Successful")
    };
     return(
-
-      <div className="info">
+      <div>
+      <HeaderAdmin/>
+  
+      <div className="infoadmin">
         <div className="bodyaa" id="bodytbc">
            <div >
             <div >
@@ -172,7 +175,7 @@ const CreatePackage = ()=>{
 
    
    
-</div></div></div></div>
+</div></div></div></div></div>
     );
 };
 

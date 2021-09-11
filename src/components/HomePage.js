@@ -8,6 +8,9 @@ import imag4 from '../Images/z4.jpg'
 import imag5 from '../Images/z5.jpg'
 import imag6 from '../Images/z6.jpg'
 import imag7 from '../Images/z7.jpg'
+import Header from './Header';
+import Footer from './Footer';
+
 
 const data =[
   {
@@ -117,11 +120,14 @@ export default class HomePage extends Component {
 
 
 render(){
+ 
 
   return(
+    <div>
+    <Header/>
 
     <div class="info">
- <div className= "container-fluid" id="bodyhome">
+ <div className= "container-fluid " id="bodyhome">
   <div className="App">
    
         <div className="containerhome">
@@ -174,6 +180,7 @@ If you travel, you will not only learn about foreign cultures, but about your ow
 <br/><br/><br/>
 </div>
 </div>
-  )
+  <Footer/>
+  </div>)
 }
 }

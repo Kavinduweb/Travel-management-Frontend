@@ -1,5 +1,5 @@
 import React ,{Component} from 'react';
-
+import ReactToPrint from "react-to-print";
 import axios from 'axios';
 
 export default class Display extends Component{
@@ -73,7 +73,7 @@ Handelsearch = (e) => {
 }
 
 onDelete = (id) =>{
-   
+  if(window.confirm("Confirm Delete")){
     const url="http://localhost:8070/access/delete/";
     const id1 = id;
         axios.delete(url+id1).then((res)=>{
@@ -81,6 +81,9 @@ onDelete = (id) =>{
         alert("success Deleted");
         this.DisplayData();
 })
+   
+}
+   
 
 }
 
@@ -88,16 +91,20 @@ render(){
 return (
       
     <div className="body1">
+        <div className="info">
 
               <br></br>
               <hr></hr>
-              <h2> All Registration Details </h2>  
+               
                
                     
 
     
    
                 <div className="container">
+                <hr></hr>
+                <h2> All Registration Details </h2> 
+                <hr></hr>
                 <input type="text" placeholder="Search By Email" id="searchid" onChange={this.Handelsearch}></input> 
                     <table className="table">
 
@@ -108,7 +115,7 @@ return (
                         <th scope="col">Name</th>
                         <th scope="col">Email</th>
                         <th scope="col">Number</th>
-                        <th scope="col">Password</th>
+                     
                         
 
                         </tr>       
@@ -121,7 +128,7 @@ return (
                         <td>{RegData.Name}</td>
                         <td>{RegData.Email}</td>
                         <td>{RegData.Num}</td>
-                        <td > {RegData.Password}</td>
+                       
                        
                         <td>
                             <a className="btn btn-danger" href="#" onClick={()=>this.onDelete(RegData._id)}>
@@ -129,9 +136,7 @@ return (
                             </a>
                         </td>
 
-                        <td>
-            
-                        </td>
+                       
                     </tr>
 
 
@@ -145,15 +150,16 @@ return (
                     </tbody>
                    
                     </table>
-
+                    <a href="/rep">
+                    <button className="button1" >Generate User Report</button></a>
+                    <hr></hr>
                     </div>
                     <hr></hr>
                     
-                      <a href="/rep">
-                    <button  >Generate User Report</button></a>
+                    
                    
                     </div>
-                
+                    </div>
        
 )}
 
