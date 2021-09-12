@@ -116,10 +116,10 @@ return (
 	  
 		<form onSubmit={sendData} className="form1">
 			<h1 className="h1">Create Account</h1>
-			
+
 			<input type="text" placeholder="Name" id="Name" onChange={(e)=>{  setName(e.target.value) ; }} required />
 			<input type="email" placeholder="Email" id="Email" onChange={(e)=>{  setEmail(e.target.value) ; }}  required/>
-       	 	 <input type="number" placeholder="Mobile" id="Number" onChange={(e)=>{ setNum (e.target.value) ; }} required/>
+        	 <input type="number" placeholder="Mobile" id="Number" onChange={(e)=>{ setNum (e.target.value) ; }} required/>
 			<input type="password" placeholder="Password" id="Password" onChange={(e)=>{setPassword(e.target.value) ;}} required/>
 
 			<button className="button1 "type="submit">Sign Up</button>

@@ -62,8 +62,7 @@ import ActivityDetails from './components/Activity/ActivityDetails';
 import ActivitySelect from './components/Activity/ActivitySelect';
 import ActivityUser from './components/Activity/ActivityUser';
 import forget from './components/Kavindu/ForgetPass';
-
-
+import resetpass from './components/Kavindu/resetpass';
 
 
 
@@ -141,6 +140,7 @@ function App() {
       <Route path="/activity-user/:id" exact component={ActivityUser} />
       <Route path="/activity-select" exact component={ActivitySelect} />
       <Route path="/forget" exact component={forget} />
+      <Route path="/reset/:id" exact component={resetpass} />
 
 
 
