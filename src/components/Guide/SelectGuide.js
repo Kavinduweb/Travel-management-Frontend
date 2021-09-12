@@ -1,6 +1,8 @@
 import React,{Component} from 'react'
 import axios from 'axios';
 import "../../Styles/Guide.css";
+import Header from '../Header';
+import Footer from '../Footer';
 
  
 export default class SelectGuide extends Component{
@@ -56,16 +58,18 @@ export default class SelectGuide extends Component{
   render(){
 
     return(
+      <div>
+        <Header/>
       <div className="info">
         <div className="container">
             <br/>
             <div>
-                <div className="input-group" >
+                <div className="input-group" style={{marginLeft:1070}} >
                     <div className="form-outline">
                         <input 
                         id="search-input" 
                         type="search" 
-                        id="form1" 
+                        id="form1"
                         className="form-control" 
                         placeholder="Search Guide"
                         onChange={this.handleSearchArea}  />
@@ -78,101 +82,73 @@ export default class SelectGuide extends Component{
                     </button>
                 </div>
             </div>
-            <br/>
- 
-                    {this.state.guide.map((guide,index)=>(
-                        <div key={index}>
-                            <div scope="row">{index+1}</div>
-                                <div className="jumbotron">                   
-                                    <div class="container">
-	                                      <div class="main-body">
-		                                        <div class="row gutters-sm">
-			                                          <div class="col-md-4 mb-3">
-				                                            <div class="card">
-					                                              <div class="card-body">
-						                                                <div class="d-flex flex-column align-items-center text-center">
-                                                                <img src = {`/uploads/${guide.guideImage}`} alt = "..." style = {{width : "40%" , minHeight : "40%"}}/>
-                                                                <div class="mt-3">
-                                                                    <h4>{guide.name}</h4>
-                                                                    <p class="text-secondary mb-1">TOURIST GUIDE</p>
-                                                                    <p class="text-muted font-size-sm">{guide.address}</p>
-                                                                    <button class="btn btn-primary"><a href={`/guide/request/${guide._id}`} style={{textDecoration:'none' ,color:'white'}}>Send Request</a></button>                                
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>   
-                                                </div>
-                                                <div class="col-md-8">
-                                                      <div class="card mb-3">
-                                                          <div class="card-body">
 
-                                                              <div class="row">
-                                                                  <div class="col-sm-3">
-                                                                      <h6 class="mb-0">Name</h6>
-                                                                  </div>
-                                                                  <div class="col-sm-9 text-secondary">
-			                                                                {guide.name}
-                                                                  </div>
-                                                              </div>
-
-                                                              <hr/>
-
-                                                              <div class="row">
-                                                                  <div class="col-sm-3">
-                                                                      <h6 class="mb-0">Address</h6>
-                                                                  </div>
-                                                                  <div class="col-sm-9 text-secondary">
-			                                                                {guide.address}
-                                                                  </div>
-                                                              </div>
-
-                                                              <hr/>
-
-                                                              <div class="row">
-                                                                  <div class="col-sm-3">
-                                                                      <h6 class="mb-0">Language</h6>
-                                                                  </div>
-                                                                  <div class="col-sm-9 text-secondary">
-		                                                                  {guide.language}
-                                                                  </div>
-                                                              </div>
-                                                              
-                                                              <hr/>
-
-                                                              <div class="row">
-                                                                  <div class="col-sm-3">
-                                                                      <h6 class="mb-0">E-Mail</h6>
-                                                                  </div>
-                                                                  <div class="col-sm-9 text-secondary">
-			                                                                {guide.email}
-                                                                  </div>
-                                                              </div>
-
-                                                              <hr/>
-
-                                                              <div class="row">
-                                                                  <div class="col-sm-3">
-                                                                      <h6 class="mb-0">Contact Number</h6>
-                                                                  </div>
-                                                                  <div class="col-sm-9 text-secondary">
-			                                                                {guide.phone}
-                                                                  </div>
-                                                              </div>
-                                                              <br/>
-                                                              
-                                                          </div>
-                                                      </div>         
-                                                </div>
+            <hr/>
+                {this.state.guide.map((guide,index)=>(
+                    
+                            <div className="about-container">
+                                <img src = {`/uploads/${guide.guideImage}`} alt = "..."/>    
+                                    <div className="about-text">
+                                        <br/>
+                                        <div className="row">
+                                            <div className="col-sm-4">
+                                                <p>Name</p>
+                                            </div>
+                                            <div className="col">
+                                                {guide.name}
                                             </div>
                                         </div>
+                                        
+
+                                        <div className="row">
+                                            <div className="col-sm-4">
+                                                <p>Address</p>
+                                            </div>
+                                            <div className="col">
+                                                {guide.address}
+                                            </div>
+                                        </div>
+                                       
+
+                                        <div className="row">
+                                            <div className="col-sm-4">
+                                                <p>Language</p>
+                                            </div>
+                                            <div className="col">
+                                                {guide.language}
+                                            </div>
+                                        </div>
+                                        
+
+                                        <div className="row">
+                                            <div className="col-sm-4">
+                                                <p>E-Mail</p>
+                                            </div>
+                                            <div className="col">
+                                                {guide.email}
+                                            </div>
+                                        </div>
+                                        
+
+                                        <div className="row">
+                                            <div className="col-sm-4">
+                                               <p>Contact Number</p>
+                                            </div>
+                                            <div className="col">
+                                                {guide.phone}
+                                            </div>
+                                        </div>
+                                        <br/>
+                                        <button className="btn btn-secondary"><a href={`/guide/request/${guide._id}`} style={{textDecoration:'none' ,color:'white'}}>Send Request</a></button>
                                     </div>
                                 </div>
-                            </div>                           
-                    ))}
-                    
-                    <br/><br/><br/>
+                                                                         
+                        ))}                                           
+                        <br/><br/><br/>         
         </div>
-        </div>
+      </div>
+      <Footer/>
+      </div>
     )
   }
 }

@@ -60,11 +60,12 @@ handleSearchArea=(e)=>{
 render(){
   return(
 
-    <div>
+    <div style={{backgroundColor:"hsl(0,0%,80%,0.1)"}}>
       <HeaderAdmin/>
   
-    <div className="infoadmin">
+    <div className="infoadmin" >
     <div className="container">
+      <br/>
   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
  
     <button className="btn btn-success"><a href="/travelpackage/admin/add" style={{textDecoration:'none' ,color:'white'}} > 
@@ -86,10 +87,12 @@ onChange={this.handleSearchArea} /><button id="search-button" type="button" clas
 <i class="fas fa-search"></i>
 </button>
 <hr/>
+
+
  <Row xs={1} md={3} className="g-4 " id="by" class="rounded" >
  {this.state.posts.map((posts,index)=>(
      <Col key={index}>
-<div class="card" style={{backgroundColor:"hsl(0,0%,75%,0.1)",borderColor:"black"}}>
+<div class="card" style={{backgroundColor:"hsl(0,0%,50%,0.1)",borderColor:"black"}}>
   <div class="card-body">
     <h5 class="card-title">{index+1}.&nbsp; <b>{posts.packageName}</b></h5>
     <h6 class="card-subtitle mb-2 text-muted">{posts.destination}</h6>

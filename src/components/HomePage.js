@@ -130,8 +130,10 @@ render(){
  <div className= "container-fluid " id="bodyhome">
   <div className="App">
    
-        <div className="containerhome">
+        <div className="containerhome container">
+          <br/>
            <div className="slideshow-containerxx">
+             
            <Slider slideIndex={this.state.slideIndex}/>
            <span className = "prev" onClick ={()=> this.prevSlide()}>&#10094;</span>
            <span className="next" onClick={()=>this.nextSlide()}>&#10095;</span>
@@ -139,7 +141,7 @@ render(){
 
            
            </div>
-           <br/>
+          
            <Dots slideIndex = {this.state.slideIndex}/>
         </div>
       </div>

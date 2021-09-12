@@ -67,16 +67,16 @@ const CreatePackage = ()=>{
            <div >
             <div >
                 
-                <form class="signup-form" onSubmit={changeOnClick} encType="multipart/form-data" >
+                <form class="signup-form signup-formtr" onSubmit={changeOnClick} encType="multipart/form-data" >
      
-     <div class="form-header">
+     <div class="form-header form-headertr">
         <h1 style={{color:"white"}}><b>Add New Travel Package</b></h1>
      </div>
 
-     <div class="form-body">
+     <div class="form-body form-bodytr">
 
 
-    <div class="form-group">   
+    <div class="form-group form-grouptr">   
      <lable class="label-title"><b>Package Name *</b></lable>
        <input type="text" name="packageName" class="form-input" placeholder="packageName"
        value={packageName}
@@ -84,7 +84,7 @@ const CreatePackage = ()=>{
       </div>
 
 
-      <div class="form-group">   
+      <div class="form-group form-grouptr">   
      <lable class="label-title"><b>Destination *</b></lable>
        <input type="text" name="destination" class="form-input" placeholder="destination"
        value={destination}
@@ -92,16 +92,16 @@ const CreatePackage = ()=>{
       </div>
 
 
-      <div class="horizontal-group">
+      <div class="horizontal-group horizontal-grouptr">
 
-     <div class="form-group left">
+     <div class="form-group form-grouptr left">
        <lable class="label-title"><b>Discription *</b></lable>
        <input type="text" name="discription" class="form-input" placeholder="discription"
        value={discription}
        onChange={(e)=>setDiscription(e.target.value)} required="required" /><br/>
      </div> 
      
-      <div class="form-group right">
+      <div class="form-group form-grouptr right">
         <lable class="label-title"><b>Date *</b></lable>
        <input type="text" name="date"  class="form-input" placeholder="date"
        value={date}
@@ -111,9 +111,9 @@ const CreatePackage = ()=>{
      </div>
 
 
-      <div class="horizontal-group">
+      <div class="horizontal-group horizontal-grouptr">
 
-     <div class="form-group left">
+     <div class="form-group form-grouptr left">
        <lable class="label-title"><b>No of Days *</b></lable>
        <input 
        type="text" 
@@ -126,7 +126,7 @@ const CreatePackage = ()=>{
        onChange={(e)=>setDays(e.target.value)}  /><br/>
      </div> 
      
-      <div class="form-group right">
+      <div class="form-group form-grouptr right">
         <lable class="label-title"><b>No of Nights *</b></lable>
        <input type="text" name="noofnights"  class="form-input" placeholder="noofnights"
        value={noofnights} maxLength="3" required="required"
@@ -137,16 +137,16 @@ const CreatePackage = ()=>{
 
 
 
-       <div class="horizontal-group">
+       <div class="horizontal-group horizontal-grouptr">
 
-     <div class="form-group left">
+     <div class="form-group form-grouptr left">
        <lable class="label-title"><b>Vehical *</b></lable>
        <input type="text" required="required" name="vehical"  class="form-input" placeholder="vehical"
        value={vehical}
        onChange={(e)=>setVehical(e.target.value)}  /><br/>
      </div> 
      
-      <div class="form-group right">
+      <div class="form-group form-grouptr right">
         <lable class="label-title"><b>Perperson *</b></lable>
        <input type="text" name="perperson" required="required" class="form-input" placeholder="perperson"
        value={perperson}
@@ -162,9 +162,10 @@ const CreatePackage = ()=>{
 </div></lable>
        
 
-        <div class="form-footer">
-      
-       <input type="submit" name="submit" class="reg" value="Add Package"/>
+        <div style={{paddingTop:"10px"}} >
+      <center>
+       <input style={{width:"100%"}} type="submit" name="submit" class="reg btn btn-danger" value="Add Package"/>
+    </center>
       </div>
 <br/>
      </div>  
@@ -174,7 +175,7 @@ const CreatePackage = ()=>{
 
 
    
-   
+   <br/>
 </div></div></div></div></div>
     );
 };

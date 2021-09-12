@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { useHistory, useParams } from "react-router-dom";
+import HeaderAdmin from '../HeaderAdmin'
 
 const EditEquipment = () => {
   let history = useHistory();
@@ -9,9 +10,10 @@ const EditEquipment = () => {
     name: "",
     description: "",
     price: "",
+    image: "",
   });
 
-  const { name, description, price } = equipment;
+  const { name, description, price, image } = equipment;
   const onInputChange = e => {
     setEquipment({ ...equipment, [e.target.name]: e.target.value });
   };
@@ -31,11 +33,28 @@ const EditEquipment = () => {
     setEquipment(result.data.equipment);
   };
   return (
-    <div className="info">
-    <div className="container">
-      <div className="w-75 mx-auto shadow p-5">
-        <h2 className="text-center mb-4">Edit An Equipment</h2>
-        <form onSubmit={e => onSubmit(e)}>
+    <div>
+        <HeaderAdmin/>
+    <div className="infoadmin">
+    <div className="container" style={{paddingTop:"100px"}}>
+
+      <div className="w-100 mx-auto shadow p-5">
+        <h2 className="text-center mb-4" style={{paddingBottom:"20px"}}><b>Edit Equipment</b></h2>
+
+
+
+
+        <div class="d-flex flex-row align-items-center mb-5">
+    
+    <div class="form-outline mb-2 ">
+   
+    <img src={`/uploads/${image}`} alt="..."  class="img-fluid rounded-start" style={{height:"350px", width:"500px", paddingLeft:"50px"}} />
+
+   </div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+   
+    <div class="form-outline mb-2 " style={{paddingLeft:"5%"}}>
+
+    <form onSubmit={e => onSubmit(e)} style={{width:"550px"}}>
           <div className="form-group">
             <input
               type="text"
@@ -48,8 +67,9 @@ const EditEquipment = () => {
             />
           </div>
           <div className="form-group">
-            <input
+            <textarea
               type="text"
+              rows="8"
               className="form-control form-control-lg"
               placeholder="Enter The Description"
               name="description"
@@ -71,7 +91,22 @@ const EditEquipment = () => {
           </div>
           <button className="btn btn-warning btn-block">Update Equipment</button>
         </form>
+                  
+    
+   </div>
+
+  
+
+</div>
+
+
+
+
+
+        
+
       </div>
+    </div>
     </div>
     </div>
   );

@@ -130,7 +130,7 @@ window.location.replace("/confirm/payment")
      
      <div className="info">
 
-<div class="card" style={{backgroundColor:"#78766F"}}>    
+<div class="card" style={{backgroundColor:"hsl(0,0%,75%,0.5)"}}>    
    <div class="card-body" >
         <div class="row" >
            
@@ -166,7 +166,7 @@ window.location.replace("/confirm/payment")
 
             <div class="col-md-7">
             
-                <div class="lefta border" style={{backgroundColor:"hsl(0,0%,100% ,0.9",borderRadius:"15px"}}>
+                <div class="lefta border" style={{backgroundColor:"hsl(0,0%,99% ,0.8",borderRadius:"15px"}}>
                
                     <div class="row"> <span class="text-center mb-1" style={{fontSize:"40px"}}>Payment </span>
                     <div class="d-flex  mb-3">

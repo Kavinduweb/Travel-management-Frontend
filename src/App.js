@@ -82,13 +82,12 @@ import {BrowserRouter as Router, Route} from "react-router-dom"
 
 
 
-
 function App() {
   return (
     <Router>
     <div> 
     
-    
+ 
       
       <Route path="/bookingpackage/:id" exact component = {PackageBooking}></Route>
       <Route path="/travelpackages/admin" exact component = {AllPackagesAdmin}></Route>
@@ -143,7 +142,7 @@ function App() {
       <Route path = "/guide/edit/:id" exact component={EditGuide}/>
       <Route path = "/guide/login" exact component={GuideLogin}/>
       <Route path = "/guide/all" exact component={SelectGuide}/>
-      <Route path = "/guide/handle" exact component={GuideConfirm}/>
+      <Route path = "/guide/handle/:id" exact component={GuideConfirm}/>
       <Route path = "/guide/request/:id" exact component={GuideRequest}/>
       <Route path = "/guide/allrequests" exact component={AllRequests}/>
       <Route path="/services" exact component = {Services}/>

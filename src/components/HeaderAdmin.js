@@ -12,7 +12,7 @@ function HeaderAdmin(){
   <i class="fas fa-plane-departure" aria-hidden="true" style={{fontSize:"70px",marginLeft:"25px",paddingBottom:"20px"}}></i>
   </div>
   <ul class="sidebar-navigation sidebar-navigationadh">
-    <li class="header" style={{fontSize:"17px" ,color:"#F1CB64"}}><b>Dream Travelers</b></li>
+    <li class="header" style={{fontSize:"17px" ,color:"black",paddingTop:'15px'}}><b>Dream Travelers</b></li>
     <li>
       <a href="/adminhome">
         <i class="fa fa-home" aria-hidden="true"></i> Homepage
@@ -77,21 +77,21 @@ function HeaderAdmin(){
 
    
 <div class="main_content"   >
-        <div class="header" style={{height:"100px"}} >
+        <div class="headerh" style={{height:"111px"}} >
     
-        <div class ="header" >
+      
 
 <div id="hname" > 
     
-  <h1 style={{paddingTop:"20px",paddingLeft:"130px"}}> Dream Travelers (pvt) Admin DashBord</h1>
+  <h1 style={{paddingTop:"20px",paddingLeft:"130px",color:'white'}}> Dream Travelers (pvt) Admin DashBord</h1>
  </div> 
 
 
 <div id="loginah">
-      <a href="/register"  style={{textDecoration:'none' ,color:'rgb(87, 87, 87)'}}  > <i class="fas fa-user-alt"></i>  </a>
+      <a href="/register"  style={{textDecoration:'none' ,color:'hsl(0,0%,70%,0.9)'}}  > <i class="fas fa-user-alt"></i>  </a>
 </div>
 
-</div>
+
 
 
 

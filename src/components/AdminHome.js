@@ -12,11 +12,11 @@ function AdminHome(){
   <HeaderAdmin/>
   
  
-<div >
+<div style={{backgroundImage:"url('https://www.freakytravel.com/wp-content/uploads/hiker-ocean-extreme.jpg')"}}>
         
         
 <div id="bodyadd">
-           <div className="info">
+           <div className="infoadmin">
             <div >
                 
 
