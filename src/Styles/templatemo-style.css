@@ -145,6 +145,7 @@
 
 
 .hero-image {
+  background-image: url("../Images/dolly.jpg");
   background-color: #cccccc;
   width: 100%;
   min-height: 500px;
@@ -171,6 +172,7 @@
   padding-left: 30px;
   width: 80%;
   border: 0px solid white;
+  
 }
 
 .bokth{
@@ -181,12 +183,13 @@
 
 .bokbox{
   width: 100%;
-  border: 1px solid rgb(141, 141, 141);
+  border: 1px solid rgba(255, 255, 255, 0.32);
   padding: 5px;
   margin-top: 5px;
   margin-bottom: 10px;
   margin-left: auto;
   margin-right: auto;
+  background-color: rgba(255, 255, 255, 0.32)
 }
 .bokmiddle{
   margin-left: auto;
@@ -203,6 +206,9 @@
 #hotelse{
   width: 300px;
 }
+
+
+
 
 
 

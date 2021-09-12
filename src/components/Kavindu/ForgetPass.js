@@ -35,12 +35,12 @@ return(
         <Header/>
   
     <div className="body1">
-        <form  className="form1"  >
-            <h2 id='h2'>Enter Your Email</h2>
-          <h2 id="emailval"></h2>
-            <input id="input" type="email" placeholder="Email" required/>
+        <form  className="form12"  >
+            <h2 id='h2' className="h222">Enter Your Email</h2>
+          <h2 id="emailval" className="h222"></h2>
+            <input className="inputabc" id="input" type="email" placeholder="Email" required/>
 
-            < button id="button" className="button1" type="button" onClick={foremail} >Submit</button>
+            < button id="button" className="button12" type="button" onClick={foremail} >Submit</button>
         </form>
       
     </div>

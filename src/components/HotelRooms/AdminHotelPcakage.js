@@ -36,54 +36,51 @@ export default class AdminHotelBooking extends Component{
         })
       }
     }
-      
-
-    
 
     render(){
         return(
           <div className="info">
-            <div className="container">
-              <h2>Rooms</h2>
-               
-              <table class="table">
-          <thead class="thead-dark">
-            <tr>
-              <th scope="col">#</th>
-              <th scope="col">Room Type</th>
-              <th scope="col">Action</th>
-            </tr>
-          </thead>
-          <tbody>
-            {this.state.posts.map((posts,index)=>(
-              <tr key={index}>
-              <th scope="row">{index+1}</th>
-              <td>
-                  <a href ={`/adminhotelpackagedetails/${posts._id}`} style={{textDecoration:'none'}}>
-                  {posts.roomType}
-                  </a>
-                  </td>
-              <td>
-                <a className ="btn btn-warning" href ={`/adminedithotelpackage/${posts._id}`}>
-                  <i className="fas fa-edit"></i>&nbsp;Edit
-                </a>&nbsp;
-                
-
-              
-                <a className ="btn btn-danger" href ="#" onClick={()=>this.onDelete(posts._id)} >
-                <i className="fas fa-edit"></i>&nbsp;Delete
+            <div class="addbttn">
+              <button className="btn btn-success">
+                <a href="/adminaddhotelpackage" style={{textDecoration:'none' ,color:'white'}}>
+                  <i class="fas fa-plus mr-2"></i>Add New Package
                 </a>
-              </td>
-            </tr>
-            ))}
+              </button>&nbsp;  
+              <button className="btn btn-success">
+                <a href="/adminhotelbooking" style={{textDecoration:'none' ,color:'white'}} >
+                  <i class="fas fa-book mr-2"></i>Hotel Booking
+                </a>
+              </button>      
+            </div>
+
+            <br></br>
+            <hr/>
+            <br></br>
             
-          </tbody>
-        </table>
-        
-         <button className="btn btn-success"><a href="/adminaddhotelpackage" style={{textDecoration:'none' ,color:'white'}} >Add New Package</a></button>
-        
-            </div>
-            </div>
-          )
+            {this.state.posts.map((posts,index)=>( 
+              <section class="ad">
+                <figure class="adcard">
+                 <div class="ad_card">
+                   <img class="card_img" src={`/uploads/${posts.packageImage}`}/>
+                 </div>
+                 <div class="ad_content">
+                   <div class="card_info">
+                     <h4 class="cardtopic">{posts.roomType}</h4>
+                     <p class="cardprice">Per Day: Rs {posts.price}</p>
+                     <p class="cardmax">max Person: {posts.maxCapacity}</p>
+                   </div>
+                   <div class="cd_bttn">
+                    <button class="btn btn-dark">
+                      <a href ={`/adminhotelpackagedetails/${posts._id}`} style={{textDecoration:'none' ,color:'white'}}>
+                        Details
+                      </a>
+                    </button>&nbsp;
+                   </div> 
+                 </div>
+                </figure>
+              </section>
+            ))}            
+          </div>
+        )
     }
 }
