@@ -2,12 +2,13 @@ import React,{useReducer, useState,useEffect} from "react"
 import {useHistory,useParams} from 'react-router-dom';
 import axios from "axios";
 
-const ActivitySelect = ()=>{
+const ActivitySelect = (props)=>{
 
 
     const [tactivity,viewActivity] = useState({
         aname:"",
         category:"",
+        mindescription:"",
         description:"",
         price:""
       });
@@ -56,20 +57,20 @@ useEffect(()=>{
 
      await axios.post ("http://localhost:8070/activityselect/add",data);
      alert("Activity Select Successfull. Click Ok to Pay")
-     history.push("/payment/add");
+     history.push(`/payment/add-activity/${props.match.params.id}`);
     
  }
  const {aname,price} = tactivity;
  return(
     <div className="infotr">
-    <div className="bodyaa"> 
+    <div className="bodyaa" style={{background:"url(https://static.officeholidays.com/images/1280x853c/sri-lanka-01.jpg)", backgroundSize: "cover"}}> 
     
-       <div className="bodybb">
+       <div className="bodybb"style={{background: "#93a8ac"}}>
     <div className="container">
     
-        <div className="w-70 mx-auto shadow p-5">
+        <div className="w-70 mx-auto shadow p-5"  >
         <div className="bodycc">
-            <h2 className ="text- mb-10"><b>Booking Travel Package</b></h2>
+            <h2 className ="text- mb-10"><b>Select Activity</b></h2>
             </div>
             <hr/>  
 
@@ -80,7 +81,7 @@ useEffect(()=>{
             <div class="row">
     <div class="col">
 
-            <div class="input-group mb-3">
+            <div class="input-group mb-3" >
   <div class="input-group-prepend">
     <span class="input-group-text" id="basic-addon1" style={{backgroundColor:'hsl(0,0%,0%,0.3)',color:"white"}}>Package Name</span>
   </div>
@@ -125,8 +126,8 @@ useEffect(()=>{
                 </div>
 
    <div className="form-group">
-                    <label><b>Content</b></label>
-                    <input type="text" className="form-control" placeholder="Enter Your Address"  name="content"
+                    <label><b>Qunatity</b></label>
+                    <input type="text" className="form-control" placeholder="Qun:"  name="content"
          value={content}
          onChange={e=>onInputChange(e)}
          required/>

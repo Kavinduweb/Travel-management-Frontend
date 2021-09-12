@@ -29,23 +29,25 @@ const ViewActivity = props => {
             <div className="info">
              <div className="container" >
             <div className="row my-5">
+                
               <div className="col-sm-2">
-                    <Link to={`/activity-user/${props.match.params.id}`} className="btn btn-outline-secondary">Select Activity</Link>
+
+              <Link to = "/all" type="submit" className="btn"><i class="fas fa-hand-point-left">&nbsp;&nbsp;Back</i></Link>
                 </div>
+                
                 </div>
                 </div>
                 <h2>{aname}</h2>
-            <img src={`/uploads/${fileName}`} alt="..." style={{margin: "0 auto", width: "40%", display: "flex"}}/>
-        
-        <h5>{category}</h5>
+            <img src={`/uploads/${fileName}`} alt="..." style={{margin: "0 auto", width: "60%", display: "flex"}}/>
+        <br/><br/>
+        <h5>{category}</h5><br/>
         <p>{description}</p>
-        <p>{price}</p>
+        <p><i className="fas fa-tag">{price}</i></p>
         <br/>
-        <Link to = "/all" 
-            type="submit" 
-            className="btn btn-primary">
-            Back to Activity
-        </Link>
+        <div class="grid gap-5 grid-cols-5">
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <Link to={`/activity-user/${props.match.params.id}`} className="btn btn-outline-secondary">Select Activity</Link>
+        </div>
         </div>
         </ActivityContainer>
 
@@ -63,14 +65,15 @@ const ActivityContainer = styled.div`
     h2 {
         text-align: center;
         font-weight: 900;
-        color: 	#33cc33;
+        color: 	#0f80aa;
     }
 
-    .btn-primary {
-        background: #00e699;
+    .btn {
+        background: #a5a5a5;
         border: none;
         &:hover {
-            background: #9fff80;
+            background: #aeb4a9;
         }
     }
+ 
 `;

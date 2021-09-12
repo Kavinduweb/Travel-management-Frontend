@@ -9,6 +9,7 @@ function AddActivity () {
     let history = useHistory();
     const [aname, setActivityName] = useState("");
     const [category, setCategory] = useState("");
+    const [mindescription, setMindescription] = useState("");
     const [description, setDescription] = useState("");
     const [price, setPrice] = useState("");
     const [message, setMessage] = useState("");
@@ -26,6 +27,7 @@ function AddActivity () {
 
         formData.append("aname", aname);
         formData.append("category", category);
+        formData.append("mindescription", mindescription);
         formData.append("description", description);
         formData.append("price", price);
         formData.append("activityImage", fileName);
@@ -33,6 +35,7 @@ function AddActivity () {
 
         setActivityName("");
         setCategory("");
+        setMindescription("");
         setDescription("");
         setPrice("");
 
@@ -49,14 +52,10 @@ function AddActivity () {
     return (
         <AddActivityContainer>
             <div className="info">
-            <div className="container">
-                     
-                <div className="flex-parent jc-center">
-                <Link to="/activities" type="submit" className="btn btn-outline-secondary">Back to Activity</Link>
-                </div>
+            <div className="container" style={{background: "#9eb3c2"}}>
                 <h1>Add New Activity </h1>
                 <span className="message">{message}</span>
-        <form onSubmit={changeOnClick} encType="multipart/form-data">
+        <form onSubmit={changeOnClick} encType="multipart/form-data" >
   <div className="form-group">
     <label htmlFor="aname">Activity Name</label>
     <input 
@@ -75,6 +74,16 @@ function AddActivity () {
     onChange={e => setCategory(e.target.value)}
     className="form-control" placeholder="Category"/>
   </div>
+
+
+  <div className="form-group">
+    <label htmlFor="mindescription">Min Description</label>
+    <textarea 
+    value={mindescription}
+    onChange={e => setMindescription(e.target.value)}
+    className="form-control" rows="5"></textarea>
+  </div>
+
 
   <div className="form-group">
     <label htmlFor="description">Description</label>
@@ -105,6 +114,11 @@ function AddActivity () {
       <div className="flex-parent jc-center">
   <button type="submit" className="btn btn-primary">Post Activity</button>
   </div>
+  <br/>
+
+  <div className="flex-parent jc-center" style={{align: "center"}}>
+                <Link to="/activities" type="submit" className="btn btn-light">Back to Activity</Link>
+                </div>
       </div> 
 </form>
 </div>
@@ -120,32 +134,33 @@ const AddActivityContainer = styled.div`
 margin: 3rem auto;
 padding: 4rem;
 width: 65.25rem;
-
 h1 {
     font-weight: 900;
-    color: #339966;
+    color: #0b2545;
+    text-align: center;
 }
 
 .btn-primary {
     margin-top: 2rem;
-    background: #008000;
+    background: #aeb4a9;
     width: 8.25rem;
     height: 2.25rem;
     border:none;     
     &:hover {
-        background: #00ff99;
+        background: #9a8f97;
         justify-content: center;
     }
 }
 
-.btn-outline-secondary {
+.btn-light {
     margin-top: 2rem;
-    width: 9.25rem;
-    height: 2.25rem; 
-    align: right; 
+    background: #7f7f7f;
+    width: 8.25rem;
+    height: 2.25rem;
+    border:none;     
     &:hover {
-        background: #00ff99;
-        display: flex;
+        background: #595959;
+        justify-content: center;
     }
 }
 

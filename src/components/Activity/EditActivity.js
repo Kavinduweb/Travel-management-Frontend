@@ -6,6 +6,7 @@ import axios from "axios";
 const EditActivity = (props) => {
     const [aname, setActivityName] = useState("");
     const [category, setCategory] = useState("");
+    const [mindescription, setMindescription] = useState("");
     const [description, setDescription] = useState("");
     const [price, setPrice] = useState("");
     const [message, setMessage] = useState("");
@@ -24,6 +25,7 @@ const EditActivity = (props) => {
 
         formData.append("aname", aname);
         formData.append("category", category);
+        formData.append("mindescription", mindescription);
         formData.append("description", description);
         formData.append("price", price);
         formData.append("activityImage", fileName);
@@ -32,6 +34,7 @@ const EditActivity = (props) => {
 
         setActivityName("");
         setCategory("");
+        setMindescription("");
         setDescription("");
         setPrice("");
         setFileName("");
@@ -51,6 +54,7 @@ const EditActivity = (props) => {
         .then(res => [
             setActivityName(res.data.aname),
             setCategory(res.data.category),
+            setMindescription(res.data.mindescription),
             setDescription(res.data.description),
             setPrice(res.data.price),
             setFileName(res.data.articleImage),
@@ -84,6 +88,16 @@ const EditActivity = (props) => {
     className="form-control" placeholder="Category"/>
   </div>
 
+
+  <div className="form-group">
+    <label htmlFor="mindescription">Min Description</label>
+    <textarea 
+    value={mindescription}
+    onChange={e => setMindescription(e.target.value)}
+    className="form-control" rows="5"></textarea>
+  </div>
+
+
   <div className="form-group">
     <label htmlFor="description">Description</label>
     <textarea 
@@ -113,7 +127,7 @@ const EditActivity = (props) => {
   </div>
 
   <div className="flex-parent jc-center">
-  <Link to="/" type="submit" className="btn btn-outline-secondary">Back to Activity</Link>
+  <Link to="/activities" type="submit" className="btn btn-outline-secondary">Back to Activity</Link>
   </div>
 </form>
 </div>
