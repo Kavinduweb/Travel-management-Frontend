@@ -4,41 +4,31 @@ import axios from 'axios';
  
 export default class GuideConfirm extends Component{
  
-    constructor(props){
-      super(props);
-      this.state={
-      guide:[]
-      };
-    }
- 
-  componentDidMount(){
-    this.retrieveGuide();
-  }
- 
-  retrieveGuide(){
-    axios.get("http://localhost:8070/guide").then(res =>{
-      if(res.data.success){
-        this.setState({
-          guide:res.data.existingGuide
-        });
-        console.log(this.state.guide);
-      }
+  constructor(props){
+    super(props);
+
+    this.state={
+        guide:{}
+    };
+}
+
+
+componentDidMount(){
+    const id = this.props.match.params.id;
+    axios.get(`http://localhost:8070/guiderequest/${id}`).then((res)=>{
+        if(res.data.success){
+            this.setState({
+                guide:res.data.guide
+            });
+
+            console.log(this.state.guide);
+        }
     });
-  }
- 
-  
-  onDelete = (id) => {
-    axios.delete(`http://localhost:8070/guide/handle/delete/${id}`).then((res) => {
-      alert("Guide Details Deleted SuccessFully!");
-      this.retrieveGuide();
-    })
-  }
- 
-  
+}
 
  
   render(){
-
+    const{uname,email,phone,destination,tourdate,noofdates} = this.state.guide;
     return(
       <div className="info">
         <div className="container">
@@ -46,18 +36,17 @@ export default class GuideConfirm extends Component{
             
             <br/>
                
-                    {this.state.guide.map((guide,index)=>(
-                        <div key={index}>
-                            <div scope="row">{index+1}</div>
+                   
                                 <div className="jumbotron">                   
 	                                  <div className="row">
                                    
 		                                    <div className="col-sm-10">                                        
-			                                    <h6>Name : {guide.name}</h6> 	
-                                                <h6>Address : {guide.address}</h6> 		
-                                                <h6>Language : {guide.language}</h6> 		
-                                                <h6>E-Mail : {guide.email}</h6> 		
-                                                <h6>Contact Number : {guide.phone}</h6>                                        		                              
+			                                    <h6>UName : {uname}</h6> 	
+                                                <h6>E-Mail : {email}</h6> 		
+                                                <h6>Phone : {phone}</h6> 		
+                                                <h6>E-Mail : {destination}</h6> 		
+                                                <h6>Tour date : {tourdate}</h6>   
+                                                <h6>Number of dates: {noofdates}</h6>                                       		                              
 		                                    </div>
 	                                  </div>
                                     <br/>
@@ -73,13 +62,13 @@ export default class GuideConfirm extends Component{
                                     <br/>
                               </div> 
                         </div>
-                    ))}
+                   
                 
  
             <br/><br/><br/>
 
       </div>
-    </div>
+    
     )
   }
 }

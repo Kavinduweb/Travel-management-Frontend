@@ -57,9 +57,10 @@ const AddGuide = ()=>{
    };
     return(
        <div class = "info">
-        <div className = "container">
+       <section id="add">
+        <div className = "jumbotron">
               <div className = "w-50 mx-auto shadow p-5">
-                     <h2 className = "text- mb-10">Add New Guide</h2>
+                     <h2 className = "text- mb-10"><b>Add New Guide</b></h2>
 
                      <hr/>
 
@@ -166,7 +167,8 @@ const AddGuide = ()=>{
                                    required = "required" /> 
                             </div>
 
-                            <lable class="label-title"><b>Select Image</b>
+                            <lable htmlFor = "floatingInput"><b>Select Image</b>
+                                   <br/>
                                    <div class="mb-3">
                                           <input class="form-control" 
                                           type="file" 
@@ -176,12 +178,13 @@ const AddGuide = ()=>{
                                           required = "required" />
                                    </div>
                             </lable> 
-
+                            <br/>
                             <button type = "submit" className = "btn btn-primary">Add Guide</button>
                             
                      </form>
               </div>
        </div>
+       </section>
        </div>
     );
 };
