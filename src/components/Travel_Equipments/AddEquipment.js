@@ -1,6 +1,7 @@
 import React,{useReducer, useState} from "react"
 import {useHistory} from 'react-router-dom';
 import axios from "axios";
+import HeaderAdmin from '../HeaderAdmin'
 
 const AddEquipment = ()=>{
 
@@ -42,7 +43,9 @@ const AddEquipment = ()=>{
        alert(" Travel Equipment Added Successful")
    };
     return (
-      <div className="info">
+      <div>
+        <HeaderAdmin/>
+      <div className="infoadmin">
         <div className="container">
         <div className="w-75 mx-auto shadow p-5">
           <h2 className="text-center mb-4">Add Equipment</h2>
@@ -59,8 +62,9 @@ const AddEquipment = ()=>{
               />
             </div>
             <div className="form-group">
-              <input
+              <textarea
                 type="text"
+                rows="6"
                 className="form-control form-control-lg"
                 placeholder="Enter Description"
                 name="description"
@@ -89,6 +93,7 @@ const AddEquipment = ()=>{
             <button className="btn btn-primary btn-block">Done</button>
           </form>
         </div>
+      </div>
       </div>
       </div>
     );
