@@ -121,7 +121,7 @@ useEffect(()=>{
 
 
 
-                <div className="form-group">
+                <div className="form-group form-grouptr">
                     <label><b>Name</b></label>
                     <input type="text" className="form-control" placeholder="Enter Your Name"  name="name"
          value={name}
@@ -130,7 +130,7 @@ useEffect(()=>{
                 </div>
 
 
-                <div className="form-group">
+                <div className="form-group form-grouptr">
                     <label><b>Phone</b></label>
                     <input type="text" className="form-control" placeholder="Enter Phone Number"  name="phone"
          value={phone}
@@ -138,21 +138,21 @@ useEffect(()=>{
          required/>
                 </div>
 
-   <div className="form-group">
+   <div className="form-group form-grouptr">
                     <label><b>Address</b></label>
                     <input type="text" className="form-control" placeholder="Enter Your Address"  name="address"
          value={address}
          onChange={e=>onInputChange(e)}
          required/>
                 </div>
-   <div className="form-group">
+   <div className="form-group form-grouptr">
                     <label><b>Email</b></label>
                     <input type="email" className="form-control" placeholder="Enter E-mail"  name="email"
          value={email}
          onChange={e=>onInputChange(e)}
          required/>
                 </div>
-   <div className="form-group">
+   <div className="form-group form-grouptr">
                     <label><b>Join Place</b></label>
                     <input type="text" className="form-control" placeholder="Where do you join"  name="joinplace"
          value={joinplace}

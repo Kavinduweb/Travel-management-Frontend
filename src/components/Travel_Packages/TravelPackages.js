@@ -96,13 +96,13 @@ render(){
 
 	<div class="container py-1">
 
-		<article class="postcard dark blue">
+		<article class="postcard postcardtr dark blue">
 			<a class="postcard__img_link" >
 				<img class="postcard__img" src={`/uploads/${posts.packageImage}`} alt="..."  />
 			</a>
 			<div class="postcard__text">
 				<h1 class="postcard__title blue"><a href="#"> {idx+1}. &nbsp;{posts.packageName}</a></h1>
-				<div class="postcard__subtitle small">
+				<div class="postcard__subtitle small smalltr">
 					<time datetime="2020-05-25 12:00:00">
 						<i class="fas fa-calendar-alt mr-2"></i>{posts.date}
 					</time>

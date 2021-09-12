@@ -44,11 +44,11 @@ const ViewPackage=()=>{
     <div class="col-md-8" style={{backgroundColor:"  hsl(0,100%,25%,0.1)	"}}>
       <div class="card-body" >
         <h2 class="card-title"> {tpackage.packageName} </h2>
-        <p class="card-text"> <b>{tpackage.destination}</b></p>
-        <p class="card-text"><small class="text-muted">{tpackage.date}</small></p>
-        <p class="card-text"> No of Days -<b> {tpackage.noofdays}</b></p>
-        <p class="card-text"> No of Nights - <b>{tpackage.noofnights}</b></p>
-        <p class="card-text"> Per Person - <b>{tpackage.perperson}</b></p>
+        <p class="card-text ptr"> <b>{tpackage.destination}</b></p>
+        <p class="card-text ptr"><small class="text-muted">{tpackage.date}</small></p>
+        <p class="card-text ptr"> No of Days -<b> {tpackage.noofdays}</b></p>
+        <p class="card-text ptr"> No of Nights - <b>{tpackage.noofnights}</b></p>
+        <p class="card-text ptr"> Per Person - <b>{tpackage.perperson}</b></p>
       </div>
     </div>
   </div>
