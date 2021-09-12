@@ -1,5 +1,9 @@
 import React, {Component } from 'react';
 import axios from 'axios';
+import hotelimg from '../../Images/simple-house-logo.png'
+import luxurious from '../../Images/aa.jpg'
+import '../../Styles/templatemo-style.css'
+
 
 export default class UserHotelBooking extends Component{
 
@@ -42,51 +46,61 @@ export default class UserHotelBooking extends Component{
     
 
     render(){
-        return(
-          <div className="info">
-            <div className="container">
-            <h2>My Booking</h2><br></br>
-             
-<table className="table">
+      return(
 
-  <tbody>
-    {this.state.posts.map((posts,index)=>(
-      <tr key={index}>
+        <div className="info">
+          <div class="parallax-window" data-parallax="scroll" data-image-src="img/simple-house-01.jpg">
+            <img src={luxurious} alt="Logo" class="shimg" />
+              <div class="tm-header">
+                <div class="tm-header-inner">
+                  <div class="row" id="bokrow">
+                    <div class="col-md-6 col-12">
+                      <img src={hotelimg} alt="Logo" class="tm-site-logo" /> 
+                      <div class="tm-site-text-box">
+                        <h1 class="tm-site-title">My Reservation</h1>
+                        <h6 class="tm-site-description" >Dream Travelers</h6>
+                      </div>
+                    </div>
+                    <nav class="col-md-6 col-12 tm-nav">
+                      <ul class="tm-nav-ul">
+                        <li class="tm-nav-li"><a style={{textDecoration:'none' ,color:'white'}} href ={"/hotelpackage"} class="tm-nav-link ">Rooms</a></li>
+                        <li class="tm-nav-li"><a style={{textDecoration:'none' ,color:'white'}} href ={"/userhotelbooking"} class="tm-nav-link active">My Booking</a></li>
+                      </ul>
+                    </nav>	
+                  </div>
+                </div>
+              </div>
+          </div>
 
-              <td>
-                <br></br>
-                <h5>
-                  <a href={`/userhotelbooking/hotelbookingdetails/${posts._id}`} style={{textDecoration:'none'}}>
-                    {posts.roomType}
-                  </a>
-                </h5>
-                Arrival Date: {posts.arrivalDate}<br></br>
-                Departure Date: {posts.departureDate}<br></br>
-              </td>
-
-          <td>
-            <br></br><br></br><br></br>
-            <a className ="btn btn-warning" href ={`/edithotelbooking/${posts._id}`}>
-              <i className="fas fa-edit"></i>Edit Booking
-            </a>&nbsp;
-            <a className ="btn btn-danger" href ="#" onClick={()=>this.onDelete(posts._id)}>
-              <i className="fas fa-edit"></i>&nbsp;Cancle Booking
-            </a>
-        </td>
-        
-
-    </tr>
-    ))}
-    
-  </tbody>
-</table>
-      
-      <button className="btn btn-success"><a href="/hotelpackage" style={{textDecoration:'none', color:'white'}}>Back to Rooms</a></button>
-      <br></br>
-      <br></br>
-      <br></br> 
-</div>
-</div>
+          <div class="bokpadding">          
+            <div class="hero-image">
+                {this.state.posts.map((posts,index)=>(
+                  <div class="bokbox"> 
+                      <table class="boktable">
+                        <tr>
+                          <h3>
+                            <td class="boktd">
+                              <a style={{textDecoration:'none' ,color:'white'}} href={`/userhotelbooking/hotelbookingdetails/${posts._id}`}>{posts.roomType}</a>
+                            </td>
+                          </h3>
+                        </tr>
+                        <tr>
+                          <td class="boktd">Arrival Date: {posts.arrivalDate}</td>
+                        </tr>
+                        <tr>
+                          <td class="boktd">Departure Date: {posts.departureDate}</td>
+                            <th class="bokth">
+                              <a href={`/userhotelbooking/hotelbookingdetails/${posts._id}`}>
+                                <button class="btn btn-dark"  style={{width: "80%"}}>Details</button>
+                              </a>
+                            </th>
+                        </tr>
+                      </table>
+                  </div>
+                ))}
+            </div>
+          </div> 
+        </div>
         )
     }
 }

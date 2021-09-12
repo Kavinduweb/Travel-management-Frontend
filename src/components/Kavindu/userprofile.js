@@ -1,6 +1,8 @@
 import React,{Component} from 'react';
-
+import ReactToPrint from "react-to-print";
 import axios from 'axios';
+import Header from '../Header';
+import Footer from '../Footer';
 
 
 export default class UserProfile extends Component {
@@ -17,6 +19,7 @@ export default class UserProfile extends Component {
 
     logout(){
 
+        if (window.confirm("You Want To LogOut ")){
        const dat = localStorage.removeItem("userInfo");
 
        if (dat == null  ){
@@ -24,10 +27,8 @@ export default class UserProfile extends Component {
         alert("log  Out Success ");
         window.location.replace("/")
 
-       }
-       else {
-           alert("cant log out ")
-       }
+       } }
+       
     }
 
     
@@ -82,26 +83,37 @@ export default class UserProfile extends Component {
 
 
         return(
+           <div>
+               <Header/>
             <div className="body1">
-
+                <div className="info">
             <div style={{marginLeft:300}}> 
-                 <button onClick={this.logout} >Log out</button>
+                 <button className="button12" onClick={this.logout} >Log out</button>
                  </div>        
-             <h2> {this.state.View.Name}'s profile </h2>  
-   
-               <form>
-               <input id="Email" type="text" value={this.state.View.Name} />
-               <input id="Name" type="text" value={this.state.View.Email} />
-               <input id="Num" type="text" value={this.state.View.Num} />
-               <input id="Password" type="Password" value={this.state.View.Password} />
+              
+            
+               <form className="form12">
+               <h2> {this.state.View.Name}'s profile </h2> 
+              <hr/>
+               <input className="inputabc" id="Email" type="text" value={this.state.View.Name} />
+               <input className="inputabc" id="Name" type="text" value={this.state.View.Email} />
+               <input className="inputabc" id="Num" type="text" value={this.state.View.Num} />
+               <input className="inputabc" id="Password" type="Password" value={this.state.View.Password} />
 
               
-               <a className="btn btn-danger"  href={"edit/" + this.state.View._id}>
+               <a className="btn btn-danger a123"  href={"edit/" + this.state.View._id}>
                                 <i className ="fas fa-edit"></i>&nbsp;Edit My Details
                             </a>
         
                             </form> 
+                           
+                            </div>
                 </div>
+
+                <Footer/>
+
+                </div>
+              
         )
 
 

@@ -72,67 +72,70 @@ export default class AdminEditHotelPackage extends Component{
     render(){
         return(
             <div className="info">
-            <div className="col-md-8 mt-4 mx-auto">
-                <h1 className="h3 mb-3 font-weight-normal">Edit Room Details</h1>
-                <form className="needs-validation" no noValidate>
-                    <div className="from group" style={{marginBottom:'15px'}}>
-                        <label style={{marginBottom:'5px'}}>Room Type</label>
-                        <input type="text"
-                        className="form-control"
-                        name="roomType"
-                        placeholder=""
-                        value={this.state.roomType}
-                        onChange={this.handleInputChange}/>
+                <div className="col-md-8 mt-4 mx-auto">
+                    <div class="adfor">
+                        <h1 className="h3 mb-3 font-weight-normal" id="tpic">Edit Room Details</h1>
+                        <form className="needs-validation" no noValidate>
+
+                            <div className="from group" style={{marginBottom:'15px'}}>
+                                <label style={{marginBottom:'5px'}}>Room Type</label>
+                                    <input type="text"
+                                    className="form-control"
+                                    name="roomType"
+                                    placeholder=""
+                                    value={this.state.roomType}
+                                    onChange={this.handleInputChange}/>
+                            </div>
+
+                            <div className="from group" style={{marginBottom:'15px'}}>
+                                <label style={{marginBottom:'5px'}}>Max Capacity</label>
+                                    <input type="text"
+                                    className="form-control"
+                                    name="maxCapacity"
+                                    placeholder="Max Capacity"
+                                    value={this.state.maxCapacity}
+                                    onChange={this.handleInputChange}/>
+                            </div>
+
+                            <div className="from group" style={{marginBottom:'15px'}}>
+                                <label style={{marginBottom:'5px'}}>Price</label>
+                                    <input type="number"
+                                    className="form-control"
+                                    name="price"
+                                    placeholder="Price"
+                                    value={this.state.price}
+                                    onChange={this.handleInputChange}/>
+                            </div>
+
+                            <div className="from group" style={{marginBottom:'15px'}}>
+                                <label style={{marginBottom:'5px'}}>Size</label>
+                                    <input type="text"
+                                    className="form-control"
+                                    name="size"
+                                    placeholder="Size"
+                                    value={this.state.size}
+                                    onChange={this.handleInputChange}/>
+                            </div>
+
+                            <div className="from group" style={{marginBottom:'15px'}}>
+                                <label style={{marginBottom:'5px'}}>Details</label>
+                                    <textarea rows="10" cols="60" name="text"  type="text"
+                                    className="form-control"
+                                    name="details"
+                                    value={this.state.details}
+                                    onChange={this.handleInputChange}>
+                                    </textarea>
+                            </div>
+
+                            <div class="btnset">
+                                <button className="btn btn-success" type="submit" style={{marginTop:'15px'}} onClick={this.onSubmit}>
+                                    <i className="far fa-check-square"></i>&nbsp; Update Package   
+                                </button>
+                            </div>
+
+                        </form>
                     </div>
-
-                    <div className="from group" style={{marginBottom:'15px'}}>
-                        <label style={{marginBottom:'5px'}}>Details</label>
-                        <input type="text"
-                        className="form-control"
-                        name="details"
-                        placeholder="Details"
-                        value={this.state.details}
-                        onChange={this.handleInputChange}/>
-                    </div>
-
-                    <div className="from group" style={{marginBottom:'15px'}}>
-                        <label style={{marginBottom:'5px'}}>Price</label>
-                        <input type="text"
-                        className="form-control"
-                        name="price"
-                        placeholder="Price"
-                        value={this.state.price}
-                        onChange={this.handleInputChange}/>
-                    </div>
-
-                    <div className="from group" style={{marginBottom:'15px'}}>
-                        <label style={{marginBottom:'5px'}}>Size</label>
-                        <input type="text"
-                        className="form-control"
-                        name="size"
-                        placeholder="Size"
-                        value={this.state.size}
-                        onChange={this.handleInputChange}/>
-                    </div>
-
-                    <div className="from group" style={{marginBottom:'15px'}}>
-                        <label style={{marginBottom:'5px'}}>Max Capacity</label>
-                        <input type="text"
-                        className="form-control"
-                        name="maxCapacity"
-                        placeholder="Max Capacity"
-                        value={this.state.maxCapacity}
-                        onChange={this.handleInputChange}/>
-                    </div>
-
-
-<button className="btn btn-success" type="submit" style={{marginTop:'15px'}} onClick={this.onSubmit}>
-    <i className="far fa-check-square"></i>
-    &nbsp; Update
-</button>
-
-                </form>
-            </div>
+                </div>
             </div>
         )
     }

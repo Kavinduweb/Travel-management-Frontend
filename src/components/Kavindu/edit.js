@@ -2,6 +2,8 @@ import React,{useReducer, useState,useEffect} from "react"
 import {useHistory,useParams} from 'react-router-dom';
 
 import axios from "axios";
+import Header from "../Header";
+import Footer from "../Footer";
 
 
   
@@ -46,20 +48,27 @@ const loadPackage = async()=>{
    },[]);
 
         return(
-
+            <div>
+                <Header/>
             <div className="body1">
-                
-        <form onSubmit={e=>onSubmit(e)}>
+                <div className="info">
+                 
+        <form onSubmit={e=>onSubmit(e)} className="form12">
 
-                <input type="text" name="Name"  value={Name}onChange={e=>onInputChange(e)} />
-                <input type="text"  name ="Email" value={Email}  onChange={e=>onInputChange(e)} />
-                <input type="text" name="Num" value={Num}  onChange={e=>onInputChange(e)}/>
-                <input type="text" Name="Password" value={Password} onChange={e=>onInputChange(e)} />
+                <h2 className="h222">Edit Details </h2>
+                <input className="inputabc" type="text" name="Name"  value={Name}onChange={e=>onInputChange(e)} />
+                <input className="inputabc" type="text"  name ="Email" value={Email}  onChange={e=>onInputChange(e)} />
+                <input className="inputabc" type="text" name="Num" value={Num}  onChange={e=>onInputChange(e)}/>
+                <input className="inputabc" type="text" Name="Password" value={Password} onChange={e=>onInputChange(e)} />
 
 
-                <input type="submit" name="submit" class="reg" value="Edit Conifrm"/>
+                <input className="inputabc" type="submit" name="submit" class="reg" value="Edit Conifrm"/>
 
                             </form>
+            </div>
+            </div>
+            
+            <Footer/>
             </div>
 
             

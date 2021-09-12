@@ -1,5 +1,7 @@
 import React, {Component} from 'react'
 import axios from 'axios'
+import Header from '../Header';
+import Footer from '../Footer';
 
 export default class EditPayment extends Component{
 
@@ -132,6 +134,8 @@ export default class EditPayment extends Component{
     const{payf} = this.state;
     const{method}= this.state;
      return(
+      <div>
+      <Header/>
        <div className="info" id="pybody">
        <div className="col-md-8 mt-4 mx-auto" style={{backgroundColor:"white"}}>
         
@@ -202,6 +206,7 @@ export default class EditPayment extends Component{
          </form>
        </div> <br></br>
        </div> 
+       </div>
      )
    }
   

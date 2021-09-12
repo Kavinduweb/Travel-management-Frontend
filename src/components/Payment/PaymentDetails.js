@@ -10,6 +10,16 @@ export default class PaymentDetails extends Component{
         };
     }
 
+    onDelete = (id)=>{
+        // eslint-disable-next-line no-restricted-globals
+        if(confirm("Are you Sure you want to delete this item?")){
+     axios.delete(`http://localhost:8070/payment/delete/${id}`).then((res)=>{
+       alert("Delete Successfully");
+      window.location.replace("/")
+     })
+   }}
+ 
+
     componentDidMount(){
         const id = this.props.match.params.id;
         axios.get(`http://localhost:8070/payment/${id}`).then((res)=>{
@@ -24,7 +34,7 @@ export default class PaymentDetails extends Component{
     }
     render(){
 
-        const{reference,name,payf,method,card,time,no,amount} = this.state.payment;
+        const{reference,name,payf,method,card,time,no,amount,_id} = this.state.payment;
         return(
             <div style={{marginTop:'20px'}}>
                 <h4>{card}</h4>
@@ -45,6 +55,17 @@ export default class PaymentDetails extends Component{
                      <dt className="col-sm-3">Amount</dt>
                      <dd className="col-sm-9">{amount}</dd>
                      
+
+
+                     <a className ="btn btn-warning" href ={`/payment/edit/${_id}`}>
+          <i className="fas fa-edit"></i>&nbsp;Edit
+        </a>&nbsp;
+     
+
+        
+          <a className ="btn btn-danger" href="#" onClick={()=>this.onDelete(_id)} >
+          <i className="fas fa-edit"></i>&nbsp;Delete
+          </a>
 
                  </dl>
             </div>

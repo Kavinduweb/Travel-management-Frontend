@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from 'react'
 import { useHistory } from 'react-router-dom';
-import '../../../src/Form.css';
+import '../../../src/Form.css'; 
 import axios from "axios";
 import { configure } from '@testing-library/react';
+import Header from '../Header';
+import Footer from '../Footer';
 
 export default function RegisterUser ({}){
 
@@ -44,9 +46,9 @@ const NewReg ={
 
 }
 	console.log(NewReg);
-
+	
 	axios.post("http://localhost:8070/Register/add",NewReg).then(()=>{
-		alert("success")
+		alert("success");
 	}).catch((err)=>{
 		alert(err);
 	})
@@ -58,13 +60,14 @@ const getData = async (e)=>{
 
 	e.preventDefault();
 	
-	const email = document.getElementById('logemail');
+	const email = document.getElementById('logemail').value;
 	const pass = document.getElementById('logpass');
 
-	if(email.value == '' || email.value == null){
-		alert("email Required");
-		return false;
-	}
+	if (email == '' || email.includes('@'  && '.com') == false ){
+
+        alert("Enter Valid email Address")
+        return false;
+    }
 	else if (pass.value == '' || pass.value == null){
 		alert("pass Required");
 		return false
@@ -104,49 +107,60 @@ const getData = async (e)=>{
 
 
 return (
-
-	<div className="body1">
-<div className="container" id="container">
-	<div className="form-container sign-up-container">
-		<form onSubmit={sendData} >
-			<h1>Create Account</h1>
+<div>	<Header/>
+	<div className="body1 ">
+	
+		<div className="info">
+<div className="container containerabc" id="container">
+	<div className="form-container form-containerabc sign-up-container sign-up-containerabc">
+	  
+		<form onSubmit={sendData} className="form12">
+			<h1 className="h111">Create Account</h1>
 			
-			<input type="text" placeholder="Name" id="Name" onChange={(e)=>{  setName(e.target.value) ; }} />
-			<input type="email" placeholder="Email" id="Email" onChange={(e)=>{  setEmail(e.target.value) ; }}  />
-       	 	 <input type="number" placeholder="Mobile" id="Number"  onChange={(e)=>{ setNum (e.target.value) ; }} />
-			<input type="password" placeholder="Password" id="Password" onChange={(e)=>{setPassword(e.target.value) ;}}/>
+			<input className="inputabc" type="text" placeholder="Name" id="Name" onChange={(e)=>{  setName(e.target.value) ; }} required />
+			<input className="inputabc" type="email" placeholder="Email" id="Email" onChange={(e)=>{  setEmail(e.target.value) ; }}  required/>
+       	 	 <input className="inputabc" type="number" placeholder="Mobile" id="Number" onChange={(e)=>{ setNum (e.target.value) ; }} required/>
+			<input className="inputabc" type="password" placeholder="Password" id="Password" onChange={(e)=>{setPassword(e.target.value) ;}} required/>
 
-			<button type="submit">Sign Up</button>
+			<button className="button12 "type="submit">Sign Up</button>
 		</form>
+		
 	</div> 
-	<div className="form-container sign-in-container">
-		<form  onSubmit={getData}>
-			<h1>Sign in</h1>
+	<div className="form-container form-containerabc sign-in-container sign-in-containerabc">
+	
+		<form  onSubmit={getData} className="form12">
+			<h1 className="h111">Sign in</h1>
 			
-			<span>or use your account</span>
-			<input type="email" placeholder="Email" id='logemail'value={Email} onChange={(e)=>{  setEmail(e.target.value) ; }} />
-			<input type="password" placeholder="Password" id='logpass' value={Password} onChange={(e)=>{  setPassword(e.target.value) ; }}  />
-			<a href="#">Forgot your password?</a>
-			<button>Sign In</button>
+			
+			<input className="inputabc" type="text" placeholder="Email" id='logemail'value={Email} onChange={(e)=>{  setEmail(e.target.value) ; }} />
+			<input className="inputabc" type="password" placeholder="Password" id='logpass' value={Password} onChange={(e)=>{  setPassword(e.target.value) ; }}  />
+			<a href="/forget" className="a123" >Forgot your password?</a>
+			<button className="button12  ">Sign In</button>
 		</form>
+		
 	</div>
-	<div className="overlay-container">
-		<div className="overlay">
-			<div className="overlay-panel overlay-left">
-				<h1>Welcome Back!</h1>
-				<p>To keep connected with us please login with your personal info</p>
-				<button className="ghost" id="signIn" onClick={window['log']}>Sign In</button>
+	<div className="overlay-container overlay-containerabc">
+		<div className="overlay overlayabc">
+			<div className="overlay-panel overlay-panelabc overlay-left overlay-leftabc">
+				<h1 className="h111">Welcome Back!</h1>
+				<p className="p123">To keep connected with us please login with your personal info</p>
+				<button className="button12 ghost " id="signIn" onClick={window['log']}>Sign In</button>
 			</div>
-			<div className="overlay-panel overlay-right">
-				<h1>Hello, Friend!</h1>
-				<p>Enter your personal details and start journey with us</p>
-				<button className="ghost" id="signUp" onClick={window['reg']}>Sign Up</button>
+			<div className="overlay-panel overlay-panelabc overlay-right overlay-rightabc">
+				<h1 className="h111">Hello, Friend!</h1>
+				<p className="p123">Enter your personal details and start journey with us</p>
+				<button className="button12 ghost " id="signUp" onClick={window['reg']}>Sign Up</button>
 			</div>
 		</div>
 	</div>
 </div>
 
-</div>	
+</div>
+</div>
+
+
+	<Footer/>
+</div>
 )
 
 }

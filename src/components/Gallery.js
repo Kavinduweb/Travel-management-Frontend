@@ -1,9 +1,14 @@
 import React from 'react'
+import Header from './Header';
+import Footer from './Footer';
+
 
 const Gallery = ()=>{
 
     
     return(
+      <div>
+            <Header/>
         <div className="info">
 
 
@@ -208,6 +213,8 @@ const Gallery = ()=>{
 
 
 
+        </div>
+        <Footer/>
         </div>
     )
 

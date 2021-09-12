@@ -15,6 +15,9 @@ const Activities = () => {
       .catch(error => console.log(error));
     });
 
+ 
+
+
     return (
         <MainContainer>
             <div className="info">
@@ -45,7 +48,7 @@ const Activities = () => {
             )
             </div>
         </MainContainer>
-    );
+);
             
 };
 

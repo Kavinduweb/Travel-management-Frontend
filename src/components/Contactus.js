@@ -1,6 +1,9 @@
 import React,{useReducer, useState} from "react"
 import {useHistory} from 'react-router-dom';
 import axios from "axios";
+import Header from './Header';
+import Footer from './Footer';
+
  
 const ContactUs = ()=>{
  
@@ -23,6 +26,8 @@ const ContactUs = ()=>{
  }
    
     return(
+        <div>
+            <Header/>
         <div className="bodycn">
             <div className="info">
 
@@ -85,6 +90,8 @@ const ContactUs = ()=>{
 
             </div>
 </div></div>
+<Footer/>
+</div>
 
     )
 

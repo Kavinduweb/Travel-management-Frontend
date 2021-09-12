@@ -2,6 +2,7 @@ import React, {useState, useEffect} from "react"
 import axios from "axios";
 import { Link ,useParams, useHistory} from "react-router-dom";
 import '../../Styles/TravelPackage.css'
+import HeaderAdmin from '../HeaderAdmin'
 
 
 const PackageDetailsAdmin=()=>{
@@ -41,8 +42,11 @@ const deletepackage = async id =>{
 
  
 return(
+  <div>
+  <HeaderAdmin/>
 
-  <div className="info" >
+
+  <div className="infoadmin" >
     <div className="container" style={{marginTop:'20px'}}>
 
     <small class="text-muted" style={{marginInlineStart:"2%"}}>  
@@ -64,18 +68,18 @@ return(
 
 
     <ul class="postcard__tagbox" style={{fontSize:"16px"}}>
-					<li class="tag__item"><i class="fas fa-tag mr-2"></i>PP&nbsp;{tpackage.perperson}</li>
+					<li class="tag__item"><i class="fas fa-tag mr-2"></i>PP Rs.&nbsp;{tpackage.perperson}</li>
 					<li class="tag__item"><i class="fas fa-clock mr-2"></i>{tpackage.noofdays}&nbsp;{tpackage.noofnights}</li>
 					<li class="tag__item play blue">	<i class="fas fa-car mr-2"></i>{tpackage.vehical}	</li>
            
              <li >
-             <small class="text-muted" style={{marginInlineStart:"20%"}}> 
+             <small class="text-muted" style={{marginInlineStart:"15%"}}> 
               <button type="submit" class="btn btn-danger" style={{width:"300px",fontSize:"20px"}} onClick={()=>deletepackage(id)} >
                Delete Package</button>
               
              </small>
              </li>
-             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
              <li >
              <small class="text-muted"> 
               <button type="submit" class="btn btn-danger" style={{width:"300px",fontSize:"20px"}}>
@@ -98,7 +102,7 @@ return(
     
     
     </div>
-
+</div>
 )
 
 };
