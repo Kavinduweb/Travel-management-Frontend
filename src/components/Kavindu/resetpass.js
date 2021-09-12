@@ -54,15 +54,15 @@ const loadPackage = async()=>{
             <div className="body1">
                 <div className="info">
                  
-        <form onSubmit={e=>onSubmit(e)} className="form1">
+        <form onSubmit={e=>onSubmit(e)} className="form12">
         <hr/>
-                <h2>Reset Password </h2>
+                <h2 className="h222">Reset Password </h2>
                 <hr/>
                 <h8>Enter New Password</h8>
-                <input type="password" Name="Password" value={Password} onChange={e=>onInputChange(e)} />
+                <input className="inputabc" type="password" Name="Password" value={Password} onChange={e=>onInputChange(e)} />
 
                
-                <input type="submit" name="submit" className="button1" value="Confirm"/>
+                <input type="submit" name="submit" className="button12" value="Confirm"/>
 
                 <br/>
 

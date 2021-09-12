@@ -53,8 +53,8 @@ componentDidMount(){
 axios.post("http://localhost:8070/hotelbooking/add",data).then((res)=>{
     if(res.data.success){
         // eslint-disable-next-line no-restricted-globals
-        if(confirm("Your reservation was Successfull, Did you want to pay Now?")){
-            window.location.href = `/payment/add/${this.props.match.params.id}`;
+        if(confirm("Your reservation was Successfull,pleaSe select OK to pay!")){
+            window.location.href = `/payment/add-room/${this.props.match.params.id}`;
         }
         else{
             window.location.href = "/userhotelbooking";
@@ -71,115 +71,110 @@ axios.post("http://localhost:8070/hotelbooking/add",data).then((res)=>{
 
         return(
             <div className="info">
-
-            <div id="booking" class="section">
-		<div class="section-center">
-			<div class="container">
-				<div class="row">
-					<div class="col-md-7 col-md-push-5">
-						<div class="booking-cta">
-							<h1>Make Your</h1>
-                            <h1>Reservation</h1>
-							<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi facere, soluta magnam consectetur molestias itaque
-								ad sint fugit architecto incidunt iste culpa perspiciatis possimus voluptates aliquid consequuntur cumque quasi.
-								Perspiciatis.
-							</p>
-						</div>
-					</div>
-					<div class="col-md-4 col-md-pull-7">
-						<div class="booking-form">
-							<form onSubmit={this.onSubmit}>
-                            <div class="row">
-									<div class="col-sm-7">
-										<div class="form-group">
-											<span class="form-label">Your Room Type</span>
-                                            <input type="text"
-                                            className="form-control"
-                                            name="roomType"
-                                            placeholder=""
-                                            value={roomType}
-                                            disabled
-                                            onChange={this.handleInputChange}/>
-										</div>
-									</div>
-									<div class="col-sm-5">
-										<div class="form-group">
-											<span class="form-label">Max Person</span>
-											<input type="text"
-                                            className="form-control"
-                                            name="capacity"
-                                            placeholder=""
-                                            value={maxCapacity}
-                                            disabled
-                                            onChange={this.handleInputChange}/>
-											<span class="select-arrow"></span>
-										</div>
-									</div>
-								</div>
-                                <div class="form-group">
-									<span class="form-label">Full Name</span>
-                                    <input type="text"
-                                    className="form-control"
-                                    name="name"
-                                    placeholder="Name"
-                                    value={this.state.name}
-                                    onChange={this.handleInputChange}/>
-								</div>
-                                <div class="form-group">
-									<span class="form-label">Email</span>
-                                    <input type="email"
-                                    className="form-control"
-                                    name="email"
-                                    placeholder="Email"
-                                    value={this.state.email}
-                                    onChange={this.handleInputChange}
-                                    required/>
-								</div>
-								<div class="row">
-									<div class="col-sm-6">
-										<div class="form-group">
-											<span class="form-label">Check In</span>
-                                            <input type="date"
-                                            required
-                                            className="form-control"
-                                            name="arrivalDate"
-                                            placeholder="YY/MM/DD"
-                                            value={this.state.arrivalDate}
-                                            onChange={this.handleInputChange}/>
-										</div>
-									</div>
-									<div class="col-sm-6">
-										<div class="form-group">
-											<span class="form-label">Check out</span>
-                                            <input type="date"
-                                            required
-                                            className="form-control"
-                                            name="departureDate"
-                                            placeholder="YY/MM/DD"
-                                            value={this.state.departureDate}
-                                            onChange={this.handleInputChange}/>
-										</div>
-									</div>
-								</div>
-                                <div class="row">
-									<div class="col-sm-6">
-										<div class="form-group">
-                                        <button class="shenuka" type="submit" >
-                                        <span class="away">Confirm booking</span>
-                <span class="over">Confirm booking</span></button>
-										</div>
-									</div>
-								</div>
-								<div class="form-btn">
-								</div>
-							</form>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-
+                <div id="booking" class="section">
+		            <div class="section-center">
+			            <div class="container">
+				            <div class="row" id="bokrow">
+					            <div class="col-md-7 col-md-push-5">
+						            <div class="booking-cta">
+							            <h1>Make Your</h1>
+                                        <h1>Reservation</h1>
+							            <p>
+                                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi facere, soluta magnam consectetur molestias itaque
+								            ad sint fugit architecto incidunt iste culpa perspiciatis possimus voluptates aliquid consequuntur cumque quasi.
+								            Perspiciatis.
+							            </p>
+						            </div>
+					            </div>
+					            <div class="col-md-4 col-md-pull-7">
+						            <div class="booking-form">
+							            <form onSubmit={this.onSubmit}>
+                                            <div class="row" id="bokrow">
+									            <div class="col-sm-7">
+										            <div class="form-group">
+                                                    <span class="form-label">Your Room Type</span>
+                                                        <input type="text"
+                                                        className="form-control"
+                                                        name="roomType"
+                                                        placeholder=""
+                                                        value={roomType}
+                                                        disabled
+                                                        onChange={this.handleInputChange}/>
+										            </div>
+									            </div>
+									            <div class="col-sm-5">
+										            <div class="form-group">
+                                                        <span class="form-label">Max Person</span>
+                                                            <input type="text"
+                                                            className="form-control"
+                                                            name="capacity"
+                                                            placeholder=""
+                                                            value={maxCapacity}
+                                                            disabled
+                                                            onChange={this.handleInputChange}/>
+											            <span class="select-arrow"></span>
+										            </div>
+									            </div>
+								            </div>
+                                            <div class="form-group">
+                                                <span class="form-label">Full Name</span>
+                                                    <input type="text"
+                                                    className="form-control"
+                                                    name="name"
+                                                    placeholder="Name"
+                                                    value={this.state.name}
+                                                    onChange={this.handleInputChange}/>
+								            </div>
+                                            <div class="form-group">
+                                            <span class="form-label">Email</span>
+                                                <input type="email"
+                                                className="form-control"
+                                                name="email"
+                                                placeholder="Email"
+                                                value={this.state.email}
+                                                onChange={this.handleInputChange}
+                                                required/>
+								            </div>
+								            <div class="row" id="bokrow">
+									            <div class="col-sm-6">
+										            <div class="form-group">
+                                                        <span class="form-label">Check In</span>
+                                                            <input type="date"
+                                                            required
+                                                            className="form-control"
+                                                            name="arrivalDate"
+                                                            placeholder="YY/MM/DD"
+                                                            value={this.state.arrivalDate}
+                                                            onChange={this.handleInputChange}/>
+										            </div>
+									            </div>
+                                                <div class="col-sm-6">
+                                                    <div class="form-group">
+                                                        <span class="form-label">Check out</span>
+                                                            <input type="date"
+                                                            required
+                                                            className="form-control"
+                                                            name="departureDate"
+                                                            placeholder="YY/MM/DD"
+                                                            value={this.state.departureDate}
+                                                            onChange={this.handleInputChange}/>
+                                                    </div>
+                                                </div>
+								            </div>
+                                            <div>
+                                                <div class="">
+                                                    <button class="btn btn-secondary" type="submit" style={{backgroundColor: "#192c3e",width: "100%"}}>
+                                                        Confirm booking
+                                                    </button>
+                                                </div>
+                                            </div>  
+							            </form>
+						            </div>
+					            </div>
+				            </div>
+			            </div>
+		            </div>
+	            </div>
             </div>
         )
     }

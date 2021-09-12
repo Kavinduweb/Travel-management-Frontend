@@ -1,11 +1,16 @@
 import React from 'react'
 import '../Styles/AboutUS.css'
 import '../Form.css'
+import Header from './Header';
+import Footer from './Footer';
+
 
 const Services = ()=>{
 
     
     return(
+        <div>
+            <Header/>
         <div className="info">
 
 
@@ -96,8 +101,8 @@ time reliable offers for the best prices for our customers</small> </p>
 
 
 
-
-
+</div>
+<Footer/>
 </div>
     )
 

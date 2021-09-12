@@ -2,6 +2,9 @@ import React,{useReducer, useState,useEffect} from "react"
 import {useHistory,useParams} from 'react-router-dom';
 import axios from "axios";
 import '../../Styles/TravelPackage.css'
+import Header from '../Header';
+import Footer from '../Footer';
+
 
 const PackageBooking = ()=>{
 
@@ -65,11 +68,13 @@ useEffect(()=>{
 
      await axios.post ("http://localhost:8070/packagebooking/add",data);
      alert("Booking Added Successfull. Click Ok to Pay")
-     history.push("/payment/add");
+     history.push(`/payment/add-package/${id}`);
     
  }
  const {packageName,perperson}=tpackage;
  return(
+    <div>
+    <Header/>
     <div className="infotr">
     <div className="bodyaa"> 
     
@@ -164,6 +169,8 @@ useEffect(()=>{
 </div>
 <br/><br/>
 </div>
+</div>
+<Footer/>
 </div>
 
     

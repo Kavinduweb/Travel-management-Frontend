@@ -82,20 +82,20 @@ return(
     <form onSubmit={emailsend}> 
 
    
-<input id="em" name="Email" type="text" placeholder="Email" required  style={{visibility:"hidden"}}/>
-<input id="id" name="id1" type="text" placeholder="name"  style={{visibility:"hidden"} }/>
+<input className ="inputabc" id="em" name="Email" type="text" placeholder="Email" required  style={{visibility:"hidden"}}/>
+<input className ="inputabc" id="id" name="id1" type="text" placeholder="name"  style={{visibility:"hidden"} }/>
 
-< input type="submit" id ="hari" value="Confirm" style={{visibility:"hidden"}}   />
+< input className ="inputabc"type="submit" id ="hari" value="Confirm" style={{visibility:"hidden"}}   />
 
 </form>
-        <form  className="form1"  onSubmit={foremail} id="form" >
+        <form  className="form12"  onSubmit={foremail} id="form" >
             <h2 id='h2'>Enter Your Email</h2>
           <h2 id="emailval"></h2>
-            <input id="input" name="a" type="email" placeholder="Email" required/>
-            <input id="demo" name="a" type="text" placeholder="name" />
+            <input className ="inputabc" id="input" name="a" type="email" placeholder="Email" required/>
+            <input className ="inputabc" id="demo" name="a" type="text" placeholder="name" />
            
 
-            < button id="button" className="button1" type="submit" >Submit</button>
+            < button id="button" className="button12" type="submit" >Submit</button>
         </form>
     
 

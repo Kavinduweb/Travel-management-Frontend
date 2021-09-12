@@ -53,16 +53,16 @@ const loadPackage = async()=>{
             <div className="body1">
                 <div className="info">
                  
-        <form onSubmit={e=>onSubmit(e)} className="form1">
+        <form onSubmit={e=>onSubmit(e)} className="form12">
 
-                <h2>Edit Details </h2>
-                <input type="text" name="Name"  value={Name}onChange={e=>onInputChange(e)} />
-                <input type="text"  name ="Email" value={Email}  onChange={e=>onInputChange(e)} />
-                <input type="text" name="Num" value={Num}  onChange={e=>onInputChange(e)}/>
-                <input type="text" Name="Password" value={Password} onChange={e=>onInputChange(e)} />
+                <h2 className="h222">Edit Details </h2>
+                <input className="inputabc" type="text" name="Name"  value={Name}onChange={e=>onInputChange(e)} />
+                <input className="inputabc" type="text"  name ="Email" value={Email}  onChange={e=>onInputChange(e)} />
+                <input className="inputabc" type="text" name="Num" value={Num}  onChange={e=>onInputChange(e)}/>
+                <input className="inputabc" type="text" Name="Password" value={Password} onChange={e=>onInputChange(e)} />
 
 
-                <input type="submit" name="submit" class="reg" value="Edit Conifrm"/>
+                <input className="inputabc" type="submit" name="submit" class="reg" value="Edit Conifrm"/>
 
                             </form>
             </div>

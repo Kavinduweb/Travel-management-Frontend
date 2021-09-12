@@ -2,6 +2,7 @@ import React, {useState, useEffect ,Component} from "react"
 import axios from "axios";
 import { Link,useParams ,useHistory} from "react-router-dom";
 import '../../Styles/TravelPackage.css'
+import HeaderAdmin from '../HeaderAdmin'
 
 
 const ViewPackage=()=>{
@@ -30,7 +31,7 @@ const ViewPackage=()=>{
     
      
     return(
-      <div className="info" >
+      <div className="infoadmin" >
         <div className="container" style={{marginTop:'20px'}}>
        
 
@@ -53,10 +54,6 @@ const ViewPackage=()=>{
   </div>
 </div>   </div>
 
-
-
-
-
         </div>
     
     )
@@ -68,6 +65,9 @@ export default function DeleteTravelPackage() {
     const [openModal,setOpenModal] = useState(false) 
 
     return (
+      <div>
+      <HeaderAdmin/>
+  
         <div style={{backgroundColor:"hsl(0,0%,0%,0.1)"}}> 
               <div className="Appxx"  >
                <h1>Do You Want to delete this travel package .?</h1>
@@ -75,26 +75,14 @@ export default function DeleteTravelPackage() {
                  <button className="openModalBtn" className="btn btn-danger" onClick={()=>{setOpenModal(true);}}>Delete Package</button>
                 { openModal && <Modal setOpenModal={setOpenModal}/>}    
               </div>
-        </div>
+        </div></div>
       )
       }
 
 function Modal({ setOpenModal }) {
     
     let history = useHistory();
-    const [packages,setUser]= useState([]);
-
-    useEffect(()=>{
-        loadUser();
-    },[]);
-
-    const loadUser= async ()=>{
-      const result =await  axios.get("http://localhost:8070/travelpackages/");
-      setUser(result.data.existingPackage)
-
-  };
-
-
+   
 const deletepackage = async id =>{
 await axios.delete(`http://localhost:8070/travelpackages/admin/delete/${id}`);
 alert("deleted");
