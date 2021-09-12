@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { useHistory, useParams } from "react-router-dom";
+import HeaderAdmin from '../HeaderAdmin'
 
 const EditGuide = () => {
   let history = useHistory();
@@ -37,8 +38,9 @@ const EditGuide = () => {
 
 
   return (
-  
-    <div className = "info">
+  <div>
+    <HeaderAdmin/>
+    <div className = "infoadmin">
       <section id="edit">
       <div className="container">
           <div className="w-50 mx-auto shadow p-5">
@@ -116,6 +118,7 @@ const EditGuide = () => {
       </div>
       </section>
 	</div> 
+  </div>
   );
 };
 

@@ -1,6 +1,7 @@
 import React,{Component} from 'react'
 import axios from 'axios';
 import "../../Styles/Guide.css";
+import HeaderAdmin from '../HeaderAdmin'
  
 export default class AllGuideDetails extends Component{
  
@@ -57,7 +58,9 @@ export default class AllGuideDetails extends Component{
  
   render(){
     return(
-      <div className = "info">
+      <div>
+        <HeaderAdmin/>
+      <div className = "infoadmin">
       <div className="container"> 
       
         <br/>
@@ -139,6 +142,7 @@ export default class AllGuideDetails extends Component{
       </section>
         <br/><br/><br/>
 
+      </div>
       </div>
       </div>
     )

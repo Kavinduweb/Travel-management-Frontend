@@ -1,6 +1,7 @@
 import React from "react";
 import axios from 'axios'
 import ReactToPrint from "react-to-print";
+import HeaderAdmin from '../HeaderAdmin'
 
 
 
@@ -31,8 +32,21 @@ class ComponentToPrint extends React.Component{
 
   render() {
     return (
+      <div>
+        <HeaderAdmin/>
         <div className="info">
-            <div className="container">
+             <ReactToPrint
+          trigger={() =>
+            <button type="button" 
+            class="btn btn-primary" 
+            style={{marginLeft:1336}}>
+            <i class="fas fa-print mr-2"></i>Print this out!
+            </button> 
+          }
+
+          content={(Component) => this.componentRef}
+        />
+            <div className="container" ref={(Component) => (this.componentRef = Component)}>
                 <h2><b><center>Requests Details Of Travellers</center></b></h2>
             <section id="report">
               <table class="table">
@@ -71,31 +85,11 @@ class ComponentToPrint extends React.Component{
             </section>
             </div>
         </div>
+        </div>
     );
   }
 }
 
-class Example extends React.Component {
-  render() {
-    return (
-      <div>
-        <ReactToPrint
-          trigger={() =>
-            <button type="button" 
-            class="btn btn-primary" 
-            style={{marginLeft:1336}}>
-            <i class="fas fa-print mr-2"></i>Print this out!
-            </button> 
-          }
 
-          content={(Component) => this.componentRef}
-        />
-     
-        <ComponentToPrint ref={(Component) => (this.componentRef = Component)}  />
 
-      </div>
-    );
-  }
-}
-
-export default Example;
+export default ComponentToPrint;

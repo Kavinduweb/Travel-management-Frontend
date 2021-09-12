@@ -1,6 +1,8 @@
 import React,{Component} from 'react'
 import axios from 'axios';
 import "../../Styles/Guide.css";
+import Header from '../Header';
+import Footer from '../Footer';
 
  
 export default class SelectGuide extends Component{
@@ -56,6 +58,8 @@ export default class SelectGuide extends Component{
   render(){
 
     return(
+      <div>
+        <Header/>
       <div className="info">
         <div className="container">
             <br/>
@@ -142,6 +146,8 @@ export default class SelectGuide extends Component{
                         ))}                                           
                         <br/><br/><br/>         
         </div>
+      </div>
+      <Footer/>
       </div>
     )
   }

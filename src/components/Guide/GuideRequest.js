@@ -2,6 +2,8 @@ import React,{useReducer, useState,useEffect} from "react"
 import {useHistory,useParams} from 'react-router-dom';
 import axios from "axios";
 import "../../Styles/Guide.css";
+import Header from '../Header';
+import Footer from '../Footer';
 
 const GuideRequest = ()=>{
 
@@ -69,6 +71,8 @@ useEffect(()=>{
  }
  const {name,language,username}=tguide;
  return(
+     <div>
+         <Header/>
     <div className="info">
                 <div className="container">
                     <div className="w-50 mx-auto shadow p-5 guide-container">
@@ -208,7 +212,8 @@ useEffect(()=>{
             <br/><br/>
         </div>
     </div>
-    
+    <Footer/>
+    </div>
     );
 
 };

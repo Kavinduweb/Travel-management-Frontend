@@ -2,6 +2,9 @@ import React,{useReducer, useState} from "react"
 import {useHistory} from 'react-router-dom';
 import axios from "axios";
 import '../../Styles/Guide.css'
+import HeaderAdmin from '../HeaderAdmin'
+
+
 
 const AddGuide = ()=>{
 
@@ -56,7 +59,9 @@ const AddGuide = ()=>{
        alert("Guide Added Successfully!")
    };
     return(
-       <div class = "info">
+       <div>
+       <HeaderAdmin/>
+       <div class = "infoadmin">
        <section id="add">
         <div className = "jumbotron">
               <div className = "w-50 mx-auto shadow p-5">
@@ -185,6 +190,8 @@ const AddGuide = ()=>{
               </div>
        </div>
        </section>
+       </div>
+       
        </div>
     );
 };

@@ -2,6 +2,8 @@ import React, {useState} from 'react'
 import { Button } from 'react-bootstrap'
 import axios from 'axios';
 import "../../Styles/Guide.css";
+import Header from '../Header';
+import Footer from '../Footer';
 
 
 const GuideLogin = () => {
@@ -43,6 +45,8 @@ const GuideLogin = () => {
 
 } 
     return (
+        <div>
+            <Header/>
         <div className="infotr">
         
             <div className="w-50 mx-auto shadow p-5">
@@ -79,8 +83,8 @@ const GuideLogin = () => {
                         <h2 id="noofdates" ></h2>
                     </div>
 	            </div>
-       
-   
+       <Footer/>
+   </div>
     
     )
 }

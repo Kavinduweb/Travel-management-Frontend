@@ -1,5 +1,7 @@
 import React,{Component} from 'react'
 import axios from 'axios';
+import Header from '../Header';
+import Footer from '../Footer';
 
  
 export default class GuideConfirm extends Component{
@@ -30,6 +32,8 @@ componentDidMount(){
   render(){
     const{uname,email,phone,destination,tourdate,noofdates} = this.state.guide;
     return(
+      <div>
+        <Header/>
       <div className="info">
         <div className="container">
             <br/>
@@ -68,7 +72,8 @@ componentDidMount(){
             <br/><br/><br/>
 
       </div>
-    
+    <Footer/>
+    </div>
     )
   }
 }
