@@ -31,6 +31,9 @@ const AdminEquipment = () => {
     return (
       <div className="TEcenter">
       <div className="info">
+      <div><Link class="btn btn-primary mr-2" to="/equipment/report" style={{float:"left"}}>
+                    Report
+                  </Link></div>
                 <div><Link class="btn btn-primary mr-2" to="/equipment/add" style={{float:"right"}}>
                     Add Equipment
                   </Link></div> <br/> <br/> <br/> 

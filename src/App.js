@@ -62,7 +62,6 @@ import ActivityDetails from './components/Activity/ActivityDetails';
 import ActivitySelect from './components/Activity/ActivitySelect';
 import ActivityUser from './components/Activity/ActivityUser';
 import forget from './components/Kavindu/ForgetPass';
-
 import CreateInquiry from './components/Inquiry/CreateInquiry';
 import EditInquiry from './components/Inquiry/EditInquiry';
 import InquiryAll from './components/Inquiry/InquiryAll';
@@ -81,13 +80,12 @@ import {BrowserRouter as Router, Route} from "react-router-dom"
 
 
 
-
 function App() {
   return (
     <Router>
     <div> 
     
-    
+ 
       
       <Route path="/bookingpackage/:id" exact component = {PackageBooking}></Route>
       <Route path="/travelpackages/admin" exact component = {AllPackagesAdmin}></Route>
@@ -151,7 +149,6 @@ function App() {
       <Route path="/activity-user/:id" exact component={ActivityUser} />
       <Route path="/activity-select" exact component={ActivitySelect} />
       <Route path="/forget" exact component={forget} />
-
       <Route path="/add" exact component={CreateInquiry}></Route>
       <Route path="/editinq/:id" component= {EditInquiry}></Route>
       <Route path="/allinq" component= {InquiryAll}></Route>
