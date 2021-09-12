@@ -61,7 +61,7 @@ render(){
   return(
     <div>
             <Header/>
-    <div className="infotr" >
+    <div className="infotr bodytravelpackage" >
     <div className="bodytravelpackage" className="container" id="bbimg">
     <div >
       <br/>

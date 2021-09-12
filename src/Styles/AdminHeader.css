@@ -5,8 +5,11 @@
     left: 0;
     overflow-x: hidden;
     overflow-y: auto;
-    background: #1a1a1a;
-    color: #fff;
+    background: #283048;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to left, #859398, #283048);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to left, #859398, #283048); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    
+    color: rgb(255, 255, 255);
   }
   
   .content-containeradh {
@@ -16,16 +19,30 @@
   #loginah{
 
     position:absolute;
-    top:20px;
-    left:93.5%;
+    top:30px;
+    left:94.5%;
     font-size: 32px;
     color: rgb(219, 213, 213);
   }
+  
 
   .sidebar-logoadh {
     padding: 10px 15px 10px 30px;
     font-size: 20px;
-    background-color: #2574A9;
+    background: #232526;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #353638, #424344);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #3f3f41, #383a3a); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+  }
+
+  .headerh{
+    background: #232526;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #414345, #232526);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #414345, #232526); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    
+    background-size: cover;
+    height: 50px;
+   
   }
   
   .sidebar-navigationadh {
@@ -46,7 +63,11 @@
   .sidebar-navigationadh li a {
     padding: 10px 15px 10px 30px;
     display: block;
-    color: #fff;
+    color: rgb(247, 247, 247);
+    text-shadow: lightcoral ;
+    box-shadow: 1px 1px 1px 1px;
+    font-weight:lighter;
+    
   }
   
   .sidebar-navigationadh li .fa {
@@ -80,7 +101,7 @@
   .sidebar-navigationadh .header {
     font-size: 12px;
     text-transform: uppercase;
-    background-color: #151515;
+    background-color: #cfcece;
     padding: 10px 15px 10px 30px;
   }
   

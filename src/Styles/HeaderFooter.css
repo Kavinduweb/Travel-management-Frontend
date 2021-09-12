@@ -152,8 +152,6 @@
   }
   
 
-
-
   /*headr*/
 
   
@@ -164,13 +162,14 @@
 	overflow:hidden;
   font-family: Verdana, sans-serif;
   float:right;
+  padding-top: 7px;
 }
 
 .menupp li a{
 	display: block;
 	color:rgb(163, 162, 162);
 	text-align:center;
-	padding:14px 53px;
+	padding:14px 45px;
   font-size: 20px;
 	text-decoration:none;
   
@@ -197,7 +196,8 @@
   text-shadow: 2px 2px 3px #ababab;
 	font-style:italic;
   font-weight:bold;
-	text-align:center;  
+	text-align:center; 
+  padding-top: 10px; 
              
 }
 

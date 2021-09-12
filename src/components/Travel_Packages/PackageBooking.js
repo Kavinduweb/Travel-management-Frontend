@@ -76,12 +76,12 @@ useEffect(()=>{
     <div>
     <Header/>
     <div className="infotr">
-    <div className="bodyaa"> 
+    <div className="bodyaa" style={{paddingTop:"10px"}}> 
     
-       <div className="bodybb">
-    <div className="container">
+       <div className="bodybb" >
+    <div className="container" >
     
-        <div className="w-70 mx-auto shadow p-5">
+        <div className="w-70 mx-auto shadow p-3">
         <div className="bodycc">
             <h2 className ="text- mb-10"><b>Booking Travel Package</b></h2>
             </div>

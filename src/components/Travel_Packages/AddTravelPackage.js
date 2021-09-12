@@ -162,9 +162,10 @@ const CreatePackage = ()=>{
 </div></lable>
        
 
-        <div class="form-footer">
-      
-       <input type="submit" name="submit" class="reg" value="Add Package"/>
+        <div style={{paddingTop:"10px"}} >
+      <center>
+       <input style={{width:"100%"}} type="submit" name="submit" class="reg btn btn-danger" value="Add Package"/>
+    </center>
       </div>
 <br/>
      </div>  
@@ -174,7 +175,7 @@ const CreatePackage = ()=>{
 
 
    
-   
+   <br/>
 </div></div></div></div></div>
     );
 };
