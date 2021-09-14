@@ -38,12 +38,12 @@ function Header(){
 
 
 <div id="login">
-      <a href="/register"  style={{textDecoration:'none' ,color:'rgb(87, 87, 87)'}}  > <i class="fas fa-user-alt"></i> </a>
+      <a href="/register"  style={{textDecoration:'none' ,color:'hsl(0,0%,70%,0.9)'}}  > <i class="fas fa-user-alt"></i> </a>
 </div>
 
 </div>
 
-<ul class="menupp" style={{width:'100%'}}>
+<div className="menupp" style={{width:"100%"}}>
     <li className="menupp"><a></a></li>
     <li className="menupp"><a></a></li>
     
@@ -52,7 +52,7 @@ function Header(){
   <li class="menupp"><a href="/contactus">Contact Us</a></li>
   <li class="menupp"><a href="/gallery">Gallery</a> </li>
 
-  </ul>
+  </div>
 
   </div>  
     </div>

@@ -2,7 +2,7 @@ import React,{useReducer, useState,useEffect} from "react"
 import {useHistory,useParams} from 'react-router-dom';
 import axios from "axios";
 
-const ActivitySelect = ()=>{
+const ActivitySelect = (props)=>{
 
 
     const [tactivity,viewActivity] = useState({
@@ -56,7 +56,7 @@ useEffect(()=>{
 
      await axios.post ("http://localhost:8070/activityselect/add",data);
      alert("Activity Select Successfull. Click Ok to Pay")
-     history.push("/payment/add");
+     history.push( `/payment/add-activity/${props.match.params.id}`);
     
  }
  const {aname,price} = tactivity;

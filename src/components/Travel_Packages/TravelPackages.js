@@ -1,10 +1,10 @@
 import React,{Component} from 'react'
 import axios from 'axios';
-import { Card } from 'react-bootstrap';
 import { Row } from 'react-bootstrap';
-import { Col } from 'react-bootstrap';
-import tp1 from '../../Images/z5.jpg'
 import '../../Styles/TravelPackage.css'
+import Header from '../Header';
+import Footer from '../Footer';
+
 
 
 export default class CardItemsT extends Component{
@@ -42,8 +42,7 @@ filterData(posts,searchkey){
   const result = posts.filter((post) =>
   post.packageName.toLowerCase().includes(searchkey)||
   post.packageName.toUpperCase().includes(searchkey)||
-  post.destination.toLowerCase().includes(searchkey) ||
-  post.perperson.toLowerCase().includes(searchkey)
+  post.destination.toLowerCase().includes(searchkey)
   )
   this.setState({posts:result})
 }
@@ -60,7 +59,9 @@ handleSearchArea=(e)=>{
 
 render(){
   return(
-    <div className="infotr" >
+    <div>
+            <Header/>
+    <div className="infotr bodytravelpackage" >
     <div className="bodytravelpackage" className="container" id="bbimg">
     <div >
       <br/>
@@ -95,13 +96,13 @@ render(){
 
 	<div class="container py-1">
 
-		<article class="postcard dark blue">
+		<article class="postcard postcardtr dark blue">
 			<a class="postcard__img_link" >
 				<img class="postcard__img" src={`/uploads/${posts.packageImage}`} alt="..."  />
 			</a>
 			<div class="postcard__text">
 				<h1 class="postcard__title blue"><a href="#"> {idx+1}. &nbsp;{posts.packageName}</a></h1>
-				<div class="postcard__subtitle small">
+				<div class="postcard__subtitle small smalltr">
 					<time datetime="2020-05-25 12:00:00">
 						<i class="fas fa-calendar-alt mr-2"></i>{posts.date}
 					</time>
@@ -112,7 +113,7 @@ render(){
                 {posts.destination}
                 
                 <ul class="postcard__tagbox">
-					<li class="tag__item"><i class="fas fa-tag mr-2"></i>PP&nbsp;<a style={{color:" hsl(180,100%,50%)"}}>{posts.perperson}</a></li>
+					<li class="tag__item"><i class="fas fa-tag mr-2"></i>PP Rs.&nbsp;<a style={{color:" hsl(180,100%,50%)"}}>{posts.perperson}</a></li>
 					<li class="tag__item"><i class="fas fa-clock mr-2"></i>{posts.noofdays}&nbsp;{posts.noofnights}</li>
 					<li class="tag__item play blue">
 						<a style={{color:"  hsl(60,100%,50%) "}}><i class="fas fa-car mr-2"></i>{posts.vehical}</a>
@@ -143,6 +144,8 @@ render(){
 </div>
  
     </div>
+    </div>
+    <Footer/>
     </div>
   )
 }

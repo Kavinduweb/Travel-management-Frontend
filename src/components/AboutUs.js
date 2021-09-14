@@ -1,11 +1,15 @@
 import React from 'react'
 import '../Styles/AboutUS.css'
-import img1 from "../Images/z1.jpg"
+import Header from './Header';
+import Footer from './Footer';
+
 
 const Aboutus = ()=>{
 
     
     return(
+        <div>
+            <Header/>
         <div className="info">
 <body>
     <div class="team-boxed">
@@ -58,6 +62,8 @@ time reliable offers for the best prices for our customers. </p>
     </div>
 </body>
 
+</div>
+<Footer/>
 </div>
     )
 

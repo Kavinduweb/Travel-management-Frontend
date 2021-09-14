@@ -3,7 +3,7 @@ import axios from 'axios';
 import '../../Styles/TravelPackage.css'
 import { Row } from 'react-bootstrap';
 import { Col } from 'react-bootstrap';
-
+import HeaderAdmin from '../HeaderAdmin'
 export default class AllPackagesAdmin extends Component{
 
 constructor(props){
@@ -60,8 +60,12 @@ handleSearchArea=(e)=>{
 render(){
   return(
 
-    <div className="info">
+    <div style={{backgroundColor:"hsl(0,0%,80%,0.1)"}}>
+      <HeaderAdmin/>
+  
+    <div className="infoadmin" >
     <div className="container">
+      <br/>
   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
  
     <button className="btn btn-success"><a href="/travelpackage/admin/add" style={{textDecoration:'none' ,color:'white'}} > 
@@ -83,15 +87,17 @@ onChange={this.handleSearchArea} /><button id="search-button" type="button" clas
 <i class="fas fa-search"></i>
 </button>
 <hr/>
+
+
  <Row xs={1} md={3} className="g-4 " id="by" class="rounded" >
  {this.state.posts.map((posts,index)=>(
      <Col key={index}>
-<div class="card" style={{backgroundColor:"hsl(0,0%,75%,0.1)",borderColor:"black"}}>
+<div class="card" style={{backgroundColor:"hsl(0,0%,50%,0.1)",borderColor:"black"}}>
   <div class="card-body">
     <h5 class="card-title">{index+1}.&nbsp; <b>{posts.packageName}</b></h5>
     <h6 class="card-subtitle mb-2 text-muted">{posts.destination}</h6>
     <p class="card-text"><i class="fas fa-car mr-2"></i>{posts.vehical}  </p>
-    <p class="card-text">{posts.noofdays}  {posts.noofnights} &nbsp;&nbsp;||&nbsp;&nbsp; Per Person:-{posts.perperson}    </p>
+    <p class="card-text">{posts.noofdays}  {posts.noofnights} &nbsp;&nbsp;||&nbsp;&nbsp; Per Person:- Rs.{posts.perperson}    </p>
     &nbsp;&nbsp;
     <a className ="btn btn-outline-primary" href ={`/travelpackages/travelpackage/admin/${posts._id}`} >
           <i className="fas fa-eye"></i>&nbsp;View
@@ -110,7 +116,7 @@ onChange={this.handleSearchArea} /><button id="search-button" type="button" clas
   ))}
 
 </Row>
-    </div></div>
+    </div></div>  </div>
   )
 }
 

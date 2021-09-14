@@ -1,6 +1,7 @@
 import React,{Component} from 'react'
 import axios from 'axios';
 import "../../Styles/Guide.css";
+import HeaderAdmin from '../HeaderAdmin'
  
 export default class AllGuideDetails extends Component{
  
@@ -57,12 +58,14 @@ export default class AllGuideDetails extends Component{
  
   render(){
     return(
-      <div className = "info">
+      <div>
+        <HeaderAdmin/>
+      <div className = "infoadmin">
       <div className="container"> 
       
         <br/>
         <div>
-          <div className="input-group" >
+          <div className="input-group" style={{marginLeft:1070}} >
             <div className="form-outline">
               <input 
               id="search-input" 
@@ -72,28 +75,29 @@ export default class AllGuideDetails extends Component{
               placeholder="Search Guide"
               onChange={this.handleSearchArea}  />
             </div>
- 
+            
             <button id="search-button" type="button" className="btn btn-primary">
               <i className="fas fa-search"></i>
             </button>
 
           </div>
         </div>
+
+        <hr/>
         <br/>
- 
-        <button type="button" className="btn btn-primary">
-          <a href="/guide/add" style={{textDecoration:'none' ,color:'white'}} >Add New Guide</a>
+        <button type="button" className="btn btn-dark btn-m mr-2">
+          <a href="/guide/add" style={{textDecoration:'none' ,color:'white'}} >+ Add New Guide</a>
         </button>
 
-        <button type="button" className="btn btn-primary">
-          <a href="/guide/allrequests" style={{textDecoration:'none' ,color:'white'}} >Requests Details</a>
+        <button type="button" style={{marginLeft:986}} className="btn btn-secondary">
+          <a href="/guide/allrequests" style={{textDecoration:'none' ,color:'white'}} >Generate Report</a>
         </button>
  
         <br/><br/>
   
-       
-        <table className="table table-bordered table-striped">
-          <thead className="thead-secondary thead-dark text-center">
+       <section id="team">
+        <table className="table table-hover">
+          <thead className="thead-dark text-center">
             <tr>
               <th scope="col">ID</th>
               <th scope="col">Image</th>
@@ -111,8 +115,8 @@ export default class AllGuideDetails extends Component{
             {this.state.guide.map((guide,index)=>(
               <tr key={index}>
                 <th scope="row">{index+1}</th>
-                  <td>
-                    <img src = {`/uploads/${guide.guideImage}`} alt = "..." style = {{width : "40%" , minHeight : "40%"}}/>
+                  <td className="text-center">
+                    <img src = {`/uploads/${guide.guideImage}`} alt = " " style = {{width : "40%" , minHeight : "30%"}}/>
                   </td>
                   <td>{guide.name}</td>
                   <td>{guide.address}</td>
@@ -124,20 +128,21 @@ export default class AllGuideDetails extends Component{
                   
                   <td>
                     <a href={`/guide/edit/${guide._id}`} type="button">
-                    <button type="button" class="btn btn-dark btn-m mr-2">Edit</button>
+                    <button type="button" style={{width:73}} class="btn btn-dark">Edit</button>
                     </a>
-                    
+                    <br/><br/>
                     <a href="/guide" onClick={()=>this.onDelete(guide._id)} type="button">
-                    <button type="button" class="btn btn-danger btn-m">Delete</button>
+                    <button type="button" class="btn btn-danger">Delete</button>
                     </a>
                   </td>
               </tr>
             ))}
           </tbody>
         </table>
- 
+      </section>
         <br/><br/><br/>
 
+      </div>
       </div>
       </div>
     )

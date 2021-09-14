@@ -1,5 +1,3 @@
-import Header from './components/Header';
-import Footer from './components/Footer';
 import PackageDetails from './components/Travel_Packages/TravelPackageDetails';
 import PackageDetailsAdmin from './components/Travel_Packages/TravelPackageDetailsAdmin';
 import PackageBooking from './components/Travel_Packages/PackageBooking';
@@ -36,7 +34,6 @@ import Gallery from './components/Gallery';
 import Aboutus from './components/AboutUs';
 import ContactUs from './components/Contactus';
 import ContactUsAdmin from './components/ContactUsAdmin';
-import AddPayment from './components/Payment/AddPayment';
 import AllPayments from './components/Payment/AllPayments';
 import EditPayment from './components/Payment/EditPayment';
 import PaymentDetails from  './components/Payment/PaymentDetails';
@@ -61,7 +58,12 @@ import ViewActivity from './components/Activity/ViewActivity';
 import ActivityDetails from './components/Activity/ActivityDetails';
 import ActivitySelect from './components/Activity/ActivitySelect';
 import ActivityUser from './components/Activity/ActivityUser';
-
+import PayForRoom from './components/Payment/PayForRoom';
+import PayForActivity from './components/Payment/PayForActivity';
+import PayForEquipment from './components/Payment/PayForEquipment';
+import PayForTP from './components/Payment/PayForTP';
+import PaymentConfirm from './components/Payment/PaymentComplete';
+import forget from './components/Kavindu/ForgetPass';
 import CreateInquiry from './components/Inquiry/CreateInquiry';
 import EditInquiry from './components/Inquiry/EditInquiry';
 import InquiryAll from './components/Inquiry/InquiryAll';
@@ -71,11 +73,14 @@ import InqView from './components/Inquiry/InqView';
 import AdminView from './components/Inquiry/AdminView';
 import ComponentToPrint from './components/Inquiry/InqReport';
 import ComponentToPrint1 from './components/Inquiry/userDoc';
+
 import Inqmail from './components/Inquiry/inqmail';
 import AdminDetails from './components/Inquiry/AdminDetails';
 
 
 
+
+import PaymentView from './components/Payment/PayView';
 
 
 import {BrowserRouter as Router, Route} from "react-router-dom"
@@ -87,7 +92,7 @@ function App() {
     <Router>
     <div> 
     
-    
+ 
       
       <Route path="/bookingpackage/:id" exact component = {PackageBooking}></Route>
       <Route path="/travelpackages/admin" exact component = {AllPackagesAdmin}></Route>
@@ -125,10 +130,15 @@ function App() {
       <Route path="/aboutus" exact component={Aboutus}/>
       <Route path="/contactus" exact component ={ContactUs}/>
       <Route path="/contactus/admin" exact component ={ContactUsAdmin}/>
-      <Route path="/payment/add" exact component={AddPayment}/>
+      <Route path="/payment/add-package/:id" exact component={PayForTP}/>
+      <Route path="/payment/add-room/:id" exact component ={PayForRoom}/>
+      <Route path="/payment/add-equipment/:id" exact component ={PayForEquipment}/>
+      <Route path="/payment/add-activity/:id" exact component ={PayForActivity}/>
       <Route path="/payment/" exact component={AllPayments}/>
       <Route path="/payment/edit/:id" exact component={EditPayment}/>
       <Route path="/payment/details/:id" exact component={PaymentDetails}/>
+      <Route path="/confirm/payment/" exact component={PaymentConfirm}/>
+      <Route path="/payment/view/" exact component={PaymentView}/>
       <Route path="/adminhome" exact component={AdminHome}/>
       <Route path="/hotelpackagedetails/:id" exact component = {hotelpackagedetails}/>
       <Route path="/equipment/report" exact component = {EquipmentReport}/>
@@ -137,7 +147,7 @@ function App() {
       <Route path = "/guide/edit/:id" exact component={EditGuide}/>
       <Route path = "/guide/login" exact component={GuideLogin}/>
       <Route path = "/guide/all" exact component={SelectGuide}/>
-      <Route path = "/guide/handle" exact component={GuideConfirm}/>
+      <Route path = "/guide/handle/:id" exact component={GuideConfirm}/>
       <Route path = "/guide/request/:id" exact component={GuideRequest}/>
       <Route path = "/guide/allrequests" exact component={AllRequests}/>
       <Route path="/services" exact component = {Services}/>
@@ -150,7 +160,7 @@ function App() {
       <Route path="/add-activity" exact component={AddActivity} />
       <Route path="/activity-user/:id" exact component={ActivityUser} />
       <Route path="/activity-select" exact component={ActivitySelect} />
-
+      <Route path="/forget" exact component={forget} />
       <Route path="/add" exact component={CreateInquiry}></Route>
       <Route path="/editinq/:id" component= {EditInquiry}></Route>
       <Route path="/allinq" component= {InquiryAll}></Route>

@@ -33,13 +33,13 @@ export default function Admin  (){
             <div className="info">
            
          
-            <form  className="form1">
+            <form  className="form12">
                 <br></br>
-            <h2>System admin Login</h2>
+            <h2 className="h222">System admin Login</h2>
 
-            <input type="text" placeholder="Username" id="user1" ></input>
-            <input type="password" placeholder="Password"id="pass1"></input>
-            <a className="btn btn-danger"  onClick={myFunction}>
+            <input className="inputabc" type="text" placeholder="Username" id="user1" ></input>
+            <input className="inputabc" type="password" placeholder="Password"id="pass1"></input>
+            <a className="btn btn-danger a123"  onClick={myFunction}>
                                 <i className ="fas fa-login"></i>&nbsp;Login
                             </a>
            

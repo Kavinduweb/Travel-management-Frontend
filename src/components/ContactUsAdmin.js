@@ -1,6 +1,7 @@
 import React,{Component} from 'react'
 import axios from 'axios';
 import { Row } from 'react-bootstrap';
+import HeaderAdmin from './HeaderAdmin'
  
 export default class AllMessages extends Component{
  
@@ -28,7 +29,10 @@ retrieveContactus(){
  
 render(){
   return(
-      <div className="info">
+    <div>
+      <HeaderAdmin/>
+  
+      <div className="infoadmin">
     <div className="container">
  <h1 style={{textAlign:"center"}}>Contact us Messages</h1>
  <br/>
@@ -61,7 +65,7 @@ render(){
 
 </div>
 <br/><br/><br/><br/>
-    </div>
+    </div>  </div>
   )
 }
  

@@ -2,6 +2,7 @@ import React, {useState, useEffect ,Component} from "react"
 import axios from "axios";
 import { Link,useParams ,useHistory} from "react-router-dom";
 import '../../Styles/TravelPackage.css'
+import HeaderAdmin from '../HeaderAdmin'
 
 
 const ViewPackage=()=>{
@@ -30,7 +31,7 @@ const ViewPackage=()=>{
     
      
     return(
-      <div className="info" >
+      <div className="infoadmin" >
         <div className="container" style={{marginTop:'20px'}}>
        
 
@@ -43,19 +44,15 @@ const ViewPackage=()=>{
     <div class="col-md-8" style={{backgroundColor:"  hsl(0,100%,25%,0.1)	"}}>
       <div class="card-body" >
         <h2 class="card-title"> {tpackage.packageName} </h2>
-        <p class="card-text"> <b>{tpackage.destination}</b></p>
-        <p class="card-text"><small class="text-muted">{tpackage.date}</small></p>
-        <p class="card-text"> No of Days -<b> {tpackage.noofdays}</b></p>
-        <p class="card-text"> No of Nights - <b>{tpackage.noofnights}</b></p>
-        <p class="card-text"> Per Person - <b>{tpackage.perperson}</b></p>
+        <p class="card-text ptr"> <b>{tpackage.destination}</b></p>
+        <p class="card-text ptr"><small class="text-muted">{tpackage.date}</small></p>
+        <p class="card-text ptr"> No of Days -<b> {tpackage.noofdays}</b></p>
+        <p class="card-text ptr"> No of Nights - <b>{tpackage.noofnights}</b></p>
+        <p class="card-text ptr"> Per Person - <b>{tpackage.perperson}</b></p>
       </div>
     </div>
   </div>
 </div>   </div>
-
-
-
-
 
         </div>
     
@@ -68,6 +65,9 @@ export default function DeleteTravelPackage() {
     const [openModal,setOpenModal] = useState(false) 
 
     return (
+      <div>
+      <HeaderAdmin/>
+  
         <div style={{backgroundColor:"hsl(0,0%,0%,0.1)"}}> 
               <div className="Appxx"  >
                <h1>Do You Want to delete this travel package .?</h1>
@@ -75,26 +75,14 @@ export default function DeleteTravelPackage() {
                  <button className="openModalBtn" className="btn btn-danger" onClick={()=>{setOpenModal(true);}}>Delete Package</button>
                 { openModal && <Modal setOpenModal={setOpenModal}/>}    
               </div>
-        </div>
+        </div></div>
       )
       }
 
 function Modal({ setOpenModal }) {
     
     let history = useHistory();
-    const [packages,setUser]= useState([]);
-
-    useEffect(()=>{
-        loadUser();
-    },[]);
-
-    const loadUser= async ()=>{
-      const result =await  axios.get("http://localhost:8070/travelpackages/");
-      setUser(result.data.existingPackage)
-
-  };
-
-
+   
 const deletepackage = async id =>{
 await axios.delete(`http://localhost:8070/travelpackages/admin/delete/${id}`);
 alert("deleted");

@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { useHistory, useParams } from "react-router-dom";
+import HeaderAdmin from '../HeaderAdmin'
 
 const EditGuide = () => {
   let history = useHistory();
@@ -37,10 +38,13 @@ const EditGuide = () => {
 
 
   return (
-    <div className = "info">
+  <div>
+    <HeaderAdmin/>
+    <div className = "infoadmin">
+      <section id="edit">
       <div className="container">
           <div className="w-50 mx-auto shadow p-5">
-              <h2 className ="text- mb-10">Update Guide Details</h2>
+              <h2 className ="text- mb-10"><b>Update Guide Details</b></h2>
               <hr/>
               <form onSubmit={e => onSubmit(e)}>
                   <label htmlFor="floatingInput"><strong>Name</strong></label>
@@ -106,14 +110,17 @@ const EditGuide = () => {
                       value={phone}
                       onChange={e=>onInputChange(e)}/>
                   </div>
-
+                  <br/>
                   <button type="submit" className="btn btn-dark">Submit Details</button>
  
               </form>
           </div>
       </div>
+      </section>
 	</div> 
+  </div>
   );
 };
+
 
 export default EditGuide;

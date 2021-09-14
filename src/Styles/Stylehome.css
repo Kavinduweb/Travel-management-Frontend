@@ -4,7 +4,9 @@
   background-position: center;
   background-repeat: no-repeat;
   background-size:cover;
-position:unset;
+ position:unset;
+ background: 	hsl(0,0%,75%,0.2);
+ min-height: 500px;
   
 }
 
@@ -170,9 +172,14 @@ position:unset;
   color: #252525;
   
   margin-inline-start: 180px;
+  min-height: 500px;
+}
 
+.infoadmin{
+ 
   
-  
+  margin-inline-start: 220px;
+  min-height: 500px;
 }
 
 

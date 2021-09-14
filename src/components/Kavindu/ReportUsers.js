@@ -45,7 +45,7 @@ componentDidMount(){
     return (
      <div className="info">
        
-       <form className="form1">
+       <form className="form12">
      
       <table className="table" border='3'> 
 
@@ -101,7 +101,7 @@ class Example extends React.Component {
     return (
       <div className="body1">
         <ReactToPrint
-          trigger={() => <button className="button1" style={{marginLeft:230}}>Print this out!</button> }
+          trigger={() => <button className="button12" style={{marginLeft:230}}>Print this out!</button> }
           
           content={() => this.componentRef}
         />
