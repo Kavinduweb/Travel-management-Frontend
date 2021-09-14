@@ -69,7 +69,7 @@ function AdminHome(){
 
               <div class="d-grid mb-4">
                 <button  class="btn btn-lg btn-secondary btn-login fw-bold text-uppercase" type="submit">
-                <a href="#" style={{textDecoration:'none' ,color:'black'}} >Inquiry</a></button>
+                <a href="/adView" style={{textDecoration:'none' ,color:'black'}} >Inquiry</a></button>
               </div>
 
              
