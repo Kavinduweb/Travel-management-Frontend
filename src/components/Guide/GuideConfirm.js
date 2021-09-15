@@ -53,6 +53,7 @@ render  () {
     return(
       <div>
         <Header/>
+        <br/><br/>
             <div className="info">  
                 <center id = "guide">             
                     <div className="col-lg-8">
@@ -64,37 +65,37 @@ render  () {
                                 <table className="table table-bordered">
                                     <tr>
                                         <th width="30%">Name</th>
-                                        <td width="2%"><b>:</b></td>
+                                        <th width="2%"><b>:</b></th>
                                         <td>{uname}</td>
                                     </tr>
 
                                     <tr>
                                         <th width="30%">E-Mail</th>
-                                        <td width="2%"><b>:</b></td>
+                                        <th width="2%"><b>:</b></th>
                                         <td>{email}</td>
                                     </tr>
 
                                     <tr>
                                         <th width="30%">Contact Number</th>
-                                        <td width="2%"><b>:</b></td>
+                                        <th width="2%"><b>:</b></th>
                                         <td>{phone}</td>
                                     </tr>
 
                                     <tr>
                                         <th width="30%">Destination</th>
-                                        <td width="2%"><b>:</b></td>
+                                        <th width="2%"><b>:</b></th>
                                         <td>{destination}</td>
                                     </tr>
 
                                     <tr>
                                         <th width="30%">Tour Date</th>
-                                        <td width="2%"><b>:</b></td>
+                                        <th width="2%"><b>:</b></th>
                                         <td>{tourdate}</td>
                                     </tr>
 
                                     <tr>
                                         <th width="30%">Number of Dates</th>
-                                        <td width="2%"><b>:</b></td>
+                                        <th width="2%"><b>:</b></th>
                                         <td>{noofdates}</td>
                                     </tr>
                                 </table>
