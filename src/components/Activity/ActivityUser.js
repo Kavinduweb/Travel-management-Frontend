@@ -1,6 +1,8 @@
 import React,{useReducer, useState,useEffect} from "react"
 import {useHistory,useParams} from 'react-router-dom';
 import axios from "axios";
+import Header from '../Header';
+import Footer from '../Footer'; 
 
 const ActivitySelect = (props)=>{
 
@@ -8,6 +10,7 @@ const ActivitySelect = (props)=>{
     const [tactivity,viewActivity] = useState({
         aname:"",
         category:"",
+        mindescription:"",
         description:"",
         price:""
       });
@@ -56,20 +59,34 @@ useEffect(()=>{
 
      await axios.post ("http://localhost:8070/activityselect/add",data);
      alert("Activity Select Successfull. Click Ok to Pay")
-     history.push( `/payment/add-activity/${props.match.params.id}`);
+     history.push(`/payment/add-activity/${props.match.params.id}`);
+
+
     
  }
+
  const {aname,price} = tactivity;
+
+ const userInfo=localStorage.getItem('userInfo');
+
+ if(userInfo==null){
+
+    alert("You are not Authorized User. Please sign in first.")
+
+  window.location.replace("/register")}
+
  return(
+     <div>
+         <Header/>
     <div className="infotr">
-    <div className="bodyaa"> 
+    <div className="bodyaa" style={{background: "url(https://pix10.agoda.net/geo/city/262/1_262_02.jpg?s=1920x822)", backgroundSize: "cover"}}> 
     
-       <div className="bodybb">
+       <div className="bodybb"style={{background: "linear-gradient(90deg, #e2eafc 0%, #b6ccfe 100%)"}}>
     <div className="container">
     
-        <div className="w-70 mx-auto shadow p-5">
+        <div className="w-70 mx-auto shadow p-5"  >
         <div className="bodycc">
-            <h2 className ="text- mb-10"><b>Booking Travel Package</b></h2>
+            <h2 className ="text- mb-10" style={{color: "#1b3b6f"}}><b>Select Activity</b></h2>
             </div>
             <hr/>  
 
@@ -80,9 +97,9 @@ useEffect(()=>{
             <div class="row">
     <div class="col">
 
-            <div class="input-group mb-3">
+            <div class="input-group mb-3" >
   <div class="input-group-prepend">
-    <span class="input-group-text" id="basic-addon1" style={{backgroundColor:'hsl(0,0%,0%,0.3)',color:"white"}}>Package Name</span>
+    <span class="input-group-text" id="basic-addon1" style={{backgroundColor:'hsl(0,0%,0%,0.3)',color:"white"}}>Activity Name</span>
   </div>
 
   <input type="text" className="form-control"   name="aName"
@@ -125,15 +142,15 @@ useEffect(()=>{
                 </div>
 
    <div className="form-group">
-                    <label><b>Content</b></label>
-                    <input type="text" className="form-control" placeholder="Enter Your Address"  name="content"
+                    <label><b>Quantity</b></label>
+                    <input type="text" className="form-control" placeholder="Qun:"  name="content"
          value={content}
          onChange={e=>onInputChange(e)}
          required/>
                 </div>
                <br/>
 
-                <button type="submit" class="btn btn-danger btn-block" > Select Now</button>
+                <button type="submit" class="btn btn-block" style={{background: "#9c89b8"}}> Select Now</button>
                
             </form>
             </div>
@@ -141,6 +158,9 @@ useEffect(()=>{
 </div>
 <br/><br/>
 </div>
+
+</div>
+<Footer/>
 </div>
 
     

@@ -1,33 +1,85 @@
 /*Add Guide CSS*/
-#add .form-group {
-    box-shadow: 0px 4px 20px rgba(5,57,94,.5);
+#add .form-group{
+    box-shadow: 0px 4px 20px rgba(0, 5, 8, 0.5);
     -moz-box-shadow: 0px 4px 20px rgba(5,57,94,.5);
     -webkit-box-shadow: 0px 4px 20px rgba(5,57,94,.5);
+}
+
+#add {
+    background-image: url('');
+    width: 100;
+}
+
+#add .text {
+    color: white;
+    text-shadow: 1px 1px 2px rgb(13, 128, 13), 0 0 25px rgb(0, 255, 149), 0 0 5px rgba(40, 165, 102, 0.836);
+    font-weight: bold;
+    text-align: center;
+}
+
+#add .form-control {
+    color: rgb(18, 150, 18);
 }
 
 /*All Guide CSS*/
 #team .table{
     width: 100%;
-    max-width: 97%;
-    margin: 40px auto;
-    box-shadow: 0px 4px 20px rgba(5,57,94,.5);
+    max-width: 98%;
+    margin: 35px auto;
+    box-shadow: 0px 4px 20px rgba(5, 26, 94, 0.5);
     -moz-box-shadow: 0px 4px 20px rgba(5,57,94,.5);
     -webkit-box-shadow: 0px 4px 20px rgba(5,57,94,.5);
 }
 
-/*All  Requests Page CSS*/
+#team th {
+    text-align: center;
+}
+
+/*All  Requests Page CSS
+#watermark{
+    background-image: url("https://images.unsplash.com/photo-1512100356356-de1b84283e18?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=709&q=80");
+    width: 100%;
+    height: 100%;  
+}
+*/
+
 #report .table{
     width: 100%;
     max-width: 97%;
-    margin: 40px auto;
+    margin: 15px auto;
     box-shadow: 0px 4px 20px rgba(5,57,94,.5);
     -moz-box-shadow: 0px 4px 20px rgba(5,57,94,.5);
     -webkit-box-shadow: 0px 4px 20px rgba(5,57,94,.5);
 }
 
 #report .thead{
-    background-color: black;
-    color:white;
+    background-color:black;
+    color:#fff;
+}
+
+#report .font {
+    font-weight: bold;
+    color: white;
+    text-shadow: 1px 1px 2px rgb(8, 8, 8), 0 0 25px rgb(12, 12, 12), 0 0 5px rgba(97, 100, 99, 0.836);
+}
+
+#report .table td {
+    color:rgb(32, 31, 31);
+    text-align: center;
+    font-size: 14px;
+}
+
+#report .table th {
+    word-break: keep-all;
+    font-weight: bold;
+    font-size: 16px;
+    height: 45px;
+}
+
+#report h1 {
+    text-align: center;
+    color:black;
+    text-shadow: 0 0 3px #3d3535;
 }
 
 /*Edit  Guide Page CSS*/
@@ -37,65 +89,150 @@
     -webkit-box-shadow: 0px 4px 2
 }
 
+#edit .text {
+    color: white;
+    text-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue;
+    font-weight: bold;
+    text-align: center;
+}
+
+#edit .form-control {
+    color:indigo;
+}
+
+
+
 /*Guide  Confirm Page CSS*/
+#guide .mb-0 {
+    text-align: center;
+    color:#fff;
+    text-shadow: 0 0 3px rgb(107, 104, 106);
+}
+
+#guide .table {
+    background-image: linear-gradient( 109.6deg,  rgba(255,253,208,1) 11.2%, rgba(153,102,51,1) 91% )
+}
+
+#guide .table th {
+    font-weight: bold;
+    font-size: 19px;
+    text-shadow: 0 0 3px rgb(114, 112, 112);
+}
+
+#guide .table td {
+    font-size: 20px;
+    color: white;
+    text-shadow: 0 0 3px rgb(15, 15, 15);
+}
+
+#guide .card {
+    background-color: black;
+    box-shadow: 0px 4px 20px rgb(17, 19, 1);
+}
+
+
 /*Guide  Login Page CSS*/
+.login-container{
+    height:400px ;
+    width: 400px;
+    background-color:rgb(0,18,32) ;
+    margin: 100px auto;
+    box-shadow:  -3px 0px 20px 4px black;
+}
+
+.login-container h5 {
+    color: #fff;
+    font-weight: bold;
+    align-content: center;
+    align-items: center;
+}
+
+.login-container .h3 {
+    color: #fff;
+    font-weight: bold;
+    align-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.login .label {
+    color: #fff;
+    font-weight: bold;
+    align-content: center;
+    align-items: center;
+}
+
+.login-container .form-control{
+    padding: 10px 60px 10px 10px;
+    border-style: solid;
+    border-color: rgb(30,83,118);
+    border-radius: 5px;
+    background:rgba(30,83, 118, 0.5) ;
+    outline: none;
+    border-width: 2px;
+    margin-bottom: 10px;
+    transition: 500ms;
+    color:rgba(255,255, 255, 0.5);
+}
+.login-container{
+    padding: 120px 20px 20px 30px;
+}
 
 
 /*Guide Request Page*/
 .guide-container {
-    background: #30cfd0;
-    background: -webkit-linear-gradient(to right, rgba(48, 207, 208, 0.5), rgba(51, 8, 103, 0.5));
-    background: linear-gradient(to right, rgba(48, 207, 208, 0.5), rgba(51, 8, 103, 0.5));
-    border-radius: 25px;   
+    background-image: linear-gradient( 68.4deg,  rgba(248,182,204,1) 0.5%, rgba(192,198,230,1) 49%, rgba(225,246,240,1) 99.8% )
 }
+
+.guide-container .form-group {
+    font-size: 19px;
+    text-shadow:darkolivegreen;
+}
+
+.guide-container .text {
+    color: white;
+    text-shadow: 1px 1px 2px rgb(82, 13, 128), 0 0 25px rgb(162, 0, 255), 0 0 5px rgba(161, 40, 165, 0.836);
+    font-size: 35px;
+}
+
 
 /*Select  Guide Page CSS*/
-.about-container{
-    width: 80%;
-    height: 330px;
-    background: radial-gradient( circle farthest-corner at -8.9% 51.2%,  rgba(255,124,0,1) 0%, rgba(255,124,0,1) 15.9%, rgba(255,163,77,1) 15.9%, rgba(255,163,77,1) 24.4%, rgba(19,30,37,1) 24.5%, rgba(19,30,37,1) 66% );
-    border-radius: 20px;
-    text-decoration: none;
-    display: flex;
-    margin: 2%auto 20px auto;
-    position: relative;
-    justify-content: space-evenly;
-    align-items: center;
-    border-radius: 15px;
-    border: none;
-    text-decoration: none;
-    display: flex;
-    margin: 2%auto 20px auto;
-    position: relative;
-    justify-content: space-evenly;
-    align-items: center;
-    border-radius: 15px;
-    border: none;
-    box-shadow: 5px 5px 15px #4b4949b2;
-    transition: all 0.3s ease-in;
-    -webkit-transition: all 0.3s ease-in;
-    -moz-transition: all 0.3s ease-in;
-    transition: all 0.3s ease-in;
-    -webkit-transition: all 0.3s ease-in;
-    -moz-transition: all 0.3s ease-in;
+.student-profile .card-c .card-header .profile_img {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+    margin: 10px auto;
+    border: 10px solid #ccc;
+    border-radius: 50%;
 }
 
-.about-container img{
-    height: 250px;
-    border-radius: 15px;
-}
-
-.about-text{
-    width: 500px;
-    color: white;
-}
-
-.about-text p:nth-child(1){
-    color: white;
+#select .mb-0 {
+    color:#000000;
+    text-shadow: 0 0 3px #fff;
     font-weight: bold;
-    font-size: 17px;    
 }
 
+#select .card {
+    background-image: radial-gradient( circle farthest-corner at -8.9% 51.2%,  rgba(255,124,0,1) 0%, rgba(255,124,0,1) 15.9%, rgba(255,163,77,1) 15.9%, rgba(255,163,77,1) 24.4%, rgba(19,30,37,1) 24.5%, rgba(19,30,37,1) 66% );
+}
 
+#select .card-c {
+    background-image: linear-gradient( 109.6deg,  rgba(0,0,0,0.93) 11.2%, rgba(63,61,61,1) 78.9% )
+}
 
+#select .table th {
+    font-size: 18px;
+    text-shadow: 0 0 3px #000000;
+    color: white;
+}
+#select .table td {
+    font-size: 18px;
+    text-shadow: 0 0 3px #ccc;
+    color: yellow;
+}
+
+#select .card-header h4 {
+    text-shadow: 0 0 3px #ccc;
+    color: yellow;
+}
 
