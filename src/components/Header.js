@@ -7,6 +7,8 @@ function Header() {
       <div class="sidebar">
        
         <ul>
+        <i class="fas fa-plane-departure"  style={{ textDecoration: "none", color: "rgba(116, 116, 116, 0)",fontSize:"105px"}}> </i>
+            
         <li> 
            
       
@@ -16,8 +18,7 @@ function Header() {
                
               
                 {" "}
-                <i class="fas fa-plane-departure"  style={{ textDecoration: "none", color: "rgba(116, 116, 116, 0)",fontSize:"105px"}}> </i>
-            
+              
         
             <a href="/" style={{ textDecoration: "none", color: "white" }}>
               <i class="fas fa-home"></i>Home
