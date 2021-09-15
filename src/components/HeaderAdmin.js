@@ -17,12 +17,12 @@ function HeaderAdmin() {
           ></i>
         </div>
         <ul class="sidebar-navigation sidebar-navigationadh">
-          <li
-            class="header"
+        <center>  <h2
+            class="headerad"
             style={{ fontSize: "17px", color: "black", paddingTop: "15px" }}
           >
             <b>Dream Travelers</b>
-          </li>
+          </h2></center>
           <li>
             <a href="/adminhome">
               <i class="fa fa-home" aria-hidden="true"></i> Homepage
@@ -61,7 +61,7 @@ function HeaderAdmin() {
             </a>
           </li>
           <li>
-            <a href="/view">
+            <a href="/adView">
               <i class="fa fa-inbox" aria-hidden="true"></i> Inquiry
             </a>
           </li>
@@ -86,11 +86,11 @@ function HeaderAdmin() {
 
       <div class="main_content">
         <div class="headerh" style={{ height: "111px" }}>
-          <div id="hname">
+          <div id="hnamed">
             <h1
               style={{
                 paddingTop: "20px",
-                paddingLeft: "130px",
+                paddingLeft: "80px",
                 color: "white",
               }}
             >

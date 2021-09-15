@@ -171,9 +171,7 @@ function App() {
       <Route path="/adView/" component= {AdminView}></Route>
       <Route path="/report" component= {ComponentToPrint}></Route>
       <Route path="/userDoc/:id" component= {ComponentToPrint1}></Route>
-
       <Route path="/edittpackage/:id" component= {EditTPackage}></Route>
-
       <Route path="/inqmail/:id" component= {Inqmail}></Route>
       <Route path="/adminDet/:id" component= {AdminDetails}></Route>
 

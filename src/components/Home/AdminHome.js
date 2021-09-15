@@ -244,7 +244,7 @@ function AdminHome() {
                               type="submit"
                             >
                               <a
-                                href="/view"
+                                href="/adView"
                                 style={{
                                   textDecoration: "none",
                                   color: "black",

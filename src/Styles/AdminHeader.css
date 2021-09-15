@@ -80,6 +80,20 @@
   line-height: 20px;
 }
 
+#hnamed {
+  font-size: 30px;
+  color:rgb(255, 255, 255);
+  font-family: "Josefin Sans", sans-serif;
+  font-style: italic;
+  font-weight: bold;
+  text-align: center;
+  padding-top: 10px;
+  text-shadow: 2px 2px 2px rgb(134, 134, 134);
+ 
+}
+
+
+
 .sidebar-navigationadh li a {
   padding: 10px 15px 10px 30px;
   display: block;
