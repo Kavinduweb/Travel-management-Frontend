@@ -2,78 +2,124 @@ import React,{Component} from 'react'
 import axios from 'axios';
 import Header from '../Header';
 import Footer from '../Footer';
+import Swal from "sweetalert2";
+
+const confirm = () => {
+  Swal.fire({
+    title: "Confirmed !",
+    text: "Traveller will contact you soon..!",
+    icon: "success",
+  });
+  // or Swal.fire( 'Good job!','You clicked the button','success');
+};
+
+const reject = () => {
+    Swal.fire({
+      title: "Rejected !",
+      text: "Traveller will be informed soon..!",
+      icon: "error",
+    });
+    // or Swal.fire( 'Good job!','You clicked the button','success');
+  };
 
  
 export default class GuideConfirm extends Component{
  
-  constructor(props){
-    super(props);
+    constructor(props){
+      super(props);
+  
+      this.state={
+          guide:{}
+      };
+  }
+  
+  
+  componentDidMount(){
+      const id = this.props.match.params.id;
+      axios.get(`http://localhost:8070/guiderequest/${id}`).then((res)=>{
+          if(res.data.success){
+              this.setState({
+                  guide:res.data.guide
+              });
+  
+              console.log(this.state.guide);
+          }
+      });
+  }
 
-    this.state={
-        guide:{}
-    };
-}
 
-
-componentDidMount(){
-    const id = this.props.match.params.id;
-    axios.get(`http://localhost:8070/guiderequest/${id}`).then((res)=>{
-        if(res.data.success){
-            this.setState({
-                guide:res.data.guide
-            });
-
-            console.log(this.state.guide);
-        }
-    });
-}
-
- 
-  render(){
+render  () {
     const{uname,email,phone,destination,tourdate,noofdates} = this.state.guide;
     return(
       <div>
         <Header/>
-      <div className="info">
-        <div className="container">
-            <br/>
-            
-            <br/>
-               
-                   
-                                <div className="jumbotron">                   
-	                                  <div className="row">
-                                   
-		                                    <div className="col-sm-10">                                        
-			                                    <h6>UName : {uname}</h6> 	
-                                                <h6>E-Mail : {email}</h6> 		
-                                                <h6>Phone : {phone}</h6> 		
-                                                <h6>E-Mail : {destination}</h6> 		
-                                                <h6>Tour date : {tourdate}</h6>   
-                                                <h6>Number of dates: {noofdates}</h6>                                       		                              
-		                                    </div>
-	                                  </div>
-                                    <br/>
-	                                  <div className="row">
-		                                    <div className="col-sm-2">
-			                                      <a href="" className="btn btn-outline-success">Confirm</a> 
-		                                    </div> 
+            <div className="info">  
+                <center id = "guide">             
+                    <div className="col-lg-8">
+                        <div className="card">
+                            <div className="card-header bg-transparent border-5">
+                                <h3 className="mb-0"><i className="far fa-clone pr-1"></i>Traveller Information</h3>
+                            </div>
+                            <div className="card-body pt-0">
+                                <table className="table table-bordered">
+                                    <tr>
+                                        <th width="30%">Name</th>
+                                        <td width="2%"><b>:</b></td>
+                                        <td>{uname}</td>
+                                    </tr>
 
-                                        <div className="col-sm-2">
-			                                      <a href="" className="btn btn-outline-success">Reject</a> 
-		                                    </div> 
-	                                  </div>	
-                                    <br/>
-                              </div> 
-                        </div>
-                   
-                
- 
-            <br/><br/><br/>
+                                    <tr>
+                                        <th width="30%">E-Mail</th>
+                                        <td width="2%"><b>:</b></td>
+                                        <td>{email}</td>
+                                    </tr>
 
-      </div>
+                                    <tr>
+                                        <th width="30%">Contact Number</th>
+                                        <td width="2%"><b>:</b></td>
+                                        <td>{phone}</td>
+                                    </tr>
+
+                                    <tr>
+                                        <th width="30%">Destination</th>
+                                        <td width="2%"><b>:</b></td>
+                                        <td>{destination}</td>
+                                    </tr>
+
+                                    <tr>
+                                        <th width="30%">Tour Date</th>
+                                        <td width="2%"><b>:</b></td>
+                                        <td>{tourdate}</td>
+                                    </tr>
+
+                                    <tr>
+                                        <th width="30%">Number of Dates</th>
+                                        <td width="2%"><b>:</b></td>
+                                        <td>{noofdates}</td>
+                                    </tr>
+                                </table>
+                            </div>
+
+                            <td>
+                                <a href="#" type="button">
+                                    <button onClick={confirm} type="button"  style = {{marginRight:725, fontSize:17}} class="btn btn-success">
+                                    <i class="fa fa-check mr-2" aria-hidden="true"></i>Confirm</button>
+                                </a>
+
+                                <a href="#" type="button">                    
+                                    <button onClick={reject} type="button" style = {{position:"absolute", bottom:25, marginLeft:-710, width:110, fontSize:17}} class="btn btn-danger">
+                                    <i class="fa fa-ban mr-2" aria-hidden="true"></i>Reject</button>
+                                </a>
+                            </td>
+                            <br/>
+                        </div>    
+                    </div>
+                </center> 
+            </div>      
+            <br/>                     
     <Footer/>
     </div>
     )
   }
 }
+ 

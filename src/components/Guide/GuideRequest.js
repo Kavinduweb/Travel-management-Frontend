@@ -69,15 +69,22 @@ useEffect(()=>{
      history.push("/");
     
  }
+
+ const userInfo=localStorage.getItem('userInfo');
+  if(userInfo==null){
+     alert("You are not Authorized User. Please sign in first.")
+   window.location.replace("/register")}
+
  const {name,language,username}=tguide;
+ 
  return(
      <div>
          <Header/>
     <div className="info">
-                <div className="container">
+                <div className="request-container">
                     <div className="w-50 mx-auto shadow p-5 guide-container">
-                        <div className="bodyc">
-                            <h2 className ="text-center"><b>Send Request Details</b></h2>
+                        <div className="bodycd">
+                            <h2 className ="text text-center"><b>Send Request Details</b></h2>
                         </div>
 
                         <hr/>  
@@ -88,7 +95,7 @@ useEffect(()=>{
                                     <div className="input-group mb-3">
                                         <div className="input-group-prepend">
                                             <span className="input-group-text border-dark" 
-                                                id="basic-addon1" 
+                                                id="basic" 
                                                 style={{backgroundColor:'hsl(0,0%,0%,0.3)',color:"white"}}>
                                                 Guide Name
                                             </span>
@@ -105,7 +112,7 @@ useEffect(()=>{
                                     <div className="input-group mb-3">
                                         <div className="input-group-prepend">
                                             <span className="input-group-text border-dark" 
-                                                id="basic-addon1" 
+                                                id="basic" 
                                                 style={{backgroundColor:'hsl(0,0%,0%,0.3)',color:"white"}}>
                                                 Language
                                             </span>
@@ -124,7 +131,7 @@ useEffect(()=>{
                                     <div className="input-group mb-3">
                                         <div className="input-group-prepend">
                                             <span className="input-group-text border-dark" 
-                                                id="basic-addon1" 
+                                                id="basic" 
                                                 style={{backgroundColor:'hsl(0,0%,0%,0.3)',color:"white"}}>
                                                 Guide Username
                                             </span>
@@ -139,6 +146,7 @@ useEffect(()=>{
                                 </div>
 
                             <div className="form-group">
+                                <i class="fa fa-address-card-o mr-2" aria-hidden="true"></i>
                                 <label><b>Name</b></label>
                                     <input type="text" 
                                     className="form-control border-dark" 
@@ -150,8 +158,11 @@ useEffect(()=>{
                             </div>
 
                             <div className="form-group">
+                                <i class="fa fa-address-book-o mr-2" aria-hidden="true"></i>
                                 <label><b>Contact Number</b></label>
-                                    <input type="text" 
+                                    <input type="text"
+                                    oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
+                                    maxlength = "10" 
                                     className="form-control border-dark" 
                                     placeholder="Enter Contact Number"  
                                     name="phone"
@@ -161,6 +172,7 @@ useEffect(()=>{
                             </div>
 
                             <div className="form-group">
+                                <i class="fa fa-envelope-o mr-2" aria-hidden="true"/>   
                                 <label><b>E-Mail</b></label>
                                     <input type="email" 
                                     className="form-control border-dark" 
@@ -172,6 +184,7 @@ useEffect(()=>{
                             </div>
 
                             <div className="form-group">
+                                <i class="fa fa-plane mr-2" aria-hidden="true"></i>
                                 <label><b>Destination</b></label>
                                     <input type="text" 
                                     className="form-control border-dark" 
@@ -183,6 +196,7 @@ useEffect(()=>{
                             </div>
 
                             <div className="form-group">
+                                <i class="fa fa-calendar mr-2" aria-hidden="true"></i>
                                 <label><b>Tour Date</b></label>
                                     <input type="date" 
                                     className="form-control border-dark" 
@@ -194,6 +208,7 @@ useEffect(()=>{
                             </div>
 
                             <div className="form-group">
+                                <i class="fa fa-list-ol mr-2" aria-hidden="true"></i>
                                 <label><b>Number of Dates</b></label>
                                     <input type="Number" 
                                     className="form-control border-dark" 
@@ -205,8 +220,10 @@ useEffect(()=>{
                             </div>
 
                             <br/>
-
-                            <button type="submit" className="btn btn-dark">Send Request</button>   
+                            
+                            <center>
+                                <button type="submit" className="btn btn-dark"><i class="fa fa-share-square-o mr-2" aria-hidden="true"></i>Send Request</button>   
+                            </center>
                         </form>
                     </div>
             <br/><br/>

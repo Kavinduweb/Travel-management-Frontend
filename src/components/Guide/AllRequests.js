@@ -35,57 +35,61 @@ class ComponentToPrint extends React.Component{
       <div>
         <HeaderAdmin/>
         <div className="info">
-             <ReactToPrint
-          trigger={() =>
-            <button type="button" 
-            class="btn btn-primary" 
-            style={{marginLeft:1336}}>
-            <i class="fas fa-print mr-2"></i>Print this out!
-            </button> 
-          }
-
-          content={(Component) => this.componentRef}
+            <br/>
+            <section id="watermark">
+            <ReactToPrint
+                trigger={() =>
+                <button type="button" 
+                class="btn btn-success" 
+                style={{marginLeft:1153}}>
+                <i class="fa fa-print mr-2"></i>Print this out!
+                </button> 
+            }
+            content={(Component) => this.componentRef}
         />
+            <hr/>
             <div className="container" ref={(Component) => (this.componentRef = Component)}>
-                <h2><b><center>Requests Details Of Travellers</center></b></h2>
-            <section id="report">
-              <table class="table">
-                <thead class="thead">
-                  <tr>
-                    <th scope="col">ID</th>
-                    <th scope="col">Guide Name</th>
-                    <th scope="col">Guide Language</th>
-                    <th scope="col">Name</th>
-                    <th scope="col">Phone</th>
-                    <th scope="col">Email</th>
-                    <th scope="col">Destination</th>
-                    <th scope="col">Tour Date</th>
-                    <th scope="col">No of Dates</th>
-                    <th scope="col">Request Date</th>      
-                  </tr>
-                </thead>
-                <tbody>
-                  {this.state.posts.map((posts,index)=>(
-                    <tr key={index}>
-                        <th scope="row">{index+1}</th>
-                            <td>{posts.guidename}</td>
-                            <td>{posts.guidelanguage}</td>
-                            <td>{posts.uname}</td>
-                            <td>{posts.phone}</td>
-                            <td>{posts.email}</td>
-                            <td>{posts.destination}</td>
-                            <td>{posts.tourdate}</td>
-                            <td>{posts.noofdates}</td>
-                            <td>{posts.requestdate}</td>       
-                    </tr>
+                    <section id="report">
+                        
+                        <h1 className = "font">Requests Details of Travellers</h1>
+                        <table class="table mr-2 table-hover table-bordered">
+                            <thead class="thead text-center">
+                                <tr>
+                                    <th scope="col">ID</th>
+                                    <th scope="col">Guide Name</th>
+                                    <th scope="col">Guide Language</th>
+                                    <th scope="col">Name</th>
+                                    <th scope="col">Telephone</th>
+                                    <th scope="col">E-Mail</th>
+                                    <th scope="col">Destination</th>
+                                    <th scope="col">Tour Date</th>
+                                    <th scope="col">No. of Dates</th>
+                                    <th scope="col">Request Date</th>      
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {this.state.posts.map((posts,index)=>(
+                                    <tr key={index}>
+                                        <th scope="row">{index+1}</th>
+                                        <td>{posts.guidename}</td>
+                                        <td>{posts.guidelanguage}</td>
+                                        <td>{posts.uname}</td>
+                                        <td>{posts.phone}</td>
+                                        <td>{posts.email}</td>
+                                        <td>{posts.destination}</td>
+                                        <td>{posts.tourdate}</td>
+                                        <td>{posts.noofdates}</td>
+                                        <td>{posts.requestdate}</td>       
+                                    </tr>
   
-                  ))}   
-                </tbody>
-              </table>
-            </section>
+                                ))}   
+                            </tbody>
+                        </table>
+                    </section>
             </div>
-        </div>
-        </div>
+          </section>
+        </div>        
+      </div>
     );
   }
 }
