@@ -43,7 +43,9 @@ componentDidMount(){
 
   render() {
     return (
-      <form>
+     <div className="info">
+       
+       <form className="form12">
      
       <table className="table" border='3'> 
 
@@ -54,7 +56,7 @@ componentDidMount(){
            <th scope="col">Name</th>
            <th scope="col">Email</th>
            <th scope="col">Number</th>
-           <th scope="col">Password</th>
+        
            
 
            </tr>       
@@ -67,7 +69,7 @@ componentDidMount(){
            <td>{RegData.Name}</td>
            <td>{RegData.Email}</td>
            <td>{RegData.Num}</td>
-           <td > {RegData.Password}</td>
+        
           
           
 
@@ -88,6 +90,8 @@ componentDidMount(){
        </table>
       
        </form>
+       </div>
+      
     );
   }
 }
@@ -95,9 +99,9 @@ componentDidMount(){
 class Example extends React.Component {
   render() {
     return (
-      <div>
+      <div className="body1">
         <ReactToPrint
-          trigger={() => <button style={{marginLeft:230}}>Print this out!</button> }
+          trigger={() => <button className="button12" style={{marginLeft:230}}>Print this out!</button> }
           
           content={() => this.componentRef}
         />

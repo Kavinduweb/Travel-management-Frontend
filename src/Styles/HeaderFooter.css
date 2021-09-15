@@ -116,6 +116,7 @@
     position: relative; 
     bottom: 0;
     margin-inline-start: 180px;
+    min-height:120px
   }
   .ftr{
       margin-inline-start: 13%;

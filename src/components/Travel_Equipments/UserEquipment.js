@@ -97,7 +97,7 @@ render(){
       
       <button type="button" class="btn btn-primary" style={{marginInlineStart:"50%", width:"110px"}}>
 
-      <a href ={("payment/add")} style={{textDecoration:'none',color:'white'}}> BUY</a></button>
+      <a href ={`/payment/add-equipment/${equipment._id}`} style={{textDecoration:'none',color:'white'}}> BUY</a></button>
       
       </li>
        

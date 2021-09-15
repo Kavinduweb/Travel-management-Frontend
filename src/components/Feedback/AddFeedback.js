@@ -2,7 +2,9 @@ import React,{sendLetter, useState} from "react"
 import {useHistory} from 'react-router-dom';
 import styled from 'styled-components';
 import axios from "axios";
- 
+import Header from '../Header';
+import Footer from '../Footer'; 
+
 const AddFeedback = ()=>{
  
      let history = useHistory();
@@ -27,7 +29,9 @@ const AddFeedback = ()=>{
  
  
     return(
-      <div className="container" className="info" style={{background: "url(https://luxerecess.com/wp-content/uploads/2020/01/Sri-Lanka-Travel-for-famlies-4.jpg)", backgroundSize: "cover"}}>
+      <div>
+      <Header/>
+      <div className="container" className="info" style={{background: "url(https://cdn.kimkim.com/files/a/content_articles/featured_photos/c38ba9e43631bcd320c316ea5ca54508d6064e72/big-ba994354b8809de2c2e6fb4c666aa6fc.jpg)", backgroundSize: "cover"}}>
       <div className="w-75 mx-auto shadow p-5" style={{background :"url(https://emozzy.com/wp-content/uploads/2020/09/Webp.net-compress-image-16.jpg)", filter: "drop-shadow(0 0 0.75rem #0A85ED)"}}>
           <h2 className ="text- mb-10">Feedback Form</h2>
           <hr/>   <br></br>
@@ -85,6 +89,8 @@ const AddFeedback = ()=>{
 </form>
 </div>
 <br/><br/><br/>
+</div>
+<Footer/>
 </div>
     );
    };

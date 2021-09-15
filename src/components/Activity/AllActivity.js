@@ -3,7 +3,9 @@ import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 import { Row } from 'react-bootstrap';
 import { Col } from 'react-bootstrap';
-import axios from 'axios'; 
+import axios from 'axios';
+import Header from '../Header';
+import Footer from '../Footer'; 
 
 const Activities = () => {
 
@@ -14,12 +16,17 @@ const Activities = () => {
       .get("http://localhost:8070/activities")
       .then(res => setPosts(res.data))
       .catch(error => console.log(error));
+    
     });
 
     return (
+      <div>
+        <Header/>
+   
      <MainContainer>
 
             <div className="info"> 
+            
 <div className="container">
 
     <Row xs={1} md={3} className="g-4" id="by" className="rounded" >
@@ -29,7 +36,7 @@ const Activities = () => {
     <Col>
                 
 <div className="card-group py-3">
-  <div className="card" style={{borderRadius: "15px", background: "linear-gradient(90deg, #edeec9 0%, #e8e8e4 100%)", width: "20rem"}}>
+  <div className="card" style={{borderRadius: "15px", width: "20rem"}}>
     <img className="card-img-top" src={`/uploads/${activity.activityImage}`} alt="..." style={{width: "100%", minHeight: "40%", hover: "hoverable"}}/>
     <div className="card-body" >
       <h5 className="card-title">{activity.aname}</h5>
@@ -37,8 +44,7 @@ const Activities = () => {
       <p className="card-title">{activity.mindescription}</p>
       <p className="card-text"><i className="fas fa-tag">{activity.price}</i></p>
 	 <Link to={`/view-activity/${activity._id}`} className="btn btn-primary">View more</Link>
-
-
+ 
 
     </div>
   </div>
@@ -51,6 +57,8 @@ const Activities = () => {
                 </div>
 
         </MainContainer>
+        <Footer/>
+        </div>
 );
             
 };
@@ -67,7 +75,5 @@ const MainContainer = styled.div`
      border-color: rgba(13, 110, 253, 0.7);
      box-shadow: 0px 0px 10px 2px rgba(13, 110,253, 0.6);
    }
-
-
   
 `;

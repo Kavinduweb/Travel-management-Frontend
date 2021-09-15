@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import {Link} from "react-router-dom";
 import {Row} from 'react-bootstrap';
 import {Col} from 'react-bootstrap';
+import HeaderAdmin from '../HeaderAdmin';
 import axios from 'axios';
 
 const Activities = () => {
@@ -23,11 +24,14 @@ const Activities = () => {
   });
 
     return (
+        <div>
+            <HeaderAdmin/>
+            
         <MainContainer>
             <div className="info" >
             <div className="container">
-            <div className="row my-5">
-              <div className="col-sm-2">
+            <div className="row my-3">
+              <div className="col-sm-2" >
                     <Link to="/add-activity" className="btn btn-outline-secondary"><i class="fas fa-plus">&nbsp;Add New Activity</i></Link>
                 </div>
                 <div className="col-sm-2">
@@ -45,20 +49,21 @@ const Activities = () => {
                 
 
     <Col><div className="card-group py-3">
-    <div className="card" style={{borderRadius: "15px", background: "linear-gradient(90deg, #DDDDDA 0%, #DDDDDA 100%)", width: "60rem"}}>
-                    <img src={`/uploads/${activity.activityImage}`} alt="..." style={{width: "100%", minHeight: "40%"}}/>
+    <div className="card" style={{borderRadius: "15px"}}>
+                    <img src={`/uploads/${activity.activityImage}`} alt="..." style={{width: "100%", MinHeight: "40%", borderRadius: "10px"}}/>
+                    
                     <Link to={{
                         pathname: `/activity/${activity._id}`
                     }}>
                         <h2>{activity.aname}</h2>
-                        
+                
                     </Link>
                 <h6>{activity.category}</h6><br/>
                 <p>{activity.mindescription}</p>
              <br/>
-                <p><i class="fas fa-tag">&nbsp;{activity.price}</i></p>
+                <p><i className="fas fa-tag">&nbsp;{activity.price}</i></p>
 
-                <div className="row my-5">
+                <div className="row my-3">
                 &nbsp;&nbsp;&nbsp;
 
                     <div className="col-sm-2">
@@ -79,6 +84,7 @@ const Activities = () => {
                 </div>
            </div>
         </MainContainer>
+           </div>
     )
 }
 

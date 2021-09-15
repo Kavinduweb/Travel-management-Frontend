@@ -1,5 +1,8 @@
 import React, {Component} from 'react';
 import axios from "axios";
+import Header from '../Header';
+import Footer from '../Footer';
+
 
 export default class PackageDetails extends Component {
 
@@ -29,7 +32,10 @@ render(){
 const {_id,packageName,destination,discription,date,noofdays,noofnights,vehical,perperson,packageImage} = this.state.post;
 
   return(
-    <div className="infotr">
+    <div>
+            <Header/>
+    <div className="infotr" >
+     
     <div className="container"  style={{marginTop:'10px'}}>
       
       
@@ -75,7 +81,7 @@ time reliable offers for the best prices for our customers.Sri Lanka Local Tours
 
 
     <ul class="postcard__tagbox" style={{fontSize:"16px"}}>
-					<li class="tag__item"><i class="fas fa-tag mr-2"></i>PP&nbsp;{perperson}</li>
+					<li class="tag__item"><i class="fas fa-tag mr-2"></i>PP Rs.&nbsp;{perperson}</li>
 					<li class="tag__item"><i class="fas fa-clock mr-2"></i>{noofdays}&nbsp;{noofnights}</li>
 					<li class="tag__item play blue">	<i class="fas fa-car mr-2"></i>{vehical}	</li>
              <li >
@@ -89,6 +95,8 @@ time reliable offers for the best prices for our customers.Sri Lanka Local Tours
 
   
   </div>
+    </div>
+    <Footer/>
     </div>
 
   )

@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import {Link} from "react-router-dom";
 import styled from 'styled-components';
+import HeaderAdmin from '../HeaderAdmin';
 import axios from "axios";
 
 const Activity = (props) => {
@@ -27,6 +28,8 @@ const Activity = (props) => {
     }, []);
 
     return (
+        <div>
+        <HeaderAdmin/>
     <MainContainer>
         <div className="info">
         <h2>{aname}</h2>
@@ -39,6 +42,7 @@ const Activity = (props) => {
     <Link to="/activities" type="submit" className="btn btn-primary">Back to Activity Page</Link>
         </div>
         </MainContainer>
+        </div>
     )
 };
 

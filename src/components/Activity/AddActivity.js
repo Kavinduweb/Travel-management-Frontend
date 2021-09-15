@@ -2,6 +2,7 @@ import React, {useState} from 'react';
 import {Link} from "react-router-dom";
 import styled from 'styled-components';
 import {useHistory} from 'react-router-dom';
+import HeaderAdmin from '../HeaderAdmin';
 import axios from "axios";
 
 function AddActivity () {
@@ -50,9 +51,12 @@ function AddActivity () {
     };
 
     return (
+        <div>
+        <HeaderAdmin/>
         <AddActivityContainer>
             <div className="info">
-            <div className="container" style={{background: "#9eb3c2"}}>
+            <div className="container" style={{backgroundImage: "linear-gradient( 180.3deg,  rgba(214,224,255,1) 37.2%, rgba(254,168,168,1) 137.3% )"}}>
+            &nbsp;&nbsp;
                 <h1>Add New Activity </h1>
                 <span className="message">{message}</span>
         <form onSubmit={changeOnClick} encType="multipart/form-data" >
@@ -119,11 +123,13 @@ function AddActivity () {
   <div className="flex-parent jc-center" style={{align: "center"}}>
                 <Link to="/activities" type="submit" className="btn btn-light">Back to Activity</Link>
                 </div>
+                &nbsp;&nbsp;
       </div> 
 </form>
 </div>
 </div>
 </AddActivityContainer>
+</div>
     );
 };
 
@@ -133,7 +139,9 @@ export default AddActivity;
 const AddActivityContainer = styled.div`
 margin: 3rem auto;
 padding: 4rem;
-width: 65.25rem;
+width: 75.25rem;
+margin: 3rem auto;
+padding: 4rem;
 h1 {
     font-weight: 900;
     color: #0b2545;
