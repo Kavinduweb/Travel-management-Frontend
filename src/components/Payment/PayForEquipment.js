@@ -28,7 +28,7 @@ export default class PayForTravelPackage extends Component{
       img:"",
       reference:"",
       name:"",
-      payf:"Hotel Booking",
+      payf:"Travel Equipment",
       method:"",
       card:"",
       time:"",
@@ -130,13 +130,13 @@ const{ename,price}=this.state;
                 <hr  class="text-center mb-4"/>
                     <h4 style={{color:"hsl(0,0%,0%,0.6)"}}>{ename}</h4>
                     <div >
-                        <div class="col-12 "><img class="img-fluid" src={`/uploads/${img}`} style={{height:"200px",width:"100%"}} /></div>
+                    <center>    <div class="col-12 "><img class="img-fluid" src={`/uploads/${img}`} style={{height:"200px",width:"65%"}} /></div></center>
                         
                     </div>
                    
-                    <hr/>
+             
                    <hr/>
-                    <div class="row lower">
+                    <div class="row lower">&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; 
                         <div class="col text-lefta"><b>Price of this</b></div>
                         <div class="col text-righta"><b>{price}</b></div>
                     </div>
@@ -152,7 +152,7 @@ const{ename,price}=this.state;
                
                     <div class="row"> <span class="text-center mb-1" style={{fontSize:"40px"}}>Payment </span>
                     <div class="d-flex  mb-3">
-                    <p class="fw-bold  payicon">We Accepted</p>
+                    <p class="fw-bold  payicon">We Accept</p>
                         <div >&nbsp;&nbsp; &nbsp;&nbsp; 
                              <img src="https://img.icons8.com/color/48/000000/visa.png" /> <img src="https://img.icons8.com/color/48/000000/mastercard-logo.png" /> <img src="https://img.icons8.com/color/48/000000/maestro.png" /> </div>
                   </div></div>
@@ -225,11 +225,11 @@ const{ename,price}=this.state;
            <label class="form-label fw-bold" > <i class="fas fa-plane mr-3"></i>Card Number</label>  
                 <div class="form-outline mb-2 col-9">
                    <input 
-                    type="number"
+                    type="text"
                     id="formControlLgXc"
                     class="form-control form-control-lg"
                     name="card" placeholder="Enter Card Number"
-                    value={this.state.card} onChange={this.onChangeCard} maxLength="9" required ="required"
+                    value={this.state.card} onChange={this.onChangeCard} maxLength="12" required ="required"
                   /></div>
                
             </div>
@@ -250,7 +250,7 @@ const{ename,price}=this.state;
              <label class="form-label fw-bold" > <i class="fas fa-plane mr-3"></i>CVV&nbsp;&nbsp;</label>  
               <div class="form-outline mb-2 col-3">
               <input
-                    type="number"
+                    type="text"
                     id="formControlLgcvv"
                     class="form-control form-control-lg"
                     placeholder="CVV" value={this.state.no} onChange={this.onChangeNo} maxLength="3" required ="required" />   </div>
@@ -267,6 +267,7 @@ const{ename,price}=this.state;
     <div> </div>
 </div>
      </div>
+     <Footer/>
      </div>
    )
  }

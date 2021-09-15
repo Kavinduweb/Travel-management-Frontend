@@ -1,6 +1,9 @@
 import React, { Component , useParameters} from 'react';
 import ReactToPrint from 'react-to-print';
 import axios from 'axios';
+import emailjs from 'emailjs-com';
+import Header from '../Header';
+import Footer from '../Footer';
 
 
 export default class ComponentToPrint1 extends React.Component {
@@ -10,6 +13,9 @@ export default class ComponentToPrint1 extends React.Component {
             post:{}
         };
     }
+
+
+    
 
     componentDidMount(){
         const id = this.props.match.params.id;
@@ -28,6 +34,7 @@ export default class ComponentToPrint1 extends React.Component {
     
 
     }
+    
     render(){
 
         const {name,nic,phone,email,inq,adrep,_id} = this.state.post;
@@ -36,6 +43,10 @@ export default class ComponentToPrint1 extends React.Component {
 
         return(
             <div  >
+
+                <Header/>
+               
+                
                 <ReactToPrint
             trigger={() => <button className="btn btn-dark"  style={{margintop:'400px'}}>
                 <i class="fa fa-file-pdf-o" aria-hidden="true"></i> &nbsp;Get a Print of the Report</button >}

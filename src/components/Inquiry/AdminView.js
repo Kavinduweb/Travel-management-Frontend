@@ -118,7 +118,7 @@ export default class AdminView extends Component{
             <tr key={index}>
             <th scope="row">{index+1}</th>
             <td>
-               <a href={`/inqD/${posts._id}`} style={{textDecoration:'none'}}>
+               <a href={`/adminDet/${posts._id}`} style={{textDecoration:'none'}}>
                 {posts.name}
                 </a>
                 </td>

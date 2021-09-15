@@ -29,7 +29,7 @@ export default class PayForActivity extends Component{
       category:"",
       reference:"",
       name:"",
-      payf:"Hotel Booking",
+      payf:"Activity",
       method:"",
       card:"",
       time:"",
@@ -158,7 +158,7 @@ const{activityName,price}=this.state;
                
                     <div class="row"> <span class="text-center mb-1" style={{fontSize:"40px"}}>Payment </span>
                     <div class="d-flex  mb-3">
-                    <p class="fw-bold  payicon">We Accepted</p>
+                    <p class="fw-bold  payicon">We Accept</p>
                         <div >&nbsp;&nbsp; &nbsp;&nbsp; 
                              <img src="https://img.icons8.com/color/48/000000/visa.png" /> <img src="https://img.icons8.com/color/48/000000/mastercard-logo.png" /> <img src="https://img.icons8.com/color/48/000000/maestro.png" /> </div>
                   </div></div>
@@ -231,11 +231,11 @@ const{activityName,price}=this.state;
            <label class="form-label fw-bold" > <i class="fas fa-plane mr-3"></i>Card Number</label>  
                 <div class="form-outline mb-2 col-9">
                    <input 
-                    type="number"
+                    type="text"
                     id="formControlLgXc"
                     class="form-control form-control-lg"
                     name="card" placeholder="Enter Card Number"
-                    value={this.state.card} onChange={this.onChangeCard} maxLength="9" required ="required"
+                    value={this.state.card} onChange={this.onChangeCard} maxLength="12" required ="required"
                   /></div>
                
             </div>
@@ -256,7 +256,7 @@ const{activityName,price}=this.state;
              <label class="form-label fw-bold" > <i class="fas fa-plane mr-3"></i>CVV&nbsp;&nbsp;</label>  
               <div class="form-outline mb-2 col-3">
               <input
-                    type="number"
+                    type="text"
                     id="formControlLgcvv"
                     class="form-control form-control-lg"
                     placeholder="CVV" value={this.state.no} onChange={this.onChangeNo} maxLength="3" required ="required" />   </div>
@@ -272,7 +272,9 @@ const{activityName,price}=this.state;
     </div>
     <div> </div>
 </div>
-     </div></div>
+     </div>
+     <Footer/>
+     </div>
    )
  }
 
