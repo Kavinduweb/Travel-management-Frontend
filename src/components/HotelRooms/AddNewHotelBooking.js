@@ -60,12 +60,18 @@ axios.post("http://localhost:8070/hotelbooking/add",data).then((res)=>{
         }
         else{
             window.location.href = "/userhotelbooking";
-        }
-        
+        }    
     }
 })
 
-    }
+    const userInfo=localStorage.getItem('userInfo');
+    if(userInfo==null){
+    alert("You are not Authorized User. Please sign in first.")
+    window.location.replace("/register")}
+
+ }
+
+
 
     render(){
 

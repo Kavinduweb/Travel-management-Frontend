@@ -1,7 +1,10 @@
 import React, { Component } from 'react'
 import axios from 'axios';
 import './inq.css'
+import emailjs from 'emailjs-com';
 import four from "./four.jpg";
+import Header from '../Header';
+import Footer from '../Footer';
 
 
 
@@ -38,6 +41,38 @@ export default class CreateInquiry extends Component{
     onSubmit= (e) =>{
         e.preventDefault();
 
+        const name1 = document.getElementById('name');
+        const nic1= document.getElementById('nic').value;
+        const email1 = document.getElementById('email').value;
+        const phone1 = document.getElementById('phone');
+        const inq1 = document.getElementById('inq');
+        const nic2 = document.getElementById('nic').nic2;
+        
+            if (name1.value === '' || name1.value == null){
+                alert('Please enter Your Name')
+                return false;
+        }
+           
+        
+         else if(email1 == '' || email1.includes('@' && '.') == false ){
+
+            alert("Enter Valid email Address")
+           return false;
+           
+        }
+            else if (phone1.value === '' || phone1.value == null){
+                alert('Please enter Your Phone Number')
+                return false;
+        } 
+            else if (inq1.value === '' || inq1.value == null){
+                alert('Please enter Your Inquiry')
+                return false;
+        }
+            else if (nic1.length < 3){
+                alert('Please enter')
+                return false;
+            }
+
         const {name,nic,phone,email,inq} = this.state;
 
         const data= {
@@ -47,6 +82,8 @@ export default class CreateInquiry extends Component{
             email:email,
             inq:inq            
         }
+
+       
 
         console.log(data)
 
@@ -68,31 +105,8 @@ export default class CreateInquiry extends Component{
 
         })
 
-        const name1 = document.getElementById('name');
-        const nic1 = document.getElementById('nic');
-        const email1 = document.getElementById('email');
-        const phone1 = document.getElementById('phone');
-        const inq1 = document.getElementById('inq');
-            if (name1.value === '' || name1.value == null){
-                alert('Please enter Your Name')
-                return false;
-        }
-            else if (nic1.value=== ''||nic1.value == null){
-                alert('Please enter Your NIC')
-                return false;
-        }
-            else if (email1.value === '' || email1.value == null){
-                alert('Please enter Your Email Address')
-                return false;
-        }
-            else if (phone1.value === '' || phone1.value == null){
-                alert('Please enter Your Phone Number')
-                return false;
-        } 
-            else if (inq1.value === '' || inq1.value == null){
-                alert('Please enter Your Inquiry')
-                return false;
-        }
+     
+            
  
     }
     
@@ -103,8 +117,9 @@ export default class CreateInquiry extends Component{
 
     render(){
         return(
+            <div >
+                <Header/>
             <div className="vj" >
-            <div>
             
             <div className="needs-validation">
           
@@ -194,6 +209,7 @@ export default class CreateInquiry extends Component{
       
             </div>
         </div> 
+        <Footer/>
         </div>   
         )
 

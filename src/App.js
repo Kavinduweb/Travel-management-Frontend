@@ -4,7 +4,7 @@ import PackageBooking from './components/Travel_Packages/PackageBooking';
 import AllPackagesAdmin from './components/Travel_Packages/TravelPackagesAdmin';
 import CreatePackage from './components/Travel_Packages/AddTravelPackage';
 import EditPackage from './components/Travel_Packages/EditTravelPackage';
-import HomePage from './components/HomePage';
+import HomePage from './components/Home/HomePage';
 import AllPackages from './components/Travel_Packages/TravelPackages';
 import AllBooking from './components/Travel_Packages/BookingAllDetails';
 import adminhotelbooking from './components/HotelRooms/AdminHotelBooking';
@@ -29,14 +29,14 @@ import AdminEquipment from './components/Travel_Equipments/AdminEquipment';
 import UserEquipment from './components/Travel_Equipments/UserEquipment';
 import AddFeedback from './components/Feedback/AddFeedback';
 import AllFeedback from './components/Feedback/AdminFeedback';
-import Gallery from './components/Gallery';
-import Aboutus from './components/AboutUs';
-import ContactUs from './components/Contactus';
-import ContactUsAdmin from './components/ContactUsAdmin';
+import Gallery from './components/Home/Gallery';
+import Aboutus from './components/Home/AboutUs';
+import ContactUs from './components/Home/Contactus';
+import ContactUsAdmin from './components/Home/ContactUsAdmin';
 import AllPayments from './components/Payment/AllPayments';
 import EditPayment from './components/Payment/EditPayment';
 import PaymentDetails from  './components/Payment/PaymentDetails';
-import AdminHome from  './components/AdminHome';
+import AdminHome from  './components/Home/AdminHome';
 import hotelpackagedetails from './components/HotelRooms/HotelPackageDetails';
 import EquipmentReport from './components/Travel_Equipments/EquipmentReport';
 import AddGuide from './components/Guide/AddGuide';
@@ -47,7 +47,7 @@ import SelectGuide from './components/Guide/SelectGuide';
 import GuideConfirm from './components/Guide/GuideConfirm';
 import GuideRequest from './components/Guide/GuideRequest';
 import AllRequests from './components/Guide/AllRequests';
-import Services from './components/Services';
+import Services from './components/Home/Services';
 import Activities from "./components/Activity/Activities";
 import Activity from "./components/Activity/Activity";
 import AddActivity from "./components/Activity/AddActivity";
@@ -71,15 +71,14 @@ import InqDetails from './components/Inquiry/InqDetails';
 import InqView from './components/Inquiry/InqView';
 import AdminView from './components/Inquiry/AdminView';
 import ComponentToPrint from './components/Inquiry/InqReport';
-import ComponentToPrint1 from './components/Inquiry/userDoc';
+import ComponentToPrint1 from './components/Inquiry/userDoc'
+import Inqmail from './components/Inquiry/inqmail';
+import AdminDetails from './components/Inquiry/AdminDetails';
 import PaymentView from './components/Payment/PayView';
 import SearchHotelBooking from './components/HotelRooms/SearchHotelBooking';
 import UserHotelBookingDetails from './components/HotelRooms/UserHotelBookingDetails';
-
-
+import EditTPackage from './components/Travel_Packages/EditPackage2';
 import {BrowserRouter as Router, Route} from "react-router-dom"
-
-
 
 
 function App() {
@@ -166,11 +165,9 @@ function App() {
       <Route path="/userDoc/:id" component= {ComponentToPrint1}></Route>
       <Route path="/userhotelbooking/View" exact component = {SearchHotelBooking}></Route>
       <Route path="/UserHotelBookingDetails/:id" exact component = {UserHotelBookingDetails}></Route>
-
-
-
-      
-
+      <Route path="/edittpackage/:id" component= {EditTPackage}></Route>
+      <Route path="/inqmail/:id" component= {Inqmail}></Route>
+      <Route path="/adminDet/:id" component= {AdminDetails}></Route>
 
 
 

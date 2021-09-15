@@ -130,13 +130,13 @@ const{ename,price}=this.state;
                 <hr  class="text-center mb-4"/>
                     <h4 style={{color:"hsl(0,0%,0%,0.6)"}}>{ename}</h4>
                     <div >
-                        <div class="col-12 "><img class="img-fluid" src={`/uploads/${img}`} style={{height:"200px",width:"100%"}} /></div>
+                    <center>    <div class="col-12 "><img class="img-fluid" src={`/uploads/${img}`} style={{height:"200px",width:"65%"}} /></div></center>
                         
                     </div>
                    
-                    <hr/>
+             
                    <hr/>
-                    <div class="row lower">
+                    <div class="row lower">&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; 
                         <div class="col text-lefta"><b>Price of this</b></div>
                         <div class="col text-righta"><b>{price}</b></div>
                     </div>
