@@ -73,8 +73,16 @@ import InqView from './components/Inquiry/InqView';
 import AdminView from './components/Inquiry/AdminView';
 import ComponentToPrint from './components/Inquiry/InqReport';
 import ComponentToPrint1 from './components/Inquiry/userDoc';
+
+import Inqmail from './components/Inquiry/inqmail';
+import AdminDetails from './components/Inquiry/AdminDetails';
+
+
+
+
 import PaymentView from './components/Payment/PayView';
 import EditTPackage from './components/Travel_Packages/EditPackage2';
+
 
 import {BrowserRouter as Router, Route} from "react-router-dom"
 
@@ -163,8 +171,11 @@ function App() {
       <Route path="/adView/" component= {AdminView}></Route>
       <Route path="/report" component= {ComponentToPrint}></Route>
       <Route path="/userDoc/:id" component= {ComponentToPrint1}></Route>
+
       <Route path="/edittpackage/:id" component= {EditTPackage}></Route>
 
+      <Route path="/inqmail/:id" component= {Inqmail}></Route>
+      <Route path="/adminDet/:id" component= {AdminDetails}></Route>
 
 
       

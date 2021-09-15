@@ -1,9 +1,9 @@
 import React, { Component } from 'react'
 import axios from 'axios';
-import Header from '../Header';
-import Footer from '../Footer';
+import HeaderAdmin from '../HeaderAdmin';
 
-export default class InqDetails extends Component{
+
+export default class AdminDetails extends Component{
     constructor(props){
         super(props);
         this.state = {
@@ -28,14 +28,14 @@ export default class InqDetails extends Component{
     
     }
     onDelete = (id) =>{
-   if(window.confirm('Do you want to delete your Inquiry ?')){
+   if(window.confirm('Do you want to block this user and delete the inquiry ?')){
         const url="http://localhost:8070/inquiry/delete/";
         const id1 = id;
         
             axios.delete(url+id1).then((res)=>{
     
             alert("Inquiry Deleted Successfully !");
-            window.location.replace("/add")
+            window.location.replace("/adView")
             
            
     })
@@ -49,15 +49,14 @@ export default class InqDetails extends Component{
 
 
         return(
-           
+
             <div >
-                <Header/>
-                <body className="vj">
+                <HeaderAdmin/>
                 <div >
                <form className="oneDetail3" id="form">
                
            
-               <h1>Your Inquiry Details</h1>
+               <h1>Inquiry Details</h1>
                 <hr/>
                     
                     <tr className="col-sm-3">Name &nbsp;: &nbsp;{name}</tr>
@@ -80,35 +79,19 @@ export default class InqDetails extends Component{
                 <div className="form-group" style={{marginBottom:'15px'}}>
                 <div className="hed">
                 <i class="fa fa-user" aria-hidden="true"></i> &nbsp;
-                        <label style={{marginBottom:'5px'}}> You ({name})</label>
+                        <label style={{marginBottom:'5px'}}> Client({name})'s Inquiry </label>
                         &nbsp;&nbsp;
                         </div>
                   
                     <p className="bod"> {inq}</p>
                   
-                    <a  href={"/editinq/"+this.state.post._id}>
-                            <button className="btn btn-warning" type="button" style={{margintop:'15px'}} > 
-                            <i className="fas fa-edit"></i>&nbsp; Edit Inquiry
-                            </button>
-                        </a>
-                        &nbsp;
-                         <a className="btn btn-danger" href="#" onClick={()=>this.onDelete(this.state.post._id)}>
-                                <i className ="fas fa-trash-alt"></i>&nbsp; Delete Inquiry
-                        </a>
+                    
 
-                        &nbsp;
+                    
 
-                        <a  href={"/userDoc/"+this.state.post._id}>
-                            <button className="btn btn-success" type="button" style={{margintop:'15px'}} > 
-                            <i className="fa fa-file-pdf-o"></i>&nbsp;Get a Copy
-                            </button>
-                        </a>
-                        &nbsp;
-                        <a  href={"/inqmail/"+this.state.post._id}>
-                            <button className="btn btn-warning" type="button" style={{margintop:'15px'}} > 
-                            <i className="fas fa-edit"></i>&nbsp; Get Email
-                            </button>
-                        </a>
+                       
+                        
+                        
 
                 </div>
                 </form>
@@ -124,11 +107,19 @@ export default class InqDetails extends Component{
                         </div>
                         <p className="bod"> {adrep}</p>
 
-
                         <br/>
-                     <b style={{textSize:"5px"}}>Inquiry & User Affairs,</b>
-                     <br/>
-                     <b>Travel Dreams(PVT)Ltd.</b>
+                        <a  href={"/admin/"+this.state.post._id}>
+                            <button className="btn btn-warning" type="button" style={{margintop:'15px'}} > 
+                            <i className="fas fa-edit"></i>&nbsp; Edit Response
+                            </button>
+                        </a>
+                        &nbsp;
+                         <a className="btn btn-danger" href="#" onClick={()=>this.onDelete(this.state.post._id)}>
+                                <i className ="fas fa-trash-alt"></i>&nbsp; Block User
+                        </a>
+
+
+                    
                         
 
                 </div>
@@ -138,8 +129,6 @@ export default class InqDetails extends Component{
                
                 
             </div>
-            </body>
-            <Footer/>
             </div>
         )
 

@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
 import axios from 'axios';
+import Header from '../Header';
+import Footer from '../Footer';
 
 export default class EditInquiry extends Component{
 
@@ -88,7 +90,9 @@ export default class EditInquiry extends Component{
 
     render(){
         return(
-            <div className="all1">
+            <div >
+                <Header/>
+                <div className="vj">
                 
                 <form className="needs-validation" noValidate  id="form">
                 <h1 > Edit Inquiry</h1>
@@ -151,6 +155,8 @@ export default class EditInquiry extends Component{
                     </button>
 
             </form>
+            </div>
+            <Footer/>
          </div>
         )
 

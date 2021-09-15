@@ -21,7 +21,7 @@ export default class EditPayment extends Component{
     this.state={
       reference:"",
       name:"",
-      payf:"Hotel Booking",
+      payf:"",
       method:"",
       card:"",
       time:"",
@@ -145,7 +145,7 @@ export default class EditPayment extends Component{
            <div className="form-group" style={{marginBottom:'15px'}}>
              <label style={{marginBottom:'5px'}}>Reference</label>
              <input type="text" className="form-control" name="reference" placeholder="Edit Reference" required ="required"
-             value={this.state.reference} onChange={this.onChangeReference}/>
+             value={this.state.reference} onChange={this.onChangeReference} disabled />
            </div>
            <div className="form-group" style={{marginBottom:'15px'}}>
              <label style={{marginBottom:'5px'}}>Name</label>
@@ -153,13 +153,10 @@ export default class EditPayment extends Component{
              value={this.state.name} onChange={this.onChangeName}/>
            </div>
            <label> Pay For</label>
-           <select  className="form-select" aria-label="Default select example" id="types" value={payf} onChange={this.onChangePay}>
-             <option value="Hotel Booking">Hotel Booking</option>
-             <option value="Travel Package">Travel Package</option>
-             <option value="Equipment Hiring">Equipment Hiring</option>
-             <option value="Activity Booking">Activity Booking</option>
+           <input type="text"  className="form-control" name="payfor"  id="types" value={payf} onChange={this.onChangePay} disabled />
+             
 
-           </select>
+           
            <div className="form-group" style={{marginBottom:'15px'}}>
            <p style={{marginBottom:'5px'}}>Card Type</p>
            
@@ -191,7 +188,7 @@ export default class EditPayment extends Component{
            <div className="form-group" style={{marginBottom:'15px'}}>
              <label style={{marginBottom:'5px'}}>Amount</label>
              <input type="text" className="form-control" name="reference" placeholder="Edit Amount" required ="required"
-             value={this.state.amount} onChange={this.onChangeAmount}/>
+             value={this.state.amount} onChange={this.onChangeAmount} disabled/>
            </div>
   
            <button className="btn btn-success" type="submit" style={{marginTop:'15px'}} onClick={this.onSubmit}>
@@ -205,7 +202,8 @@ export default class EditPayment extends Component{
            
          </form>
        </div> <br></br>
-       </div> 
+       </div>
+       <Footer/>
        </div>
      )
    }
