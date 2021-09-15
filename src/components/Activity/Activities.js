@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import {Link} from "react-router-dom";
 import {Row} from 'react-bootstrap';
 import {Col} from 'react-bootstrap';
+import HeaderAdmin from '../HeaderAdmin';
 import axios from 'axios';
 
 const Activities = () => {
@@ -23,12 +24,15 @@ const Activities = () => {
   });
 
     return (
+        <div>
+            <HeaderAdmin/>
+            
         <MainContainer>
-            <div className="info">
-            <div className="container" >
-            <div className="row my-5">
-              <div className="col-sm-2">
-                    <Link to="/add-activity" className="btn btn-outline-secondary">+Add New Activity</Link>
+            <div className="info" >
+            <div className="container">
+            <div className="row my-3">
+              <div className="col-sm-2" >
+                    <Link to="/add-activity" className="btn btn-outline-secondary"><i class="fas fa-plus">&nbsp;Add New Activity</i></Link>
                 </div>
                 <div className="col-sm-2">
                     <Link to="/activity-select" className="btn btn-outline-secondary">Activity Select Details</Link>
@@ -44,29 +48,35 @@ const Activities = () => {
                         {post.map((activity) => (
                 
 
-    <Col>
-                    <img src={`/uploads/${activity.activityImage}`} alt="..." style={{width: "40%"}}/>
+    <Col><div className="card-group py-3">
+    <div className="card" style={{borderRadius: "15px"}}>
+                    <img src={`/uploads/${activity.activityImage}`} alt="..." style={{width: "100%", MinHeight: "40%", borderRadius: "10px"}}/>
+                    
                     <Link to={{
                         pathname: `/activity/${activity._id}`
                     }}>
                         <h2>{activity.aname}</h2>
-                        
+                
                     </Link>
-                <h6>{activity.category}</h6>
-             
-                <p>{activity.price}</p>
+                <h6>{activity.category}</h6><br/>
+                <p>{activity.mindescription}</p>
+             <br/>
+                <p><i className="fas fa-tag">&nbsp;{activity.price}</i></p>
 
-                <div className="row my-5">
+                <div className="row my-3">
+                &nbsp;&nbsp;&nbsp;
+
                     <div className="col-sm-2">
-                    <Link to={`/update/${activity._id}`} className="btn btn-outline-success">Edit Activity</Link>
+                    <Link to={`/update/${activity._id}`} className="btn btn-outline-success"><i className="far fa-edit">&nbsp;&nbsp;Edit Activity</i></Link>
                 </div>
-                    &nbsp;
-                    &nbsp;
+                    &nbsp;&nbsp;&nbsp;
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                 <div className="col-sm-2">
-                    <button onClick={() => deleteActivity(activity._id)} className="btn btn-outline-danger">Delete Activity</button>
+                    <button onClick={() =>  deleteActivity(activity._id)}  className="btn btn-outline-danger"><i className="far fa-trash-alt">&nbsp;&nbsp;Delete Activity</i></button>
                 </div>
                 </div>
+                </div></div>
                 <hr/>
                 </Col>
     ))}
@@ -74,6 +84,7 @@ const Activities = () => {
                 </div>
            </div>
         </MainContainer>
+           </div>
     )
 }
 
@@ -81,7 +92,10 @@ export default Activities;
 //MAIN CONTAINER
 const MainContainer = styled.div`
     margin: 7rem 0;
-
+    
+    .btn btn-outline-success{
+    
+    }
 `;
 
 
