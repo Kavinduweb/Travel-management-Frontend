@@ -3,6 +3,8 @@ import axios from 'axios';
 import { Card } from 'react-bootstrap';
 import { Row } from 'react-bootstrap';
 import { Col } from 'react-bootstrap';
+import Header from '../Header';
+import Footer from '../Footer';
 
 
 export default class CardItemsT extends Component{
@@ -46,12 +48,15 @@ handleSearchArea=(e)=>{
 
 render(){
   return(
+    <div>
+      <Header/>
+      <div style={{backgroundColor:"hsl(0,0%,75%,0.2)"}}>
     <div className="infotr">
     <div className="bodytravelpackage" id="bbimg">
     <div >
       <br/>
   
-<div className="rightsearch">
+<div style={{marginInlineStart:"85%"}}>
 
       <div class="input-group" >
   <div class="form-outline">
@@ -73,18 +78,18 @@ render(){
 </div>
 
        
-<Row xs={1} md={3} className="g-4" id="by" class="rounded" >
+<Row xs={1} md={4} className="g-4" id="by" class="rounded" >
 {this.state.posts.map((equipment, idx) => (
    
     <Col >
     <div class="card h-1000">
   
       <Card >
-      <div className="cdbody">
-        <Card.Img variant="top" src={`/uploads/${equipment.image}`} class="img-fluid rounded-start" style={{height:"250px"}} alt="..." id="cardimg" />
+      <div>
+       <center> <Card.Img variant="top" src={`/uploads/${equipment.image}`} class="img-fluid rounded-start" style={{height:"200px", width:"200px"}} alt="..." id="cardimg" /></center>
         <Card.Body>
         
-          <Card.Title> {equipment.name}<br/>
+          <Card.Title> <b>{equipment.name}</b><br/>
           </Card.Title>
           <Card.Text>
        
@@ -93,9 +98,9 @@ render(){
 
 
 <ul>
-      <li ><i class="fas fa-tag "></i>Rs.&nbsp;{equipment.price}
+      <li ><i class="fas fa-tag " > </i> Rs.&nbsp;{equipment.price}
       
-      <button type="button" class="btn btn-primary" style={{marginInlineStart:"50%", width:"110px"}}>
+      <button type="button" class="btn btn-primary" style={{marginInlineStart:"30%", width:"110px"}}>
 
       <a href ={`/payment/add-equipment/${equipment._id}`} style={{textDecoration:'none',color:'white'}}> BUY</a></button>
       
@@ -124,6 +129,9 @@ render(){
 </div>
  
     </div>
+    </div>
+    </div>
+    <Footer/>
     </div>
   )
 }

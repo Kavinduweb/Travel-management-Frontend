@@ -6,6 +6,7 @@ import { Row } from 'react-bootstrap';
 import { Col } from 'react-bootstrap';
 import pb from '../../Images/pb.jpg'
 import '../../Styles/TravelEquipment.css'
+import HeaderAdmin from '../HeaderAdmin'
 
 const AdminEquipment = () => {
     const [equipments, setEquipment] = useState([]);
@@ -29,38 +30,71 @@ const AdminEquipment = () => {
       };
     const { id } = useParams();
     return (
+      <div>
+        <HeaderAdmin/>
+        <div className="infoadmin">
       <div className="TEcenter">
-      <div className="info">
+      <div style={{paddingRight:"100px", paddingTop:"10px"}}><Link class="btn btn-primary mr-2" to="/equipment/report" style={{float:"right"}}>
+                    Report
+                  </Link></div>
                 <div><Link class="btn btn-primary mr-2" to="/equipment/add" style={{float:"right"}}>
                     Add Equipment
                   </Link></div> <br/> <br/> <br/> 
-                  <Row xs={1} md={1} className="g-4" id="by" class="rounded" style={{maxHeight:"250px", maxWidth:"65%"}} >
+                  <Row xs={1} md={1} className="g-4" id="by" class="rounded" style={{height:"270px", width:"90%"}} >
           {equipments.map((equipment, idx) => (
           
 
 <div class="card mb-3" >
   <div class="row g-0">
     <div class="col-md-2"><br/>
-      <img src={`/uploads/${equipment.image}`} alt="..."  class="img-fluid rounded-start" style={{maxHeight:"200px", maxWidth:"200px"}} />
+      <img src={`/uploads/${equipment.image}`} alt="..."  class="img-fluid rounded-start" style={{height:"200px", width:"200px", paddingRight:"5px"}} />
     </div>
     <div class="col-md-10">
       <div class="card-body"> <br/>
         <h5 class="card-title">{equipment.name}</h5> 
         <p class="card-text">{equipment.description}</p>
-        <h6 class="card-text"><b>{equipment.price}</b></h6>
+
+
+
+
+
+        <div class="d-flex flex-row align-items-center mb-5">
+    
+    <div class="form-outline mb-2 ">
+   
+    <h6 class="card-text"><b>Rs. {equipment.price}</b></h6>
+
+   </div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+   
+    <div class="form-outline mb-2 " style={{paddingLeft:"70%"}}>
                   <Link style={{float:"right"}}
                     class="btn btn-danger"
                     onClick={() => deleteEquipment(equipment._id)}
                   >
                     Delete
                   </Link>
-
+                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                   <Link style={{float:"right"}}
-                    class="btn btn-outline-primary mr-2"
+                    class="btn btn-outline-primary mr-3"
                     to={`/equipment/edit/${equipment._id}`}
                   >
                     Edit
                   </Link>
+    
+   </div>
+
+  
+
+</div>
+
+
+
+
+
+
+
+        
+                  
       </div>
     </div>
   </div>
@@ -72,6 +106,7 @@ const AdminEquipment = () => {
         </Row> <br/> <br/> <br/> <br/>
                 </div>
                 </div> 
+                </div>
     );
 };
 

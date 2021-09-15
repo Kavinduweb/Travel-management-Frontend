@@ -1,5 +1,7 @@
 import React, {Component} from 'react';
 import axios from 'axios';
+import Header from '../Header';
+import Footer from '../Footer';
 
 export default class PaymentDetails extends Component{
     constructor(props){
@@ -36,14 +38,17 @@ export default class PaymentDetails extends Component{
 
         const{reference,name,payf,method,card,time,no,amount,_id} = this.state.payment;
         return(
-            <div style={{marginTop:'20px'}}>
-                <h4>{card}</h4>
+            <div>
+                <Header/>
+           
+            <div className="info" style={{marginTop:'20px', marginInlineStart:'20%'}}>
+                <h4>{name}</h4>
                  <hr/>
                  <dl className="row">
                      <dt className="col-sm-3">Reference</dt>
                      <dd className="col-sm-9">{reference}</dd>
-                     <dt className="col-sm-3">Name</dt>
-                     <dd className="col-sm-9">{name}</dd>
+                     <dt className="col-sm-3">Card Number</dt>
+                     <dd className="col-sm-9">{card}</dd>
                      <dt className="col-sm-3">Paid for</dt>
                      <dd className="col-sm-9">{payf}</dd>
                      <dt className="col-sm-3">Method</dt>
@@ -57,17 +62,20 @@ export default class PaymentDetails extends Component{
                      
 
 
-                     <a className ="btn btn-warning" href ={`/payment/edit/${_id}`}>
+                     <a style={{width:"40%"}} className ="btn btn-warning" href ={`/payment/edit/${_id}`}>
           <i className="fas fa-edit"></i>&nbsp;Edit
         </a>&nbsp;
      
-
+            </dl>
+            <dl>
         
-          <a className ="btn btn-danger" href="#" onClick={()=>this.onDelete(_id)} >
+          <a style={{width:"40%"}} className ="btn btn-danger" href="#" onClick={()=>this.onDelete(_id)} >
           <i className="fas fa-edit"></i>&nbsp;Delete
           </a>
 
                  </dl>
+            </div>
+            <Footer/>
             </div>
         )
     }

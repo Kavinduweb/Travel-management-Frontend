@@ -1,20 +1,19 @@
-#bodyhome{
+#bodyhome {
   min-height: 100%;
   min-width: 100%;
   background-position: center;
   background-repeat: no-repeat;
-  background-size:cover;
-position:unset;
-  
+  background-size: cover;
+  position: unset;
+  background: hsl(0, 0%, 75%, 0.2);
+  min-height: 500px;
 }
 
-
-
-.dot-container{
+.dot-container {
   text-align: center;
 }
 
-.dot{
+.dot {
   height: 12px;
   width: 12px;
   margin: 0 03px;
@@ -24,45 +23,44 @@ position:unset;
   transition: background-color 0.6s ease;
 }
 
-.activedot{
+.activedot {
   background-color: orangered;
   cursor: pointer;
   height: 15px;
   width: 15px;
 }
 
-@media only screen and (max-width :500px) {
-  .dot{
-      width:8px;
-      height: 8px;
+@media only screen and (max-width: 500px) {
+  .dot {
+    width: 8px;
+    height: 8px;
   }
-  .activedot{
-      width: 8px;
-      height: 8px;
+  .activedot {
+    width: 8px;
+    height: 8px;
   }
-  
 }
 
-.containerhome{
+.containerhome {
   width: 100%;
   height: 60vh;
   max-width: 1600px;
   user-select: none;
-  margin:0 auto;
+  margin: 0 auto;
 }
 
-.slideshow-containerxx{
+.slideshow-containerxx {
   width: 100%;
   height: 90%;
   background-color: lightgray;
   position: relative;
 }
 
-.prev{
+.prev {
   font-size: 30px;
   color: #fff;
-  text-shadow: 0 0 5px #fff, 0 0 10px #fff,0 0px,0 0 20px #454647,0 0 25px #454647,
-  0 0 30px #454647,0 0 35px #454647;
+  text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0px, 0 0 20px #454647,
+    0 0 25px #454647, 0 0 30px #454647, 0 0 35px #454647;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -70,7 +68,7 @@ position:unset;
   position: absolute;
   width: 50px;
   /*background-color: #00000036;*/
-  transition:background-color 0.1;
+  transition: background-color 0.1;
   height: 72px;
   top: 50%;
   transform: translateY(-50%);
@@ -78,17 +76,18 @@ position:unset;
   border-bottom-left-radius: 10px;
 }
 
-.prev:hover,.next:hover{
+.prev:hover,
+.next:hover {
   /*background-color: #9796962c;*/
   cursor: pointer;
   font-size: 45px;
 }
 
-.next{
+.next {
   font-size: 30px;
   color: #fff;
-  text-shadow: 0 0 5px #fff, 0 0 10px #fff,0 0px,0 0 20px #454647,0 0 25px #454647,
-  0 0 30px #454647,0 0 35px #454647;
+  text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0px, 0 0 20px #454647,
+    0 0 25px #454647, 0 0 30px #454647, 0 0 35px #454647;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -96,7 +95,7 @@ position:unset;
   position: absolute;
   width: 50px;
   /*background-color: #00000036;*/
-  transition:background-color 0.1;
+  transition: background-color 0.1;
   height: 72px;
   top: 50%;
   left: auto;
@@ -105,81 +104,73 @@ position:unset;
   border-top-left-radius: 0px;
   border-bottom-left-radius: 0px;
   border-bottom-right-radius: 10px;
-  border-top-right-radius: 10px ;
+  border-top-right-radius: 10px;
 }
 
-@media only screen and (max-width:500px){
-  .prev,.next{
+@media only screen and (max-width: 500px) {
+  .prev,
+  .next {
     font-size: 10px;
   }
 }
 
-
-.myslides{
+.myslides {
   width: 100%;
   height: 100%;
   position: absolute;
 }
-.imgxx{
+.imgxx {
   width: 100%;
   height: 100%;
 }
 
-.myslidesnone{
+.myslidesnone {
   display: none;
 }
 
-.fade{
+.fade {
   animation-name: fade;
   animation-duration: 3s;
 }
-@keyframes fade{
-  from{
-      opacity:  .3;
+@keyframes fade {
+  from {
+    opacity: 0.3;
   }
-  to{
-      opacity: 1;
+  to {
+    opacity: 1;
   }
 }
 
-.textxx{
+.textxx {
   color: rgb(255, 255, 255);
   font-size: 20px;
   padding: 4px 8px;
   position: absolute;
-  bottom:0px;
+  bottom: 0px;
   width: 100%;
   text-align: center;
   background-color: rgba(109, 108, 108, 0.527);
 }
 
-
-@media only screen and (max-width:500px){
-  .textxx{
+@media only screen and (max-width: 500px) {
+  .textxx {
     font-size: 10px;
   }
 }
 
-.parga{
+.parga {
   text-align: justify;
   text-justify: inter-word;
 }
 
-.info{
- 
+.info {
   color: #252525;
-  
+
   margin-inline-start: 180px;
+  min-height: 500px;
 }
 
-.infoadmin{
- 
-  
+.infoadmin {
   margin-inline-start: 220px;
-  margin-top: 20px;
-
-  
-  
+  min-height: 500px;
 }
-
-
