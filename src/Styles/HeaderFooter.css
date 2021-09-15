@@ -204,7 +204,7 @@
   color: rgb(218, 213, 213);
 }
 #logott{
-  position: absolute;
+  position: fixed;
   top: 10px;
   left: 2%;
   font-size: 90px;
