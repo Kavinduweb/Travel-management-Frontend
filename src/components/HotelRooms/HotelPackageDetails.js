@@ -1,6 +1,8 @@
 import React, {Component} from 'react';
 import axios from "axios";
-import '../../Styles/templatemo-style.css'
+import '../../Styles/HotelRoomStyle.css'
+import Header from '../Header';
+import Footer from '../Footer';
 
 
 
@@ -30,42 +32,46 @@ render(){
   const {roomType,details,price,size,maxCapacity,packageImage} = this.state.post;
 
     return(
-      <div className="info">
-        <div class="container">
-          <div class="row" id="bokrow">
-            <div class="col-md-12">
-              <div class="mu-about-area">
-                <br></br>
-                <br></br>
-                <br></br>
-                  <div class="row" id="bokrow">
-                    <div class="col-md-6">
-                      <div class="mu-about-left">
-                        <img class="detailsimg" src={`/uploads/${packageImage}`} alt="Men Speaker"/>
+      <div>
+        <Header/>
+          <div className="info">
+            <div class="container">
+              <div class="row" id="bokrow">
+                <div class="col-md-12">
+                  <div class="mu-about-area">
+                    <br></br>
+                    <br></br>
+                    <br></br>
+                      <div class="row" id="bokrow">
+                        <div class="col-md-6">
+                          <div class="mu-about-left">
+                            <img class="detailsimg" src={`/uploads/${packageImage}`} alt="Men Speaker"/>
+                          </div>
+                        </div>
+                        <div class="col-md-6">
+                          <div class="mu-about-right">
+                            <br></br>
+                            <h2 class="detailstitle"> {roomType}</h2><br></br> 
+                            <p>{details}</p>
+                            <p class="detailsprice">Per Day: Rs {price}</p>
+                            <p className="tm-gallery-price">Room Size: {size}</p>
+                            <p>Maximum people: {maxCapacity}</p>
+                            <button className="btn btn-primary" style={{backgroundColor: "#192c3e",width: "20%"}}><a href={`/addnewhotelbooking/${this.state.post._id}`} style={{textDecoration:'none', color:'white'}}>Book Now</a></button>
+                            <br></br>
+                            <br></br>
+                            <br></br>
+                            <br></br>
+                            <br></br>
+                            <br></br>
+                          </div>
+                        </div>
                       </div>
-                    </div>
-                    <div class="col-md-6">
-                      <div class="mu-about-right">
-                        <br></br>
-                        <h2 class="detailstitle"> {roomType}</h2><br></br> 
-                        <p>{details}</p>
-                        <p class="detailsprice">Per Day: Rs {price}</p>
-                        <p className="tm-gallery-price">Room Size: {size}</p>
-                        <p>Maximum people: {maxCapacity}</p>
-                        <button className="btn btn-primary" style={{backgroundColor: "#192c3e",width: "20%"}}><a href={`/addnewhotelbooking/${this.state.post._id}`} style={{textDecoration:'none', color:'white'}}>Book Now</a></button>
-                        <br></br>
-                        <br></br>
-                        <br></br>
-                        <br></br>
-                        <br></br>
-                        <br></br>
-                      </div>
-                    </div>
                   </div>
+                </div>
               </div>
             </div>
           </div>
-        </div>
+        <Footer/>
       </div>
     )
   }

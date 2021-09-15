@@ -8,7 +8,6 @@ import HomePage from './components/HomePage';
 import AllPackages from './components/Travel_Packages/TravelPackages';
 import AllBooking from './components/Travel_Packages/BookingAllDetails';
 import adminhotelbooking from './components/HotelRooms/AdminHotelBooking';
-import userhotelbooking from './components/HotelRooms/UserHotelBooking';
 import hotelbookingdetails from './components/HotelRooms/HotelBookingDetails';
 import addnewhotelbooking from './components/HotelRooms/AddNewHotelBooking';
 import edithotelbooking from './components/HotelRooms/EditHotelBooking';
@@ -74,8 +73,12 @@ import AdminView from './components/Inquiry/AdminView';
 import ComponentToPrint from './components/Inquiry/InqReport';
 import ComponentToPrint1 from './components/Inquiry/userDoc';
 import PaymentView from './components/Payment/PayView';
+import SearchHotelBooking from './components/HotelRooms/SearchHotelBooking';
+import UserHotelBookingDetails from './components/HotelRooms/UserHotelBookingDetails';
+
 
 import {BrowserRouter as Router, Route} from "react-router-dom"
+
 
 
 
@@ -96,7 +99,6 @@ function App() {
       <Route path="/travelpackages" exact component = {AllPackages}></Route>
       <Route path="/allbooking" exact component = {AllBooking}></Route>
       <Route path="/adminhotelbooking" exact component = {adminhotelbooking}></Route>
-      <Route path="/userhotelbooking" exact component = {userhotelbooking}></Route>
       <Route path="/userhotelbooking/hotelbookingdetails/:id" exact component = {hotelbookingdetails}></Route>
       <Route path="/addnewhotelbooking/:id" exact component = {addnewhotelbooking}></Route>
       <Route path="/edithotelbooking/:id" exact component = {edithotelbooking}></Route>
@@ -162,6 +164,8 @@ function App() {
       <Route path="/adView/" component= {AdminView}></Route>
       <Route path="/report" component= {ComponentToPrint}></Route>
       <Route path="/userDoc/:id" component= {ComponentToPrint1}></Route>
+      <Route path="/userhotelbooking/View" exact component = {SearchHotelBooking}></Route>
+      <Route path="/UserHotelBookingDetails/:id" exact component = {UserHotelBookingDetails}></Route>
 
 
 
