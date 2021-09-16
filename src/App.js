@@ -63,6 +63,9 @@ import PayForEquipment from './components/Payment/PayForEquipment';
 import PayForTP from './components/Payment/PayForTP';
 import PaymentConfirm from './components/Payment/PaymentComplete';
 import forget from './components/Kavindu/ForgetPass';
+import resetpass from './components/Kavindu/resetpass';
+
+
 import CreateInquiry from './components/Inquiry/CreateInquiry';
 import EditInquiry from './components/Inquiry/EditInquiry';
 import InquiryAll from './components/Inquiry/InquiryAll';
@@ -154,6 +157,7 @@ function App() {
       <Route path="/activity-user/:id" exact component={ActivityUser} />
       <Route path="/activity-select" exact component={ActivitySelect} />
       <Route path="/forget" exact component={forget} />
+      <Route path="/reset/:id" exact component={resetpass} />
       <Route path="/add" exact component={CreateInquiry}></Route>
       <Route path="/editinq/:id" component= {EditInquiry}></Route>
       <Route path="/allinq" component= {InquiryAll}></Route>
