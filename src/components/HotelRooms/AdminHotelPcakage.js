@@ -1,5 +1,7 @@
 import React, {Component } from 'react';
 import axios from 'axios';
+import '../../Styles/HotelRoomStyle.css'
+import HeaderAdmin from '../HeaderAdmin'
 
 export default class AdminHotelBooking extends Component{
 
@@ -39,47 +41,49 @@ export default class AdminHotelBooking extends Component{
 
     render(){
         return(
-          <div className="info">
-            <div class="addbttn">
-              <button className="btn btn-success">
-                <a href="/adminaddhotelpackage" style={{textDecoration:'none' ,color:'white'}}>
-                  <i class="fas fa-plus mr-2"></i>Add New Package
-                </a>
-              </button>&nbsp;  
-              <button className="btn btn-success">
-                <a href="/adminhotelbooking" style={{textDecoration:'none' ,color:'white'}} >
-                  <i class="fas fa-book mr-2"></i>Hotel Booking
-                </a>
-              </button>      
-            </div>
+          <div>
+            <HeaderAdmin/><br></br><br></br>
+              <div className="info">
+                <div class="addbttn">
+                  <button className="btn btn-success">
+                    <a href="/adminaddhotelpackage" style={{textDecoration:'none' ,color:'white'}}>
+                      <i class="fas fa-plus mr-2"></i>Add New Package
+                    </a>
+                  </button>&nbsp;  
+                  <button className="btn btn-success">
+                    <a href="/adminhotelbooking" style={{textDecoration:'none' ,color:'white'}} >
+                      <i class="fas fa-book mr-2"></i>Hotel Booking
+                    </a>
+                  </button>      
+                </div>
 
-            <br></br>
-            <hr/>
-            <br></br>
-            
-            {this.state.posts.map((posts,index)=>( 
-              <section class="ad">
-                <figure class="adcard">
-                 <div class="ad_card">
-                   <img class="card_img" src={`/uploads/${posts.packageImage}`}/>
-                 </div>
-                 <div class="ad_content">
-                   <div class="card_info">
-                     <h4 class="cardtopic">{posts.roomType}</h4>
-                     <p class="cardprice">Per Day: Rs {posts.price}</p>
-                     <p class="cardmax">max Person: {posts.maxCapacity}</p>
-                   </div>
-                   <div class="cd_bttn">
-                    <button class="btn btn-dark">
-                      <a href ={`/adminhotelpackagedetails/${posts._id}`} style={{textDecoration:'none' ,color:'white'}}>
-                        Details
-                      </a>
-                    </button>&nbsp;
-                   </div> 
-                 </div>
-                </figure>
-              </section>
-            ))}            
+                <br></br>
+                <br></br>
+                
+                {this.state.posts.map((posts,index)=>( 
+                  <section class="ad">
+                    <figure class="adcard">
+                    <div class="ad_card">
+                      <img class="card_img" src={`/uploads/${posts.packageImage}`}/>
+                    </div>
+                    <div class="ad_content">
+                      <div class="card_info">
+                        <h4 class="cardtopic">{posts.roomType}</h4>
+                        <p class="cardprice">Per Day: Rs {posts.price}</p>
+                        <p class="cardmax">max Person: {posts.maxCapacity}</p>
+                      </div>
+                      <div class="cd_bttn">
+                        <button class="btn btn-dark">
+                          <a href ={`/adminhotelpackagedetails/${posts._id}`} style={{textDecoration:'none' ,color:'white'}}>
+                            Details
+                          </a>
+                        </button>&nbsp;
+                      </div> 
+                    </div>
+                    </figure>
+                  </section>
+                ))}            
+              </div>
           </div>
         )
     }

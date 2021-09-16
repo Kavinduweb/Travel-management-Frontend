@@ -1,23 +1,25 @@
 import React, { useEffect, useState } from 'react'
 import axios from "axios";
+import Header from '../Header';
+import Footer from '../Footer';
 
 
 
 export default function PayView (){
    
   
-	const [no,setno] = useState("");
+	const [card,setno] = useState("");
    
 
     const getData =async (e)=>{
 
         e.preventDefault();
 
-        const no1 = no;
+        const card1 = card;
         const url="http://localhost:8070/payment/view/";
 
      
-        const res = await axios.get(url+no1).then((res)=> {
+        const res = await axios.get(url+card1).then((res)=> {
 
         document.getElementById("reference").innerHTML =res.data.reference;
         document.getElementById("name").innerHTML =res.data.name;
@@ -31,7 +33,7 @@ export default function PayView (){
           
        
            if(res=true) {
-                alert("You are a valid user");
+               
                 window.location.replace("/payment/details/" + mongoid)
 
            }
@@ -41,7 +43,7 @@ export default function PayView (){
            
 
             }).catch((err)=>{
-            alert('You Are Not a Verified User!!');
+            alert('Invalid Card Number.');
     })
 
     }
@@ -53,18 +55,21 @@ export default function PayView (){
    
     
     return(
-        <div >
 
-                <div >
-		            <form className="needs-validation-view"   >
+        <div >
+            <Header/>
+
+                <div className="info container" >
+
+		            <form className="needs-validation-view" style={{backgroundColor:"hsl(172, 50%, 50%,0.2)" ,marginTop:"150px", marginLeft:"200px"}}   >
 			
-                    <h3>Enter Your National Identity Card Number (no)</h3>
+                    <h3>Enter Your  Card Number </h3>
                         <hr/>
-			            <input type="no" id ="no" placeholder="no" value={no} onChange={(e)=>{  setno(e.target.value) ; }}/>
+			            <input type="no" id ="card" placeholder="Enter your Card Number" maxLength="12"  value={card} onChange={(e)=>{  setno(e.target.value) ; }}/>
                         <br/>
                         <a>
-			                <button  className="btn mt-3 btn-dark"  style={{textDecoration:'none',color:'white'}} onClick={getData}>
-                            <i className="fa fa-arrow-circle-right"></i> Submit
+			                <button  className="btn mt-3 btn-success"  style={{textDecoration:'none',color:'white'}} onClick={getData}>
+                             Submit
                             </button>
                         </a>
                     </form>
@@ -80,6 +85,7 @@ export default function PayView (){
                         <h2 id="amount" ></h2>
                     </div>
 	            </div>
+                <Footer/>
             </div>
          
 
