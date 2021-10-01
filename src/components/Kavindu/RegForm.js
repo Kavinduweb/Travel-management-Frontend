@@ -116,7 +116,7 @@ return (
 	  
 		<form onSubmit={sendData} className="form12">
 			<h1 className="h111">Create Account</h1>
-
+		
 			<input className ="inputabc" type="text" placeholder="Name" id="Name" onChange={(e)=>{  setName(e.target.value) ; }} required />
 			<input  className ="inputabc" type="email" placeholder="Email" id="Email" onChange={(e)=>{  setEmail(e.target.value) ; }}  required/>
         	 <input  className ="inputabc" type="number" placeholder="Mobile" id="Number" onChange={(e)=>{ setNum (e.target.value) ; }} required/>
