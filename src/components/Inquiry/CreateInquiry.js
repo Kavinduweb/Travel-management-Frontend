@@ -87,25 +87,6 @@ export default class CreateInquiry extends Component{
         }
 
         console.log(data)
-
-        axios.post("http://localhost:8070/inquiry/add",data).then((res) =>{
-           
-        if(res.data.success){
-            alert("You Have Successfully Created an Inquiry")
-            
-                this.setState({
-                    name:"",
-                    nic:"",
-                    phone:"",
-                    email:"",
-                    inq:""
-                })
-
-            }
-            
-
-        })
-            
         const name1 = document.getElementById('Name');
         const nic1 = document.getElementById('nic');
         const email1 = document.getElementById('email');
@@ -131,6 +112,26 @@ export default class CreateInquiry extends Component{
                 alert('Please enter Your Inquiry')
                 return false;
         }
+
+        axios.post("http://localhost:8070/inquiry/add",data).then((res) =>{
+           
+        if(res.data.success){
+            alert("You Have Successfully Created an Inquiry")
+            
+                this.setState({
+                    name:"",
+                    nic:"",
+                    phone:"",
+                    email:"",
+                    inq:""
+                })
+
+            }
+            
+
+        })
+        window.location.replace("/add")
+       
  
     }
     
