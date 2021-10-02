@@ -20,7 +20,8 @@ function Sub(){
         <h2 style={{marginLeft:150 }}>Upgrade Your Membership Plan </h2>
         </th>
         <th>
-        <button style={{marginLeft:150 }} type="button" class="btn btn-primary">Subscribe</button> 
+            <a
+                  style={{marginLeft:150 }} type="button" class="btn btn-primary" href="/subscribe">Subscribe </a>
         </th>
         </tr>
     </table>
