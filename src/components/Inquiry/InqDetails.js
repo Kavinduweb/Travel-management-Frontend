@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
 import axios from 'axios';
+import Header from '../Header';
+import Footer from '../Footer';
 
 export default class InqDetails extends Component{
     constructor(props){
@@ -47,8 +49,10 @@ export default class InqDetails extends Component{
 
 
         return(
-
+           
             <div >
+                <Header/>
+                <body className="vj">
                 <div >
                <form className="oneDetail3" id="form">
                
@@ -99,6 +103,12 @@ export default class InqDetails extends Component{
                             <i className="fa fa-file-pdf-o"></i>&nbsp;Get a Copy
                             </button>
                         </a>
+                        &nbsp;
+                        <a  href={"/inqmail/"+this.state.post._id}>
+                            <button className="btn btn-warning" type="button" style={{margintop:'15px'}} > 
+                            <i className="fas fa-edit"></i>&nbsp; Get Email
+                            </button>
+                        </a>
 
                 </div>
                 </form>
@@ -128,6 +138,8 @@ export default class InqDetails extends Component{
                
                 
             </div>
+            </body>
+            <Footer/>
             </div>
         )
 

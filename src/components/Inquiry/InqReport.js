@@ -7,6 +7,7 @@ import axios from 'axios';
 
 
 
+
  class ComponentToPrint extends React.Component {
     constructor(props){
         super(props);

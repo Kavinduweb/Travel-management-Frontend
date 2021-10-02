@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import axios from "axios";
+import Header from '../Header';
+import Footer from '../Footer';
 
 
 
@@ -38,6 +40,8 @@ export default function InqView (){
 
             }).catch((err)=>{
             alert('You Are Not a Verified User!!');
+            window.location.replace("/add") 
+
     })
 
     }
@@ -50,13 +54,15 @@ export default function InqView (){
     
     return(
         <div >
+            <Header/>
+            <body className="vj">
 
                 <div >
 		            <form className="needs-validation-view"   >
 			
                     <h3>Enter Your National Identity Card Number (NIC)</h3>
                         <hr/>
-			            <input type="nic" id ="nic" placeholder="NIC" value={nic} onChange={(e)=>{  setNic(e.target.value) ; }}/>
+			            <input type="text" id ="nic" placeholder="NIC" value={nic} onChange={(e)=>{  setNic(e.target.value) ; }}/>
                         <br/>
                         <a>
 			                <button  className="btn mt-3 btn-dark"  style={{textDecoration:'none',color:'white'}} onClick={getData}>
@@ -73,6 +79,8 @@ export default function InqView (){
                         <h2 id="inq" ></h2>
                     </div>
 	            </div>
+                </body>
+                <Footer/>
             </div>
          
 
