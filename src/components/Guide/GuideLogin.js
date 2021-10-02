@@ -47,42 +47,38 @@ const GuideLogin = () => {
     return (
         <div>
             <Header/>
-        <div className="infotr">
-        
-            <div className="w-50 mx-auto shadow p-5">
-                    <form action = "">
-                        <center><h3><b>GUIDE LOGIN</b></h3></center>
-                        <div>
-                            <label htmlFor = "username"><strong>Username</strong></label>
-                            <input type = "text" 
-                            className="form-control"
-                            placeholder="Enter Username" 
-                            name = "username" 
-                            id = "username"
-                            autoComplete = "off"
-                            value = {guideusername} 
-                            onChange={(e)=>{  setguideusername(e.target.value) ; }} />
+                <div className="infotr">
+                                <form class="login-container">
+                                    <h3 className = "h3">GUIDE LOGIN</h3>
+                                    <hr/>
+                                    <div className = "login">
+                                        <h5>Username :</h5>
+                                        <input type = "text" 
+                                        className="form-control"
+                                        placeholder="Enter Username" 
+                                        name = "username" 
+                                        id = "username"
+                                        autoComplete = "off"
+                                        value = {guideusername} 
+                                        onChange={(e)=>{  setguideusername(e.target.value) ; }} />
+                                    </div>
+                                    <br/>
+                                    <center>
+                                    <Button type = "submit" className = "btn btn-primary" onClick={getData}>
+                                        <i class="fa fa-sign-in mr-2" aria-hidden="true"></i>
+                                        Login
+                                    </Button> 
+                                    </center>
+                                </form>                           
                         </div>
-
-                        <br/>
-
-
-                        <br/>
-
-                        <Button type = "submit" className = "btn-dark" onClick={getData}>Login</Button>
-
-                    </form>
-            </div>
-
-            < div style={{visibility: 'hidden'}} >
-                        <h1 id="uname" ></h1>
-                        <h2 id="phone" ></h2>
-                        <h2 id="email" ></h2>
-                        <h2 id="destination"></h2>
-                        <h2 id="tourdate" ></h2>
-                        <h2 id="noofdates" ></h2>
-                    </div>
-	            </div>
+                        < div style={{visibility: 'hidden'}} >
+                                <h1 id="uname" ></h1>
+                                <h2 id="phone" ></h2>
+                                <h2 id="email" ></h2>
+                                <h2 id="destination"></h2>
+                                <h2 id="tourdate" ></h2>
+                                <h2 id="noofdates" ></h2>
+                        </div>            
        <Footer/>
    </div>
     

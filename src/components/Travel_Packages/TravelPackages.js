@@ -1,153 +1,266 @@
-import React,{Component} from 'react'
-import axios from 'axios';
-import { Row } from 'react-bootstrap';
-import '../../Styles/TravelPackage.css'
-import Header from '../Header';
-import Footer from '../Footer';
+import React, { Component } from "react";
+import axios from "axios";
+import { Row } from "react-bootstrap";
+import "../../Styles/TravelPackage.css";
+import Header from "../Header";
+import Footer from "../Footer";
 
+export default class CardItemsT extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      posts: [],
+    };
+  }
 
-
-export default class CardItemsT extends Component{
-
-constructor(props){
-  super(props);
-  this.state={
-    posts:[]
-  };
-}
-
-componentDidMount(){
-  this.retrievePosts();
-}
-
-retrievePosts(){
-  axios.get("http://localhost:8070/travelpackages").then(res =>{
-    if(res.data.success){
-      this.setState({
-        posts:res.data.existingPackage
-      });
-    console.log(this.state.travelpackages);
-    }
-  });
-}
-
-onDelete=(id)=>{
-  axios.delete(`http://localhost:8070/travelpackages/admin/delete/${id}`).then((res)=>{
-    alert("Delete SuccessFully");
+  componentDidMount() {
     this.retrievePosts();
-  })
-}
+  }
 
-filterData(posts,searchkey){
-  const result = posts.filter((post) =>
-  post.packageName.toLowerCase().includes(searchkey)||
-  post.packageName.toUpperCase().includes(searchkey)||
-  post.destination.toLowerCase().includes(searchkey)
-  )
-  this.setState({posts:result})
-}
+  retrievePosts() {
+    axios.get("http://localhost:8070/travelpackages").then((res) => {
+      if (res.data.success) {
+        this.setState({
+          posts: res.data.existingPackage,
+        });
+        console.log(this.state.travelpackages);
+      }
+    });
+  }
 
-handleSearchArea=(e)=>{
-  const searchkey = e.currentTarget.value;
+  onDelete = (id) => {
+    axios
+      .delete(`http://localhost:8070/travelpackages/admin/delete/${id}`)
+      .then((res) => {
+        alert("Delete SuccessFully");
+        this.retrievePosts();
+      });
+  };
 
-  axios.get("http://localhost:8070/travelpackages").then(res =>{
-    if(res.data.success){
-      this.filterData(res.data.existingPackage,searchkey)
-    }
-  });
-}
+  filterData(posts, searchkey) {
+    const result = posts.filter(
+      (post) =>
+        post.packageName.toLowerCase().includes(searchkey) ||
+        post.packageName.toUpperCase().includes(searchkey)
+    );
+    this.setState({ posts: result });
+  }
 
-render(){
-  return(
-    <div>
-            <Header/>
-    <div className="infotr bodytravelpackage" >
-    <div className="bodytravelpackage" className="container" id="bbimg">
-    <div >
-      <br/>
-  
-<div className="rightsearch">
+  handleSearchArea = (e) => {
+    const searchkey = e.currentTarget.value;
 
-      <div class="input-group" >
-  <div class="form-outline">
+    axios.get("http://localhost:8070/travelpackages").then((res) => {
+      if (res.data.success) {
+        this.filterData(res.data.existingPackage, searchkey);
+      }
+    });
+  };
 
-    <input 
-    id="search-input" 
-    type="search" 
-    id="form1" 
-    class="form-control" 
-    placeholder="Search Package"
-    onChange={this.handleSearchArea}  />
-  </div>
+  render() {
+    return (
+      <div>
+        <Header />
+        <div className="infotr bodytravelpackage">
+          <div className="bodytravelpackage" className="container" id="bbimg">
+            <div>
+              <br />
+              <div class="row text-center text-lg-start">
+                <div class="col-lg-2 col-md-2 col-6">
+                  <a href="#" class="d-block mb-1 h-5">
+                    <img
+                      class="img-fluid img-thumbnail"
+                     
+                      src=" https://www.worldtravelguide.net/wp-content/uploads/2019/03/shu-Sri-Lanka-Train-to-Kandy-253468045-430x246.jpg"
+                      alt=""
+                    />
+                  </a>
+                </div>
 
-  <button id="search-button" type="button" class="btn btn-primary">
-    <i class="fas fa-search"></i>
-  </button>
+                <div class="col-lg-2 col-md-2 col-6">
+                  <a href="#" class="d-block mb-1 h-10">
+                    <img
+                      class="img-fluid img-thumbnail"
+                      src="https://www.worldtravelguide.net/wp-content/uploads/2019/03/shu-Sri-Lanka-Aerial-view-of-Unawatuna-1281093679-430x246.jpg"
+                      alt=""
+                    />
+                  </a>
+                </div>
 
-</div>
-</div>
+                <div class="col-lg-2 col-md-2 col-6">
+                  <a href="#" class="d-block mb-1 h-10">
+                    <img
+                      class="img-fluid img-thumbnail"
+                      src="https://www.worldtravelguide.net/wp-content/uploads/2019/03/shu-Sri-Lanka-Tea-plantations-in-Nuwara-Eliya-263078249-430x246.jpg"
+                      alt=""
+                    />
+                  </a>
+                </div>
 
-       
-<hr/>
-<Row xs={1} md={1} className="g-4" id="by" class="rounded" >
-  {this.state.posts.map((posts, idx) => (
-   
-   
+                <div class="col-lg-2 col-md-2 col-6">
+                  <a href="#" class="d-block mb-1 h-10">
+                    <img
+                      class="img-fluid img-thumbnail"
+                      src="https://www.worldtravelguide.net/wp-content/uploads/2019/05/shu-UK-England-London-Waterfall-at-Kyoto-Garden-1340178161-430x246-1.jpg"
+                      alt=""
+                    />
+                  </a>
+                </div>
 
-	<div class="container py-1">
+                <div class="col-lg-2 col-md-2 col-6">
+                  <a href="#" class="d-block mb-1 h-10">
+                    <img
+                      class="img-fluid img-thumbnail"
+                      src="https://www.worldtravelguide.net/wp-content/uploads/2021/08/shu-CostaRica-ManuelAntonio_1553348390-430.jpg"
+                      alt=""
+                    />
+                  </a>
+                </div>
 
-		<article class="postcard postcardtr dark blue">
-			<a class="postcard__img_link" >
-				<img class="postcard__img" src={`/uploads/${posts.packageImage}`} alt="..."  />
-			</a>
-			<div class="postcard__text">
-				<h1 class="postcard__title blue"><a href="#"> {idx+1}. &nbsp;{posts.packageName}</a></h1>
-				<div class="postcard__subtitle small smalltr">
-					<time datetime="2020-05-25 12:00:00">
-						<i class="fas fa-calendar-alt mr-2"></i>{posts.date}
-					</time>
-				</div>
-				<div class="postcard__bar"></div>
-				<div class="postcard__preview-txt">{posts.discription}</div>
-               <br/>
-                {posts.destination}
+                <div class="col-lg-2 col-md-2 col-6">
+                  <a href="#" class="d-block mb-1 h-10">
+                    <img
+                      class="img-fluid img-thumbnail"
+                      src="https://www.worldtravelguide.net/wp-content/uploads/2019/03/shu-Sri-Lanka-Train-to-Kandy-253468045-430x246.jpg"
+                      alt=""
+                    />
+                  </a>
+                </div>
+              </div>
+              <hr />
+           <p className="mb-2">   Sri Lanka, formerly known as Ceylon, and officially the Democratic
+              Socialist Republic of Sri Lanka, is an island country in South
+              Asia. It lies in the Indian Ocean, southwest of the Bay of Bengal,
+              and southeast of the Arabian Sea; it is separated from the Indian
+              subcontinent by the Gulf of Mannar and the Palk Strait Sri Lanka,
+              an island south of India crams an extraordinary variety of places
+              to visit within its modest size. Lapped up by the Indian Ocean,
+              the coastline is lined with idyllic – and often refreshingly
+              undeveloped – beaches, while the mainland boasts a compelling
+              variety of landscapes ranging from wildlife-rich lowland jungles
+              to the misty highlands of the hills, swathed in tea plantations.
+              We love nature, adventure and road trips. Read on to travel with
+              us and let us show you the magical side of the places that we
+              visit.
+
+           </p>
+        
+              <div     class="d-flex flex-row align-items-center mb-2"
+              style={{
+                backgroundColor: "hsla(101, 27%, 53%, 0.27)",
+                paddingBottom: "5px",
+                paddingTop: "7px",
                 
-                <ul class="postcard__tagbox">
-					<li class="tag__item"><i class="fas fa-tag mr-2"></i>PP Rs.&nbsp;<a style={{color:" hsl(180,100%,50%)"}}>{posts.perperson}</a></li>
-					<li class="tag__item"><i class="fas fa-clock mr-2"></i>{posts.noofdays}&nbsp;{posts.noofnights}</li>
-					<li class="tag__item play blue">
-						<a style={{color:"  hsl(60,100%,50%) "}}><i class="fas fa-car mr-2"></i>{posts.vehical}</a>
-					</li>
-             <li >
-                    <button type="button" class="btn btn-primary" id="cardbtn2">
+              }}
+            >
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              
+              <h1><b>Our Travel Packages</b></h1>
+           
+                    <input
+                      id="search-input"
+                      type="search"
+                      id="form1"
+                      class="form-outline form-control"
+                      style={{width:"400px",marginInlineStart:"14%"}}
+                      placeholder="Search Package"
+                      onChange={this.handleSearchArea}
+                    />
+                 
+                  <button
+                    id="search-button"
+                    type="button"
+                    class="btn btn-primary"
+                  >
+                    <i class="fas fa-search"></i>
+                  </button>
+            </div>
+           
+           
+           
+              <hr />
+              <Row xs={1} md={1} className="g-4" id="by" class="rounded">
+                {this.state.posts.map((posts, idx) => (
+                  <div class="container py-1">
+                    <article class="postcard postcardtr dark blue">
+                      <a class="postcard__img_link">
+                        <img
+                          class="postcard__img"
+                          src={`/uploads/${posts.packageImage}`}
+                          alt="..."
+                        />
+                      </a>
+                      <div class="postcard__text">
+                        <h1 class="postcard__title blue">
+                          <a href="#">
+                            {" "}
+                            {idx + 1}. &nbsp;{posts.packageName}
+                          </a>
+                        </h1>
+                        <div class="postcard__subtitle small smalltr">
+                          <time datetime="2020-05-25 12:00:00">
+                            <i class="fas fa-calendar-alt mr-2"></i>
+                            {posts.date}
+                          </time>
+                        </div>
+                        <div class="postcard__bar"></div>
+                        <div class="postcard__preview-txt">
+                          {posts.discription}
+                        </div>
+                        <br />
+                        {posts.destination}
 
-         <a href ={`/travelpackages/travelpackage/${posts._id}`} style={{textDecoration:'none',color:'white'}}>View Details &nbsp;<i class="fas fa-hand-point-right"> </i></a></button>
-         </li>
-				</ul>
-			</div>
-		</article>
-		
-	</div>
-
-
-
-
-
-  ))}
-</Row>
-
-
-
-<br/><br/><br/><br/><br/>
-
-
-</div>
- 
-    </div>
-    </div>
-    <Footer/>
-    </div>
-  )
-}
-
+                        <ul class="postcard__tagbox">
+                          <li class="tag__item">
+                            <i class="fas fa-tag mr-2"></i>PP Rs.&nbsp;
+                            <a style={{ color: " hsl(180,100%,50%)" }}>
+                              {posts.perperson}
+                            </a>
+                          </li>
+                          <li class="tag__item">
+                            <i class="fas fa-clock mr-2"></i>
+                            {posts.noofdays}&nbsp;{posts.noofnights}
+                          </li>
+                          <li class="tag__item play blue">
+                            <a style={{ color: "  hsl(60,100%,50%) " }}>
+                              <i class="fas fa-car mr-2"></i>
+                              {posts.vehical}
+                            </a>
+                          </li>
+                          <li>
+                            <button
+                              type="button"
+                              class="btn btn-primary"
+                              id="cardbtn2"
+                            >
+                              <a
+                                href={`/travelpackages/travelpackage/${posts._id}`}
+                                style={{
+                                  textDecoration: "none",
+                                  color: "white",
+                                }}
+                              >
+                                View Details &nbsp;
+                                <i class="fas fa-hand-point-right"> </i>
+                              </a>
+                            </button>
+                          </li>
+                        </ul>
+                      </div>
+                    </article>
+                  </div>
+                ))}
+              </Row>
+              <br />
+              <br />
+              <br />
+              <br />
+              <br />
+            </div>
+          </div>
+        </div>
+        <Footer />
+      </div>
+    );
+  }
 }

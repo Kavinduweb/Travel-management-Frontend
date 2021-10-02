@@ -1,11 +1,13 @@
 import React, {useState, useEffect} from 'react';
 import {Link} from "react-router-dom";
 import styled from 'styled-components';
+import HeaderAdmin from '../HeaderAdmin';
 import axios from "axios";
 
 const Activity = (props) => {
     const [aname, setActivityName] = useState("");
     const [category, setCategory] = useState("");
+    const [mindescription, setMindescription] = useState("");
     const [description, setDescription] = useState("");
     const [price, setPrice] = useState("");
     const [fileName, setFileName] = useState("");
@@ -17,6 +19,7 @@ const Activity = (props) => {
         .then(res => [
             setActivityName(res.data.aname),
             setCategory(res.data.category),
+            setMindescription(res.data.mindescription),
             setDescription(res.data.description),
             setPrice(res.data.price),
             setFileName(res.data.activityImage),
@@ -25,18 +28,21 @@ const Activity = (props) => {
     }, []);
 
     return (
+        <div>
+        <HeaderAdmin/>
     <MainContainer>
         <div className="info">
-        <img src={`/uploads/${fileName}`} alt="..." style={{margin: "0 auto", width: "40%", display:"flex"}}/>
-    <h2>{aname}</h2>
-    <h6>{category}</h6>
+        <h2>{aname}</h2>
+        <img src={`/uploads/${fileName}`} alt="..." style={{margin: "0 auto", width: "70%", display:"flex"}}/><br/>
+    <h6 style={{title: "text-muted"}}>{category}</h6><br/>
     <p>{description}</p>
-    <p>{price}</p>
+    <p><i class="fas fa-tag">{price}</i></p>
     <br/>
 
-    <Link to="/" type="submit" className="btn btn-primary">Back to Activity Page</Link>
+    <Link to="/activities" type="submit" className="btn btn-primary">Back to Activity Page</Link>
         </div>
         </MainContainer>
+        </div>
     )
 };
 
@@ -50,16 +56,16 @@ const MainContainer = styled.div`
     h2 {
         text-align: center;
         font-weight: 900;
-        color:  #008000;
+        color:  #13315c;
     }
 
     .btn-primary {
-        background: #008000;
-        width: 10.25rem;
+        background: #16262e;
+        width: 11rem;
         height: 2.25rem;
         border:none;     
         &:hover {
-            background: #00ff99;
+            background: #cccccc;
         }
     }
 `;

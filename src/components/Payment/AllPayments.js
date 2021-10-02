@@ -2,6 +2,7 @@ import React, {Component} from 'react'
 import axios from 'axios';
 import '../../Styles/Payment.css'
 import ReactToPrint from "react-to-print";
+import HeaderAdmin from '../HeaderAdmin'
 
 export default class AllPayments extends Component{
 
@@ -33,7 +34,9 @@ export default class AllPayments extends Component{
 
     return(
       <div>
-      <div className="info">
+        <HeaderAdmin/>
+
+      <div className="infoadmin">
       <ReactToPrint
           trigger={() =>
             
