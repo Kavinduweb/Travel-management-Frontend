@@ -1,24 +1,34 @@
-import React ,{Component} from 'react';
-import HeaderAdmin from '../HeaderAdmin'
-import ReactToPrint from "react-to-print";
-import axios from 'axios';
+import React from "react";
 
 
 
-export default class Display extends Component{
+function Sub(){
 
-
-render(){
-return (
-    <div>
-    
-    <div class="wrapper">
+    return(
+    <div style={{backgroundColor:"#776E6C"}}>
+      
+              
+        <table border="0" >
+        <tr>
+         <th>   
+           
+        <img src="https://purepng.com/public/uploads/large/purepng.com-gold-coinsgoldatomic-number-79chemical-elementgroup-11-elementaurumgold-dustprecious-metalgold-coins-1701528978267zsaly.png" width="15%" height="15%" style={{marginLeft:240 }}/>
+        </th>
+        
+        
+        <th>
+        <h2>Upgrade Your Membership Plan </h2>
+        </th>
+        <th>
+        <button type="sumbit" >Subscribe</button>  
+        </th>
+        </tr>
+    </table>
+    </div>
+ 
    
-        <div class="header"></div>
-        <h1>hh</h1>
-        </div>
-        </div>
+       
         
 )}
 
-}
+export default Sub;
