@@ -5,7 +5,7 @@ import emailjs from 'emailjs-com';
 import four from "./four.jpg";
 
 import { FormGroup } from 'react-bootstrap';
-=======
+
 import Header from '../Header';
 import Footer from '../Footer';
 
@@ -48,7 +48,7 @@ export default class CreateInquiry extends Component{
         
         if (userInfo == null){
 
-            alert("You Are Not Authorized User")
+            alert("You Are Not Registered User")
             window.location.replace("/register")
 
 
@@ -156,10 +156,12 @@ export default class CreateInquiry extends Component{
 
     render(){
         return(
-            <div >
-                <Header/>
+           
+               <div>
+                   <Header/>
+                   <div className="info">
             <div className="vj" >
-
+ 
             <div>
            
 
@@ -252,8 +254,13 @@ export default class CreateInquiry extends Component{
       
             </div>
         </div> 
+        </div>
+            </div>
+
         <Footer/>
-        </div>   
+        </div> 
+            
+        
         )
 
     }
