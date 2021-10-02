@@ -79,6 +79,7 @@ import ComponentToPrint1 from './components/Inquiry/userDoc';
 import PaymentView from './components/Payment/PayView';
 
 import {BrowserRouter as Router, Route} from "react-router-dom"
+import pay from './components/Kavindu/pay';
 
 
 
@@ -167,7 +168,7 @@ function App() {
       <Route path="/adView/" component= {AdminView}></Route>
       <Route path="/report" component= {ComponentToPrint}></Route>
       <Route path="/userDoc/:id" component= {ComponentToPrint1}></Route>
-      
+      <Route path="/subscribe" component= {pay}></Route>
 
 
       
