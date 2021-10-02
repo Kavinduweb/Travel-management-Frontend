@@ -3,6 +3,9 @@ import axios from 'axios';
 import './inq.css'
 import emailjs from 'emailjs-com';
 import four from "./four.jpg";
+
+import { FormGroup } from 'react-bootstrap';
+
 import Header from '../Header';
 import Footer from '../Footer';
 
@@ -25,7 +28,9 @@ export default class CreateInquiry extends Component{
             nicValid:false,
             phoneValid:false,
             emailValid:false,
-            inqValid:false
+            inqValid:false,
+
+            View:[]
         }
 
     }
@@ -37,7 +42,44 @@ export default class CreateInquiry extends Component{
             
         })
     }
+     
+    componentDidMount(){
+        const userInfo = localStorage.getItem('userInfo');
+        
+        if (userInfo == null){
+
+            alert("You Are Not Registered User")
+            window.location.replace("/register")
+
+
+        }
+        var line=[];
+
+        for ( var i =7 ,p=0 ; i !== 31;i++,p++){
+            
+             
+            line.push(userInfo[i]);
+          
+        }
+        const mongoid= line.join('');
+        const url ="http://localhost:8070/user/Details/";
+
+        
+        axios.get(url+mongoid).then(res =>{
+           
+        if(res.data.success){
+            this.setState({
+                View:res.data.BackendData
+            
+            });
     
+        }
+        else (
+            console.log("cant")
+        )
+
+    })
+    }
     onSubmit= (e) =>{
         e.preventDefault();
 
@@ -85,8 +127,6 @@ export default class CreateInquiry extends Component{
 
        
 
-        console.log(data)
-
         axios.post("http://localhost:8070/inquiry/add",data).then((res) =>{
            
         if(res.data.success){
@@ -105,22 +145,27 @@ export default class CreateInquiry extends Component{
 
         })
 
-     
-            
- 
+        window.location.replace("/add")
+       
+
     }
     
-
      
     
 
 
     render(){
         return(
-            <div >
-                <Header/>
+           
+               <div>
+                   <Header/>
+                   <div className="info">
             <div className="vj" >
-            
+ 
+            <div>
+           
+
+
             <div className="needs-validation">
           
                 <form  noValidate  >
@@ -131,11 +176,11 @@ export default class CreateInquiry extends Component{
                         <label style={{marginBottom:'5px'}}>Name</label>
                             <input 
                             type="text"
-                            id="name"
+                            id="Name"
                             className="form-control"                
                             name="name"
                             placeholder="Enter Your Name"
-                            value={this.state.name} 
+                            value={this.state.View.Name} 
                             onChange={this.handleInputChange}/>
 
                     </div>
@@ -174,7 +219,7 @@ export default class CreateInquiry extends Component{
                             id="email"             
                             name="email"
                             placeholder="Enter Your Email"
-                            value={this.state.email} 
+                            value={this.state.View.Email} 
                             onChange={this.handleInputChange}/>
                          
                     </div>
@@ -209,8 +254,13 @@ export default class CreateInquiry extends Component{
       
             </div>
         </div> 
+        </div>
+            </div>
+
         <Footer/>
-        </div>   
+        </div> 
+            
+        
         )
 
     }

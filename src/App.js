@@ -82,6 +82,8 @@ import SearchHotelBooking from './components/HotelRooms/SearchHotelBooking';
 import UserHotelBookingDetails from './components/HotelRooms/UserHotelBookingDetails';
 import EditTPackage from './components/Travel_Packages/EditPackage2';
 import {BrowserRouter as Router, Route} from "react-router-dom"
+import pay from './components/Kavindu/pay';
+
 
 
 function App() {
@@ -167,11 +169,19 @@ function App() {
       <Route path="/adView/" component= {AdminView}></Route>
       <Route path="/report" component= {ComponentToPrint}></Route>
       <Route path="/userDoc/:id" component= {ComponentToPrint1}></Route>
+
+      <Route path="/subscribe" component= {pay}></Route>
+
+
+      
+
+
       <Route path="/userhotelbooking/View" exact component = {SearchHotelBooking}></Route>
       <Route path="/UserHotelBookingDetails/:id" exact component = {UserHotelBookingDetails}></Route>
       <Route path="/edittpackage/:id" component= {EditTPackage}></Route>
       <Route path="/inqmail/:id" component= {Inqmail}></Route>
       <Route path="/adminDet/:id" component= {AdminDetails}></Route>
+
 
 
 
