@@ -10,17 +10,17 @@ function Sub(){
               
         <table border="0" >
         <tr>
-         <th>   
+        <th>   
            
-        <img src="https://purepng.com/public/uploads/large/purepng.com-gold-coinsgoldatomic-number-79chemical-elementgroup-11-elementaurumgold-dustprecious-metalgold-coins-1701528978267zsaly.png" width="15%" height="15%" style={{marginLeft:240 }}/>
-        </th>
+           <img src="https://www.toyoos.com/wp-content/uploads/2018/07/Platinum-Membership.png" width="100" height="100" style={{marginLeft:240 }}/>
+           </th>
         
         
         <th>
-        <h2>Upgrade Your Membership Plan </h2>
+        <h2 style={{marginLeft:150 }}>Upgrade Your Membership Plan </h2>
         </th>
         <th>
-        <button type="sumbit" >Subscribe</button>  
+        <button style={{marginLeft:150 }} type="button" class="btn btn-primary">Subscribe</button> 
         </th>
         </tr>
     </table>
