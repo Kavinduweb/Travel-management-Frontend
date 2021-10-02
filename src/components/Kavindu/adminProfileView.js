@@ -1,6 +1,9 @@
 import React ,{Component} from 'react';
+import HeaderAdmin from '../HeaderAdmin'
 import ReactToPrint from "react-to-print";
 import axios from 'axios';
+
+
 
 export default class Display extends Component{
    
@@ -89,8 +92,10 @@ onDelete = (id) =>{
 
 render(){
 return (
-      
+    <div>
+     <HeaderAdmin/> 
     <div className="body1">
+        
         <div className="infoadmin">
 
               <br></br>
@@ -132,7 +137,7 @@ return (
                        
                         <td>
                             <a className="btn btn-danger a123" href="#" onClick={()=>this.onDelete(RegData._id)}>
-                                <i className ="fas fa-trash-alt"></i>&nbsp;Block User
+                                <i className ="fas fa-trash-alt"></i>&nbsp;Ban User
                             </a>
                         </td>
 
@@ -160,7 +165,7 @@ return (
                    
                     </div>
                     </div>
-       
+                    </div>
 )}
 
 }
