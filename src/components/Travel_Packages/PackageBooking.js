@@ -65,6 +65,8 @@ const PackageBooking = () => {
     alert("Booking Added Successfull. Click Ok to Pay");
     history.push(`/payment/add-package/${id}`);
   };
+  
+  
   const userInfo=localStorage.getItem('userInfo');
   if(userInfo==null){
      alert("You are not Authorized User. Please sign in first.")
