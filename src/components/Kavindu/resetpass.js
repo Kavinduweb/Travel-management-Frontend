@@ -7,7 +7,7 @@ import Footer from "../Footer";
 
 
   
-const EditPackage = ()=>{
+const Reset = ()=>{
 
       
         
@@ -33,8 +33,9 @@ const onSubmit=async e =>{
     e.preventDefault();
     await axios.put(`http://localhost:8070/user/update/${id}`,Registers);
 
-    history.push("/profile");
-    alert("  Successful")
+   
+    alert("  Password Reset Success")
+    window.location.replace("/register")
 }
 
 const loadPackage = async()=>{
@@ -54,17 +55,18 @@ const loadPackage = async()=>{
                 <div className="info">
                  
         <form onSubmit={e=>onSubmit(e)} className="form12">
+        <hr/>
+                <h2 className="h222">Reset Password </h2>
+                <hr/>
+                <h8>Enter New Password</h8>
+                <input className="inputabc" type="password" Name="Password" value={Password} onChange={e=>onInputChange(e)} />
 
-                <h2 className="h222">Edit Details </h2>
-                <input className="inputabc" type="text" name="Name"  value={Name}onChange={e=>onInputChange(e)} />
-                <input className="inputabc" type="text"  name ="Email" value={Email}  onChange={e=>onInputChange(e)} />
-                <input className="inputabc" type="text" name="Num" value={Num}  onChange={e=>onInputChange(e)}/>
-                <input className="inputabc" type="text" Name="Password" value={Password} onChange={e=>onInputChange(e)} />
+               
+                <input type="submit" name="submit" className="button12" value="Confirm"/>
 
+                <br/>
 
-                <button  className="button12" type="submit" name="submit" class="reg" >Edit Conifrm</button>
-
-                            </form>
+      </form>
             </div>
             </div>
             
@@ -80,4 +82,4 @@ const loadPackage = async()=>{
 
 
 
-    export default EditPackage
+    export default Reset
