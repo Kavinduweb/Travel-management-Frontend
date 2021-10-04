@@ -1,12 +1,13 @@
 import React ,{useState} from "react";
 import Reactstars from "react-rating-stars-component";
 import axios from "axios";
+import { Form} from "react-bootstrap";
 
 
 export default function AddRating(props){
 
-    const[name, setName] = useState('')
-    const[comment, setComment] = useState('')
+  const [validated, setValidated] = useState(false);
+
     const[rating, setRating] =useState(0)
 
     const ratingChanged = (rating)=>{
@@ -16,12 +17,16 @@ export default function AddRating(props){
          console.log(ratingChanged);
 
          
-         const onClick = async ()=>{
-         
+         const onSubmit = async (e) => {
+
+          const form = e.currentTarget;
+          if (form.checkValidity() === false) {
+          e.preventDefault();
+          e.stopPropagation();
+        }
+       else{  
         try{
             await axios.post('http://localhost:8070/travelpackage/review', {
-                name,
-                comment,
                 rating,
                 packageId:props.id
             })
@@ -31,7 +36,8 @@ export default function AddRating(props){
          }catch (error){
           alert("Please fill this field");
            }
-         
+          }
+          setValidated(true);
         };
         
 
@@ -40,26 +46,21 @@ return(
 <div className="container">  
 <div className="app">
  <div>
+
+ <center>   
+ <Form noValidate validated={validated} onSubmit={(e) => onSubmit(e)}>
     <div className="mb-3" >
     
-    <div className="rating">   
-           <Reactstars   size={40} value={rating}   onChange={ratingChanged}/>
+    
+    <div className="rating" >
+           <Reactstars size={113} value={rating}   onChange={ratingChanged}/>
     </div>
-   
-  <input required type="text" value={name} onChange={(e)=> setName(e.target.value)} className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="add your name"/> <br></br>
-  <input required type="text" value={comment} onChange={(e)=> setComment(e.target.value)} className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="add your comment"/>
-
+ 
  </div>
-  
-  {/* <button
-   type="submit" 
-   className="btn btn-primary"
-   
-  >Submit</button> */}
 
-<button className="btn btn-success" onClick={onClick}>comment</button><hr/>
-
-
+<button className="btn btn-success">Give Rating</button><hr/>
+</Form>
+</center>
 </div>
 </div>
 </div>

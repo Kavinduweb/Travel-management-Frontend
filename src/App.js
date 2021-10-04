@@ -81,8 +81,6 @@ import UserHotelBookingDetails from './components/HotelRooms/UserHotelBookingDet
 import EditTPackage from './components/Travel_Packages/EditPackage2';
 import {BrowserRouter as Router, Route} from "react-router-dom"
 import pay from './components/Kavindu/pay';
-import Test from './components/Travel_Packages/Test';
-
 
 
 function App() {
@@ -174,11 +172,7 @@ function App() {
       <Route path="/edittpackage/:id" component= {EditTPackage}></Route>
       <Route path="/inqmail/:id" component= {Inqmail}></Route>
       <Route path="/adminDet/:id" component= {AdminDetails}></Route>
-      <Route path="/test" component= {Test}></Route>
 
-
-
-    
     </div>
     </Router>
     

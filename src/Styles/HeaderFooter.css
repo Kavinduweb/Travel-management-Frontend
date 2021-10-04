@@ -16,7 +16,7 @@
   width: 180px;
   height: 100%;
  background-color: #333;
-  padding: 30px 0px 0px 0px;
+  padding: 00px 0px 0px 0px;
   position: fixed;
 }
 
@@ -124,7 +124,15 @@
 .ftr li {
   color: rgb(138, 138, 138);
 }
+.abcs li a {
+  text-decoration: none;
+  color: rgb(138, 138, 138);
+}
 
+.abcs li a:hover {
+  color: rgb(255, 246, 246);
+  font-size: 17px;
+}
 .down {
   margin-inline-start: 25%;
 }
@@ -157,14 +165,13 @@
   overflow: hidden;
   font-family: Verdana, sans-serif;
   float: right;
-  padding-top: 7px;
 }
 
 .menupp li a {
   display: block;
   color: rgb(255, 255, 255);
   text-align: center;
-  padding: 14px 45px;
+  padding: 3px 35px;
   font-size: 20px;
   text-decoration: none;
 }
@@ -179,7 +186,7 @@
   /*padding: 10px;*/
   background-image: url("https://image.shutterstock.com/image-photo/dark-gray-grey-anthracite-black-260nw-1935038138.jpg");
   background-size: cover;
-  height: 139px;
+  height: 100px;
   position: relative;
 }
 
@@ -198,15 +205,76 @@
 
 #login {
   position: absolute;
-  top: 33px;
+  top: 20px;
   left: 93.5%;
   font-size: 50px;
   color: rgb(218, 213, 213);
 }
+#dateandtime {
+  position: absolute;
+  top: 20px;
+  left: 80.5%;
+  font-size: 15px;
+  color: rgb(218, 213, 213);
+}
+
 #logott{
   position: fixed;
-  top: 10px;
-  left: 2%;
-  font-size: 90px;
+  top: 5px;
+  left: 3%;
+  font-size: 70px;
   color: rgb(218, 213, 213);
+}
+
+
+
+
+
+/*fotter models*/
+
+.ftmodal-body {
+  background-color:hsl(240,100%,35%,0.5)	;
+  border-color: #5165ff
+}
+
+.ftintro-1 {
+  font-size: 20px
+}
+
+.ftclose {
+  color: #fff
+}
+
+.ftclose:hover {
+  color: #fff
+}
+
+
+.ftbtn-primary {
+  color: #5165ff;
+  background-color: #fffaff;
+  border-color: #fffaff;
+  padding: 12px;
+  font-weight: 700;
+  border-radius: 41px;
+  padding-right: 20px;
+  padding-left: 20px
+}
+
+.gg li{
+  cursor: pointer;
+}
+.gg li:hover{
+  color: rgb(163, 185, 231);
+  font-size: 17px;
+}
+
+.servicetext a{
+  text-decoration: none;
+  color: white;
+}
+
+.custom-fade .modal-dialog {
+    transform: translateY(-10%);
+    transition: all .2s ease-out;
 }

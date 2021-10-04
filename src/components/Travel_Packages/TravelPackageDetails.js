@@ -43,7 +43,8 @@ export default class PackageDetails extends Component {
       <div className="boodydetails">
         <Header />
         <div className="infotr boodydetails">
-          <div className="container" style={{ marginTop: "10px" }}>
+          <div className="container">
+            <div className={{paddingBottom:"10px"}}><hr/></div>
             <ul class="postcard__tagbox" style={{ fontSize: "16px" }}>
               <li>
                 <small class="text-muted" style={{ marginInlineStart: "2%" }}>
@@ -114,7 +115,22 @@ export default class PackageDetails extends Component {
                   experience.
                 </p>
               </div>
-              <AddRating id={_id}/>
+
+
+<div class="modal custom-fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      
+      <div >
+      <AddRating id={_id}/>
+    
+      </div>
+     
+    </div>
+  </div>
+</div>
+
+
               <div class="card-footer" style={{ backgroundColor: "#ADADAD" }}>
                 <ul class="postcard__tagbox" style={{ fontSize: "16px" }}>
                   <li class="tag__item">
@@ -129,7 +145,16 @@ export default class PackageDetails extends Component {
                     <i class="fas fa-car mr-2"></i>
                     {vehical}{" "}
                   </li>
-                  <li style={{ paddingLeft: "39%", paddingBottom: "5px" }}>
+
+
+            
+                  <li style={{marginLeft:"6%",paddingBottom: "5px"}} >
+                  <button style={{width:"200px"}} type="button" class="btn btn-success" data-toggle="modal" data-target="#exampleModalCenter">
+                    <b>Give Rating</b>
+</button>
+                  </li>
+
+                  <li style={{ marginLeft: "14%", paddingBottom: "5px" }}>
                     <small class="text-muted">
                       {" "}
                       <button
