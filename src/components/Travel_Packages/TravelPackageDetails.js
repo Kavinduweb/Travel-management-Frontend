@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import axios from "axios";
 import Header from "../Header";
 import Footer from "../Footer";
+import AddRating from './PackageAddRating';
 
 export default class PackageDetails extends Component {
   constructor(props) {
@@ -113,6 +114,7 @@ export default class PackageDetails extends Component {
                   experience.
                 </p>
               </div>
+              <AddRating id={_id}/>
               <div class="card-footer" style={{ backgroundColor: "#ADADAD" }}>
                 <ul class="postcard__tagbox" style={{ fontSize: "16px" }}>
                   <li class="tag__item">

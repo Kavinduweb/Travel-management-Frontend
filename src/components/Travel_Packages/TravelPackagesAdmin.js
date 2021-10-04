@@ -143,21 +143,21 @@ export default class AllPackagesAdmin extends Component {
                       &nbsp;&nbsp;
                       <a
                         className="btn btn-outline-primary"
-                        href={`/travelpackages/travelpackage/admin/${posts._id}`}
+                        href={`/travelpackages/travelpackage/admin/${posts.id}`}
                       >
                         <i className="fas fa-eye"></i>&nbsp;View
                       </a>
                       &nbsp;
                       <a
                         className="btn btn-outline-warning"
-                        href={`/travelpackage/admin/edit/${posts._id}`}
+                        href={`/travelpackage/admin/edit/${posts.id}`}
                       >
                         <i className="fas fa-edit"></i>&nbsp;Edit
                       </a>
                       &nbsp;
                       <a
                         className="btn btn-outline-danger"
-                        href={`/travelpackage/admin/delete/${posts._id}`}
+                        href={`/travelpackage/admin/delete/${posts.id}`}
                       >
                         <i className="fas fa-trash-alt"></i>&nbsp;Delete
                       </a>

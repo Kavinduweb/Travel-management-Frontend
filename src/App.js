@@ -64,8 +64,6 @@ import PayForTP from './components/Payment/PayForTP';
 import PaymentConfirm from './components/Payment/PaymentComplete';
 import forget from './components/Kavindu/ForgetPass';
 import resetpass from './components/Kavindu/resetpass';
-
-
 import CreateInquiry from './components/Inquiry/CreateInquiry';
 import EditInquiry from './components/Inquiry/EditInquiry';
 import InquiryAll from './components/Inquiry/InquiryAll';
@@ -169,13 +167,7 @@ function App() {
       <Route path="/adView/" component= {AdminView}></Route>
       <Route path="/report" component= {ComponentToPrint}></Route>
       <Route path="/userDoc/:id" component= {ComponentToPrint1}></Route>
-
       <Route path="/subscribe" component= {pay}></Route>
-
-
-      
-
-
       <Route path="/userhotelbooking/View" exact component = {SearchHotelBooking}></Route>
       <Route path="/UserHotelBookingDetails/:id" exact component = {UserHotelBookingDetails}></Route>
       <Route path="/edittpackage/:id" component= {EditTPackage}></Route>
