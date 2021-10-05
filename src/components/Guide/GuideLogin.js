@@ -47,7 +47,8 @@ const GuideLogin = () => {
     return (
         <div>
             <Header/>
-                <div className="infotr">
+                <section id = "gl">
+                <div className="info">
                                 <form class="login-container">
                                     <h3 className = "h3">GUIDE LOGIN</h3>
                                     <hr/>
@@ -78,7 +79,8 @@ const GuideLogin = () => {
                                 <h2 id="destination"></h2>
                                 <h2 id="tourdate" ></h2>
                                 <h2 id="noofdates" ></h2>
-                        </div>            
+                        </div>     
+                </section>       
        <Footer/>
    </div>
     

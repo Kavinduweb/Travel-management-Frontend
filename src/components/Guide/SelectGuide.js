@@ -52,12 +52,13 @@ export default class SelectGuide extends Component{
     return(
       <div>
         <Header/>
+        <section id = "gs">
             <div className="info">
                 <div className="container">
                     <br/>
                     <div>
                      
-                        <div className="input-group" style={{marginLeft:1070}} >
+                        <div className="input-group" style={{marginLeft:1066}} >
                             <div className="form-outline">
                                 <input 
                                 id="search-input" 
@@ -77,6 +78,14 @@ export default class SelectGuide extends Component{
                     </div>
 
                     <hr/>
+                      <div className = "go" style = {{marginLeft: 16}}>
+                        <p>If you are a Guide Please login to see your requests</p>
+                        <div className="card-go">
+                            <button className="btn btn-dark"><i class="fa fa-hand-o-right mr-2" aria-hidden="true"></i>
+                            <a href={`/guide/login`}>Let's Go</a></button>
+                        </div>
+                      </div>
+                      <br/>
                     {this.state.guide.map((guide,index)=>(
                     <section id = "select">
                         <div class="rt-container">
@@ -94,7 +103,7 @@ export default class SelectGuide extends Component{
                                                             <h5 class="mb-0"><strong class="pr-1">Travel Guide</strong></h5>
                                                         </div>
                                                         <div class="card-body">
-                                                            <center><button className="btn btn-success"><i class="fa fa-share-square-o mr-2" aria-hidden="true"></i>
+                                                            <center><button className="btn btn-primary"><i class="fa fa-share-square-o mr-2" aria-hidden="true"></i>
                                                             <a href={`/guide/request/${guide._id}`} style={{textDecoration:'none' ,color:'white'}}>Send Request</a></button></center>
                                                         </div>
                                                     </div>
@@ -141,12 +150,12 @@ export default class SelectGuide extends Component{
     		                        </div>
 		                        </div>
                         </div>
+                        <br/><br/>
                     </section>                                                                              
-                        ))}
-                                                                
-                        <br/><br/><br/>         
+                        ))}                
         </div>
       </div>
+      </section>
       <Footer/>
       </div>
       

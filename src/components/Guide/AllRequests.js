@@ -34,9 +34,10 @@ class ComponentToPrint extends React.Component{
     return (
       <div>
         <HeaderAdmin/>
+        <section id="watermark">
         <div className="info">
             <br/>
-            <section id="watermark">
+            
             <ReactToPrint
                 trigger={() =>
                 <button type="button" 
@@ -81,15 +82,15 @@ class ComponentToPrint extends React.Component{
                                         <td>{posts.noofdates}</td>
                                         <td>{posts.requestdate}</td>       
                                     </tr>
-  
                                 ))}   
                             </tbody>
                         </table>
                     </section>
-            </div>
-          </section>
-        </div>        
+            </div> 
+        </div>  
+        </section>      
       </div>
+      
     );
   }
 }

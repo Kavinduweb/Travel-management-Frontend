@@ -1,12 +1,14 @@
 import React,{useReducer, useState,useEffect} from "react"
 import {useHistory,useParams} from 'react-router-dom';
 import axios from "axios";
+import { Form,Button,Col,Row,InputGroup } from "react-bootstrap";
 import "../../Styles/Guide.css";
 import Header from '../Header';
 import Footer from '../Footer';
 
 const GuideRequest = ()=>{
 
+    const [validated, setValidated] = useState(false);
 
     const [tguide,viewGuide] = useState({
         name:"",
@@ -48,6 +50,15 @@ useEffect(()=>{
  };
 
  const onSubmit=async e =>{
+
+    const form = e.currentTarget;
+    if (form.checkValidity() === false) {
+    e.preventDefault();
+    e.stopPropagation();
+    }
+
+    else {
+
      e.preventDefault();
      const {guidename,guidelanguage,guideusername,uname,phone,email,destination,tourdate,noofdates}=post;
      const {name,language}=tguide;
@@ -62,13 +73,17 @@ useEffect(()=>{
         destination:destination,
         tourdate:tourdate,
         noofdates:noofdates
-     }
+     };
 
      await axios.post ("http://localhost:8070/guiderequest/add",data);
      alert("Request sent successfully!")
-     history.push("/");
+     history.push("/guide/all");
     
  }
+
+ setValidated(true);
+
+};
 
  const userInfo=localStorage.getItem('userInfo');
   if(userInfo==null){
@@ -80,6 +95,7 @@ useEffect(()=>{
  return(
      <div>
          <Header/>
+         <br/>
     <div className="info">
                 <div className="request-container">
                     <div className="w-50 mx-auto shadow p-5 guide-container">
@@ -89,7 +105,7 @@ useEffect(()=>{
 
                         <hr/>  
 
-                        <form onSubmit={e=>onSubmit(e)}>
+                        <Form noValidate validated={validated} onSubmit={e=>onSubmit(e)}>
                             <div className="row">
                                 <div className="col">
                                     <div className="input-group mb-3">
@@ -155,6 +171,9 @@ useEffect(()=>{
                                     value={uname}
                                     onChange={e=>onInputChange(e)}
                                     required/>
+                                    <Form.Control.Feedback type="invalid">
+                                        Please Provide a Valid Name
+                                    </Form.Control.Feedback>
                             </div>
 
                             <div className="form-group">
@@ -169,6 +188,9 @@ useEffect(()=>{
                                     value={phone}
                                     onChange={e=>onInputChange(e)}
                                     required/>
+                                    <Form.Control.Feedback type="invalid">
+                                        Please Provide a Valid Contact Number
+                                    </Form.Control.Feedback>
                             </div>
 
                             <div className="form-group">
@@ -181,6 +203,9 @@ useEffect(()=>{
                                     value={email}
                                     onChange={e=>onInputChange(e)}
                                     required/>
+                                    <Form.Control.Feedback type="invalid">
+                                        Please Provide a Valid E-Mail
+                                    </Form.Control.Feedback>
                             </div>
 
                             <div className="form-group">
@@ -193,6 +218,9 @@ useEffect(()=>{
                                     value={destination}
                                     onChange={e=>onInputChange(e)}
                                     required/>
+                                    <Form.Control.Feedback type="invalid">
+                                        Please Provide a Valid Destination
+                                    </Form.Control.Feedback>
                             </div>
 
                             <div className="form-group">
@@ -205,6 +233,9 @@ useEffect(()=>{
                                     value={tourdate}
                                     onChange={e=>onInputChange(e)}
                                     required/>
+                                    <Form.Control.Feedback type="invalid">
+                                        Please Provide a Valid Date
+                                    </Form.Control.Feedback>
                             </div>
 
                             <div className="form-group">
@@ -217,14 +248,17 @@ useEffect(()=>{
                                     value={noofdates}
                                     onChange={e=>onInputChange(e)}
                                     required/>
+                                    <Form.Control.Feedback type="invalid">
+                                        Please Provide a Valid Number
+                                    </Form.Control.Feedback>
                             </div>
 
                             <br/>
-                            
+
                             <center>
-                                <button type="submit" className="btn btn-dark"><i class="fa fa-share-square-o mr-2" aria-hidden="true"></i>Send Request</button>   
+                                <button type="submit" className="btn btn-dark"><i className="fa fa-share-square-o mr-2" aria-hidden="true"></i>Send Request</button>   
                             </center>
-                        </form>
+                        </Form>
                     </div>
             <br/><br/>
         </div>

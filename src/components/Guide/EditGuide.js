@@ -40,6 +40,7 @@ const EditGuide = () => {
   return (
   <div>
     <HeaderAdmin/>
+    <br/>
     <div className = "infoadmin">
         <section id="edit">
             <div className="container">

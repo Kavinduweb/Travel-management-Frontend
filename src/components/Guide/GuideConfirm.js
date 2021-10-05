@@ -9,7 +9,9 @@ const confirm = () => {
     title: "Confirmed !",
     text: "Traveller will contact you soon..!",
     icon: "success",
-  });
+  }).then(function() {
+    window.location = "/guide/all";
+});
   // or Swal.fire( 'Good job!','You clicked the button','success');
 };
 
@@ -18,6 +20,8 @@ const reject = () => {
       title: "Rejected !",
       text: "Traveller will be informed soon..!",
       icon: "error",
+    }).then(function() {
+        window.location = "/guide/all";
     });
     // or Swal.fire( 'Good job!','You clicked the button','success');
   };
