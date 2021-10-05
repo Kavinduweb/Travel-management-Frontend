@@ -73,9 +73,10 @@ export default class hotelpackage extends Component{
                         <div class="col-md-6 col-12">
                           <img src={hotelimg} alt="Logo" class="tm-site-logo"/> 
                             <div class="tm-site-text-box">
-                              <h1 class="tm-site-title">Rooms</h1>
+                              <h1 class="tm-site-title" style={{fontFamily: "Calibri"}}>Rooms</h1>
                               <div className="col-lg-3 mt-2 mb-2">
                                 <input
+                                style={{fontFamily: "Calibri"}}
                                   className="from-control"
                                   id="hotelse"
                                   type="search"
@@ -88,8 +89,8 @@ export default class hotelpackage extends Component{
                         </div>
                         <nav class="col-md-6 col-12 tm-nav">
                           <ul class="tm-nav-ul">
-                            <li class="tm-nav-li"><a style={{textDecoration:'none' ,color:'white'}} href ={"/hotelpackage"} class="tm-nav-link active">Rooms</a></li>
-                            <li class="tm-nav-li"><a style={{textDecoration:'none' ,color:'white'}} href ={"/userhotelbooking/View"} class="tm-nav-link">My Booking</a></li>
+                            <li class="tm-nav-li"><a style={{fontFamily: "Calibri", textDecoration:'none' ,color:'white'}} href ={"/hotelpackage"} class="tm-nav-link active">Rooms</a></li>
+                            <li class="tm-nav-li"><a style={{fontFamily: "Calibri", textDecoration:'none' ,color:'white'}} href ={"/userhotelbooking/View"} class="tm-nav-link">My Booking</a></li>
                           </ul>
                         </nav>	
                       </div>
@@ -110,16 +111,16 @@ export default class hotelpackage extends Component{
                                 {posts.roomType}
                               </Card.Title>
                                 <Card.Text>
-                                  <div className="">
+                                  <div>
                                     <table>
                                       <tr>
-                                        <td>
+                                        <td style={{fontFamily: "Calibri"}}>
                                           Per Day: Rs {posts.price}<br></br>
                                           Max Capacity: {posts.maxCapacity}
                                         </td>
                                         <td>
                                           <button type="button" class="btn btn-dark" id="crdbtn">
-                                            <a href ={`/hotelpackagedetails/${posts._id}`} style={{textDecoration:'none',color:'white'}}>Features</a>
+                                            <a href ={`/hotelpackagedetails/${posts._id}`} style={{fontFamily: "Calibri", textDecoration:'none',color:'white'}}>Features</a>
                                           </button>
                                         </td>
                                       </tr>

@@ -49,7 +49,7 @@ export default class EditHotelBooking extends Component{
     axios.put(`http://localhost:8070/hotelbooking//update/${id}`,data).then((res)=>{
         if(res.data.success){
             alert("Update Successfully")
-            window.location.href = `/userhotelbooking/hotelbookingdetails/${id}`;
+            window.location.href = `/UserHotelBookingDetails/${id}`;
         }
      })
     }

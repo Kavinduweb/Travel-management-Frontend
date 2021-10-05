@@ -25,7 +25,18 @@ export default class hotelpackageDetails extends Component {
       }
     });
   }
-  
+
+  onSubmit=(e)=> {
+
+  const userInfo=localStorage.getItem('userInfo');
+  if(userInfo==null){
+    alert("You are not Authorized User. Please sign in first.")
+    window.location.href = `/register`;
+}else{
+  window.location.href = `/addnewhotelbooking/${this.state.post._id}`;
+}
+  }
+    
 
 render(){
   
@@ -51,12 +62,13 @@ render(){
                         <div class="col-md-6">
                           <div class="mu-about-right">
                             <br></br>
-                            <h2 class="detailstitle"> {roomType}</h2><br></br> 
+                            <h2 class="detailstitle" style={{fontFamily: "Calibri"}}> {roomType}</h2><br></br> 
                             <p>{details}</p>
-                            <p class="detailsprice">Per Day: Rs {price}</p>
-                            <p className="tm-gallery-price">Room Size: {size}</p>
-                            <p>Maximum people: {maxCapacity}</p>
-                            <button className="btn btn-primary" style={{backgroundColor: "#192c3e",width: "20%"}}><a href={`/addnewhotelbooking/${this.state.post._id}`} style={{textDecoration:'none', color:'white'}}>Book Now</a></button>
+                            <p class="detailsprice" style={{fontFamily: "Calibri"}}>Per Day: Rs {price}</p>
+                            <p className="tm-gallery-price" style={{fontFamily: "Calibri"}}>Room Size: {size}</p>
+                            <p style={{fontFamily: "Calibri"}}>Maximum people: {maxCapacity}</p>
+                            <button className="btn btn-primary" onClick={this.onSubmit} style={{backgroundColor: "#192c3e",width: "20%"}}><a  style={{textDecoration:'none', color:'white'}}>Book Now</a>
+                            </button>
                             <br></br>
                             <br></br>
                             <br></br>

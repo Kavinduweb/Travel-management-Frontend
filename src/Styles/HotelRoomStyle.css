@@ -231,6 +231,7 @@
 .adcard{
   background-color: #ebebeb;
   width: 800px;
+  height: 180px;
   border-radius: 1px;
   display: flex;
 }
@@ -238,6 +239,7 @@
 .ad_card{
   flex: 0 0 35%;
   position: relative;
+  max-height: fit-content;
 }
 
 .card_img{

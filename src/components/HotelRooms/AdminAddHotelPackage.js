@@ -71,7 +71,7 @@ const AdminAddPackage = ()=>{
                                     </div>
 
                                     <div className="from group" style={{marginBottom:'15px'}}>
-                                        <label style={{marginBottom:'5px'}}>max Capacity</label>
+                                        <label style={{marginBottom:'5px'}}>Max Capacity</label>
                                             <input type="text"
                                             className="form-control"
                                             placeholder="Max Capacity"

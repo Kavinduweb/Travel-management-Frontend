@@ -63,12 +63,6 @@ axios.post("http://localhost:8070/hotelbooking/add",data).then((res)=>{
         }    
     }
 })
-
-    const userInfo=localStorage.getItem('userInfo');
-    if(userInfo==null){
-    alert("You are not Authorized User. Please sign in first.")
-    window.location.replace("/register")}
-
  }
 
 
@@ -133,7 +127,8 @@ axios.post("http://localhost:8070/hotelbooking/add",data).then((res)=>{
                                                             name="name"
                                                             placeholder="Name"
                                                             value={this.state.name}
-                                                            onChange={this.handleInputChange}/>
+                                                            onChange={this.handleInputChange}
+                                                            required/>
                                                     </div>
                                                     <div class="form-group">
                                                     <span class="form-label">Email</span>
@@ -154,6 +149,7 @@ axios.post("http://localhost:8070/hotelbooking/add",data).then((res)=>{
                                                                     className="form-control"
                                                                     name="arrivalDate"
                                                                     placeholder="YY/MM/DD"
+                                                                    min="2021-10-05"
                                                                     value={this.state.arrivalDate}
                                                                     onChange={this.handleInputChange}/>
                                                             </div>

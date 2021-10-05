@@ -68,7 +68,7 @@ export default class AdminHotelBooking extends Component{
                     </div>
                     <div class="ad_content">
                       <div class="card_info">
-                        <h4 class="cardtopic">{posts.roomType}</h4>
+                        <h4 class="cardtopic" style={{fontFamily: "Calibri", fontSize:"28px"}}>{posts.roomType}</h4>
                         <p class="cardprice">Per Day: Rs {posts.price}</p>
                         <p class="cardmax">max Person: {posts.maxCapacity}</p>
                       </div>
@@ -77,7 +77,7 @@ export default class AdminHotelBooking extends Component{
                           <a href ={`/adminhotelpackagedetails/${posts._id}`} style={{textDecoration:'none' ,color:'white'}}>
                             Details
                           </a>
-                        </button>&nbsp;
+                        </button>
                       </div> 
                     </div>
                     </figure>
