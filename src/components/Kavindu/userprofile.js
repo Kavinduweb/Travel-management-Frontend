@@ -85,6 +85,7 @@ export default class UserProfile extends Component {
         return(
            <div>
                <Header/>
+               <div style={{marginTop:"100px"}}>
                <Sub/>
                
             <div className="body1">
@@ -114,6 +115,7 @@ export default class UserProfile extends Component {
 
                 <Footer/>
 
+                </div>
                 </div>
               
         )
