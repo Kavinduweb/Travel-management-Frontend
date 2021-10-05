@@ -1,67 +1,77 @@
-import React, {useState, useEffect} from 'react';
-import {Link} from 'react-router-dom';
-import styled from 'styled-components';
-import Header from '../Header';
-import Footer from '../Footer';
-import axios from 'axios';
+import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
+import styled from "styled-components";
+import Header from "../Header";
+import Footer from "../Footer";
+import axios from "axios";
 
-const ViewActivity = props => {
-    const [aname, setActivityName] = useState("");
-    const [category, setCategory] = useState("");
-    const [description, setDescription] = useState("");
-    const [price, setPrice] = useState("");
-    const [fileName, setFileName] = useState("");
+const ViewActivity = (props) => {
+  const [aname, setActivityName] = useState("");
+  const [category, setCategory] = useState("");
+  const [description, setDescription] = useState("");
+  const [price, setPrice] = useState("");
+  const [fileName, setFileName] = useState("");
 
-    useEffect(() => {
-        axios
-        .get(`http://localhost:8070/activities/${props.match.params.id}`)
-        .then((res) => [
-            setActivityName(res.data.aname),
-            setCategory(res.data.category),
-            setDescription(res.data.description),
-            setPrice(res.data.price),
-            setFileName(res.data.activityImage)
-        ])
-        .catch((error) => console.log(error));
-    }, []);
+  useEffect(() => {
+    axios
+      .get(`http://localhost:8070/activities/${props.match.params.id}`)
+      .then((res) => [
+        setActivityName(res.data.aname),
+        setCategory(res.data.category),
+        setDescription(res.data.description),
+        setPrice(res.data.price),
+        setFileName(res.data.activityImage),
+      ])
+      .catch((error) => console.log(error));
+  }, []);
 
-//console.log(props);
-    return (
-        (
-        <div>
-        <Header/>
-        <ActivityContainer>
-            <div className="info">
-             <div className="container" >
+  //console.log(props);
+  return (
+    <div>
+      <Header />
+      <ActivityContainer>
+        <div className="info">
+          <div className="container">
             <div className="row my-5">
-                
               <div className="col-sm-2">
-
-              <Link to = "/all" type="submit" className="btn"><i class="fas fa-hand-point-left">&nbsp;&nbsp;Back</i></Link>
-                </div>
-                
-                </div>
-                </div>
-                <h2>{aname}</h2>
-            <img src={`/uploads/${fileName}`} alt="..." style={{margin: "0 auto", width: "60%", display: "flex"}}/>
-        <br/><br/>
-        <h5><div className="threeD">{category}</div></h5><br/>
-        <p>{description}</p>
-        <p><i className="fas fa-tag">{price}</i></p>
-        <br/>
-        <div class="grid gap-5 grid-cols-5">
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <Link to={`/activity-user/${props.match.params.id}`} className="btn" style={{color: "#b6465f", background: "#9bb1ff"}}>Select Activity</Link>
+                <Link to="/all" type="submit" className="btn">
+                  <i class="fas fa-hand-point-left">&nbsp;&nbsp;Back</i>
+                </Link>
+              </div>
+            </div>
+          </div>
+          <h2>{aname}</h2>
+          <img
+            src={`/uploads/${fileName}`}
+            alt="..."
+            style={{ margin: "0 auto", width: "60%", display: "flex" }}
+          />
+          <br />
+          <br />
+          <h5>
+            <div className="threeD">{category}</div>
+          </h5>
+          <br />
+          <p>{description}</p>
+          <p>
+            <i className="fas fa-tag">{price}</i>
+          </p>
+          <br />
+          <div class="grid gap-5 grid-cols-5">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <Link
+              to={`/activity-user/${props.match.params.id}`}
+              className="btn"
+              style={{ color: "#b6465f", background: "#9bb1ff" }}
+            >
+              Select Activity
+            </Link>
+          </div>
         </div>
-        </div>
-        
-        </ActivityContainer>
-        <Footer/>
-        </div>
-        
-        )
-        
-    );
+      </ActivityContainer>
+      <Footer />
+    </div>
+  );
 };
 
 export default ViewActivity;
