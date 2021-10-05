@@ -1,5 +1,6 @@
 import React from "react";
 import "../Styles/HeaderFooter.css";
+import img1 from '../Images/logoo.png'
 
 function Header() {
   return (
@@ -89,24 +90,22 @@ function Header() {
         </div>
       </div>
       <div class="main_content">
+        
       <header  class="fixed-top">
+       
         <div class="header">
         
-     
+       
           <div>
+          <div id="logott">
+              
+              <img src={img1} style={{width:"200px",height:"100px"}}/> 
+             
+           </div>
             <div id="hname">
-              <h1>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b> Dream Travelers (pvt)</b></h1> 
+              <h1><b> Dream Travelers</b></h1> 
             </div>
 
-        <div id="logott">
-              <a
-                href="/"
-                style={{ textDecoration: "none", color: "rgb(218, 213, 213)"}}
-              >
-                {" "}
-                <i class="fas fa-plane-departure"> </i>
-              </a>
-            </div>
 
             <div id="dateandtime">
             <p>  {new Date().getFullYear()} : {new Date().getMonth()} : {new Date().getDate()} - {new Date().toLocaleTimeString()}</p>
@@ -124,7 +123,7 @@ function Header() {
             </div>
           </div>
 
-          <div className="menupp" style={{ width: "100%" ,backgroundColor:"hsla(101, 27%, 100%, 0.1)" }}>
+          <div className="menupp" style={{ width: "100%"}}>
             <li className="menupp">
               <a></a>
             </li>

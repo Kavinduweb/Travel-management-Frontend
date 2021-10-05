@@ -61,7 +61,7 @@ export default class AllPayments extends Component{
         <th scope="col">CVV</th>
         <th scope="col">Amount</th>
         <th scope="col">Payment Date</th>
-        <th scope="col">Action</th>
+        
       </tr>
     </thead>
     <tbody>
@@ -73,8 +73,8 @@ export default class AllPayments extends Component{
         <td>{payments.name}</td>
         <td>{payments.method}</td>
          <td>
-         <a href ={`/payment/${payments._id}`} style={{textDecoration:'none'}}>
-             {payments.card}</a></td>
+        
+             {payments.card}</td>
          <td>{payments.time}</td>
          <td>
          

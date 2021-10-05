@@ -91,6 +91,7 @@ else{
     <div>
       <Header />
       <div className="infotr">
+        <hr/>
         <div className="bodyaa" style={{ paddingTop: "10px" }}>
           <div className="bodybb">
             <div className="container">

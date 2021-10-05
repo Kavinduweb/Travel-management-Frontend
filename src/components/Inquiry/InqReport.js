@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import ReactToPrint from 'react-to-print';
 import axios from 'axios';
+import HeaderAdmin from '../HeaderAdmin';
 
 
 
@@ -40,9 +41,18 @@ import axios from 'axios';
 
     render() {
       return (
-        <div className="oneDetail6">
+        <div>
+          <HeaderAdmin/>
+       <div  className="infoadmin" >
+        <div className="oneDetail6 infoadmin">
+        <ReactToPrint
+            trigger={() => <button className="btn btn-success" style={{margintop:'400px'}}>Print this out!</button >}
+            content={() => this.componentRef}
+          />
+          <div className="container2" ref={(el) => (this.componentRef = el)}>
         <div className="row">
          <div className="col-lg-9 mt-2 mb-2">
+        
            <h1>Inquiry Report</h1>
            <span className="xyz">
              Date & Time : {`${new Date().toLocaleString()}`}
@@ -54,8 +64,8 @@ import axios from 'axios';
          
 
         </div>
-          
-         <table className="blueTable" border="2">
+
+         <table className="blueTable" border="2"  >
  
        <tr>
          <th scope="col">#</th>
@@ -93,27 +103,13 @@ import axios from 'axios';
        
      </tbody>
    </table>
-   
-    
+   </div>
+   </div></div>
        </div>
       );
     }
   }
 
  
-  class Example extends React.Component {
-    render() {
-      return (
-        <div style={{margintop:'400px'}}>
-         
-          <ReactToPrint
-            trigger={() => <button className="btn btn-success" style={{margintop:'400px'}}>Print this out!</button >}
-            content={() => this.componentRef}
-          />
-          <ComponentToPrint ref={(el) => (this.componentRef = el)} />
-        </div>
-      );
-    }
-  }
   
-  export default Example;
+  export default ComponentToPrint;
