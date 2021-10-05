@@ -1,5 +1,6 @@
 import React from "react";
 import axios from 'axios'
+import styled from 'styled-components';
 import ReactToPrint from "react-to-print";
 import HeaderAdmin from '../HeaderAdmin';
 
@@ -32,11 +33,12 @@ class ComponentToPrint extends React.Component{
     return (
       <div>
         <HeaderAdmin/>
+        <SelectContainer>
       <div className="info">
              <ReactToPrint
           trigger={() =>
             <button type="button" 
-            class="btn btn-primary" 
+            className="btn btn-outline-secondary"
             style={{marginLeft:1336}}>
           
             <i class="fas fa-print mr-2"></i>Generate Report
@@ -47,7 +49,7 @@ class ComponentToPrint extends React.Component{
         />
             <div className="container" ref={(Component) => (this.componentRef = Component)}>
       <div className="container">
-      <h2> Activity Select Details</h2>
+      <h2> Print Select Details</h2>
         <hr/>
          
         <table class="table">
@@ -84,6 +86,7 @@ class ComponentToPrint extends React.Component{
       </div>
    
 </div>
+</SelectContainer>
 </div>
 
     );
@@ -91,3 +94,13 @@ class ComponentToPrint extends React.Component{
 }
 
 export default ComponentToPrint;
+
+//MAIN CONTAINER
+const SelectContainer = styled.div`
+button{
+margin: 1rem auto;
+padding: 1rem 1rem;
+height: 3rem;
+
+}
+`;
