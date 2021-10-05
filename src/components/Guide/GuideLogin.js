@@ -47,8 +47,8 @@ const GuideLogin = () => {
     return (
         <div>
             <Header/>
-                <section id = "gl">
                 <div className="info">
+                            <section id="gl" style={{height:"520px"}}>
                                 <form class="login-container">
                                     <h3 className = "h3">GUIDE LOGIN</h3>
                                     <hr/>
@@ -70,7 +70,8 @@ const GuideLogin = () => {
                                         Login
                                     </Button> 
                                     </center>
-                                </form>                           
+                                </form>   
+                            </section>                            
                         </div>
                         < div style={{visibility: 'hidden'}} >
                                 <h1 id="uname" ></h1>
@@ -80,7 +81,6 @@ const GuideLogin = () => {
                                 <h2 id="tourdate" ></h2>
                                 <h2 id="noofdates" ></h2>
                         </div>     
-                </section>       
        <Footer/>
    </div>
     

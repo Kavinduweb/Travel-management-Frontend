@@ -95,12 +95,13 @@ useEffect(()=>{
  return(
      <div>
          <Header/>
-         <br/>
+         
     <div className="info">
-                <div className="request-container">
-                    <div className="w-50 mx-auto shadow p-5 guide-container">
+                <div className="request-container"style={{background:"blueviolet"}}>
+                    <br/>
+                    <div className="w-50 mx-auto shadow p-5 guide-container"style={{background:"white"}}>
                         <div className="bodycd">
-                            <h2 className ="text text-center"><b>Send Request Details</b></h2>
+                            <h2 className ="text text-center">Send Request Details</h2>
                         </div>
 
                         <hr/>  
@@ -112,8 +113,10 @@ useEffect(()=>{
                                         <div className="input-group-prepend">
                                             <span className="input-group-text border-dark" 
                                                 id="basic" 
-                                                style={{backgroundColor:'hsl(0,0%,0%,0.3)',color:"white"}}>
+                                                style={{backgroundColor:'hsl(0,0%,0%,0.3)',color:"black"}}>
+                                                <b>
                                                 Guide Name
+                                                </b>
                                             </span>
                                         </div>
                                         <input type="text" 
@@ -124,13 +127,16 @@ useEffect(()=>{
                                         disabled/>
                                     </div>
                                 </div>
+                               
                                 <div className="col">
                                     <div className="input-group mb-3">
                                         <div className="input-group-prepend">
                                             <span className="input-group-text border-dark" 
                                                 id="basic" 
-                                                style={{backgroundColor:'hsl(0,0%,0%,0.3)',color:"white"}}>
+                                                style={{backgroundColor:'hsl(0,0%,0%,0.3)',color:"black"}}>
+                                                <b>
                                                 Language
+                                                </b>
                                             </span>
                                         </div>
                                         <input type="text" 
@@ -149,7 +155,9 @@ useEffect(()=>{
                                             <span className="input-group-text border-dark" 
                                                 id="basic" 
                                                 style={{backgroundColor:'hsl(0,0%,0%,0.3)',color:"white"}}>
+                                                <b>
                                                 Guide Username
+                                                </b>
                                             </span>
                                         </div>
                                         <input type="text" 
@@ -161,7 +169,7 @@ useEffect(()=>{
                                     </div>
                                 </div>
 
-                            <div className="form-group">
+                            <div className="form-group" style = {{color: "#160e5e"}}>
                                 <i class="fa fa-address-card-o mr-2" aria-hidden="true"></i>
                                 <label><b>Name</b></label>
                                     <input type="text" 
@@ -171,12 +179,15 @@ useEffect(()=>{
                                     value={uname}
                                     onChange={e=>onInputChange(e)}
                                     required/>
+                                    <Form.Control.Feedback>Looks Good!</Form.Control.Feedback>
                                     <Form.Control.Feedback type="invalid">
                                         Please Provide a Valid Name
                                     </Form.Control.Feedback>
                             </div>
 
-                            <div className="form-group">
+                            <br/>
+
+                            <div className="form-group" style = {{color: "#160e5e"}}>
                                 <i class="fa fa-address-book-o mr-2" aria-hidden="true"></i>
                                 <label><b>Contact Number</b></label>
                                     <input type="text"
@@ -188,12 +199,15 @@ useEffect(()=>{
                                     value={phone}
                                     onChange={e=>onInputChange(e)}
                                     required/>
+                                    <Form.Control.Feedback>Looks Good!</Form.Control.Feedback>
                                     <Form.Control.Feedback type="invalid">
                                         Please Provide a Valid Contact Number
                                     </Form.Control.Feedback>
                             </div>
 
-                            <div className="form-group">
+                            <br/>
+
+                            <div className="form-group" style = {{color: "#160e5e"}}>
                                 <i class="fa fa-envelope-o mr-2" aria-hidden="true"/>   
                                 <label><b>E-Mail</b></label>
                                     <input type="email" 
@@ -203,12 +217,15 @@ useEffect(()=>{
                                     value={email}
                                     onChange={e=>onInputChange(e)}
                                     required/>
+                                    <Form.Control.Feedback>Looks Good!</Form.Control.Feedback>
                                     <Form.Control.Feedback type="invalid">
                                         Please Provide a Valid E-Mail
                                     </Form.Control.Feedback>
                             </div>
 
-                            <div className="form-group">
+                            <br/>
+
+                            <div className="form-group" style = {{color: "#160e5e"}}>
                                 <i class="fa fa-plane mr-2" aria-hidden="true"></i>
                                 <label><b>Destination</b></label>
                                     <input type="text" 
@@ -218,12 +235,15 @@ useEffect(()=>{
                                     value={destination}
                                     onChange={e=>onInputChange(e)}
                                     required/>
+                                    <Form.Control.Feedback>Looks Good!</Form.Control.Feedback>
                                     <Form.Control.Feedback type="invalid">
                                         Please Provide a Valid Destination
                                     </Form.Control.Feedback>
                             </div>
 
-                            <div className="form-group">
+                            <br/>
+
+                            <div className="form-group" style = {{color: "#160e5e"}}>
                                 <i class="fa fa-calendar mr-2" aria-hidden="true"></i>
                                 <label><b>Tour Date</b></label>
                                     <input type="date" 
@@ -233,12 +253,15 @@ useEffect(()=>{
                                     value={tourdate}
                                     onChange={e=>onInputChange(e)}
                                     required/>
+                                    <Form.Control.Feedback>Looks Good!</Form.Control.Feedback>
                                     <Form.Control.Feedback type="invalid">
                                         Please Provide a Valid Date
                                     </Form.Control.Feedback>
                             </div>
 
-                            <div className="form-group">
+                            <br/>
+
+                            <div className="form-group" style = {{color: "#160e5e"}}>
                                 <i class="fa fa-list-ol mr-2" aria-hidden="true"></i>
                                 <label><b>Number of Dates</b></label>
                                     <input type="Number" 
@@ -248,6 +271,7 @@ useEffect(()=>{
                                     value={noofdates}
                                     onChange={e=>onInputChange(e)}
                                     required/>
+                                    <Form.Control.Feedback>Looks Good!</Form.Control.Feedback>
                                     <Form.Control.Feedback type="invalid">
                                         Please Provide a Valid Number
                                     </Form.Control.Feedback>

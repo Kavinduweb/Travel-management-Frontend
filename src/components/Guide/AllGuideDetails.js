@@ -64,7 +64,7 @@ export default class AllGuideDetails extends Component{
                 <div className="container">      
                     <br/>
                     <div>
-                        <div className="input-group" style={{marginLeft:1050}} >
+                        <div className="input-group" style={{marginLeft:1045}} >
                             <div className="form-outline">
                                 <input 
                                     id="search-input" 
@@ -111,7 +111,7 @@ export default class AllGuideDetails extends Component{
                                         <tr key={index}>
                                             <th scope="row">{index+1}</th>
                                                 <td className="text-center">
-                                                    <img src = {`/uploads/${guide.guideImage}`} alt = " " style = {{width : "40%" , minHeight : "30%"}}/>
+                                                    <img src = {`/uploads/${guide.guideImage}`} alt = " " style = {{width : "80%" , minHeight : "70%"}}/>
                                                 </td>
                                                 <td>{guide.name}</td>
                                                 <td>{guide.address}</td>
