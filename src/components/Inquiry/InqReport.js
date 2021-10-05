@@ -55,7 +55,7 @@ import axios from 'axios';
 
         </div>
           
-         <table className="table table-hover" border="2">
+         <table className="blueTable" border="2">
  
        <tr>
          <th scope="col">#</th>

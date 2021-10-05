@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import axios from 'axios';
 import './inq.css'
+import emailjs from 'emailjs-com';
+import four from "./four.jpg";
 import Header from '../Header';
 import Footer from '../Footer';
 
@@ -23,9 +25,7 @@ export default class CreateInquiry extends Component{
             nicValid:false,
             phoneValid:false,
             emailValid:false,
-            inqValid:false,
-
-            View:[]
+            inqValid:false
         }
 
     }
@@ -37,84 +37,56 @@ export default class CreateInquiry extends Component{
             
         })
     }
-     
-    componentDidMount(){
-        const userInfo = localStorage.getItem('userInfo');
-        
-        if (userInfo == null){
-
-            alert("You Are Not Registered User")
-            window.location.replace("/register")
-
-
-        }
-        var line=[];
-
-        for ( var i =7 ,p=0 ; i !== 31;i++,p++){
-            
-             
-            line.push(userInfo[i]);
-          
-        }
-        const mongoid= line.join('');
-        const url ="http://localhost:8070/user/Details/";
-
-        
-        axios.get(url+mongoid).then(res =>{
-           
-        if(res.data.success){
-            this.setState({
-                View:res.data.BackendData
-            
-            });
     
-        }
-        else (
-            console.log("cant")
-        )
-
-    })
-    }
     onSubmit= (e) =>{
         e.preventDefault();
 
-        const name1 = document.getElementById('Name');
-        const nic1 = document.getElementById('nic');
-        const email1 = document.getElementById('email');
+        const name1 = document.getElementById('name');
+        const nic1= document.getElementById('nic').value;
+        const email1 = document.getElementById('email').value;
         const phone1 = document.getElementById('phone');
         const inq1 = document.getElementById('inq');
+        const nic2 = document.getElementById('nic').nic2;
+        
             if (name1.value === '' || name1.value == null){
                 alert('Please enter Your Name')
                 return false;
         }
-            else if (nic1.value=== ''||nic1.value == null){
-                alert('Please enter Your NIC')
-                return false;
+        else if (nic1.length < 8){
+            alert('Please enter a valid NIC')
+            return false;
         }
-            else if (email1.value === '' || email1.value == null){
-                alert('Please enter Your Email Address')
-                return false;
+        
+        else if (phone1.value === '' || phone1.value == null){
+            alert('Please enter Your Phone Number')
+            return false;
+    } 
+         else if(email1 == '' || email1.includes('@' && '.') == false ){
+
+            alert("Please enter valid Email Address")
+           return false;
+           
         }
-            else if (phone1.value === '' || phone1.value == null){
-                alert('Please enter Your Phone Number')
-                return false;
-        } 
+            
             else if (inq1.value === '' || inq1.value == null){
                 alert('Please enter Your Inquiry')
                 return false;
         }
+           
 
         const {name,nic,phone,email,inq} = this.state;
 
         const data= {
-            name:this.state.View.Name,
+            name:name,
             nic:nic,
             phone:phone,
-            email:this.state.View.Email,
+            email:email,
             inq:inq            
         }
 
        
+
+        console.log(data)
 
         axios.post("http://localhost:8070/inquiry/add",data).then((res) =>{
            
@@ -134,42 +106,38 @@ export default class CreateInquiry extends Component{
 
         })
 
-        window.location.replace("/add")
-       
-
+     
+            
+ 
     }
     
+
      
     
 
 
     render(){
         return(
-           
-               <div>
-                   <Header/>
-                   <div className="info">
+            <div >
+                <Header/>
+                <div className="info"> 
             <div className="vj" >
- 
-            <div>
-           
-
-
+            
             <div className="needs-validation">
           
                 <form  noValidate  >
-                <h2 > Create New Inquiry</h2>
+                <h1 className="nam"> Create New Inquiry</h1>
                 <hr/>
 
                     <div className="" style={{marginBottom:'15px'}} >
                         <label style={{marginBottom:'5px'}}>Name</label>
                             <input 
                             type="text"
-                            id="Name"
+                            id="name"
                             className="form-control"                
                             name="name"
                             placeholder="Enter Your Name"
-                            value={this.state.View.Name} 
+                            value={this.state.name} 
                             onChange={this.handleInputChange}/>
 
                     </div>
@@ -208,7 +176,7 @@ export default class CreateInquiry extends Component{
                             id="email"             
                             name="email"
                             placeholder="Enter Your Email"
-                            value={this.state.View.Email} 
+                            value={this.state.email} 
                             onChange={this.handleInputChange}/>
                          
                     </div>
@@ -244,12 +212,8 @@ export default class CreateInquiry extends Component{
             </div>
         </div> 
         </div>
-            </div>
-
         <Footer/>
-        </div> 
-            
-        
+        </div>   
         )
 
     }
