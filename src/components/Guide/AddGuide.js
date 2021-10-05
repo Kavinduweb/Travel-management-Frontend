@@ -63,21 +63,24 @@ const AddGuide = ()=>{
     return(
        <div>
        <HeaderAdmin/>
-       <br/>
+       
        <div class = "infoadmin">
-              <section id="add">
-                     <div className = "w-50 mx-auto shadow p-5">
+              <section id="add" style={{background:"blueviolet"}}>
+              <br/>
+                     <div className = "w-50 mx-auto shadow p-5" style={{background:"white"}}>
                             <h2 className = "text text- mb-10"><b>Add New Guide</b></h2>
                             <hr/>
 
+                            <br/>
+
                             <form onSubmit = {changeOnClick} encType = "multipart/form-data">
 
-                                   <label htmlFor = "floatingInput" style = {{fontSize:18}}><i class="fa fa-user-plus mr-2" aria-hidden="true"></i>
+                                   <label htmlFor = "floatingInput" style = {{fontSize:17, color:"green"}}><i class="fa fa-user-o mr-2" aria-hidden="true"></i>
                                    <strong>Name</strong></label>
                                    <div className = "form-group">
                                           <input 
                                           type = "text" 
-                                          className = "form-control" 
+                                          className = "form-control border-dark" 
                                           id = "floatingInput" 
                                           placeholder = "Enter Name"
                                           name = "name"
@@ -85,14 +88,15 @@ const AddGuide = ()=>{
                                           onChange = {(e)=>setName(e.target.value)}
                                           required />     
                                    </div>
-
+                                   
+                                   <br/>
                            
-                                   <label htmlFor = "floatingInput" style = {{fontSize:18}}><i class="fa fa-address-card-o mr-2" aria-hidden="true"></i>
+                                   <label htmlFor = "floatingInput" style = {{fontSize:17, color:"green"}}><i class="fa fa-address-card-o mr-2" aria-hidden="true"></i>
                                    <strong>Address</strong></label>
                                    <div className = "form-group">
                                           <input 
                                           type = "text" 
-                                          className = "form-control" 
+                                          className = "form-control border-dark" 
                                           id = "floatingInput" 
                                           placeholder = "Enter Address"
                                           name = "address"
@@ -101,13 +105,14 @@ const AddGuide = ()=>{
                                           required /> 
                                    </div>
 
+                                   <br/>
 
-                                   <label htmlFor = "floatingInput" style = {{fontSize:18}}><i class="fa fa-pencil-square-o mr-2" aria-hidden="true"></i>
+                                   <label htmlFor = "floatingInput" style = {{fontSize:17, color:"green"}}><i class="fa fa-pencil-square-o mr-2" aria-hidden="true"></i>
                                    <strong>Language</strong></label>
                                    <div className = "form-group">
                                           <select name = "language" 
                                                  id = "floatingInput" 
-                                                 className = "form-control" 
+                                                 className = "form-control border-dark" 
                                                  value = {language} 
                                                  onChange = {(e)=>setLanguage(e.target.value)}
                                                  required > 
@@ -118,13 +123,14 @@ const AddGuide = ()=>{
                                           </select> 
                                    </div>
 
+                                   <br/>
 
-                                   <label htmlFor = "floatingInput" style = {{fontSize:18}}><i class="fa fa-envelope-o mr-2" aria-hidden="true"></i>
+                                   <label htmlFor = "floatingInput" style = {{fontSize:17, color:"green"}}><i class="fa fa-envelope-o mr-2" aria-hidden="true"></i>
                                    <strong>E-Mail</strong></label>
                                    <div className = "form-group">
                                           <input 
                                           type = "email" 
-                                          className = "form-control" 
+                                          className = "form-control border-dark" 
                                           id = "floatingInput" 
                                           placeholder = "Enter E-Mail"
                                           name = "email"
@@ -133,14 +139,15 @@ const AddGuide = ()=>{
                                           required /> 
                                    </div>
 
+                                   <br/>
                             
-                                   <label htmlFor = "floatingInput" style = {{fontSize:18}}><i class="fa fa-address-book-o mr-2" aria-hidden="true"></i>
+                                   <label htmlFor = "floatingInput" style = {{fontSize:17, color:"green"}}><i class="fa fa-address-book-o mr-2" aria-hidden="true"></i>
                                    <strong>Contact Number</strong></label>
                                    <div className = "form-group">
                                           <input type="text"
                                           oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
                                           maxlength = "10"           
-                                          className = "form-control" 
+                                          className = "form-control border-dark" 
                                           id = "floatingInput" 
                                           placeholder = "Enter Contact Number"
                                           name = "phone"
@@ -149,13 +156,14 @@ const AddGuide = ()=>{
                                           required /> 
                                    </div>
 
+                                   <br/>
                             
-                                   <label htmlFor = "floatingInput" style = {{fontSize:18}}><i class="fa fa-user-o mr-2" aria-hidden="true"></i>
+                                   <label htmlFor = "floatingInput" style = {{fontSize:17, color:"green"}}><i class="fa fa-user-o mr-2" aria-hidden="true"></i>
                                    <strong>Username</strong></label>
                                    <div className = "form-group">
                                           <input 
                                           type = "text" 
-                                          className = "form-control" 
+                                          className = "form-control border-dark" 
                                           id = "floatingInput" 
                                           placeholder = "Enter Username"
                                           name = "username"
@@ -164,14 +172,14 @@ const AddGuide = ()=>{
                                           required /> 
                                    </div>
 
-                            
+                                   <br/>
 
-                                   <label htmlFor = "floatingInput" style = {{fontSize:18}}><i class="fa fa-unlock-alt mr-2" aria-hidden="true"></i>
+                                   <label htmlFor = "floatingInput" style = {{fontSize:17, color:"green"}}><i class="fa fa-unlock-alt mr-2" aria-hidden="true"></i>
                                    <strong>Password</strong></label>
                                    <div className = "form-group">
                                           <input 
                                           type = "password" 
-                                          className = "form-control" 
+                                          className = "form-control border-dark" 
                                           id = "floatingInput" 
                                           placeholder = "Enter Password"
                                           name = "password"
@@ -180,11 +188,13 @@ const AddGuide = ()=>{
                                           required /> 
                                    </div>
 
-                                   <lable htmlFor = "floatingInput" style = {{fontSize:18}}><i class="fa fa-file-image-o mr-2" aria-hidden="true"></i>
+                                   <br/>
+
+                                   <lable htmlFor = "floatingInput" style = {{fontSize:17, color:"green"}}><i class="fa fa-file-image-o mr-2" aria-hidden="true"></i>
                                    <b>Select Image</b>
                                           <br/>
                                           <div class="mb-3">
-                                                 <input class="form-control" 
+                                                 <input class="form-control border-dark" 
                                                  type="file" 
                                                  id="formFile" 
                                                  filename="guideImage" 

@@ -1,24 +1,19 @@
 /*Add Guide CSS*/
-#add .form-group{
-    box-shadow: 0px 4px 20px rgba(0, 5, 8, 0.5);
-    -moz-box-shadow: 0px 4px 20px rgba(5,57,94,.5);
-    -webkit-box-shadow: 0px 4px 20px rgba(5,57,94,.5);
-}
-
-#add {
-    background-image: url('');
-    width: 100;
-}
-
 #add .text {
     color: white;
-    text-shadow: 1px 1px 2px rgb(13, 128, 13), 0 0 25px rgb(0, 255, 149), 0 0 5px rgba(40, 165, 102, 0.836);
+    font-weight: bold;
+    color: #160e5e;
+    text-align: center;
+    letter-spacing:3px;
+    text-shadow: 5px 7px 5px rgba(0,0,0,0.3), 
+    0px -4px 10px rgba(255,255,255,0.3);
+    font-size: 40px;
     font-weight: bold;
     text-align: center;
 }
 
 #add .form-control {
-    color: rgb(18, 150, 18);
+    color: #000000;
 }
 
 /*All Guide CSS*/
@@ -36,10 +31,9 @@
 }
 
 /*All  Requests Page CSS*/
-
 #report .table{
     width: 100%;
-    max-width: 97%;
+    max-width: 1260px;
     margin: 15px auto;
     box-shadow: 0px 4px 20px rgba(5,57,94,.5);
     -moz-box-shadow: 0px 4px 20px rgba(5,57,94,.5);
@@ -54,7 +48,15 @@
 #report .font {
     font-weight: bold;
     color: white;
-    text-shadow: 1px 1px 2px rgb(8, 8, 8), 0 0 25px rgb(12, 12, 12), 0 0 5px rgba(97, 100, 99, 0.836);
+    font-weight: bold;
+    color: #160e5e;
+    text-align: center;
+    letter-spacing:3px;
+    text-shadow: 5px 7px 5px rgba(0,0,0,0.3), 
+    0px -4px 10px rgba(255,255,255,0.3);
+    font-size: 40px;
+    font-weight: bold;
+    text-align: center;
 }
 
 #report .table td {
@@ -67,7 +69,7 @@
     word-break: keep-all;
     font-weight: bold;
     font-size: 16px;
-    height: 45px;
+    height: 40px;
 }
 
 #report h1 {
@@ -76,25 +78,23 @@
     text-shadow: 0 0 3px #3d3535;
 }
 
-/*Edit  Guide Page CSS*/
-#edit .form-group{
-    box-shadow: 0px 4px 20px rgba(5,57,94,.5);
-    -moz-box-shadow: 0px 4px 20px rgba(5,57,94,.5);
-    -webkit-box-shadow: 0px 4px 2
-}
 
+/*Edit  Guide Page CSS*/
 #edit .text {
     color: white;
-    text-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue;
+    color: white;
+    font-weight: bold;
+    color: #160e5e;
+    text-align: center;
+    letter-spacing:3px;
+    text-shadow: 5px 7px 5px rgba(0,0,0,0.3), 
+    0px -4px 10px rgba(255,255,255,0.3);
+    font-size: 40px;
+    font-weight: bold;
+    text-align: center;
     font-weight: bold;
     text-align: center;
 }
-
-#edit .form-control {
-    color:indigo;
-}
-
-
 
 /*Guide  Confirm Page CSS*/
 #guide .mb-0 {
@@ -130,7 +130,7 @@
     height:400px ;
     width: 400px;
     background-color:rgb(0,18,32) ;
-    margin: 100px auto;
+    margin: 200px auto;
     box-shadow:  -3px 0px 20px 4px black;
 }
 
@@ -174,19 +174,18 @@
 
 
 /*Guide Request Page*/
-.guide-container {
-    background-image: linear-gradient( 68.4deg,  rgba(248,182,204,1) 0.5%, rgba(192,198,230,1) 49%, rgba(225,246,240,1) 99.8% )
-}
-
 .guide-container .form-group {
-    font-size: 19px;
-    text-shadow:darkolivegreen;
+    font-size: 17px;
 }
 
 .guide-container .text {
-    color: white;
-    text-shadow: 1px 1px 2px rgb(82, 13, 128), 0 0 25px rgb(162, 0, 255), 0 0 5px rgba(161, 40, 165, 0.836);
-    font-size: 35px;
+    font-weight: bold;
+    color: #160e5e;
+    text-align: center;
+    letter-spacing:3px;
+    text-shadow: 5px 7px 5px rgba(0,0,0,0.3), 
+    0px -4px 10px rgba(255,255,255,0.3);
+    font-size: 40px;
 }
 
 
