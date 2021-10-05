@@ -107,7 +107,7 @@ export default class EditInquiry extends Component{
                 <div className="info">
                 <div className="vj">
                 
-                <Form className="needs-validation" noValidate  id="form">
+                <Form className="needs-validation12" noValidate  id="form">
                 <h1 className="nam" > Edit Inquiry</h1>
                 <hr/>
                     <div className="form-group" style={{marginBottom:'15px'}}>

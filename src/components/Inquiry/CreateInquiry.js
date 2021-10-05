@@ -116,7 +116,7 @@ export default class CreateInquiry extends Component{
                 <div className="info"> 
             <div className="vj" >
             
-            <div className="needs-validation">
+            <div className="needs-validation12">
           
                 <Form  noValidate validated={this.state.validated}>
                 <h1 className="nam"> Create New Inquiry</h1>
