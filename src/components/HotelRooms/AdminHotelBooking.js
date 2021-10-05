@@ -45,7 +45,7 @@ class ComponentToPrint extends React.Component{
             <div className="container" ref={(el) => (this.componentRef = el)} >
               <h2>Hotel Booking Details</h2>
                 
-                  <table class="table">
+                  <table class="blueTable" >
 
                     <thead class="thead-dark">
                       <tr>

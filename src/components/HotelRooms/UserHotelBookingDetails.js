@@ -34,7 +34,7 @@ export default class UserHotelBookingDetails extends Component{
         return(
             <div>
               <Header/>
-                <div class="info" >
+                <div class="info" ><br/>
                   <div class="bokpadding">                          
                     <div class="hero-image">
                           <div class="bokbox"> 
