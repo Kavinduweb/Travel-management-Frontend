@@ -175,3 +175,19 @@
   margin-inline-start: 220px;
   min-height: 500px;
 }
+
+
+.needs-validation-payment{
+        
+  border-radius:  20px ;
+  width: 800px;
+  max-width: 100%;
+  padding:50px;
+  padding-top: 30px;
+  margin: 10px;
+  
+  background-color:gainsboro;
+  font-family: 'Gill Sans', 'Nunito','Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-weight: bold;
+  
+}

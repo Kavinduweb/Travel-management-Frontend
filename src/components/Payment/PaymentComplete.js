@@ -27,7 +27,7 @@ render(){
           </div>
           <div class="card-body p-4 p-sm-5">
     
-           <center> <h1>PAYMENT Confirmaton</h1></center>
+           <center> <h1>PAYMENT Confirmation</h1></center>
            <hr class="my-4" />
 
 
