@@ -50,108 +50,114 @@ function AddActivity() {
 
   return (
     <div>
-      <HeaderAdmin />
-      <AddActivityContainer>
-        <div className="info">
-          <div
-            className="container"
-            style={{
-              backgroundImage:
-                "linear-gradient( 180.3deg,  rgba(214,224,255,1) 37.2%, rgba(254,168,168,1) 137.3% )",
-            }}
-          >
-            &nbsp;&nbsp;
-            <h1>Add New Activity </h1>
-            <span className="message">{message}</span>
-            <form onSubmit={changeOnClick} encType="multipart/form-data">
-              <div className="form-group">
-                <label htmlFor="aname">Activity Name</label>
-                <input
-                  type="text"
-                  value={aname}
-                  onChange={(e) => setActivityName(e.target.value)}
-                  className="form-control"
-                  placeholder="Activity Name"
-                />
-              </div>
-
-              <div className="form-group">
-                <label htmlFor="category">Category</label>
-                <input
-                  type="text"
-                  value={category}
-                  onChange={(e) => setCategory(e.target.value)}
-                  className="form-control"
-                  placeholder="Category"
-                />
-              </div>
-
-              <div className="form-group">
-                <label htmlFor="mindescription">Min Description</label>
-                <textarea
-                  value={mindescription}
-                  onChange={(e) => setMindescription(e.target.value)}
-                  className="form-control"
-                  rows="5"
-                ></textarea>
-              </div>
-
-              <div className="form-group">
-                <label htmlFor="description">Description</label>
-                <textarea
-                  value={description}
-                  onChange={(e) => setDescription(e.target.value)}
-                  className="form-control"
-                  rows="10"
-                ></textarea>
-              </div>
-
-              <div className="form-group">
-                <label htmlFor="price">Price</label>
-                <input
-                  type="text"
-                  value={price}
-                  onChange={(e) => setPrice(e.target.value)}
-                  className="form-control"
-                  placeholder="Price"
-                />
-              </div>
-
-              <div className="form-group">
-                <label htmlFor="file">Choose activity image</label>
-                <input
-                  type="file"
-                  filename="activityImage"
-                  className="form-control-file"
-                  onChange={onChangeFile}
-                />
-              </div>
-
-              <div className="row">
-                <div className="flex-parent jc-center">
-                  <button type="submit" className="btn btn-primary">
-                    Post Activity
-                  </button>
+      <div
+        className="background"
+        style={{
+          background:
+            "url(https://previews.123rf.com/images/wstockstudio/wstockstudio1707/wstockstudio170700176/82195391-accessories-for-travel-top-view-on-white-wooden-background-with-copy-space-adventure-and-wanderlust-.jpg)",
+        }}
+      >
+        <HeaderAdmin />
+        <AddActivityContainer>
+          <div className="info">
+            <div
+              className="container"
+              style={{
+                background: "#C9C0BB",
+              }}
+            >
+              &nbsp;&nbsp;
+              <h1>Add New Activity </h1>
+              <span className="message">{message}</span>
+              <form onSubmit={changeOnClick} encType="multipart/form-data">
+                <div className="form-group">
+                  <label htmlFor="aname">Activity Name</label>
+                  <input
+                    type="text"
+                    value={aname}
+                    onChange={(e) => setActivityName(e.target.value)}
+                    className="form-control"
+                    placeholder="Activity Name"
+                  />
                 </div>
-                <br />
-                <div
-                  className="flex-parent jc-center"
-                  style={{ align: "center" }}
-                >
-                  <Link
-                    to="/activities"
-                    type="submit"
-                    className="btn btn-light"
+
+                <div className="form-group">
+                  <label htmlFor="category">Category</label>
+                  <input
+                    type="text"
+                    value={category}
+                    onChange={(e) => setCategory(e.target.value)}
+                    className="form-control"
+                    placeholder="Category"
+                  />
+                </div>
+
+                <div className="form-group">
+                  <label htmlFor="mindescription">Min Description</label>
+                  <textarea
+                    value={mindescription}
+                    onChange={(e) => setMindescription(e.target.value)}
+                    className="form-control"
+                    rows="3"
+                  ></textarea>
+                </div>
+
+                <div className="form-group">
+                  <label htmlFor="description">Description</label>
+                  <textarea
+                    value={description}
+                    onChange={(e) => setDescription(e.target.value)}
+                    className="form-control"
+                    rows="5"
+                  ></textarea>
+                </div>
+
+                <div className="form-group">
+                  <label htmlFor="price">Price</label>
+                  <input
+                    type="text"
+                    value={price}
+                    onChange={(e) => setPrice(e.target.value)}
+                    className="form-control"
+                    placeholder="Price"
+                  />
+                </div>
+
+                <div className="form-group">
+                  <label htmlFor="file">Choose activity image</label>
+                  <input
+                    type="file"
+                    filename="activityImage"
+                    className="form-control-file"
+                    onChange={onChangeFile}
+                  />
+                </div>
+
+                <div className="row">
+                  <div className="flex-parent jc-center">
+                    <button type="submit" className="btn btn-primary">
+                      Post Activity
+                    </button>
+                  </div>
+                  <div
+                    className="flex-parent jc-center"
+                    style={{ align: "center" }}
                   >
-                    Back to Activity
-                  </Link>
+                    <Link
+                      to="/activities"
+                      type="submit"
+                      className="btn btn-light"
+                    >
+                      Back to Activity
+                    </Link>
+                  </div>
+                  &nbsp;&nbsp;
                 </div>
-                &nbsp;&nbsp;
-              </div>
-            </form>
+              </form>
+            </div>
           </div>
-        </div>
-      </AddActivityContainer>
+        </AddActivityContainer>
+      </div>
     </div>
   );
 }

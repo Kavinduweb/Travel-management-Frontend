@@ -1,4 +1,10 @@
 
+* {
+  box-sizing: border-box;
+  list-style: none;
+  text-decoration: none;
+  font-family: 'Gill Sans', 'Nunito','Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
 
 .wrapper {
   display: flex;
@@ -11,6 +17,7 @@
  background-color: #333;
   padding: 00px 0px 0px 0px;
   position: fixed;
+  padding-top: 10px;
 }
 
 .wrapper .sidebar h1 {
@@ -177,9 +184,8 @@
 
 .header {
   /*padding: 10px;*/
-  background-image: url("https://image.shutterstock.com/image-photo/dark-gray-grey-anthracite-black-260nw-1935038138.jpg");
-  background-size: cover;
-  height: 100px;
+  background-color: #333; background-size: cover;
+  height: 120px;
   position: relative;
 }
 
@@ -187,12 +193,12 @@
   font-size: 30px;
   color:rgb(255, 255, 255);
   font-family: "Josefin Sans", sans-serif;
-  box-shadow: 10px 2px 3px  #afafaf;
-  font-style: italic;
+ 
   font-weight: bold;
   text-align: center;
+  letter-spacing: 10px;
   padding-top: 10px;
-  text-shadow: 10px 10px 7px black;
+ 
  
 }
 
@@ -213,10 +219,7 @@
 
 #logott{
   position: fixed;
-  top: 5px;
-  left: 3%;
-  font-size: 70px;
-  color: rgb(218, 213, 213);
+margin-top: 4px;
 }
 
 

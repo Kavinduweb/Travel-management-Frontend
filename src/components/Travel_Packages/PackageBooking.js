@@ -91,6 +91,7 @@ else{
     <div>
       <Header />
       <div className="infotr">
+        <hr/>
         <div className="bodyaa" style={{ paddingTop: "10px" }}>
           <div className="bodybb">
             <div className="container">
@@ -159,7 +160,7 @@ else{
                  
                  
                   <div class="d-flex flex-row align-items-center mb-2">
-                          <div class="form-outline mb-2 mr-5" style={{width:"40%"}}>
+                          <div class="form-outline mb-2 mr-5" style={{width:"50%"}}>
                      
                       <b>Name</b>
                    
@@ -176,7 +177,7 @@ else{
               Please provide a valid Name
             </Form.Control.Feedback>
                             </div>
-                            <div class="form-outline mb-2" style={{width:"40%"}}>
+                            <div class="form-outline mb-2" style={{width:"50%"}}>
                            
                       <b>Phone Number</b>
                     

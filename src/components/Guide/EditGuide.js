@@ -40,43 +40,49 @@ const EditGuide = () => {
   return (
   <div>
     <HeaderAdmin/>
-    <br/>
+    
     <div className = "infoadmin">
         <section id="edit">
-            <div className="container">
-                <div className="w-50 mx-auto shadow p-5">
+            <div className="container" style={{background:"blueviolet"}}>
+            <br/>
+                <div className="w-50 mx-auto shadow p-5" style={{background:"white"}}>
                     <h2 className ="text">Update Guide Details</h2>
                     <hr/>
+                    <br/>
                     <form onSubmit={e => onSubmit(e)}>
-                        <label htmlFor="floatingInput" style = {{fontSize:18}}><i class="fa fa-user-plus mr-2" aria-hidden="true"/><strong>Name</strong></label>
+                        <label htmlFor="floatingInput" style = {{fontSize:17, color:"green"}}><i class="fa fa-user-o mr-2" aria-hidden="true"/><strong>Name</strong></label>
                             <div className="form-group">
                                 <input 
                                     type="text" 
-                                    className="form-control" 
+                                    className="form-control border-dark" 
                                     id="floatingInput" 
-                                    placeholder="Enter Guide Nmae"
+                                    placeholder="Enter Guide Name"
                                     name="name"
                                     value={name}
                                     onChange={e=>onInputChange(e)}/>
                             </div>
+
+                            <br/>
  
-                        <label htmlFor="floatingInput" style = {{fontSize:18}}><i class="fa fa-address-card-o mr-2" aria-hidden="true"/><strong>Address</strong></label>
+                        <label htmlFor="floatingInput" style = {{fontSize:17, color:"green"}}><i class="fa fa-address-card-o mr-2" aria-hidden="true"/><strong>Address</strong></label>
                             <div className="form-group">
                                 <input 
                                     type="text" 
-                                    className="form-control" 
+                                    className="form-control border-dark" 
                                     id="floatingInput" 
                                     placeholder="Guide address"
                                     name="address"
                                     value={address}
                                     onChange={e=>onInputChange(e)}/>
                             </div>
+
+                            <br/>
  
-                        <label htmlFor="floatingInput" style = {{fontSize:18}}><i class="fa fa-pencil-square-o mr-2" aria-hidden="true"/><strong>Language</strong></label>
+                        <label htmlFor="floatingInput" style = {{fontSize:17, color:"green"}}><i class="fa fa-pencil-square-o mr-2" aria-hidden="true"/><strong>Language</strong></label>
                             <div className="form-group">
                                 <select name = "language" 
                                     id = "floatingInput" 
-                                    className = "form-control" 
+                                    className = "form-control border-dark" 
                                     placeholder="Guide Language"
                                     value = {language} 
                                     onChange={e=>onInputChange(e)}
@@ -88,24 +94,28 @@ const EditGuide = () => {
                                 </select> 
                             </div>
 
-                        <label htmlFor="floatingInput" style = {{fontSize:18}}><i class="fa fa-envelope-o mr-2" aria-hidden="true"/><strong>E-Mail</strong></label>
+                            <br/>
+
+                        <label htmlFor="floatingInput" style = {{fontSize:17, color:"green"}}><i class="fa fa-envelope-o mr-2" aria-hidden="true"/><strong>E-Mail</strong></label>
                             <div className="form-group">
                                 <input 
                                     type="text" 
-                                    className="form-control" 
+                                    className="form-control border-dark" 
                                     id="floatingInput" 
                                     placeholder="Enter email"
                                     name="email"
                                     value={email}
                                     onChange={e=>onInputChange(e)}/>
                             </div>
+
+                            <br/>
  
-                        <label htmlFor="floatingInput" style = {{fontSize:18}}><i class="fa fa-address-book-o mr-2" aria-hidden="true"/><strong>Contact Number</strong></label>
+                        <label htmlFor="floatingInput" style = {{fontSize:17, color:"green"}}><i class="fa fa-address-book-o mr-2" aria-hidden="true"/><strong>Contact Number</strong></label>
                             <div className="form-group">
                                     <input type="text"
                                     oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
                                     maxlength = "10"     
-                                    className="form-control" 
+                                    className="form-control border-dark" 
                                     id="floatingInput" 
                                     placeholder="enter phone"
                                     name="phone"
@@ -113,7 +123,9 @@ const EditGuide = () => {
                                     onChange={e=>onInputChange(e)}/>
                             </div>
                             <br/>
-                            <button type="submit" className="btn btn-dark"><i class="fa fa-cloud-upload mr-2" aria-hidden="true"></i>
+
+
+                            <button type="submit" className="btn btn-success"><i class="fa fa-cloud-upload mr-2" aria-hidden="true"></i>
                                 Submit Details
                             </button>
                     </form>

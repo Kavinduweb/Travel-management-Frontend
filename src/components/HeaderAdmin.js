@@ -95,7 +95,7 @@ function HeaderAdmin() {
               }}
             >
               {" "}
-              Dream Travelers (pvt) Admin DashBord
+              Dream Travelers Admin DashBord
             </h1>
           </div>
 

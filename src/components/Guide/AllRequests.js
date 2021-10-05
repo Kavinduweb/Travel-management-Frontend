@@ -34,21 +34,19 @@ class ComponentToPrint extends React.Component{
     return (
       <div>
         <HeaderAdmin/>
-        <section id="watermark">
-        <div className="info">
-            <br/>
-            
+        <br/>
+        <div className="info" style={{marginTop:-1}}>
             <ReactToPrint
                 trigger={() =>
                 <button type="button" 
                 class="btn btn-success" 
-                style={{marginLeft:1153}}>
+                style={{marginLeft:1170}}>
                 <i class="fa fa-print mr-2"></i>Print this out!
                 </button> 
             }
             content={(Component) => this.componentRef}
         />
-            <hr/>
+       
             <div className="container" ref={(Component) => (this.componentRef = Component)}>
                     <section id="report">
                         
@@ -88,7 +86,7 @@ class ComponentToPrint extends React.Component{
                     </section>
             </div> 
         </div>  
-        </section>      
+         
       </div>
       
     );
