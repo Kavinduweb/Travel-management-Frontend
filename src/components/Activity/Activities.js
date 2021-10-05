@@ -47,7 +47,7 @@ const Activities = () => {
                 marginlnlineStart: "14%",
                 marginLeft: "990px",
                 marginTop: "-50px",
-                background: "#ADD8E6"
+                background: "#ADD8E6",
               }}
               placeholder="Search Activity"
               onChange={(e) => setSearch(e.target.value)}
@@ -82,7 +82,7 @@ const Activities = () => {
             <Row xs={1} md={3} className="g-4" id="by" className="rounded">
               {filterdActivity.map((activity) => (
                 <Col>
-                  <div className="card-group py-3" >
+                  <div className="card-group py-3">
                     <div className="card" style={{ borderRadius: "15px" }}>
                       <img
                         src={`/uploads/${activity.activityImage}`}
