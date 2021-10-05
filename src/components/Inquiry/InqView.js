@@ -33,7 +33,7 @@ export default function InqView (){
                 window.location.replace("/inqD/" + mongoid)
 
            }
-           if(res=false) {
+           else{
                 window.location.replace("/add")  
            }
            
@@ -55,21 +55,34 @@ export default function InqView (){
     return(
         <div >
             <Header/>
-            <body className="vj">
 
+            <div className="info">
+            
+            <body className="vj">
+            <br/>
                 <div >
+                <br/>
 		            <form className="needs-validation-view"   >
 			
-                    <h3>Enter Your National Identity Card Number (NIC)</h3>
+                    <h2 className="nam">Enter Your National Identity Card Number (NIC)</h2>
                         <hr/>
-			            <input type="text" id ="nic" placeholder="NIC" value={nic} onChange={(e)=>{  setNic(e.target.value) ; }}/>
-                        <br/>
+			            <input className="form-control" type="text" id ="nic" placeholder="NIC" value={nic} onChange={(e)=>{  setNic(e.target.value) ; }}/>
+                        
                         <a>
-			                <button  className="btn mt-3 btn-dark"  style={{textDecoration:'none',color:'white'}} onClick={getData}>
-                            <i className="fa fa-arrow-circle-right"></i> Submit
+			                <button  className="btn mt-3 btn-dark btn-block"  style={{textDecoration:'none',color:'white'}} onClick={getData}>
+                            <i  class="fa fa-id-card" aria-hidden="true"> </i> Submit
                             </button>
                         </a>
                     </form>
+
+                    <br/>
+                    <br/>
+                    <br/>
+                    <br/>
+                    <br/>
+                    <br/>
+                    <br/>
+                  
 
                     < div style={{visibility: 'hidden'}} >
                         <h1 id="name" ></h1>
@@ -80,6 +93,7 @@ export default function InqView (){
                     </div>
 	            </div>
                 </body>
+                </div>
                 <Footer/>
             </div>
          

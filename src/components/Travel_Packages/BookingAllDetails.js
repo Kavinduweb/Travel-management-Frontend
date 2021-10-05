@@ -24,7 +24,6 @@ class ComponentToPrint extends React.Component {
           this.setState({
             posts: res.data.allBookings,
           });
-          console.log(this.state.packagebooking);
         }
       });
   }
@@ -35,6 +34,8 @@ class ComponentToPrint extends React.Component {
       const isReversed = sortType === "asc" ? 1 : -1;
       return isReversed * a.packagename.localeCompare(b.packagename);
     });
+
+
     return (
       <div>
         <HeaderAdmin />

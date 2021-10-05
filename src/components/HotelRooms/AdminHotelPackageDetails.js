@@ -44,7 +44,7 @@ render(){
     return(
       <div>
         <HeaderAdmin/>
-          <div className="info">
+          <div className="infoadmin">
               <div className="col-md-8 mt-4 mx-auto">
                     <div class="adfor">
                       <h1 className="h3 mb-3 font-weight-normal" id="tpic">Edit Room Details</h1>

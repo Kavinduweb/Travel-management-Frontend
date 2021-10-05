@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
 import axios from 'axios';
+import HeaderAdmin from '../HeaderAdmin';
+import { Hidden } from '@material-ui/core';
 
 export default class AdminRep extends Component{
 
@@ -90,11 +92,15 @@ export default class AdminRep extends Component{
 
     render(){
         return(
+            <div>
+                <HeaderAdmin/>
             
-            <div className="col-md-8 mt-4 mx-auto">
+            <div className="vj">
+
+                <div className="infoadmin">
                
-                <form className="needs-validation" noValidate  id="form">  
-                <h1 className="h3 mb-3 front-weight-normal"> Add Reply</h1>
+                <form className="needs-validation-view" noValidate  id="form">  
+                <h1 className="nam"> Add Reply</h1>
                 <hr/>
                     <div className="form-group" style={{marginBottom:'15px'}}>
                         <label style={{marginBottom:'5px'}}>Reply To the Inquiry</label>
@@ -116,6 +122,20 @@ export default class AdminRep extends Component{
                     </button>
 
             </form>
+
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <div style={{visibility: 'hidden'}}>
+            <br/>
+            <br/>
+            <p>aaaaaaaaaaaaaaaaaaaaaaaaa</p>
+            </div>
+            </div>
+            
+         </div>
+            
          </div>
         )
 

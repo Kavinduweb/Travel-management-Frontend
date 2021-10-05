@@ -1,7 +1,8 @@
 import React from "react";
 import axios from 'axios'
+import styled from 'styled-components';
 import ReactToPrint from "react-to-print";
-
+import HeaderAdmin from '../HeaderAdmin';
 
 class ComponentToPrint extends React.Component{
 
@@ -30,10 +31,25 @@ class ComponentToPrint extends React.Component{
 
   render() {
     return (
-    
+      <div>
+        <HeaderAdmin/>
+        <SelectContainer>
       <div className="info">
+             <ReactToPrint
+          trigger={() =>
+            <button type="button" 
+            className="btn btn-outline-secondary"
+            style={{marginLeft:1336}}>
+          
+            <i class="fas fa-print mr-2"></i>Generate Report
+            </button> 
+          }
+
+          content={(Component) => this.componentRef}
+        />
+            <div className="container" ref={(Component) => (this.componentRef = Component)}>
       <div className="container">
-      <h2> Activity Select Details</h2>
+      <h2> Print Select Details</h2>
         <hr/>
          
         <table class="table">
@@ -44,7 +60,7 @@ class ComponentToPrint extends React.Component{
         <th scope="col">Price</th>
         <th scope="col">Name</th>
         <th scope="col">Phone Number</th>
-        <th scope="col">Content</th>
+        <th scope="col">Quantity</th>
         <th scope="col">Booking Date</th>
        
       </tr>
@@ -66,35 +82,25 @@ class ComponentToPrint extends React.Component{
       
     </tbody>
   </table>
-  
-  
    </div>
       </div>
-  
-
-
+   
+</div>
+</SelectContainer>
+</div>
 
     );
-  }
+}
 }
 
-class Example extends React.Component {
-  render() {
-    return (
-      <div>
-        <ReactToPrint
-          trigger={() =>
-            
-          
-            <button type="button" class="btn btn-secondary" style={{marginLeft:1100}}><i class="fas fa-print mr-2"></i>Print this out!</button> }
-          
-          content={(Component) => this.componentRef}
-        />
-     
-        <ComponentToPrint ref={(Component) => (this.componentRef = Component)}  />
-      </div>
-    );
-  }
-}
+export default ComponentToPrint;
 
-export default Example;
+//MAIN CONTAINER
+const SelectContainer = styled.div`
+button{
+margin: 1rem auto;
+padding: 1rem 1rem;
+height: 3rem;
+
+}
+`;

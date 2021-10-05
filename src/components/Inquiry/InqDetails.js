@@ -52,12 +52,13 @@ export default class InqDetails extends Component{
            
             <div >
                 <Header/>
+                <div className="info">
                 <body className="vj">
                 <div >
                <form className="oneDetail3" id="form">
                
            
-               <h1>Your Inquiry Details</h1>
+               <h1 className="nam">Your Inquiry Details</h1>
                 <hr/>
                     
                     <tr className="col-sm-3">Name &nbsp;: &nbsp;{name}</tr>
@@ -105,8 +106,8 @@ export default class InqDetails extends Component{
                         </a>
                         &nbsp;
                         <a  href={"/inqmail/"+this.state.post._id}>
-                            <button className="btn btn-warning" type="button" style={{margintop:'15px'}} > 
-                            <i className="fas fa-edit"></i>&nbsp; Get Email
+                            <button className="btn btn-dark" type="button" style={{margintop:'15px'}} > 
+                            <i class="fa fa-envelope" aria-hidden="true"></i>&nbsp; Get Email
                             </button>
                         </a>
 
@@ -115,7 +116,7 @@ export default class InqDetails extends Component{
 
 
 
-                <form className="oneDetail3" id="form">
+                <form className="oneDetail4" id="form">
                 <div className="form-group" style={{marginBottom:'15px'}}>
                         <div className="hed">
                         <i class="fa fa-comments" aria-hidden="true"></i> &nbsp;
@@ -139,6 +140,7 @@ export default class InqDetails extends Component{
                 
             </div>
             </body>
+            </div>
             <Footer/>
             </div>
         )

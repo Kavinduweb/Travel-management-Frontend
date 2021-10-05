@@ -61,7 +61,7 @@ export default function PayView (){
 
                 <div className="info container" >
 
-		            <form className="needs-validation-view" style={{backgroundColor:"hsl(172, 50%, 50%,0.2)" ,marginTop:"150px", marginLeft:"200px"}}   >
+		            <form className="needs-validation-payment" style={{backgroundColor:"hsl(172, 50%, 50%,0.2)" ,marginTop:"150px", marginLeft:"200px"}}   >
 			
                     <h3>Enter Your  Card Number </h3>
                         <hr/>

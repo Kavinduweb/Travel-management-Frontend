@@ -14,7 +14,7 @@ export default class PaymentDetails extends Component{
 
     onDelete = (id)=>{
         // eslint-disable-next-line no-restricted-globals
-        if(confirm("Are you Sure you want to delete this item?")){
+        if(confirm("Are you Sure you want to delete your payment?")){
      axios.delete(`http://localhost:8070/payment/delete/${id}`).then((res)=>{
        alert("Delete Successfully");
       window.location.replace("/")
@@ -41,7 +41,7 @@ export default class PaymentDetails extends Component{
             <div>
                 <Header/>
            
-            <div className="info" style={{marginTop:'20px', marginInlineStart:'20%'}}>
+            <div className="info" style={{ marginInlineStart:'20%'}}> <br/>
                 <h4>{name}</h4>
                  <hr/>
                  <dl className="row">

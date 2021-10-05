@@ -3,7 +3,7 @@ import ReactToPrint from "react-to-print";
 import axios from 'axios';
 import Header from '../Header';
 import Footer from '../Footer';
-
+import Sub from './goldpack';
 
 export default class UserProfile extends Component {
 
@@ -85,6 +85,9 @@ export default class UserProfile extends Component {
         return(
            <div>
                <Header/>
+               <div style={{marginTop:"100px"}}>
+               <Sub/>
+               
             <div className="body1">
                 <div className="info">
             <div style={{marginLeft:300}}> 
@@ -112,6 +115,7 @@ export default class UserProfile extends Component {
 
                 <Footer/>
 
+                </div>
                 </div>
               
         )

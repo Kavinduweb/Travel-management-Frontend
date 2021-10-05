@@ -1,16 +1,19 @@
 import React, {Component} from 'react'
 import axios from "axios";
 import '../../Styles/Payment.css'
+import { Form,Button,Col,Row,InputGroup } from "react-bootstrap";
 import { reference } from '@popperjs/core';
 import Header from '../Header';
 import Footer from '../Footer';
 
 export default class PayForTravelPackage extends Component{
 
-
+  
     
   constructor(props){
     super(props)
+
+    
 
     this.onChangeReference =this.onChangeReference.bind(this);
     this.onChangeName =this.onChangeName.bind(this);
@@ -21,8 +24,11 @@ export default class PayForTravelPackage extends Component{
     this.onChangeNo=this.onChangeNo.bind(this);
     this.onChangeAmount=this.onChangeAmount.bind(this);
 
+   
+
 
     this.state={
+      validated:false,
       packageName:"",
       price:"",
       img:"",
@@ -59,7 +65,7 @@ export default class PayForTravelPackage extends Component{
 
   }
 
-
+    
 
     onChangeReference (e){
       this.setState({reference:e.target.value})
@@ -90,6 +96,14 @@ export default class PayForTravelPackage extends Component{
   
 
     onSubmit= (e)=>{
+      const form = e.currentTarget;
+    if (form.checkValidity() === false) {
+    e.preventDefault();
+    e.stopPropagation();
+  }
+  else{
+
+  
       e.preventDefault();
       
       console.log('Payment Added');
@@ -119,8 +133,10 @@ window.location.replace("/confirm/payment")
           )
           }
         })
-     )}
-
+          )}
+          this.setState({ validated: true })
+        }
+      
  render(){
 
     const{packageName,price,payf,method,img,tdate,noofD,noofN}=this.state;
@@ -174,7 +190,7 @@ window.location.replace("/confirm/payment")
                         <div >&nbsp;&nbsp; &nbsp;&nbsp; 
                              <img src="https://img.icons8.com/color/48/000000/visa.png" /> <img src="https://img.icons8.com/color/48/000000/mastercard-logo.png" /> <img src="https://img.icons8.com/color/48/000000/maestro.png" /> </div>
                   </div></div>
-                    <form onSubmit={this.onSubmit}>
+                    <Form noValidate validated={this.state.validated} onSubmit={this.onSubmit}>
             
 
             <div class="row mb-2" >
@@ -216,7 +232,10 @@ window.location.replace("/confirm/payment")
                     class="form-control form-control-lg"
                     name="name" placeholder="Card Holder Name" required ="required"
            value={this.state.name} onChange={this.onChangeName}
-                  /></div>
+                  />
+                 <Form.Control.Feedback type="invalid">
+              Please provide Card Holder Name
+            </Form.Control.Feedback> </div>
                
             </div>
 
@@ -226,11 +245,11 @@ window.location.replace("/confirm/payment")
          <label class="form-label fw-bold" > <i class="fas fa-plane mr-3"></i>Card Type :</label>  
               <div class="form-outline mb-2 col-9">
               &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <input className="form-check-input" type="radio" id="flexRadioDefault1" value="Visa" checked={method==="Visa"} onChange={this.onChangeMethod}/> 
+            <input className="form-check-input" type="radio"  id="flexRadioDefault1" value="Visa" checked={method==="Visa"} onChange={this.onChangeMethod}/> 
             &nbsp;&nbsp;
             <label className="form-check-label" for="flexRadioDefault1"><b> Visa</b></label>
             &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;
-            <input className="form-check-input" type="radio" id="flexRadioDefault1" value="MasterCard" checked={method==="MasterCard"} onChange={this.onChangeMethod}/> 
+            <input className="form-check-input" type="radio"  id="flexRadioDefault1" value="MasterCard" checked={method==="MasterCard"} onChange={this.onChangeMethod}/> 
             &nbsp;&nbsp;
             <label className="form-check-label" for="flexRadioDefault1"><b> Master Card</b></label>
                 
@@ -248,7 +267,10 @@ window.location.replace("/confirm/payment")
                     class="form-control form-control-lg"
                     name="card" placeholder="Enter Card Number"
                     value={this.state.card} onChange={this.onChangeCard} maxLength="12" required ="required"
-                  /></div>
+                  /> 
+                  <Form.Control.Feedback type="invalid">
+              Please provide a valid Card Number
+            </Form.Control.Feedback></div>
                
             </div>
 
@@ -263,7 +285,9 @@ window.location.replace("/confirm/payment")
                     id="formControlLgExpk"
                     class="form-control form-control-lg"
                     placeholder="MM/YY" value={this.state.time} onChange={this.onChangeTime}  required ="required"
-                  /></div>&nbsp;&nbsp;&nbsp;&nbsp;
+                  /><Form.Control.Feedback type="invalid">
+                  Please the provide the date
+                </Form.Control.Feedback></div>&nbsp;&nbsp;&nbsp;&nbsp;
              
              <label class="form-label fw-bold" > <i class="fas fa-plane mr-3"></i>CVV&nbsp;&nbsp;</label>  
               <div class="form-outline mb-2 col-3">
@@ -271,12 +295,15 @@ window.location.replace("/confirm/payment")
                     type="text"
                     id="formControlLgcvv"
                     class="form-control form-control-lg"
-                    placeholder="CVV" value={this.state.no} onChange={this.onChangeNo} maxLength="3" required ="required" />   </div>
+                    placeholder="CVV" value={this.state.no} onChange={this.onChangeNo} maxLength="3" required ="required" /> 
+                    <Form.Control.Feedback type="invalid">
+              Please provide a valid CVV
+            </Form.Control.Feedback>  </div>
           </div>
 
 
             <button type="submit" class="btn btn-danger btn-lg btn-block" style={{height:"43px"}}><b>Pay Now</b></button>
-          </form>
+          </Form>
 
                 </div>
             </div>

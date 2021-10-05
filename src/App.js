@@ -63,6 +63,7 @@ import PayForEquipment from './components/Payment/PayForEquipment';
 import PayForTP from './components/Payment/PayForTP';
 import PaymentConfirm from './components/Payment/PaymentComplete';
 import forget from './components/Kavindu/ForgetPass';
+import resetpass from './components/Kavindu/resetpass';
 import CreateInquiry from './components/Inquiry/CreateInquiry';
 import EditInquiry from './components/Inquiry/EditInquiry';
 import InquiryAll from './components/Inquiry/InquiryAll';
@@ -79,6 +80,7 @@ import SearchHotelBooking from './components/HotelRooms/SearchHotelBooking';
 import UserHotelBookingDetails from './components/HotelRooms/UserHotelBookingDetails';
 import EditTPackage from './components/Travel_Packages/EditPackage2';
 import {BrowserRouter as Router, Route} from "react-router-dom"
+import pay from './components/Kavindu/pay';
 
 
 function App() {
@@ -154,6 +156,7 @@ function App() {
       <Route path="/activity-user/:id" exact component={ActivityUser} />
       <Route path="/activity-select" exact component={ActivitySelect} />
       <Route path="/forget" exact component={forget} />
+      <Route path="/reset/:id" exact component={resetpass} />
       <Route path="/add" exact component={CreateInquiry}></Route>
       <Route path="/editinq/:id" component= {EditInquiry}></Route>
       <Route path="/allinq" component= {InquiryAll}></Route>
@@ -163,15 +166,13 @@ function App() {
       <Route path="/adView/" component= {AdminView}></Route>
       <Route path="/report" component= {ComponentToPrint}></Route>
       <Route path="/userDoc/:id" component= {ComponentToPrint1}></Route>
+      <Route path="/subscribe" component= {pay}></Route>
       <Route path="/userhotelbooking/View" exact component = {SearchHotelBooking}></Route>
       <Route path="/UserHotelBookingDetails/:id" exact component = {UserHotelBookingDetails}></Route>
       <Route path="/edittpackage/:id" component= {EditTPackage}></Route>
       <Route path="/inqmail/:id" component= {Inqmail}></Route>
       <Route path="/adminDet/:id" component= {AdminDetails}></Route>
 
-
-
-    
     </div>
     </Router>
     

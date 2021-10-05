@@ -71,6 +71,14 @@ export default class EditHotelBooking extends Component{
         });
       }
 
+      disablePastDate = () => {
+        const today = new Date();
+        const dd = String(today.getDate() + 1).padStart(2, "0");
+        const mm = String(today.getMonth() + 1).padStart(2, "0");
+        const yyyy = today.getFullYear();
+        return yyyy + "-" + mm + "-" + dd;
+    };
+
 
     render(){
         return(
@@ -148,6 +156,7 @@ export default class EditHotelBooking extends Component{
                                                                 <input type="date"
                                                                 required
                                                                 className="form-control"
+                                                                min={this.disablePastDate()}
                                                                 name="arrivalDate"
                                                                 placeholder="YY/MM/DD"
                                                                 value={this.state.arrivalDate}
@@ -160,6 +169,7 @@ export default class EditHotelBooking extends Component{
                                                                     <input type="date"
                                                                     required
                                                                     className="form-control"
+                                                                    min={this.disablePastDate()}
                                                                     name="departureDate"
                                                                     placeholder="YY/MM/DD"
                                                                     value={this.state.departureDate}

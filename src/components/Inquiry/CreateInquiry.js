@@ -52,26 +52,27 @@ export default class CreateInquiry extends Component{
                 alert('Please enter Your Name')
                 return false;
         }
-           
+        else if (nic1.length < 8){
+            alert('Please enter a valid NIC')
+            return false;
+        }
         
+        else if (phone1.value === '' || phone1.value == null){
+            alert('Please enter Your Phone Number')
+            return false;
+    } 
          else if(email1 == '' || email1.includes('@' && '.') == false ){
 
-            alert("Enter Valid email Address")
+            alert("Please enter valid Email Address")
            return false;
            
         }
-            else if (phone1.value === '' || phone1.value == null){
-                alert('Please enter Your Phone Number')
-                return false;
-        } 
+            
             else if (inq1.value === '' || inq1.value == null){
                 alert('Please enter Your Inquiry')
                 return false;
         }
-            else if (nic1.length < 3){
-                alert('Please enter')
-                return false;
-            }
+           
 
         const {name,nic,phone,email,inq} = this.state;
 
@@ -119,12 +120,13 @@ export default class CreateInquiry extends Component{
         return(
             <div >
                 <Header/>
+                <div className="info"> 
             <div className="vj" >
             
             <div className="needs-validation">
           
                 <form  noValidate  >
-                <h2 > Create New Inquiry</h2>
+                <h1 className="nam"> Create New Inquiry</h1>
                 <hr/>
 
                     <div className="" style={{marginBottom:'15px'}} >
@@ -209,6 +211,7 @@ export default class CreateInquiry extends Component{
       
             </div>
         </div> 
+        </div>
         <Footer/>
         </div>   
         )

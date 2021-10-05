@@ -88,14 +88,14 @@ function Header() {
           </a>
         </div>
       </div>
-
       <div class="main_content">
+      <header  class="fixed-top">
         <div class="header">
         
      
           <div>
             <div id="hname">
-              <h1>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b> Dream Travelers (pvt)</b> </h1>
+              <h1>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b> Dream Travelers (pvt)</b></h1> 
             </div>
 
         <div id="logott">
@@ -106,6 +106,11 @@ function Header() {
                 {" "}
                 <i class="fas fa-plane-departure"> </i>
               </a>
+            </div>
+
+            <div id="dateandtime">
+            <p>  {new Date().getFullYear()} : {new Date().getMonth()} : {new Date().getDate()} - {new Date().toLocaleTimeString()}</p>
+
             </div>
 
             <div id="login">
@@ -145,7 +150,10 @@ function Header() {
             </li>
           </div>
         </div>
+
+        </header>
       </div>
+    
     </div>
   );
 }

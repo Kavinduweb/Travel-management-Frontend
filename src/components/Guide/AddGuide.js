@@ -6,6 +6,8 @@ import HeaderAdmin from '../HeaderAdmin'
 
 
 
+
+
 const AddGuide = ()=>{
 
      let history = useHistory();
@@ -61,139 +63,153 @@ const AddGuide = ()=>{
     return(
        <div>
        <HeaderAdmin/>
+       <br/>
        <div class = "infoadmin">
-       <section id="add">
-        <div className = "jumbotron">
-              <div className = "w-50 mx-auto shadow p-5">
-                     <h2 className = "text- mb-10"><b>Add New Guide</b></h2>
+              <section id="add">
+                     <div className = "w-50 mx-auto shadow p-5">
+                            <h2 className = "text text- mb-10"><b>Add New Guide</b></h2>
+                            <hr/>
 
-                     <hr/>
+                            <form onSubmit = {changeOnClick} encType = "multipart/form-data">
 
-                     <form onSubmit = {changeOnClick} encType = "multipart/form-data">
-                            <label htmlFor = "floatingInput"><strong>Name</strong></label>
-                            <div className = "form-group">
-                                   <input 
-                                   type = "text" 
-                                   className = "form-control" 
-                                   id = "floatingInput" 
-                                   placeholder = "Enter Name"
-                                   name = "name"
-                                   value = {name}
-                                   onChange = {(e)=>setName(e.target.value)}
-                                   required = "required" />     
-                            </div>
-
-                           
-                            <label htmlFor = "floatingInput"><strong>Address</strong></label>
-                            <div className = "form-group">
-                                   <input 
-                                   type = "text" 
-                                   className = "form-control" 
-                                   id = "floatingInput" 
-                                   placeholder = "Enter Address"
-                                   name = "address"
-                                   value = {address}
-                                   onChange = {(e)=>setAddress(e.target.value)}
-                                   required = "required" /> 
-                            </div>
-
-                           
-
-                            <label htmlFor = "floatingInput"><strong>Language</strong></label>
-                            <div className = "form-group">
-                                   <select name = "language" 
-                                   id = "floatingInput" 
-                                   className = "form-control" 
-                                   value = {language} 
-                                   onChange = {(e)=>setLanguage(e.target.value)}
-                                   required = "required"> 
-                                          <option>Select</option>
-                                          <option>Sinhala</option>
-                                          <option>English</option>
-                                          <option>Tamil</option>
-                                   </select> 
-                            </div>
-
-
-                            <label htmlFor = "floatingInput"><strong>E-Mail</strong></label>
-                            <div className = "form-group">
-                                   <input 
-                                   type = "email" 
-                                   className = "form-control" 
-                                   id = "floatingInput" 
-                                   placeholder = "Enter E-Mail"
-                                   name = "email"
-                                   value = {email}
-                                   onChange = {(e)=>setEmail(e.target.value)}
-                                   required = "required" /> 
-                            </div>
-
-                     
-                            <label htmlFor = "floatingInput"><strong>Contact Number</strong></label>
-                            <div className = "form-group">
-                                   <input 
-                                   type = "text" 
-                                   className = "form-control" 
-                                   id = "floatingInput" 
-                                   placeholder = "Enter Contact Number"
-                                   name = "phone"
-                                   size = "10"
-                                   value = {phone}
-                                   onChange = {(e)=>setPhone(e.target.value)}
-                                   required = "required" /> 
-                            </div>
-
-                            
-                            <label htmlFor = "floatingInput"><strong>Username</strong></label>
-                            <div className = "form-group">
-                                   <input 
-                                   type = "text" 
-                                   className = "form-control" 
-                                   id = "floatingInput" 
-                                   placeholder = "Enter Username"
-                                   name = "username"
-                                   value = {username}
-                                   onChange = {(e)=>setUsername(e.target.value)}
-                                   required = "required" /> 
-                            </div>
-
-                            
-
-                            <label htmlFor = "floatingInput"><strong>Password</strong></label>
-                            <div className = "form-group">
-                                   <input 
-                                   type = "password" 
-                                   className = "form-control" 
-                                   id = "floatingInput" 
-                                   placeholder = "Enter Password"
-                                   name = "password"
-                                   value = {password}
-                                   onChange = {(e)=>setPassword(e.target.value)}
-                                   required = "required" /> 
-                            </div>
-
-                            <lable htmlFor = "floatingInput"><b>Select Image</b>
-                                   <br/>
-                                   <div class="mb-3">
-                                          <input class="form-control" 
-                                          type="file" 
-                                          id="formFile" 
-                                          filename="guideImage" 
-                                          onChange={onChangeFile}
-                                          required = "required" />
+                                   <label htmlFor = "floatingInput" style = {{fontSize:18}}><i class="fa fa-user-plus mr-2" aria-hidden="true"></i>
+                                   <strong>Name</strong></label>
+                                   <div className = "form-group">
+                                          <input 
+                                          type = "text" 
+                                          className = "form-control" 
+                                          id = "floatingInput" 
+                                          placeholder = "Enter Name"
+                                          name = "name"
+                                          value = {name}
+                                          onChange = {(e)=>setName(e.target.value)}
+                                          required />     
                                    </div>
-                            </lable> 
-                            <br/>
-                            <button type = "submit" className = "btn btn-primary">Add Guide</button>
+
+                           
+                                   <label htmlFor = "floatingInput" style = {{fontSize:18}}><i class="fa fa-address-card-o mr-2" aria-hidden="true"></i>
+                                   <strong>Address</strong></label>
+                                   <div className = "form-group">
+                                          <input 
+                                          type = "text" 
+                                          className = "form-control" 
+                                          id = "floatingInput" 
+                                          placeholder = "Enter Address"
+                                          name = "address"
+                                          value = {address}
+                                          onChange = {(e)=>setAddress(e.target.value)}
+                                          required /> 
+                                   </div>
+
+
+                                   <label htmlFor = "floatingInput" style = {{fontSize:18}}><i class="fa fa-pencil-square-o mr-2" aria-hidden="true"></i>
+                                   <strong>Language</strong></label>
+                                   <div className = "form-group">
+                                          <select name = "language" 
+                                                 id = "floatingInput" 
+                                                 className = "form-control" 
+                                                 value = {language} 
+                                                 onChange = {(e)=>setLanguage(e.target.value)}
+                                                 required > 
+                                                 <option>Select</option>
+                                                 <option>Sinhala</option>
+                                                 <option>English</option>
+                                                 <option>Tamil</option>
+                                          </select> 
+                                   </div>
+
+
+                                   <label htmlFor = "floatingInput" style = {{fontSize:18}}><i class="fa fa-envelope-o mr-2" aria-hidden="true"></i>
+                                   <strong>E-Mail</strong></label>
+                                   <div className = "form-group">
+                                          <input 
+                                          type = "email" 
+                                          className = "form-control" 
+                                          id = "floatingInput" 
+                                          placeholder = "Enter E-Mail"
+                                          name = "email"
+                                          value = {email}
+                                          onChange = {(e)=>setEmail(e.target.value)}
+                                          required /> 
+                                   </div>
+
                             
-                     </form>
-              </div>
-       </div>
-       </section>
+                                   <label htmlFor = "floatingInput" style = {{fontSize:18}}><i class="fa fa-address-book-o mr-2" aria-hidden="true"></i>
+                                   <strong>Contact Number</strong></label>
+                                   <div className = "form-group">
+                                          <input type="text"
+                                          oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
+                                          maxlength = "10"           
+                                          className = "form-control" 
+                                          id = "floatingInput" 
+                                          placeholder = "Enter Contact Number"
+                                          name = "phone"
+                                          value = {phone}
+                                          onChange = {(e)=>setPhone(e.target.value)}
+                                          required /> 
+                                   </div>
+
+                            
+                                   <label htmlFor = "floatingInput" style = {{fontSize:18}}><i class="fa fa-user-o mr-2" aria-hidden="true"></i>
+                                   <strong>Username</strong></label>
+                                   <div className = "form-group">
+                                          <input 
+                                          type = "text" 
+                                          className = "form-control" 
+                                          id = "floatingInput" 
+                                          placeholder = "Enter Username"
+                                          name = "username"
+                                          value = {username}
+                                          onChange = {(e)=>setUsername(e.target.value)}
+                                          required /> 
+                                   </div>
+
+                            
+
+                                   <label htmlFor = "floatingInput" style = {{fontSize:18}}><i class="fa fa-unlock-alt mr-2" aria-hidden="true"></i>
+                                   <strong>Password</strong></label>
+                                   <div className = "form-group">
+                                          <input 
+                                          type = "password" 
+                                          className = "form-control" 
+                                          id = "floatingInput" 
+                                          placeholder = "Enter Password"
+                                          name = "password"
+                                          value = {password}
+                                          onChange = {(e)=>setPassword(e.target.value)}
+                                          required /> 
+                                   </div>
+
+                                   <lable htmlFor = "floatingInput" style = {{fontSize:18}}><i class="fa fa-file-image-o mr-2" aria-hidden="true"></i>
+                                   <b>Select Image</b>
+                                          <br/>
+                                          <div class="mb-3">
+                                                 <input class="form-control" 
+                                                 type="file" 
+                                                 id="formFile" 
+                                                 filename="guideImage" 
+                                                 onChange={onChangeFile}
+                                                 required />
+                                          </div>
+                                   </lable> 
+
+                                   <br/>
+
+                                   <button type = "submit" className = "btn btn-success">
+                                          <i class="fa fa-plus mr-2" aria-hidden="true"></i>
+                                          Add Guide
+                                   </button>
+                            
+                            </form>
+                     </div>
+              </section>
        </div>
        
-       </div>
-    );
+</div>
+
+);
+
 };
  
+
 export default AddGuide;

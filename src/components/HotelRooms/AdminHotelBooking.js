@@ -36,7 +36,7 @@ class ComponentToPrint extends React.Component{
     return (
       <div>
         <HeaderAdmin/>
-          <div className="info">
+          <div className="infoadmin">
             <div className="pad">
             <ReactToPrint
               trigger={() => <button  class="prntbtn" >Make a Report</button> }

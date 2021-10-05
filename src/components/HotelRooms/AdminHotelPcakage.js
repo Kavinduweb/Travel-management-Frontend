@@ -43,7 +43,7 @@ export default class AdminHotelBooking extends Component{
         return(
           <div>
             <HeaderAdmin/><br></br><br></br>
-              <div className="info">
+              <div className="infoadmin">
                 <div class="addbttn">
                   <button className="btn btn-success">
                     <a href="/adminaddhotelpackage" style={{textDecoration:'none' ,color:'white'}}>
@@ -82,7 +82,7 @@ export default class AdminHotelBooking extends Component{
                     </div>
                     </figure>
                   </section>
-                ))}            
+                ))}    <br/><br/><br/><br/>        
               </div>
           </div>
         )

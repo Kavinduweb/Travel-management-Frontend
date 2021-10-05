@@ -91,7 +91,7 @@ export default class EditPayment extends Component{
         if(res.data.success){
           alert("Payemt updated successfully")
           this.setState(
-            window.location.replace("/payment")
+            window.location.replace(`/payment/details/${id}`)
           )
 
           }
@@ -141,7 +141,7 @@ export default class EditPayment extends Component{
         
        <br/> <h1 className="h3 mb- font-weight-normal">Update Payment</h1>
          
-         <form className="needs-validation" noValidate>
+         <form className="needs-validation-payment" noValidate>
            <div className="form-group" style={{marginBottom:'15px'}}>
              <label style={{marginBottom:'5px'}}>Reference</label>
              <input type="text" className="form-control" name="reference" placeholder="Edit Reference" required ="required"

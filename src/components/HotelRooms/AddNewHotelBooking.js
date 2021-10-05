@@ -1,6 +1,8 @@
 import React, {Component } from 'react';
 import axios from 'axios';
-import '../../Styles/HotelRoomStyle.css'
+import '../../Styles/HotelRoomStyle.css';
+import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
 import Header from '../Header';
 import Footer from '../Footer';
 
@@ -65,6 +67,13 @@ axios.post("http://localhost:8070/hotelbooking/add",data).then((res)=>{
 })
  }
 
+ disablePastDate = () => {
+    const today = new Date();
+    const dd = String(today.getDate() + 1).padStart(2, "0");
+    const mm = String(today.getMonth() + 1).padStart(2, "0");
+    const yyyy = today.getFullYear();
+    return yyyy + "-" + mm + "-" + dd;
+};
 
 
     render(){
@@ -149,7 +158,7 @@ axios.post("http://localhost:8070/hotelbooking/add",data).then((res)=>{
                                                                     className="form-control"
                                                                     name="arrivalDate"
                                                                     placeholder="YY/MM/DD"
-                                                                    min="2021-10-05"
+                                                                    min={this.disablePastDate()}
                                                                     value={this.state.arrivalDate}
                                                                     onChange={this.handleInputChange}/>
                                                             </div>
@@ -159,9 +168,10 @@ axios.post("http://localhost:8070/hotelbooking/add",data).then((res)=>{
                                                                 <span class="form-label">Check out</span>
                                                                     <input type="date"
                                                                     required
-                                                                    className="form-control"
+                                                                    className="datepicker form-control"
                                                                     name="departureDate"
                                                                     placeholder="YY/MM/DD"
+                                                                    min={this.disablePastDate()}
                                                                     value={this.state.departureDate}
                                                                     onChange={this.handleInputChange}/>
                                                             </div>
