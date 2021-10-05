@@ -63,6 +63,7 @@ const AddGuide = ()=>{
     return(
        <div>
        <HeaderAdmin/>
+       <br/>
        <div class = "infoadmin">
               <section id="add">
                      <div className = "w-50 mx-auto shadow p-5">
