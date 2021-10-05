@@ -76,14 +76,17 @@ export default class Inqmail extends Component{
     render(){
         return(
             <div >
+
                 <Header/>
+                <div className="info">
                 <div className="vj" onSubmit={this.onSubmit}>
+
                 
                 <form  noValidate>
                 
 
-                <div className="needs-validation" style={{marginBottom:'15px'}}>
-                <h1 >Confirm Your Email</h1>
+                <div className="needs-validation-view" >
+                <h1 className="nam">Confirm Your Email</h1>
                 <hr/>
                         <label style={{marginBottom:'5px'}}>Email</label>
                         <input type="text" 
@@ -91,15 +94,18 @@ export default class Inqmail extends Component{
                         name="email"
                         placeholder="Enter Your Email"
                         value={this.state.email} 
+                        style={{marginBottom:'10px'}}
                        />
-                    </div>
-
                     
-                    <button class="btn btn-dark" type="submit" style={{margintop:'15px'}} >
-                    <i className="fa fa-chevron-circle-right"></i>    
+                    <button class="btn btn-dark btn-block" type="submit" style={{margintop:'15px'}} >
+                    <i class="fa fa-envelope" aria-hidden="true"></i>    
                     &nbsp; Send Inquiry to Email  
                     
                     </button>
+                    </div>
+
+                    
+                   
 
 
                     <div className="form-group" style={{marginBottom:'15px'}}style={{visibility: 'hidden'}}>
@@ -166,6 +172,7 @@ export default class Inqmail extends Component{
                     </div>
 
             </form>
+            </div>
             </div>
             <Footer/>
          </div>

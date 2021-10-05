@@ -1,11 +1,15 @@
 import React, { useReducer, useState, useEffect } from "react";
 import { useHistory, useParams } from "react-router-dom";
 import axios from "axios";
+import { Form,Button,Col,Row,InputGroup } from "react-bootstrap";
 import "../../Styles/TravelPackage.css";
 import Header from "../Header";
 import Footer from "../Footer";
 
 const PackageBooking = () => {
+
+  const [validated, setValidated] = useState(false);
+
   const [tpackage, viewPackage] = useState({
     packageName: "",
     destination: "",
@@ -47,6 +51,13 @@ const PackageBooking = () => {
   };
 
   const onSubmit = async (e) => {
+
+    const form = e.currentTarget;
+    if (form.checkValidity() === false) {
+    e.preventDefault();
+    e.stopPropagation();
+  }
+else{
     e.preventDefault();
     const { packagename, price, name, phone, address, email, joinplace } = post;
     const { packageName, perperson } = tpackage;
@@ -64,7 +75,11 @@ const PackageBooking = () => {
     await axios.post("http://localhost:8070/packagebooking/add", data);
     alert("Booking Added Successfull. Click Ok to Pay");
     history.push(`/payment/add-package/${id}`);
+  }
+  setValidated(true);
   };
+  
+  
   const userInfo=localStorage.getItem('userInfo');
   if(userInfo==null){
      alert("You are not Authorized User. Please sign in first.")
@@ -87,7 +102,7 @@ const PackageBooking = () => {
                 </div>
                 <hr />
 
-                <form onSubmit={(e) => onSubmit(e)}>
+                <Form noValidate validated={validated} onSubmit={(e) => onSubmit(e)}>
                   <div class="row">
                     <div class="col">
                       <div class="input-group mb-3">
@@ -140,12 +155,15 @@ const PackageBooking = () => {
                       </div>
                     </div>
                   </div>
-
-                  <div className="form-group form-grouptr">
-                    <label>
+                 
+                 
+                 
+                  <div class="d-flex flex-row align-items-center mb-2">
+                          <div class="form-outline mb-2 mr-5" style={{width:"40%"}}>
+                     
                       <b>Name</b>
-                    </label>
-                    <input
+                   
+                          <input
                       type="text"
                       className="form-control"
                       placeholder="Enter Your Name"
@@ -154,13 +172,15 @@ const PackageBooking = () => {
                       onChange={(e) => onInputChange(e)}
                       required
                     />
-                  </div>
-
-                  <div className="form-group form-grouptr">
-                    <label>
-                      <b>Phone</b>
-                    </label>
-                    <input
+                    <Form.Control.Feedback type="invalid">
+              Please provide a valid Name
+            </Form.Control.Feedback>
+                            </div>
+                            <div class="form-outline mb-2" style={{width:"40%"}}>
+                           
+                      <b>Phone Number</b>
+                    
+                        <input
                       type="text"
                       className="form-control"
                       placeholder="Enter Phone Number"
@@ -169,7 +189,12 @@ const PackageBooking = () => {
                       onChange={(e) => onInputChange(e)}
                       required
                     />
-                  </div>
+                    <Form.Control.Feedback type="invalid">
+              Please provide a valid Phone Number
+            </Form.Control.Feedback>
+                            </div>
+                            
+                            </div>
 
                   <div className="form-group form-grouptr">
                     <label>
@@ -184,6 +209,9 @@ const PackageBooking = () => {
                       onChange={(e) => onInputChange(e)}
                       required
                     />
+                    <Form.Control.Feedback type="invalid">
+              Please provide a valid Address
+            </Form.Control.Feedback>
                   </div>
                   <div className="form-group form-grouptr">
                     <label>
@@ -198,6 +226,9 @@ const PackageBooking = () => {
                       onChange={(e) => onInputChange(e)}
                       required
                     />
+                    <Form.Control.Feedback type="invalid">
+              Please provide a valid Email
+            </Form.Control.Feedback>
                   </div>
                   <div className="form-group form-grouptr">
                     <label>
@@ -212,14 +243,36 @@ const PackageBooking = () => {
                       onChange={(e) => onInputChange(e)}
                       required
                     />
+                    <Form.Control.Feedback type="invalid">
+              Please provide a valid Place
+            </Form.Control.Feedback>
                   </div>
+
+
+ <div class="col-12">
+    <div class="form-check">
+      <input
+        class="form-check-input"
+        type="checkbox"
+        value=""
+        id="invalidCheck"
+        required
+      />
+      <label class="form-check-label" for="invalidCheck">
+        Agree to terms and conditions
+      </label>
+      <div class="invalid-feedback">You must agree before submitting.</div>
+    </div>
+  </div>
+
+
                   <br />
 
                   <button type="submit" class="btn btn-danger btn-block">
                     {" "}
                     Book Now
                   </button>
-                </form>
+                </Form>
               </div>
             </div>
           </div>

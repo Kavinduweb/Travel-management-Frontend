@@ -91,7 +91,7 @@ export default class EditPayment extends Component{
         if(res.data.success){
           alert("Payemt updated successfully")
           this.setState(
-            window.location.replace("/payment")
+            window.location.replace(`/payment/details/${id}`)
           )
 
           }

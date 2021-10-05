@@ -3,7 +3,6 @@ import ReactToPrint from 'react-to-print';
 import axios from 'axios';
 import emailjs from 'emailjs-com';
 import Header from '../Header';
-import Footer from '../Footer';
 
 
 export default class ComponentToPrint1 extends React.Component {
@@ -42,13 +41,14 @@ export default class ComponentToPrint1 extends React.Component {
 
 
         return(
-            <div  >
-
+            <div>
                 <Header/>
-               
-                
-                <ReactToPrint
-            trigger={() => <button className="btn btn-dark"  style={{margintop:'400px'}}>
+            
+            <div className="info">
+
+              
+            <ReactToPrint
+            trigger={() => <button className="btn btn-dark"  style={{margintop:'500px'}}>
                 <i class="fa fa-file-pdf-o" aria-hidden="true"></i> &nbsp;Get a Print of the Report</button >}
             content={() => this.componentRef}
           />
@@ -57,10 +57,10 @@ export default class ComponentToPrint1 extends React.Component {
 
               <br/>
               
-            <form className="oneDetail5"   style={{textSizeAdjust:'15px'}}>
+            <form className="container2"   style={{textSizeAdjust:'15px'}}>
             <br/> <br/>
         
-            <h1>Travel Dreams User Inquiry Report</h1>
+            <h1>Dream Travelers User Inquiry Report</h1>
              <hr/>
                  
                  <tr className="col-sm-3">User &nbsp;- &nbsp;{name}</tr>
@@ -99,7 +99,7 @@ export default class ComponentToPrint1 extends React.Component {
                      <br/>
                      <b>Inquiry & User Affairs,</b>
                      <br/>
-                     <b>Travel Dreams(PVT)Ltd.</b>
+                     <b>Dream Travelers(PVT)Ltd.</b>
 
              </div>
   
@@ -107,7 +107,7 @@ export default class ComponentToPrint1 extends React.Component {
              </form>
              </div>
             
-             
+             </div>
          </div>
             
 

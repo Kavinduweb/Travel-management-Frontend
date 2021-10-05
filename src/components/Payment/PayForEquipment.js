@@ -130,7 +130,7 @@ const{ename,price}=this.state;
                 <hr  class="text-center mb-4"/>
                     <h4 style={{color:"hsl(0,0%,0%,0.6)"}}>{ename}</h4>
                     <div >
-                    <center>    <div class="col-12 "><img class="img-fluid" src={`/uploads/${img}`} style={{height:"200px",width:"65%"}} /></div></center>
+                    <center>    <div class="col-12 "><img class="img-fluid" src={`/uploads/${img}`} style={{height:"350px",width:"65%"}} /></div></center>
                         
                     </div>
                    
@@ -164,7 +164,7 @@ const{ename,price}=this.state;
 
  <div class="input-group mb-3">
   <div class="input-group-prepend">
-    <span class="input-group-text" id="basic-addon1" style={{backgroundColor:'hsl(0,0%,0%,0.3)',color:"white"}}>Package Name</span>
+    <span class="input-group-text" id="basic-addon1" style={{backgroundColor:'hsl(0,0%,0%,0.3)',color:"white"}}>Item Name</span>
   </div>
   <input type="text" className="form-control" name="reference" value={ename} onChange={this.onChangeReference} disabled />
 </div></div>
@@ -258,6 +258,7 @@ const{ename,price}=this.state;
 
 
             <button type="submit" class="btn btn-danger btn-lg btn-block" style={{height:"43px"}}><b>Pay Now</b></button>
+            
           </form>
 
                 </div>

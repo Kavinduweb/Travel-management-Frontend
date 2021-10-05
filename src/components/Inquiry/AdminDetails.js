@@ -3,6 +3,7 @@ import axios from 'axios';
 import HeaderAdmin from '../HeaderAdmin';
 
 
+
 export default class AdminDetails extends Component{
     constructor(props){
         super(props);
@@ -52,11 +53,12 @@ export default class AdminDetails extends Component{
 
             <div >
                 <HeaderAdmin/>
+                <body className="vj">
                 <div >
                <form className="oneDetail3" id="form">
                
            
-               <h1>Inquiry Details</h1>
+               <h1 className="nam"> Client Inquiry Details</h1>
                 <hr/>
                     
                     <tr className="col-sm-3">Name &nbsp;: &nbsp;{name}</tr>
@@ -84,28 +86,21 @@ export default class AdminDetails extends Component{
                         </div>
                   
                     <p className="bod"> {inq}</p>
-                  
-                    
-
-                    
-
-                       
-                        
-                        
+   
 
                 </div>
                 </form>
 
 
 
-                <form className="oneDetail3" id="form">
+                <form className="oneDetail4" id="form">
                 <div className="form-group" style={{marginBottom:'15px'}}>
                         <div className="hed">
                         <i class="fa fa-comments" aria-hidden="true"></i> &nbsp;
                         <label style={{marginBottom:'5px'}}> Response From Administration</label>
                         &nbsp;&nbsp;
                         </div>
-                        <p className="bod"> {adrep}</p>
+                        <p className="boadad"> {adrep}</p>
 
                         <br/>
                         <a  href={"/admin/"+this.state.post._id}>
@@ -129,6 +124,7 @@ export default class AdminDetails extends Component{
                
                 
             </div>
+            </body>
             </div>
         )
 

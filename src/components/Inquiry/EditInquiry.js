@@ -45,7 +45,7 @@ export default class EditInquiry extends Component{
            
         if(res.data.success){
                 alert("Inquiry updated Successfully!!")
-              window.location.replace("/add")
+              window.location.replace("/view")
                 this.setState({
                     name:"",
                     nic:"",
@@ -92,10 +92,11 @@ export default class EditInquiry extends Component{
         return(
             <div >
                 <Header/>
+                <div className="info">
                 <div className="vj">
                 
                 <form className="needs-validation" noValidate  id="form">
-                <h1 > Edit Inquiry</h1>
+                <h1 className="nam" > Edit Inquiry</h1>
                 <hr/>
                     <div className="form-group" style={{marginBottom:'15px'}}>
                         <label style={{marginBottom:'5px'}}>Name</label>
@@ -155,6 +156,7 @@ export default class EditInquiry extends Component{
                     </button>
 
             </form>
+            </div>
             </div>
             <Footer/>
          </div>

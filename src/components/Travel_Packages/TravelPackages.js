@@ -1,9 +1,10 @@
 import React, { Component } from "react";
 import axios from "axios";
-import { Row } from "react-bootstrap";
+import { Button, Row } from "react-bootstrap";
 import "../../Styles/TravelPackage.css";
 import Header from "../Header";
 import Footer from "../Footer";
+import Reactstars from "react-rating-stars-component";
 
 export default class CardItemsT extends Component {
   constructor(props) {
@@ -28,14 +29,6 @@ export default class CardItemsT extends Component {
     });
   }
 
-  onDelete = (id) => {
-    axios
-      .delete(`http://localhost:8070/travelpackages/admin/delete/${id}`)
-      .then((res) => {
-        alert("Delete SuccessFully");
-        this.retrievePosts();
-      });
-  };
 
   filterData(posts, searchkey) {
     const result = posts.filter(
@@ -197,18 +190,36 @@ export default class CardItemsT extends Component {
                             {idx + 1}. &nbsp;{posts.packageName}
                           </a>
                         </h1>
-                        <div class="postcard__subtitle small smalltr">
-                          <time datetime="2020-05-25 12:00:00">
+                       
+                       
+                        <div class="d-flex">
+                          <div class="form-outline mr-4">
+                      
+                          <time class="postcard__subtitle small smalltr" datetime="2020-05-25 12:00:00">
                             <i class="fas fa-calendar-alt mr-2"></i>
                             {posts.date}
-                          </time>
-                        </div>
+                          </time> 
+                     
+                            </div>
+                            <div class="form-outline ">
+                            
+                          <Reactstars edit={false}  size={20} value={Math.floor(posts.reviewsAvg)}/>
+                            </div>
+                            </div>
+                       
+
+
+
+
+
+
                         <div class="postcard__bar"></div>
                         <div class="postcard__preview-txt">
                           {posts.discription}
                         </div>
                         <br />
                         {posts.destination}
+                 
 
                         <ul class="postcard__tagbox">
                           <li class="tag__item">
@@ -227,6 +238,7 @@ export default class CardItemsT extends Component {
                               {posts.vehical}
                             </a>
                           </li>
+                  
                           <li>
                             <button
                               type="button"
@@ -234,7 +246,7 @@ export default class CardItemsT extends Component {
                               id="cardbtn2"
                             >
                               <a
-                                href={`/travelpackages/travelpackage/${posts._id}`}
+                                href={`/travelpackages/travelpackage/${posts.id}`}
                                 style={{
                                   textDecoration: "none",
                                   color: "white",

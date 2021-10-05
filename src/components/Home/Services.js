@@ -8,7 +8,8 @@ const Services = () => {
   return (
     <div>
       <Header />
-      <div className="info">
+      <div className="info" style={{background:"hsl(0,0%,50%,0.2)	"}}>
+        <br/>
         <div
           class="container-fluid mx-auto mt-5 mb-5 col-12"
           style={{ textAlign: "center" }}
@@ -199,9 +200,9 @@ const Services = () => {
             <p class="chk">
               <small class="text-muted">Still not sure?</small>
             </p>
-            <div class="btn btn-primary">Travel Packages</div> &nbsp;&nbsp;
-            <div class="btn btn-primary">Room Packages</div>&nbsp;&nbsp;
-            <div class="btn btn-primary">Select Activity</div>
+            <div class="btn btn-primary servicetext"><a href="/travelpackages" >Travel Packages</a></div> &nbsp;&nbsp;
+            <div class="btn btn-primary servicetext"> <a href="/hotelpackage" >Room Packages</a></div>&nbsp;&nbsp;
+            <div class="btn btn-primary servicetext"> <a href="/all" >Select Activity</a></div>
           </div>
         </div>
       </div>
