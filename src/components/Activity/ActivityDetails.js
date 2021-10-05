@@ -29,13 +29,13 @@ class ComponentToPrint extends React.Component {
       <div>
         <HeaderAdmin />
         <DetailsContainer>
-          <div className="info">
+          <div className="infoadmin">
             <ReactToPrint
               trigger={() => (
                 <button
                   type="button"
                   className="btn btn-outline-secondary"
-                  style={{ marginLeft: 1336 }}
+                  style={{ marginLeft: 133 }}
                 >
                   <i class="fas fa-print mr-2"></i>Generate Report
                 </button>

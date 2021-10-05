@@ -62,7 +62,7 @@ const loadPackage = async()=>{
                 <input className="inputabc" type="text" Name="Password" value={Password} onChange={e=>onInputChange(e)} />
 
 
-                <button  className="button12" type="submit" name="submit" class="reg" >Edit Conifrm</button>
+                <button className="btn btn-danger a123" type="submit" name="submit"  >Edit Conifrm</button>
 
                             </form>
             </div>

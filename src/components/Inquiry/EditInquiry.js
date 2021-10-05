@@ -2,12 +2,14 @@ import React, { Component } from 'react'
 import axios from 'axios';
 import Header from '../Header';
 import Footer from '../Footer';
+import { Form,Button,Col,Row,InputGroup } from "react-bootstrap";
 
 export default class EditInquiry extends Component{
 
     constructor(props){
         super(props);
         this.state = {
+            validated:false,
             name:"",
             nic:"",
             phone:"",
@@ -25,6 +27,14 @@ export default class EditInquiry extends Component{
     }
 
     onSubmit= (e) =>{
+        const form = e.currentTarget;
+        if (form.checkValidity() === false) {
+            
+        e.preventDefault();
+        e.stopPropagation();
+      }
+
+      else{
         
         e.preventDefault();
         const id = this.props.match.params.id;
@@ -58,6 +68,8 @@ export default class EditInquiry extends Component{
             
 
         })
+    }
+    this.setState({ validated: true })
         
     }
 
@@ -95,7 +107,7 @@ export default class EditInquiry extends Component{
                 <div className="info">
                 <div className="vj">
                 
-                <form className="needs-validation" noValidate  id="form">
+                <Form className="needs-validation12" noValidate  id="form">
                 <h1 className="nam" > Edit Inquiry</h1>
                 <hr/>
                     <div className="form-group" style={{marginBottom:'15px'}}>
@@ -105,7 +117,9 @@ export default class EditInquiry extends Component{
                         name="name"
                         placeholder="Enter Your Name"
                         value={this.state.name} 
-                        onChange={this.handleInputChange}/>
+                        onChange={this.handleInputChange}
+                        required="required"/>
+                        
                     </div>
 
                     <div className="form-group" style={{marginBottom:'15px'}}>
@@ -155,7 +169,7 @@ export default class EditInquiry extends Component{
                     
                     </button>
 
-            </form>
+            </Form>
             </div>
             </div>
             <Footer/>
