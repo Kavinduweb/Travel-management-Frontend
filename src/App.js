@@ -173,6 +173,7 @@ function App() {
       <Route path="/inqmail/:id" component= {Inqmail}></Route>
       <Route path="/adminDet/:id" component= {AdminDetails}></Route>
 
+  
     </div>
     </Router>
     
