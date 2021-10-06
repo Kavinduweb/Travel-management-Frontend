@@ -66,7 +66,7 @@ import HeaderAdmin from '../HeaderAdmin';
         </div>
 
          <table className="blueTable" border="2"  >
- 
+ <thead>
        <tr>
          <th scope="col">#</th>
          <th scope="col">Name</th>
@@ -79,7 +79,7 @@ import HeaderAdmin from '../HeaderAdmin';
          
         
        </tr>
-    
+    </thead>
      <tbody>
        {this.state.posts.map((posts,index)=>(
          <tr key={index}>

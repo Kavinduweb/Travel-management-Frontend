@@ -75,7 +75,7 @@ export default class CreateInquiry extends Component{
 
         console.log(data)
 
-        axios.post("http://localhost:8070/inquiry/add",data).then((res) =>{
+        axios.post("https://trabackend1223.herokuapp.com/inquiry/add",data).then((res) =>{
            
         if(res.data.success){
             alert("You Have Successfully Created an Inquiry")
@@ -211,7 +211,7 @@ export default class CreateInquiry extends Component{
                             onChange={this.handleInputChange}
                             required ="required"/>
                             <Form.Control.Feedback type="invalid">
-                            Please provide Card Holder Inquiry
+                            Please Enter Your Inquiry
                             </Form.Control.Feedback> 
                                         
                     </div>
