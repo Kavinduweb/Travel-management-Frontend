@@ -38,7 +38,7 @@ const EditActivity = (props) => {
 
     axios
       .put(
-        `http://localhost:8070/activities/update/${props.match.params.id}`,
+        `https://trabackend1223.herokuapp.com/activities/update/${props.match.params.id}`,
         formData
       )
       .then((res) => setMessage(res.data))

@@ -47,7 +47,7 @@ const NewReg ={
 }
 	console.log(NewReg);
 			
-	axios.post("https://trabackend1223.herokuapp.com/Register/add",NewReg).then(()=>{
+	axios.post("http://localhost:8070/Register/add",NewReg).then(()=>{
 		alert("success");
 	}).catch((err)=>{
 		alert(err);

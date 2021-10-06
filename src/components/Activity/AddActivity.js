@@ -38,7 +38,7 @@ function AddActivity() {
     setPrice("");
 
     axios
-      .post(`http://localhost:8070/activities/add/`, formData)
+      .post(`https://trabackend1223.herokuapp.com/activities/add/`, formData)
       .then((res) => setMessage(res.data))
       .catch((err) => {
         console.log(err);

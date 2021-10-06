@@ -40,6 +40,11 @@ const ActivitySelect = (props) => {
   };
 
   const onSubmit = async (e) => {
+    const form = e.currentTarget;
+    if (form.checkValidity() === false) {
+      e.preventDefault();
+      e.stopPropagation();
+    }else{
     e.preventDefault();
     const { aName, aprice, name, phone, content } = post;
     const { aname, price } = tactivity;
@@ -56,7 +61,8 @@ const ActivitySelect = (props) => {
     alert("Activity Select Successfull. Click Ok to Pay");
     history.push(`/payment/add-activity/${props.match.params.id}`);
   };
-
+  setValidated(true);
+  }
   const { aname, price } = tactivity;
 
   const userInfo = localStorage.getItem("userInfo");
@@ -68,16 +74,6 @@ const ActivitySelect = (props) => {
   }
 
   const [validated, setValidated] = useState(false);
-
-  const handleSubmit = (event) => {
-    const form = event.currentTarget;
-    if (form.checkValidity() === false) {
-      event.preventDefault();
-      event.stopPropagation();
-    }
-
-    setValidated(true);
-  };
 
   return (
     <div
@@ -107,11 +103,7 @@ const ActivitySelect = (props) => {
                   </div>
                   <hr />
 
-                  <Form
-                    noValidate
-                    validated={validated}
-                    onSubmit={(e) => onSubmit(e)}
-                  >
+                  <Form noValidate validated={validated} onSubmit={(e) => onSubmit(e)}>
                     <div class="row">
                       <div class="col">
                         <div class="input-group mb-3">
