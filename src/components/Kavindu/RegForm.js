@@ -47,7 +47,7 @@ const NewReg ={
 }
 	console.log(NewReg);
 	
-	axios.post("http://localhost:8070/Register/add",NewReg).then(()=>{
+	axios.post("https://trabackend1223.herokuapp.com/Register/add",NewReg).then(()=>{
 		alert("success");
 	}).catch((err)=>{
 		alert(err);
@@ -82,7 +82,7 @@ const getData = async (e)=>{
 		setLoding(true);
 			const { data } = await  axios.post(
 
-				"http://localhost:8070/Register/login",
+				"https://trabackend1223.herokuapp.com/Register/login",
 				{
 					Email,Password,
 				},
