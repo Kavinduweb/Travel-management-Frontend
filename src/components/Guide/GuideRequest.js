@@ -75,7 +75,7 @@ useEffect(()=>{
         noofdates:noofdates
      };
 
-     await axios.post ("http://localhost:8070/guiderequest/add",data);
+     await axios.post ("https://trabackend1223.herokuapp.com/guiderequest/add",data);
      alert("Request sent successfully!")
      history.push("/guide/all");
     

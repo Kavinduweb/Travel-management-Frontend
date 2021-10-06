@@ -78,7 +78,7 @@ export default class EditInquiry extends Component{
     componentDidMount(){
         const id = this.props.match.params.id;
         
-        axios.get(`http://localhost:8070/inquiry/${id}`).then((res) =>{
+        axios.get(`https://trabackend1223.herokuapp.com/inquiry/${id}`).then((res) =>{
             if(res.data.success){
                 this.setState({
                     name:res.data.post.name,

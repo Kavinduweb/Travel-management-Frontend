@@ -123,7 +123,7 @@ const{packageName,price}=this.state;
       }
 
       console.log(data)
-      axios.post("http://localhost:8070/payment/add",data).then((res=>{
+      axios.post("https://trabackend1223.herokuapp.com/payment/add",data).then((res=>{
         if(res.data.success){
 
 window.location.replace("/confirm/payment")
