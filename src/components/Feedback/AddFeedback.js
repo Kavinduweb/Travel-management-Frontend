@@ -26,7 +26,7 @@ const AddFeedback = () => {
       e.stopPropagation();
     } else {
       e.preventDefault();
-      await axios.post("http://localhost:8070/feedback/add", feedback);
+      await axios.post("https://trabackend1223.herokuapp.com/feedback/add", feedback);
       history.push("/");
       alert(" Successfully added Your Feedback");
     }

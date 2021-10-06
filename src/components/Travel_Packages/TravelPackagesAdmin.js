@@ -17,7 +17,7 @@ export default class AllPackagesAdmin extends Component {
   }
 
   retrievePosts() {
-    axios.get("http://localhost:8070/travelpackages").then((res) => {
+    axios.get("https://trabackend1223.herokuapp.com/travelpackages").then((res) => {
       if (res.data.success) {
         this.setState({
           posts: res.data.existingPackage,
@@ -29,7 +29,7 @@ export default class AllPackagesAdmin extends Component {
 
   onDelete = (id) => {
     axios
-      .delete(`http://localhost:8070/travelpackages/admin/delete/${id}`)
+      .delete(`https://trabackend1223.herokuapp.com/travelpackages/admin/delete/${id}`)
       .then((res) => {
         alert("Delete SuccessFully");
         this.retrievePosts();
@@ -48,7 +48,7 @@ export default class AllPackagesAdmin extends Component {
   handleSearchArea = (e) => {
     const searchkey = e.currentTarget.value;
 
-    axios.get("http://localhost:8070/travelpackages").then((res) => {
+    axios.get("https://trabackend1223.herokuapp.com/travelpackages").then((res) => {
       if (res.data.success) {
         this.filterData(res.data.existingPackage, searchkey);
       }

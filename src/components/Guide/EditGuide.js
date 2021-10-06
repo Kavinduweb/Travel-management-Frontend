@@ -23,13 +23,13 @@ const EditGuide = () => {
  
   const onSubmit = async e => {
     e.preventDefault();
-    await axios.put(`http://localhost:8070/guide/update/${id}`, guide);
+    await axios.put(`https://trabackend1223.herokuapp.com/guide/update/${id}`, guide);
     history.push("/guide");
     alert("Guide Updated Successfully!")
   };
 
   const loadGuide = async () => {
-    const result = await axios.get(`http://localhost:8070/guide/${id}`);
+    const result = await axios.get(`https://trabackend1223.herokuapp.com/guide/${id}`);
     setGuide(result.data.guide);
   };
   useEffect(() => {

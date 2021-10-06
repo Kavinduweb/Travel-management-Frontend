@@ -19,7 +19,7 @@ const ViewPackage = () => {
 
   const loadPackage = async () => {
     const res = await axios.get(
-      `http://localhost:8070/travelpackages/admin/${id}`
+      `https://trabackend1223.herokuapp.com/travelpackages/admin/${id}`
     );
     viewPackage(res.data.post);
   };

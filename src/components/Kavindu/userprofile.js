@@ -57,7 +57,7 @@ export default class UserProfile extends Component {
           
         }
         const mongoid= line.join('');
-        const url ="http://localhost:8070/user/Details/";
+        const url ="https://trabackend1223.herokuapp.com/user/Details/";
 
         
         axios.get(url+mongoid).then(res =>{

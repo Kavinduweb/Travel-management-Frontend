@@ -16,7 +16,7 @@ export default function InqView (){
         e.preventDefault();
 
         const nic1 = nic;
-        const url="http://localhost:8070/inquiry/view/";
+        const url="https://trabackend1223.herokuapp.com/inquiry/view/";
 
      
         const res = await axios.get(url+nic1).then((res)=> {

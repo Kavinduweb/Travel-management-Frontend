@@ -18,7 +18,7 @@ export default function SearchBooking (){
         e.preventDefault();
 
         const email1 = email;
-        const url="http://localhost:8070/hotelbooking/view/";
+        const url="https://trabackend1223.herokuapp.com/hotelbooking/view/";
 
      
         const res = await axios.get(url+email1).then((res)=> {

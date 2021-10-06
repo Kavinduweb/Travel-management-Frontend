@@ -20,7 +20,7 @@ const GuideRequest = ()=>{
 
 const loadGuide = async()=>{
     const res = await axios.get(
-        (`http://localhost:8070/guide/${id}`)
+        (`https://trabackend1223.herokuapp.com/guide/${id}`)
     );
     viewGuide(res.data.guide);
 };

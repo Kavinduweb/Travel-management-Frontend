@@ -51,7 +51,7 @@ export default class EditInquiry extends Component{
         console.log(data)
         
 
-        axios.put(`http://localhost:8070/inquiry/update/${id}`,data).then((res) =>{
+        axios.put(`https://trabackend1223.herokuapp.com/inquiry/update/${id}`,data).then((res) =>{
            
         if(res.data.success){
                 alert("Inquiry updated Successfully!!")

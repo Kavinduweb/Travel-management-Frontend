@@ -39,7 +39,7 @@ const AdminAddPackage = ()=>{
        
    
        axios
-       .post("http://localhost:8070/hotelpackage/add",formData)
+       .post("https://trabackend1223.herokuapp.com/hotelpackage/add",formData)
        .then(
         (res)=>setMessage(res.data))
         

@@ -21,7 +21,7 @@ componentDidMount(){
 
   DisplayData(){  //Display All details
       
-      axios.get("http://localhost:8070/access/Details").then(res =>{
+      axios.get("https://trabackend1223.herokuapp.com/access/Details").then(res =>{
           
           if(res.data.success){
               this.setState({

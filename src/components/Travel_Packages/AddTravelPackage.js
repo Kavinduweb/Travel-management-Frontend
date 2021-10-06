@@ -46,7 +46,7 @@ const CreatePackage = () => {
     setPerperson("");
 
     axios
-      .post("http://localhost:8070/travelpackages/admin/add", formData)
+      .post("https://trabackend1223.herokuapp.com/travelpackages/admin/add", formData)
       .then((res) => setMessage(res.data))
 
       .catch((err) => {

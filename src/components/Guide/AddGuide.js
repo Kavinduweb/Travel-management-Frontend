@@ -50,7 +50,7 @@ const AddGuide = ()=>{
        
    
        axios
-       .post("http://localhost:8070/guide/add",formData)
+       .post("https://trabackend1223.herokuapp.com/guide/add",formData)
        .then(
         (res)=>setMessage(res.data))
         

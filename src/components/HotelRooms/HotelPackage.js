@@ -23,7 +23,7 @@ export default class hotelpackage extends Component{
       }
       
       retrievePosts(){
-        axios.get("http://localhost:8070/hotelpackage/").then(res =>{
+        axios.get("https://trabackend1223.herokuapp.com/hotelpackage/").then(res =>{
           if(res.data.success){
             this.setState({
               posts:res.data.existingPackage
@@ -47,7 +47,7 @@ export default class hotelpackage extends Component{
       handleSearchArea=(e)=>{
 
         const searchKey=e.currentTarget.value;
-        axios.get("http://localhost:8070/hotelpackage/").then(res =>{
+        axios.get("https://trabackend1223.herokuapp.com/hotelpackage/").then(res =>{
           if(res.data.success){
 
             this.filterData(res.data.existingPackage,searchKey)

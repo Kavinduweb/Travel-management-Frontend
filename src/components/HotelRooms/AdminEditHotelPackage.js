@@ -43,7 +43,7 @@ export default class AdminEditHotelPackage extends Component{
     
             console.log(data)
     
-    axios.put(`http://localhost:8070/hotelpackage/update/${id}`,data).then((res)=>{
+    axios.put(`https://trabackend1223.herokuapp.com/hotelpackage/update/${id}`,data).then((res)=>{
         if(res.data.success){
             window.location.href = "/adminhotelpackage";
             alert("Update Successfully")

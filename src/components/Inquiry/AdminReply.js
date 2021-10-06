@@ -42,7 +42,7 @@ export default class AdminRep extends Component{
 
         console.log(data)
 
-        axios.put(`http://localhost:8070/inquiry/update/${id}`,data).then((res) =>{
+        axios.put(`https://trabackend1223.herokuapp.com/inquiry/update/${id}`,data).then((res) =>{
            
         if(res.data.success){
                 alert("Reply Added to the Inquiry")
@@ -67,7 +67,7 @@ export default class AdminRep extends Component{
     componentDidMount(){
         const id = this.props.match.params.id;
         
-        axios.get(`http://localhost:8070/inquiry/${id}`).then((res) =>{
+        axios.get(`https://trabackend1223.herokuapp.com/inquiry/${id}`).then((res) =>{
             if(res.data.success){
                 this.setState({
                     name:res.data.post.name,

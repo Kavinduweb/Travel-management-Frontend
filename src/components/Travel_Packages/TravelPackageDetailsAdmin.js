@@ -20,7 +20,7 @@ const PackageDetailsAdmin = () => {
 
   const loadPackage = async () => {
     const res = await axios.get(
-      `http://localhost:8070/travelpackages/admin/${id}`
+      `https://trabackend1223.herokuapp.com/travelpackages/admin/${id}`
     );
     viewPackage(res.data.post);
   };
@@ -31,7 +31,7 @@ const PackageDetailsAdmin = () => {
   const deletepackage = async (id) => {
  
       await axios.delete(
-        `http://localhost:8070/travelpackages/admin/delete/${id}`
+        `https://trabackend1223.herokuapp.com/travelpackages/admin/delete/${id}`
       );
       alert("Package Deleted");
       window.location.href = "/travelpackages/admin";
