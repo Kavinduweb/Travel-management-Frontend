@@ -54,7 +54,7 @@ componentDidMount(){
 
         console.log(data)
 
-axios.post("http://localhost:8070/hotelbooking/add",data).then((res)=>{
+axios.post("https://trabackend1223.herokuapp.com/hotelbooking/add",data).then((res)=>{
     if(res.data.success){
         // eslint-disable-next-line no-restricted-globals
         if(confirm("Your reservation was Successfull, please select OK to pay!")){
