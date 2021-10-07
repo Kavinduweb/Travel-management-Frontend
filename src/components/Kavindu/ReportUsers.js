@@ -1,9 +1,10 @@
 import React from "react";
 import axios from 'axios'
 import ReactToPrint from "react-to-print";
+import HeaderAdmin from '../HeaderAdmin';
 
 
-class ComponentToPrint extends React.Component{
+export default class ComponentToPrint extends React.Component{
 constructor(props){
   super(props);
 
@@ -21,7 +22,7 @@ componentDidMount(){
 
   DisplayData(){  //Display All details
       
-      axios.get("https://trabackend1223.herokuapp.com/access/Details").then(res =>{
+      axios.get("http://localhost:8070/access/Details").then(res =>{
           
           if(res.data.success){
               this.setState({
@@ -43,11 +44,31 @@ componentDidMount(){
 
   render() {
     return (
-     <div className="info">
+      <div>
+        <HeaderAdmin/>
+       
+     <div className="infoadmin">
+
+
+     <ReactToPrint
+            trigger={() => <button className="btn btn-success"  style={{margintop:'500px'}}>
+                <i class="fa fa-file-pdf-o" aria-hidden="true"></i> &nbsp;Print Report</button >}
+            content={() => this.componentRef}
+          />
+
+
+          <div ref={(el) => (this.componentRef = el)}>
+
+
+       
        
        <form className="form12">
+       <h1>Dream Travelers User Report</h1>
+             <hr/>
+                 
+         
      
-      <table className="table" border='3'> 
+      <table className="blueTable" border='3'> 
 
                
       <thead>
@@ -73,9 +94,7 @@ componentDidMount(){
           
           
 
-           <td>
-
-           </td>
+           
        </tr>
 
 
@@ -91,24 +110,10 @@ componentDidMount(){
       
        </form>
        </div>
+       </div>
+       </div>
       
     );
   }
 }
 
-class Example extends React.Component {
-  render() {
-    return (
-      <div className="body1">
-        <ReactToPrint
-          trigger={() => <button className="button12" style={{marginLeft:230}}>Print this out!</button> }
-          
-          content={() => this.componentRef}
-        />
-        <ComponentToPrint ref={(el) => (this.componentRef = el)} />
-      </div>
-    );
-  }
-}
-
-export default Example;
