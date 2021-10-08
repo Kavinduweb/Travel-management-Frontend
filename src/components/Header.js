@@ -48,14 +48,6 @@ function Header() {
           </li>
           <li>
             <a
-              href="/equipment"
-              style={{ textDecoration: "none", color: "white" }}
-            >
-              <i class="fas fa-campground"></i>Equipment
-            </a>
-          </li>
-          <li>
-            <a
               href="/guide/all"
               style={{ textDecoration: "none", color: "white" }}
             >
